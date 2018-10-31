@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="icon" href="https://www.freecodecamp.one/favicon.ico">
+    <meta name="referrer" content="always">
+    <meta name="keywords" content="freeCodeCamp 开发者社区 互联网行业技术 人才">
+    <meta name="description" content="">
+    <title>freeCodeConf</title>
+    <script src="./third-party/vue.min.js"></script>
+    <link rel="stylesheet" href="./freecodecamp.one/css/style.css?v=1.1">
+  </head>
+
+  <body>
+    <div id="app">
+      <section class="banner">
+        <h2 class="title">【<span>上海</span>】</h2>
+        <div class="sec_title">freeCodeCamp中国城市社区</div>
+      </section>
+      <div class="container">
+        <div class="top_links">
+          <a href="https://www.freecodecamp.one" target="_blank">首页</a>&gt;
+          <a href="https://www.freecodecamp.one/community" target="_blank">社区</a>
+          <span class="city_tip"><em>&gt;</em>【<em>上海</em>】feeeCodeCamp中国城市社区</span>
+        </div>
+        <div class="snap clearfix">
+          <div class="img_box">
+            <img src="./cities/Bitmap.png">
+          </div>
+          <div class="info">
+            <div class="info_t">
+              欢迎加入FCC<span>上海</span>社区
+            </div>
+            <ul>
+              <li><a href="">网站</a></li>
+              <li><span>微博：</span><a href="">聚会</a></li>
+              <li><span>微信：</span><a href="">网站</a></li>
+              <li><a href="">优酷</a></li>
+              <li><a href="">Youtube</a></li>
+              <li><a href="">Github 账号</a></li>
+              <li><a href="">DevStie章节</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+          <p class="list_head">社区组织者</p>
+          <div class="lists">
+            <div class="list_item">
+              <a href="">
+                <div class="img_content">
+                  <div>
+                    <img src="./cities/Oval 2 Copy 2.png">
+                  </div>
+                </div>
+                <p>李先生</p>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="">
+                <div class="img_content">
+                  <div>
+                    <img src="./cities/Oval 2 Copy 2.png">
+                  </div>
+                </div>
+                <p>李先生</p>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="">
+                <div class="img_content">
+                  <div>
+                    <img src="./cities/Oval 2 Copy 2.png">
+                  </div>
+                </div>
+                <p>李先生</p>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="">
+                <div class="img_content">
+                  <div>
+                    <img src="./cities/Oval 2 Copy 2.png">
+                  </div>
+                </div>
+                <p>李先生</p>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="">
+                <div class="img_content">
+                  <div>
+                    <img src="./cities/Oval 2 Copy 2.png">
+                  </div>
+                </div>
+                <p>李先生</p>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="">
+                <div class="img_content">
+                  <div>
+                    <img src="./cities/Oval 2 Copy 2.png">
+                  </div>
+                </div>
+                <p>李先生</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <p class="list_head">合作企业</p>
+          <div class="partners">
+            <div class="part_item">
+              <a href="">
+                <img src="./cities/freecodecamp.jpg">
+              </a>
+            </div>
+            <div class="part_item">
+              <a href="">
+                <img src="./cities/freecodecamp.jpg">
+              </a>
+            </div>
+            <div class="part_item">
+              <a href="">
+                <img src="./cities/freecodecamp.jpg">
+              </a>
+            </div>
+            <div class="part_item">
+              <a href="">
+                <img src="./cities/freecodecamp.jpg">
+              </a>
+            </div>
+            <div class="part_item">
+              <a href="">
+                <img src="./cities/freecodecamp.jpg">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      console.log(new URLSearchParams(location.search).get('city'));
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          d: 1
+        }
+      });
+    </script>
+  </body>
+
+</html>
