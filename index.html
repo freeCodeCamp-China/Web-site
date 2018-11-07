@@ -114,8 +114,8 @@
           },
           computed: {
             picPrefix:function(){
-              var located = window.location.hostname;
-              return located + city.picPrefix;
+              var located = window.location.origin;
+              return located + '/' + city.picPrefix;
             }
           }
         });
