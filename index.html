@@ -46,6 +46,7 @@
             </ul>
           </div>
         </div>
+        
         <div class="content">
           <p class="list_head">社区组织者</p>
           <div class="lists">
@@ -60,8 +61,9 @@
               </a>
             </div>
           </div>
-          <div @click="organiserMore" v-if="organiser.length>10 && organiser.length>organiserCount" class="more_item">More</div>
+          <div @click="organiserMore" v-if="organiser.length>organiserCount" class="more_item">More</div>
         </div>
+
         <div class="content" v-if="speakers.length>0">
           <p class="list_head">演讲嘉宾</p>
           <div class="lists">
@@ -76,8 +78,9 @@
               </a>
             </div>
           </div>
-          <div @click="organiserMore" v-if="speakers.length>10 && speakers.length<speakersCount" class="more_item">More</div>
+          <div @click="speakersMore" v-if="speakers.length>speakersCount" class="more_item">More</div>
         </div>
+
         <div class="content" v-if="co_company.length>0">
           <p class="list_head">合作企业</p>
           <div class="partners">
@@ -119,7 +122,8 @@
           computed: {
             picPrefix:function(){
               var located = window.location.origin;
-              return located + '/' + city.picPrefix;
+              return city.picPrefix;
+              // return located + '/' + city.picPrefix;
             }
           },
           methods: {
