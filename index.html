@@ -12,28 +12,28 @@
     <meta name="description" content="">
     <title>freeCodeConf</title>
     <script src="./third-party/vue.min.js"></script>
-    <link rel="stylesheet" href="./freecodecamp.one/css/style.css?v=1.1">
+    <link rel="stylesheet" href="./freecodecamp.one/css/style.css?v=1.2">
   </head>
 
   <body>
-    <div id="app">
+    <div id="freecodecamp">
       <section class="banner">
-        <h2 class="title">【<span>上海</span>】</h2>
+        <h2 class="title">【<span v-text="cityName"></span>】</h2>
         <div class="sec_title">freeCodeCamp中国城市社区</div>
       </section>
       <div class="container">
         <div class="top_links">
           <a href="https://www.freecodecamp.one" target="_blank">首页</a>&gt;
           <a href="https://www.freecodecamp.one/community" target="_blank">社区</a>
-          <span class="city_tip"><em>&gt;</em>【<em>上海</em>】feeeCodeCamp中国城市社区</span>
+          <span class="city_tip"><em>&gt;</em>【<em v-text="cityName"></em>】feeeCodeCamp中国城市社区</span>
         </div>
         <div class="snap clearfix">
           <div class="img_box">
-            <img src="./cities/Bitmap.png">
+            <img :src="picPrefix+banner">
           </div>
           <div class="info">
             <div class="info_t">
-              欢迎加入FCC<span>上海</span>社区
+              欢迎加入FCC<span v-text="cityName"></span>社区
             </div>
             <ul>
               <li><a href="">网站</a></li>
@@ -49,94 +49,39 @@
         <div class="content">
           <p class="list_head">社区组织者</p>
           <div class="lists">
-            <div class="list_item">
-              <a href="">
+            <div class="list_item" v-for="(orger, index) of organiser" :key="index">
+              <a :href="orger.link">
                 <div class="img_content">
                   <div>
-                    <img src="./cities/Oval 2 Copy 2.png">
+                    <img :src="picPrefix +'organiser/' + orger.pic">
                   </div>
                 </div>
-                <p>李先生</p>
-              </a>
-            </div>
-            <div class="list_item">
-              <a href="">
-                <div class="img_content">
-                  <div>
-                    <img src="./cities/Oval 2 Copy 2.png">
-                  </div>
-                </div>
-                <p>李先生</p>
-              </a>
-            </div>
-            <div class="list_item">
-              <a href="">
-                <div class="img_content">
-                  <div>
-                    <img src="./cities/Oval 2 Copy 2.png">
-                  </div>
-                </div>
-                <p>李先生</p>
-              </a>
-            </div>
-            <div class="list_item">
-              <a href="">
-                <div class="img_content">
-                  <div>
-                    <img src="./cities/Oval 2 Copy 2.png">
-                  </div>
-                </div>
-                <p>李先生</p>
-              </a>
-            </div>
-            <div class="list_item">
-              <a href="">
-                <div class="img_content">
-                  <div>
-                    <img src="./cities/Oval 2 Copy 2.png">
-                  </div>
-                </div>
-                <p>李先生</p>
-              </a>
-            </div>
-            <div class="list_item">
-              <a href="">
-                <div class="img_content">
-                  <div>
-                    <img src="./cities/Oval 2 Copy 2.png">
-                  </div>
-                </div>
-                <p>李先生</p>
+                <p v-text="orger.name"></p>
               </a>
             </div>
           </div>
         </div>
-        <div class="content">
+        <div class="content" v-if="speakers.length>0">
+          <p class="list_head">演讲嘉宾</p>
+          <div class="lists">
+            <div class="list_item" v-for="(speaker, index) of speakers" :key="index">
+              <a :href="speaker.link">
+                <div class="img_content">
+                  <div>
+                    <img :src="picPrefix +'speakers/' + speaker.pic">
+                  </div>
+                </div>
+                <p v-text="speaker.name"></p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="content" v-if="co_company.length>0">
           <p class="list_head">合作企业</p>
           <div class="partners">
-            <div class="part_item">
-              <a href="">
-                <img src="./cities/freecodecamp.jpg">
-              </a>
-            </div>
-            <div class="part_item">
-              <a href="">
-                <img src="./cities/freecodecamp.jpg">
-              </a>
-            </div>
-            <div class="part_item">
-              <a href="">
-                <img src="./cities/freecodecamp.jpg">
-              </a>
-            </div>
-            <div class="part_item">
-              <a href="">
-                <img src="./cities/freecodecamp.jpg">
-              </a>
-            </div>
-            <div class="part_item">
-              <a href="">
-                <img src="./cities/freecodecamp.jpg">
+            <div class="part_item" v-for="(company, index) in co_company " :key="index">
+              <a :href="company.link">
+                <img :src="picPrefix +'co_company/' + company.pic">
               </a>
             </div>
           </div>
@@ -144,13 +89,38 @@
       </div>
     </div>
     <script>
-      console.log(new URLSearchParams(location.search).get('city'));
-      var vm = new Vue({
-        el: "#app",
-        data: {
-          d: 1
+      (function (window, document, undefined) {
+        var getCity = function (callback) {
+          var cbName = 'cb=' + new Date().getMonth();
+          var ele = document.createElement('script');
+          var path = new URLSearchParams(location.search).get('city');
+          ele.src = `./cities/${path}.js?${cbName}`;
+          document.body.insertBefore(ele, document.querySelector("#freecodecamp"));
+          ele.onload = function () {
+            setCity();
+          }
         }
-      });
+        window.getCity = getCity;
+      })(window, document, undefined);
+      var setCity = function () {
+        var vm = new Vue({
+          el: "#freecodecamp",
+          data: {
+            cityName: city.name,
+            banner: city.banner,
+            organiser: city.organiser,
+            co_company: city.co_company,
+            speakers: city.speakers
+          },
+          computed: {
+            picPrefix:function(){
+              var located = window.location.hostname;
+              return located + city.picPrefix;
+            }
+          }
+        });
+      }
+      getCity()
     </script>
   </body>
 
