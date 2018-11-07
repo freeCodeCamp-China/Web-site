@@ -225,6 +225,19 @@ body {
   text-align: center;
   width: 180px;
 }
+.more_item{
+  text-align: center;
+  width: 100px;
+  margin: 0 auto;
+  padding: 10px 0;
+  cursor: pointer;
+  animation: more_item 2s infinite;
+}
+@-webkit-keyframes more_item{
+  0%{opacity: 0.5;}
+  50%{opacity: 1;}
+  100%{opacity: 0.5;}
+}
 
 @media screen and (max-width:620px) {
   .container {
