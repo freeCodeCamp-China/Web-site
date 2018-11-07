@@ -46,7 +46,7 @@
             </ul>
           </div>
         </div>
-        
+
         <div class="content">
           <p class="list_head">社区组织者</p>
           <div class="lists">
@@ -122,8 +122,7 @@
           computed: {
             picPrefix:function(){
               var located = window.location.origin;
-              return city.picPrefix;
-              // return located + '/' + city.picPrefix;
+              return located + '/' + city.picPrefix;
             }
           },
           methods: {
