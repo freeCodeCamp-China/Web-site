@@ -269,8 +269,8 @@ body {
     width: 50%;
   }
   .list_item .img_content>div {
-    height: auto;
-    width: 60%;
+    height: 120px;
+    width: 120px;
   }
   .part_item {
     width: 45%;
