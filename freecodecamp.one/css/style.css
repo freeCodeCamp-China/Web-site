@@ -59,18 +59,19 @@ body {
 }
 
 .qrcode {
-  position:relative;top:-1px;
-  display: inline-block;
-  width: 16px;
+  position: fixed;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  background: rgba(0,0,0,0.7);
+  -webkit-justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 3;
 }
-.city_qr {
-  position: absolute;
-  display: none;
-}
-.qrcode:hover  .city_qr{
-  display: block;
-  width: 160px;
-  height: 160px;
+.qrcode img{
+  max-width: 300px;
 }
 .top_links {
   margin: 20px 0;
@@ -266,6 +267,9 @@ body {
     float: none;
     width: 100%;
   }
+  .snap ul{
+    padding: 0;
+  }
   .snap .info {
     float: none;
     padding-left: 0;
@@ -288,6 +292,13 @@ body {
   }
   .part_item img {
     height: 30px;
+  }
+  .speaker_img {
+    width: 120px;
+    height: 120px;
+  }
+  .story .s_comment{
+    font-size: 13px;
   }
   .sm_db{
     display: block;

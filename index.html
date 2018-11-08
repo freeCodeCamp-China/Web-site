@@ -33,18 +33,16 @@
           </div>
           <div class="info">
             <div class="info_t">
-              欢迎加入freeCodeCamp<span v-text="cityName"></span>社区
+              欢迎加入<br class="sm_db">freeCodeCamp<br class="sm_db"><span v-text="cityName"></span>社区
             </div>
             <ul>
               <li><a :href="website" target='_blank'>网站</a></li>
-              <li><span>微信：</span>
-                <a href="javascript:;" class="qrcode">
-                  <img src="./freecodecamp.one/img/qrcode.png">
-                  <img :src="picPrefix + wechat" class="city_qr">
-                </a>
-              </li>
+              <li><a href="javascript:;" @click="qrcodeShow=true">微信</a></li>
               <li><a :href="weibo" target='_blank'>微博</a></li>
               <li><a :href="github" target='_blank'>Github 账号</a></li>
+              <div class="qrcode" @click="qrcodeShow=false" v-if="qrcodeShow">
+                <img :src="picPrefix + wechat" class="city_qr">
+              </div>
             </ul>
           </div>
         </div>
@@ -127,19 +125,20 @@
         var vm = new Vue({
           el: "#freecodecamp",
           data: {
+            qrcodeShow:false,
             cityName: city.name,
             banner: city.banner,
-            website:city.website,
-            weibo:city.weibo,
-            wechat:city.wechat,
-            github:city.github,
+            website: city.website,
+            weibo: city.weibo,
+            wechat: city.wechat,
+            github: city.github,
             organiser: city.organiser,
             co_company: city.co_company,
             speakers: city.speakers,
             history: city.history
           },
           computed: {
-            picPrefix:function(){
+            picPrefix: function () {
               var located = window.location.origin;
               // located + '/' + 
               return city.picPrefix;
