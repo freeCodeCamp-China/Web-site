@@ -28,8 +28,13 @@
           <span class="city_tip"><em>&gt;</em>【<em v-text="cityName"></em>】feeeCodeCamp中国城市社区</span>
         </div>
         <div class="snap clearfix">
-          <div class="img_box">
+          <div class="img_box" @mouseover="shadowin=true" @mouseout="shadowin=false">
             <img :src="picPrefix+banner">
+            <div v-show="shadowin">
+              <div class="shadowin">
+                <p v-for="(item,index) in brief" :key="index" v-text="item"></p>
+              </div>
+            </div>
           </div>
           <div class="info">
             <div class="info_t">
@@ -37,7 +42,7 @@
             </div>
             <ul>
               <li><a :href="website" target='_blank'>网站</a></li>
-              <li><a href="javascript:;" @click="qrcodeShow=true">微信</a></li>
+              <li><a href="javascript:;" @click="qrcodeShow=true" @mouseover="qrcodeShow=true">微信</a></li>
               <li><a :href="weibo" target='_blank'>微博</a></li>
               <li><a :href="github" target='_blank'>Github 账号</a></li>
               <div class="qrcode" @click="qrcodeShow=false" v-if="qrcodeShow">
@@ -125,7 +130,9 @@
         var vm = new Vue({
           el: "#freecodecamp",
           data: {
-            qrcodeShow:false,
+            qrcodeShow: false,
+            shadowin: false,
+            brief:city.brief,
             cityName: city.name,
             banner: city.banner,
             website: city.website,

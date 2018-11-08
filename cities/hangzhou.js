@@ -7,6 +7,8 @@ const city = {
   wechat: 'qrcode.png',
   weibo: 'javascript:;',
   github: 'javascript:;',
+  brief:[
+  ],
   history:[],
   speakers: [
 
