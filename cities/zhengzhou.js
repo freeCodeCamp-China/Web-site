@@ -3,6 +3,11 @@ const city = {
   enName: 'zhengzhou',
   picPrefix: 'cities/zhengzhou/',
   banner: 'banner.png',
+  website: 'javascript:;',
+  wechat: 'qrcode.png',
+  weibo: 'javascript:;',
+  github: 'javascript:;',
+  github:'',
   speakers: [
 
   ],

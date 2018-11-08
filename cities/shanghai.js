@@ -3,6 +3,11 @@ const city = {
   enName: 'shanghai',
   picPrefix: 'cities/shanghai/',
   banner: 'banner.png',
+  website: 'javascript:;',
+  wechat: 'qrcode.png',
+  weibo: 'javascript:;',
+  github: 'javascript:;',
+  history:[],
   speakers: [
 
   ],

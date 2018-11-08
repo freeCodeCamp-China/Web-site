@@ -3,6 +3,11 @@ const city = {
   enName: 'xian',
   picPrefix: 'cities/xian/',
   banner: 'banner.png',
+  website: 'javascript:;',
+  wechat: 'qrcode.png',
+  weibo: 'javascript:;',
+  github: 'javascript:;',
+  history:[],
   speakers: [
 
   ],

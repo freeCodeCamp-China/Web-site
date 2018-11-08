@@ -3,6 +3,11 @@ const city = {
   enName: 'hangzhou',
   picPrefix:'cities/hangzhou/',
   banner: 'banner.png',
+  website: 'javascript:;',
+  wechat: 'qrcode.png',
+  weibo: 'javascript:;',
+  github: 'javascript:;',
+  history:[],
   speakers: [
 
   ],

@@ -1,8 +1,13 @@
 const city = {
   name: '重庆',
   enName: 'chongqing',
-  picPrefix:'cities/chongqing/',
+  picPrefix: 'cities/chongqing/',
   banner: 'banner.png',
+  website: 'javascript:;',
+  wechat: 'qrcode.png',
+  weibo: 'javascript:;',
+  github: 'javascript:;',
+  history: [],
   speakers: [
 
   ],

@@ -3,6 +3,13 @@ const city = {
   enName: 'guangzhou',
   picPrefix:'cities/guangzhou/',
   banner: 'banner.png',
+  website: 'javascript:;',
+  wechat: 'qrcode.png',
+  weibo: 'javascript:;',
+  github: 'javascript:;',
+  history:[
+    {name:'程晓琳', pic:'chengxiaolin.png', link: 'javascript:;'}
+  ],
   speakers: [
     { name: '魏朝欣', pic: 'weichaoxin.png', link: 'javascript:;' },
   ],

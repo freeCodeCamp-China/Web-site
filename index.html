@@ -33,16 +33,18 @@
           </div>
           <div class="info">
             <div class="info_t">
-              欢迎加入FCC<span v-text="cityName"></span>社区
+              欢迎加入freeCodeCamp<span v-text="cityName"></span>社区
             </div>
             <ul>
-              <li><a href="">网站</a></li>
-              <li><span>微博：</span><a href="">聚会</a></li>
-              <li><span>微信：</span><a href="">网站</a></li>
-              <li><a href="">优酷</a></li>
-              <li><a href="">Youtube</a></li>
-              <li><a href="">Github 账号</a></li>
-              <li><a href="">DevStie章节</a></li>
+              <li><a :href="website" target='_blank'>网站</a></li>
+              <li><span>微信：</span>
+                <a href="javascript:;" class="qrcode">
+                  <img src="./freecodecamp.one/img/qrcode.png">
+                  <img :src="picPrefix + wechat" class="city_qr">
+                </a>
+              </li>
+              <li><a :href="weibo" target='_blank'>微博</a></li>
+              <li><a :href="github" target='_blank'>Github 账号</a></li>
             </ul>
           </div>
         </div>
@@ -50,8 +52,8 @@
         <div class="content">
           <p class="list_head">社区组织者</p>
           <div class="lists">
-            <div class="list_item" v-for="(orger, index) of organiser" :key="index" v-if="index<organiserCount">
-              <a :href="orger.link">
+            <div class="list_item" v-for="(orger, index) of organiser" :key="index">
+              <a :href="orger.link==='javascript:;'?orger.link:'./organiser.html?name='+orger.link" target='_blank'>
                 <div class="img_content">
                   <div>
                     <img :src="picPrefix +'organiser/' + orger.pic">
@@ -61,14 +63,29 @@
               </a>
             </div>
           </div>
-          <div @click="organiserMore" v-if="organiser.length>organiserCount" class="more_item">More</div>
+        </div>
+
+        <div class="content" v-if="history.length>0">
+          <p class="list_head">历史贡献者</p>
+          <div class="lists">
+            <div class="list_item" v-for="(hst, index) of history" :key="index">
+              <a :href="hst.link" target='_blank'>
+                <div class="img_content">
+                  <div>
+                    <img :src="picPrefix +'history/' + hst.pic">
+                  </div>
+                </div>
+                <p v-text="hst.name"></p>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="content" v-if="speakers.length>0">
           <p class="list_head">演讲嘉宾</p>
           <div class="lists">
-            <div class="list_item" v-for="(speaker, index) of speakers" :key="index" v-if="index<speakersCount">
-              <a :href="speaker.link">
+            <div class="list_item" v-for="(speaker, index) of speakers" :key="index">
+              <a :href="speaker.link" target='_blank'>
                 <div class="img_content">
                   <div>
                     <img :src="picPrefix +'speakers/' + speaker.pic">
@@ -78,14 +95,13 @@
               </a>
             </div>
           </div>
-          <div @click="speakersMore" v-if="speakers.length>speakersCount" class="more_item">More</div>
         </div>
 
         <div class="content" v-if="co_company.length>0">
           <p class="list_head">合作企业</p>
           <div class="partners">
             <div class="part_item" v-for="(company, index) in co_company " :key="index">
-              <a :href="company.link">
+              <a :href="company.link" target='_blank'>
                 <img :src="picPrefix +'co_company/' + company.pic">
               </a>
             </div>
@@ -113,24 +129,20 @@
           data: {
             cityName: city.name,
             banner: city.banner,
+            website:city.website,
+            weibo:city.weibo,
+            wechat:city.wechat,
+            github:city.github,
             organiser: city.organiser,
             co_company: city.co_company,
             speakers: city.speakers,
-            organiserCount: 10,
-            speakersCount: 10
+            history: city.history
           },
           computed: {
             picPrefix:function(){
               var located = window.location.origin;
-              return located + '/' + city.picPrefix;
-            }
-          },
-          methods: {
-            speakersMore:function(){
-              this.speakersCount +=10;
-            },
-            organiserMore:function(){
-              this.organiserCount +=10;
+              // located + '/' + 
+              return city.picPrefix;
             }
           }
         });

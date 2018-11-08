@@ -3,6 +3,11 @@ const city = {
   enName: 'shenzhen',
   picPrefix: 'cities/shenzhen/',
   banner: 'banner.png',
+  website: 'javascript:;',
+  wechat: 'qrcode.png',
+  weibo: 'javascript:;',
+  github: 'javascript:;',
+  history:[],
   speakers: [
 
   ],
