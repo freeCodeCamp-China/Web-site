@@ -44,7 +44,7 @@
               <li><a :href="website" target='_blank'>网站</a></li>
               <li><a href="javascript:;" @click="qrcodeShow=true" @mouseover="qrcodeShow=true">微信</a></li>
               <li><a :href="weibo" target='_blank'>微博</a></li>
-              <li><a :href="github" target='_blank'>Github 账号</a></li>
+              <li><a :href="github" target='_blank'>Github</a></li>
               <div class="qrcode" @click="qrcodeShow=false" v-if="qrcodeShow">
                 <img :src="picPrefix + wechat" class="city_qr">
               </div>
