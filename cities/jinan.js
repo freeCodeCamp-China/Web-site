@@ -7,12 +7,14 @@ const city = {
   wechat: 'qrcode.png',
   weibo: 'javascript:;',
   github: 'javascript:;',
-  brief:[
+  brief: [
   ],
-  history:[],
+  history: [],
   speakers: [
 
   ],
-  organiser: [],
+  organiser: [
+    { name: '王军', pic:'wangjun.png', link:'javascript;'}
+  ],
   co_company: []
 }
