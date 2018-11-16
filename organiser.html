@@ -11,20 +11,12 @@
     <meta name="keywords" content="freeCodeCamp 开发者社区 互联网行业技术 人才">
     <meta name="description" content="">
     <title>freeCodeConf</title>
-    <script src="./third-party/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
     <link rel="stylesheet" href="./freecodecamp.one/css/style.css?v=1.1">
   </head>
 
   <body>
     <div id="freecodecamp" class="container">
-      <div class="top_links">
-        <a href="https://www.freecodecamp.one" target="_blank">首页</a>&gt;
-        <a href="https://www.freecodecamp.one/community" target="_blank">社区</a>
-        <span class="sm_db">&gt;
-          <a :href="'https://city.freecodecamp.one?city='+volunteer.from" target="_blank">【<em v-text="volunteer.zhFrom"></em>】feeeCodeCamp中国城市社区</a>
-        </span>
-        <span class="teacher sm_db"><em>&gt;</em>人物介绍</span>
-      </div>
       <div class="speaker top_links">
         <div class="speaker_img">
           <img :src="volunteer.img">
@@ -50,7 +42,7 @@
         </section>
       </div>
     </div>
-    <script src="./cities/organiser.js"></script>
+    <script src="organiser.js"></script>
     <script>
       window.onload = function () {
         var name = new URLSearchParams(location.search).get('name');

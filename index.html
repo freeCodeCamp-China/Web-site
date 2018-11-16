@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
@@ -11,22 +10,13 @@
     <meta name="keywords" content="freeCodeCamp 开发者社区 互联网行业技术 人才">
     <meta name="description" content="">
     <title>freecodecamp 城市社区</title>
-    <script src="./third-party/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
     <link rel="stylesheet" href="./freecodecamp.one/css/style.css?v=1.2">
   </head>
 
   <body>
     <div id="freecodecamp">
-      <section class="banner">
-        <h2 class="title">【<span v-text="cityName"></span>】</h2>
-        <div class="sec_title">freeCodeCamp中国城市社区</div>
-      </section>
       <div class="container">
-        <div class="top_links">
-          <a href="https://www.freecodecamp.one" target="_blank">首页</a>&gt;
-          <a href="https://www.freecodecamp.one/community" target="_blank">社区</a>
-          <span class="city_tip"><em>&gt;</em>【<em v-text="cityName"></em>】feeeCodeCamp中国城市社区</span>
-        </div>
         <div class="snap clearfix">
           <div class="img_box" @mouseover="shadowin=true" @mouseout="shadowin=false">
             <img :src="picPrefix+banner">
@@ -41,10 +31,10 @@
               欢迎加入<br class="sm_db">freeCodeCamp<br class="sm_db"><span v-text="cityName"></span>社区
             </div>
             <ul>
-              <li><a :href="website" target='_blank'>网站</a></li>
+              <li><a :href="website">网站</a></li>
               <li><a href="javascript:;" @click="qrcodeShow=true" @mouseover="qrcodeShow=true">微信</a></li>
-              <li><a :href="weibo" target='_blank'>微博</a></li>
-              <li><a :href="github" target='_blank'>Github</a></li>
+              <li><a :href="weibo">微博</a></li>
+              <li><a :href="github">Github</a></li>
               <div class="qrcode" @click="qrcodeShow=false" v-if="qrcodeShow">
                 <img :src="picPrefix + wechat" class="city_qr">
               </div>
@@ -55,105 +45,69 @@
         <div class="content">
           <p class="list_head">社区组织者</p>
           <div class="lists">
-            <div class="list_item" v-for="(orger, index) of organiser" :key="index">
-              <a :href="orger.link==='javascript:;'?orger.link:'./organiser.html?name='+orger.link" target='_blank'>
+            <div class="list_item" v-for="item of organiser">
+              <a :href="item.link? `organiser.html?name=${item.link}` : '#' ">
                 <div class="img_content">
                   <div>
-                    <img :src="picPrefix +'organiser/' + orger.pic">
+                    <img :src="picPrefix +'organiser/' + item.pic">
                   </div>
                 </div>
-                <p v-text="orger.name"></p>
+                <p v-text="item.name"></p>
               </a>
             </div>
           </div>
         </div>
 
-        <div class="content" v-if="history.length>0">
-          <p class="list_head">历史贡献者</p>
-          <div class="lists">
-            <div class="list_item" v-for="(hst, index) of history" :key="index">
-              <a :href="hst.link" target='_blank'>
-                <div class="img_content">
-                  <div>
-                    <img :src="picPrefix +'history/' + hst.pic">
-                  </div>
-                </div>
-                <p v-text="hst.name"></p>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="content" v-if="speakers.length>0">
+        <div class="content" v-if="speaker.length>0">
           <p class="list_head">演讲嘉宾</p>
           <div class="lists">
-            <div class="list_item" v-for="(speaker, index) of speakers" :key="index">
-              <a :href="speaker.link" target='_blank'>
+            <div class="list_item" v-for="item of speaker">
+              <a :href="item.link">
                 <div class="img_content">
                   <div>
-                    <img :src="picPrefix +'speakers/' + speaker.pic">
+                    <img :src="picPrefix +'speaker/' + item.pic">
                   </div>
                 </div>
-                <p v-text="speaker.name"></p>
+                <p v-text="item.name"></p>
               </a>
             </div>
           </div>
         </div>
 
-        <div class="content" v-if="co_company.length>0">
+        <div class="content" v-if="partner.length>0">
           <p class="list_head">合作企业</p>
           <div class="partners">
-            <div class="part_item" v-for="(company, index) in co_company " :key="index">
-              <a :href="company.link" target='_blank'>
-                <img :src="picPrefix +'co_company/' + company.pic">
+            <div class="part_item" v-for="item in partner">
+              <a :href="item.link">
+                <img :src="picPrefix +'partner/' + item.pic">
               </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="index.js"></script>
     <script>
-      (function (window, document, undefined) {
-        var getCity = function (callback) {
-          var cbName = 'cb=' + new Date().getMonth();
-          var ele = document.createElement('script');
-          var path = new URLSearchParams(location.search).get('city');
-          ele.src = `./cities/${path}.js?${cbName}`;
-          document.body.insertBefore(ele, document.querySelector("#freecodecamp"));
-          ele.onload = function () {
-            setCity();
-          }
-        }
-        window.getCity = getCity;
-      })(window, document, undefined);
-      var setCity = function () {
+        var city = new URLSearchParams(location.search).get('city');
         var vm = new Vue({
           el: "#freecodecamp",
           data: {
             qrcodeShow: false,
             shadowin: false,
-            brief:city.brief,
-            cityName: city.name,
-            banner: city.banner,
-            website: city.website,
-            weibo: city.weibo,
-            wechat: city.wechat,
-            github: city.github,
-            organiser: city.organiser,
-            co_company: city.co_company,
-            speakers: city.speakers,
-            history: city.history
-          },
-          computed: {
-            picPrefix: function () {
-              var located = window.location.origin;
-              // located + '/' + 
-              return city.picPrefix;
-            }
+            cityName: data[city].name,
+            brief: data[city].brief,
+            banner: data[city].banner,
+            website: data[city].website,
+            weibo: data[city].weibo,
+            wechat: data[city].wechat,
+            github: data[city].github,
+            organiser: data[city].organiser,
+            partner: data[city].partner,
+            speaker: data[city].speaker,
+            history: data[city].history,
+            picPrefix: data[city].picPrefix
           }
         });
-      }
-      getCity()
     </script>
   </body>
 
