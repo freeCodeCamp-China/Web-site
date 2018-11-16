@@ -22,7 +22,7 @@
             <img :src="picPrefix+banner">
             <div v-show="shadowin">
               <div class="shadowin">
-                <p v-for="(item,index) in brief" :key="index" v-text="item"></p>
+                <p v-for="item in brief" v-text="item"></p>
               </div>
             </div>
           </div>
@@ -46,14 +46,22 @@
           <p class="list_head">社区组织者</p>
           <div class="lists">
             <div class="list_item" v-for="item of organiser">
-              <a :href="item.link? `organiser.html?name=${item.link}` : '#' ">
-                <div class="img_content">
-                  <div>
-                    <img :src="picPrefix +'organiser/' + item.pic">
+              <div v-if="item.link">
+                <a :href=`organiser.html?name=${item.link}`>
+                  <div class="img_content">
+                    <div>
+                      <img :src="picPrefix +'organiser/' + item.pic">
+                    </div>
                   </div>
+                  <p v-text="item.name"></p>
+                </a>
+              </div>
+             <div v-else class="img_content">
+                <div>
+                  <img :src="picPrefix +'organiser/' + item.pic">
                 </div>
                 <p v-text="item.name"></p>
-              </a>
+              </div> 
             </div>
           </div>
         </div>
