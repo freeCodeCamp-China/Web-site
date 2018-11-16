@@ -70,14 +70,12 @@
           <p class="list_head">演讲嘉宾</p>
           <div class="lists">
             <div class="list_item" v-for="item of speaker">
-              <a :href="item.link">
-                <div class="img_content">
-                  <div>
-                    <img :src="picPrefix +'speaker/' + item.pic">
-                  </div>
+              <div class="img_content">
+                <div>
+                  <img :src="picPrefix +'speaker/' + item.pic">
                 </div>
-                <p v-text="item.name"></p>
-              </a>
+              </div>
+              <p v-text="item.name"></p>
             </div>
           </div>
         </div>
@@ -86,9 +84,14 @@
           <p class="list_head">合作企业</p>
           <div class="partners">
             <div class="part_item" v-for="item in partner">
-              <a :href="item.link">
+              <div v-if="item.link">
+                <a :href="item.link">
+                  <img :src="picPrefix +'partner/' + item.pic">
+                </a>
+              </div>
+              <div v-else>
                 <img :src="picPrefix +'partner/' + item.pic">
-              </a>
+              </div>
             </div>
           </div>
         </div>
