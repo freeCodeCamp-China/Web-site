@@ -11,10 +11,31 @@
     <meta name="description" content="">
     <title>freecodecamp 城市社区</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
-    <link rel="stylesheet" href="./freecodecamp.one/css/style.css?v=1.2">
+    <link rel="stylesheet" href="./assets/css/style.css?v=1.2">
   </head>
 
   <body>
+    <nav class="clearfix">
+      <ul id="nav" class="clearfix">
+        <li class="head_logo">
+          <a href="https://www.freecodecamp.one">
+            <img src="https://conf.freecodecamp.one/assets/freecodecamp_logo.svg" class="init">
+          </a>
+        </li>
+        <li class="nav_bar">
+          <ul>
+            <li><a href="https://learn.freecodecamp.one">课程</a></li>
+            <li><a href="https://forum.freecodecamp.one">论坛</a></li>
+            <li><a href="https://www.freecodecamp.one/community">社区</a></li>
+            <li><a href="https://www.freecodecamp.one/volunteer">志愿者</a></li>
+            <li><a href="https://conf.freecodecamp.one">会议</a></li>
+          </ul>
+        </li>
+        <li class="nav_toggle">
+          <img src="https://conf.freecodecamp.one/assets/toggle_holder.png" class="init">
+        </li>
+      </ul>
+    </nav>
     <div id="freecodecamp">
       <div class="container">
         <div class="snap clearfix">
@@ -98,6 +119,17 @@
       </div>
     </div>
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript">
+      var toggle = document.getElementsByClassName('nav_toggle')[0];
+      var bar = document.getElementsByClassName('nav_bar')[0];
+      toggle.onclick=function(){
+        if(bar.style.display == 'none'){
+          bar.style.display = 'block'
+        }else{
+          bar.style.display = 'none'
+        }
+      }
+    </script>
     <script>
         var city = new URLSearchParams(location.search).get('city');
         var vm = new Vue({
