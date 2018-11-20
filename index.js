@@ -5,6 +5,7 @@ var data = {
 	  picPrefix:'chengdu/',
 	  banner: 'banner.png',
 	  website:'https://web-conf.tk/',
+	  wechat: 'qrcode.png',
 	  weibo:'https://weibo.com/u/6165665516?is_all=1',
 	  github:'https://github.com/FreeCodeCamp-Chengdu',
 	  brief:[
@@ -109,6 +110,7 @@ var data = {
 	  picPrefix: 'chongqing/',
 	  banner: 'banner.png',
 	  website: '',
+	  wechat: 'qrcode.png',
 	  weibo: '',
 	  github: '',
 	  brief: [
