@@ -1,17 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-    <link rel="icon" href="./assets/img/favicon.ico">
-    <meta name="referrer" content="always">
-    <meta name="keywords" content="freeCodeCamp 开发者社区 互联网行业技术 人才">
-    <meta name="description" content="">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="icon" href="./assets/img/favicon.ico" />
+    <meta name="referrer" content="always" />
+    <meta
+      name="keywords"
+      content="freeCodeCamp 开发者社区 互联网行业技术 人才"
+    />
+    <meta name="description" content="" />
     <title>freecodecamp 城市社区</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
-    <link rel="stylesheet" href="./assets/css/style.css?v=1.2">
+    <link rel="stylesheet" href="./assets/css/style.css?v=1.2" />
   </head>
 
   <body>
@@ -19,7 +25,7 @@
       <ul id="nav" class="clearfix">
         <li class="head_logo">
           <a href="https://www.freecodecamp.one">
-            <img src="./assets/img/freecodecamp_logo.svg" class="init">
+            <img src="./assets/img/freecodecamp_logo.svg" class="init" />
           </a>
         </li>
         <li class="nav_bar">
@@ -32,15 +38,19 @@
           </ul>
         </li>
         <li class="nav_toggle">
-          <img src="./assets/img/toggle_holder.png" class="init">
+          <img src="./assets/img/toggle_holder.png" class="init" />
         </li>
       </ul>
     </nav>
     <div id="freecodecamp">
       <div class="container">
         <div class="snap clearfix">
-          <div class="img_box" @mouseover="shadowin=true" @mouseout="shadowin=false">
-            <img :src="picPrefix+banner">
+          <div
+            class="img_box"
+            @mouseover="shadowin=true"
+            @mouseout="shadowin=false"
+          >
+            <img :src="picPrefix+banner" />
             <div v-show="shadowin">
               <div class="shadowin">
                 <p v-for="item in brief" v-text="item"></p>
@@ -49,15 +59,25 @@
           </div>
           <div class="info">
             <div class="info_t">
-              欢迎加入<br class="sm_db">freeCodeCamp<br class="sm_db"><span v-text="cityName"></span>社区
+              欢迎加入<br class="sm_db" />freeCodeCamp<br class="sm_db" /><span
+                v-text="cityName"
+              ></span
+              >社区
             </div>
             <ul>
               <li><a :href="website">网站</a></li>
-              <li><a href="javascript:;" @click="qrcodeShow=true" @mouseover="qrcodeShow=true">微信</a></li>
+              <li>
+                <a
+                  href="javascript:;"
+                  @click="qrcodeShow=true"
+                  @mouseover="qrcodeShow=true"
+                  >微信</a
+                >
+              </li>
               <li><a :href="weibo">微博</a></li>
               <li><a :href="github">Github</a></li>
               <div class="qrcode" @click="qrcodeShow=false" v-if="qrcodeShow">
-                <img :src="picPrefix + wechat" class="city_qr">
+                <img :src="picPrefix + wechat" class="city_qr" />
               </div>
             </ul>
           </div>
@@ -68,21 +88,21 @@
           <div class="lists">
             <div class="list_item" v-for="item of organiser">
               <div v-if="item.link">
-                <a :href=`organiser.html?name=${item.link}`>
+                <a :href="`organiser.html?name" ="${item.link}`">
                   <div class="img_content">
                     <div>
-                      <img :src="picPrefix +'organiser/' + item.pic">
+                      <img :src="picPrefix +'organiser/' + item.pic" />
                     </div>
                   </div>
                   <p v-text="item.name"></p>
                 </a>
               </div>
-             <div v-else class="img_content">
+              <div v-else class="img_content">
                 <div>
-                  <img :src="picPrefix +'organiser/' + item.pic">
+                  <img :src="picPrefix +'organiser/' + item.pic" />
                 </div>
                 <p v-text="item.name"></p>
-              </div> 
+              </div>
             </div>
           </div>
         </div>
@@ -93,7 +113,7 @@
             <div class="list_item" v-for="item of speaker">
               <div class="img_content">
                 <div>
-                  <img :src="picPrefix +'speaker/' + item.pic">
+                  <img :src="picPrefix +'speaker/' + item.pic" />
                 </div>
               </div>
               <p v-text="item.name"></p>
@@ -107,11 +127,11 @@
             <div class="part_item" v-for="item in partner">
               <div v-if="item.link">
                 <a :href="item.link">
-                  <img :src="picPrefix +'partner/' + item.pic">
+                  <img :src="picPrefix +'partner/' + item.pic" />
                 </a>
               </div>
               <div v-else>
-                <img :src="picPrefix +'partner/' + item.pic">
+                <img :src="picPrefix +'partner/' + item.pic" />
               </div>
             </div>
           </div>
@@ -122,36 +142,35 @@
     <script type="text/javascript">
       var toggle = document.getElementsByClassName('nav_toggle')[0];
       var bar = document.getElementsByClassName('nav_bar')[0];
-      toggle.onclick=function(){
-        if(bar.style.display == 'none'){
-          bar.style.display = 'block'
-        }else{
-          bar.style.display = 'none'
+      toggle.onclick = function () {
+        if (bar.style.display == 'none') {
+          bar.style.display = 'block';
+        } else {
+          bar.style.display = 'none';
         }
-      }
+      };
     </script>
     <script>
-        var city = new URLSearchParams(location.search).get('city');
-        var vm = new Vue({
-          el: "#freecodecamp",
-          data: {
-            qrcodeShow: false,
-            shadowin: false,
-            cityName: data[city].name,
-            brief: data[city].brief,
-            banner: data[city].banner,
-            website: data[city].website,
-            weibo: data[city].weibo,
-            wechat: data[city].wechat,
-            github: data[city].github,
-            organiser: data[city].organiser,
-            partner: data[city].partner,
-            speaker: data[city].speaker,
-            history: data[city].history,
-            picPrefix: data[city].picPrefix
-          }
-        });
+      var city = new URLSearchParams(location.search).get('city');
+      var vm = new Vue({
+        el: '#freecodecamp',
+        data: {
+          qrcodeShow: false,
+          shadowin: false,
+          cityName: data[city].name,
+          brief: data[city].brief,
+          banner: data[city].banner,
+          website: data[city].website,
+          weibo: data[city].weibo,
+          wechat: data[city].wechat,
+          github: data[city].github,
+          organiser: data[city].organiser,
+          partner: data[city].partner,
+          speaker: data[city].speaker,
+          history: data[city].history,
+          picPrefix: data[city].picPrefix,
+        },
+      });
     </script>
   </body>
-
 </html>
