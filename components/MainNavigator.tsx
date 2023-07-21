@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const MainNavigator: React.FC = () => {
+  const [isNavVisible, setIsNavVisible] = useState(true);
+
+  const handleToggleClick = () => {
+    setIsNavVisible(!isNavVisible);
+  };
   return (
     <nav className="clearfix">
       <ul id="nav" className="clearfix">
@@ -9,7 +14,7 @@ export const MainNavigator: React.FC = () => {
             <img src="./freecodecamp_logo.svg" className="init" alt="logo" />
           </a>
         </li>
-        <li className="nav_bar">
+        <li className="nav_bar" style={{ display: isNavVisible ? 'block' : 'none'}}>
           <ul>
             <li><a href="https://learn.freecodecamp.one">课程</a></li>
             <li><a href="https://forum.freecodecamp.one">论坛</a></li>
@@ -18,7 +23,7 @@ export const MainNavigator: React.FC = () => {
             <li><a href="https://conf.freecodecamp.one">会议</a></li>
           </ul>
         </li>
-        <li className="nav_toggle">
+        <li className="nav_toggle" onClick={handleToggleClick}>
           <img src="./toggle_holder.png" className="init" alt="toggle" />
         </li>
       </ul>
