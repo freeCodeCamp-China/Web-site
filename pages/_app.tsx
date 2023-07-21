@@ -19,9 +19,7 @@ const AppShell = observer(({ Component, pageProps }: AppProps) => (
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
-
     <MainNavigator />
-
     <div className="mt-5 pt-2">
       <Component {...pageProps} />
     </div>
