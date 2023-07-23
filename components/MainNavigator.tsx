@@ -8,7 +8,7 @@ export const MainNavigator: FC = () => {
   const handleToggleClick = () => setIsNavVisible(!isNavVisible);
 
   return (
-    <nav className="clearfix">
+    <nav className={`${styles.navigator} clearfix`}>
       <ul className="clearfix">
         <li className={styles.head_logo}>
           <a href=".">
