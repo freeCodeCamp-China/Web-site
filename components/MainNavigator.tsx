@@ -6,9 +6,10 @@ export const MainNavigator: FC = () => {
   const [isNavVisible, setIsNavVisible] = useState(true);
 
   const handleToggleClick = () => setIsNavVisible(!isNavVisible);
+
   return (
-    <nav className={styles.clearfix}>
-      <ul className={styles.clearfix}>
+    <nav className="clearfix">
+      <ul className="clearfix">
         <li className={styles.head_logo}>
           <a href=".">
             <img alt="logo" src="./freecodecamp_logo.svg" />
@@ -17,10 +18,10 @@ export const MainNavigator: FC = () => {
         <li className={styles.nav_bar} hidden={!isNavVisible}>
           <ul>
             <li>
-              <a href="https://www.freecodecamp.org/learn">课程</a>
+              <a href="https://www.freecodecamp.org/chinese/learn/">课程</a>
             </li>
             <li>
-              <a href="https://forum.freecodecamp.org">论坛</a>
+              <a href="https://forum.freecodecamp.org/c/chinese/">论坛</a>
             </li>
             <li>
               <a href=".">社区</a>
