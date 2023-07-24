@@ -335,11 +335,39 @@ nav a{color:#f7f7f7}
 .nav_bar,.nav_toggle{float: right;}
 .nav_toggle{display: none;width:50px;height:50px;}
 #freecodecamp{margin-top:20px;}
-@media screen and (max-width:620px){
-  nav,nav>ul{overflow: initial!important;}
-  nav{padding: 0 10px;}
-  .head_logo img{width: 180px;}
-  .nav_bar{display: none;z-index:3;background:#029950;position: absolute;top: 50px;left:0;right: 0;border-top:1px solid #f8f8f8;}
-  .nav_bar ul{height: auto;}
-  .nav_bar li{float: none;}
-  .nav_toggle{display: block;}
+@media screen and (max-width:620px) {
+  nav, nav > ul {
+    overflow: initial !important;
+  }
+
+  nav {
+    padding: 0 10px;
+  }
+
+  .head_logo img {
+    width: 180px;
+  }
+
+  .nav_bar {
+    display: none;
+    z-index: 3;
+    background: #029950;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #f8f8f8;
+  }
+
+  .nav_bar ul {
+    height: auto;
+  }
+
+  .nav_bar li {
+    float: none;
+  }
+
+  .nav_toggle {
+    display: block;
+  }
+}
