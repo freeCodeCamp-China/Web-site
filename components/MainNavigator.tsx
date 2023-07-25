@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FC, useState } from 'react';
 
 import styles from './MainNavigator.module.less';
@@ -30,7 +31,7 @@ export const MainNavigator: FC = () => {
               <a href=".">志愿者</a>
             </li>
             <li>
-              <a href="/conference">会议</a>
+              <Link href="/conference">会议</Link>
             </li>
           </ul>
         </li>

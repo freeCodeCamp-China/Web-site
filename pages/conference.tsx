@@ -15,7 +15,7 @@ const ConferencePage = observer(() => (
     <PageHead title="Hello Conference Page!" />
 
     <h1>Hello Conference Page!</h1>
-    <h2>Let's get our hands dirty!</h2>
+    <h2>Let&apos;s get our hands dirty!</h2>
   </Container>
 ));
 
