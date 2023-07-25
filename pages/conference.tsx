@@ -8,19 +8,13 @@ import { withTranslation } from './api/core';
 
 export const getServerSideProps = withTranslation();
 
-const ConferencePage = observer(() => {
-  const { t } = i18n;
+const { t } = i18n;
 
-  return (
-    <>
-      <PageHead />
-
-      <Container as="main" className={styles.main}>
-        <h1>Hello Conference Page!</h1>
-        <h2>Let's get our hands dirty!</h2>
-      </Container>
-    </>
-  );
-});
+const ConferencePage = observer(() => (
+  <Container as="main" className={styles.main}>
+    <h1>Hello Conference Page!</h1>
+    <h2>Let's get our hands dirty!</h2>
+  </Container>
+));
 
 export default ConferencePage;
