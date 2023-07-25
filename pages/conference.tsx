@@ -8,7 +8,7 @@ import { withTranslation } from './api/core';
 
 export const getServerSideProps = withTranslation();
 
-const HomePage = observer(() => {
+const ConferencePage = observer(() => {
   const { t } = i18n;
 
   return (
@@ -23,4 +23,4 @@ const HomePage = observer(() => {
   );
 });
 
-export default HomePage;
+export default ConferencePage;
