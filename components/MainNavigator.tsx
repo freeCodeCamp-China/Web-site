@@ -30,7 +30,7 @@ export const MainNavigator: FC = () => {
               <a href=".">志愿者</a>
             </li>
             <li>
-              <a href=".">会议</a>
+              <a href="/conference">会议</a>
             </li>
           </ul>
         </li>
