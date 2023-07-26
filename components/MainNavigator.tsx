@@ -35,7 +35,7 @@ export const MainNavigator: FC = () => {
               <Nav.Link href=".">志愿者</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link href=".">会议</Nav.Link>
+              <Nav.Link href="/conference">会议</Nav.Link>
             </Nav.Item>
           </Nav>
         </Nav.Item>
