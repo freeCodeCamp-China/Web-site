@@ -2,7 +2,7 @@ import { Icon } from 'idea-react';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 import { InferGetServerSidePropsType } from 'next';
-import { MouseEvent, PureComponent, ReactNode } from 'react';
+import { MouseEvent, PureComponent } from 'react';
 import { Button, Container, Nav, Offcanvas } from 'react-bootstrap';
 import { scrollTo, sleep } from 'web-utility';
 
