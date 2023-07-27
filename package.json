@@ -71,5 +71,8 @@
     "test": "lint-staged  &&  npm run lint",
     "pack-image": "docker build -t next-bootstrap-ts:latest .",
     "container": "docker rm -f next-bootstrap-ts  &&  docker run --name next-bootstrap-ts -p 3000:3000 -d next-bootstrap-ts:latest"
+  },
+  "resolutions": {
+    "@types/react": "17.0.62"
   }
 }
