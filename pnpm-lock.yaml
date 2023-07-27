@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@types/react': 17.0.62
+
 dependencies:
   '@editorjs/code':
     specifier: ^2.8.0
@@ -104,7 +107,7 @@ devDependencies:
     specifier: ^18.16.19
     version: 18.16.19
   '@types/react':
-    specifier: ^17.0.62
+    specifier: 17.0.62
     version: 17.0.62
   eslint:
     specifier: ^8.44.0
