@@ -6,6 +6,7 @@ import { i18n } from '../models/Translation';
 import styles from '../styles/Home.module.less';
 import { withTranslation } from './api/core';
 import Purpose from '../components/conference/Purpose';
+import Review from '../components/conference/Review';
 
 export const getServerSideProps = withTranslation();
 
@@ -17,6 +18,7 @@ const ConferencePage = observer(() => (
 
     
     <Purpose />
+    <Review />
   </Container>
 ));
 
