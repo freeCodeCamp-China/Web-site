@@ -3,7 +3,6 @@ import { Container } from 'react-bootstrap';
 
 import { DrawerNav } from '../components/DrawerNav';
 import { PageHead } from '../components/PageHead';
-import { conferenceName } from '../data/conference';
 import { i18n } from '../models/Translation';
 import styles from '../styles/Home.module.less';
 import { withTranslation } from './api/core';
@@ -19,7 +18,7 @@ const ConferencePage = observer(() => (
       <h1>Hello Conference Page!</h1>
       <h2>Let&apos;s get our hands dirty!</h2>
     </Container>
-    <DrawerNav names={conferenceName} />
+    <DrawerNav />
   </>
 ));
 
