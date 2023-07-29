@@ -8,6 +8,7 @@ import { withTranslation } from './api/core';
 import Purpose from '../components/conference/Purpose';
 import Review from '../components/conference/Review';
 import Situation from '../components/conference/Situation';
+import Snap from '../components/conference/Snap';
 
 export const getServerSideProps = withTranslation();
 
@@ -21,6 +22,7 @@ const ConferencePage = observer(() => (
     <Purpose />
     <Review />
     <Situation />
+    <Snap />
   </Container>
 ));
 
