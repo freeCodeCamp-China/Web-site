@@ -5,7 +5,7 @@ import styles from '../../styles/conference/Situation.module.less';
 const Situation: FC = () => {
 
     return (
-        <div className="situation" id="section_4">
+        <div className={`${styles.situation}`} id="section_4">
             <div className={`${styles.container}   ${styles.animated}`}>
                 <h2>2018 freeCodeConf 概况</h2>
                 <div className="sumary">
