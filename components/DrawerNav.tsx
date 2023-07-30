@@ -1,7 +1,7 @@
 import { Icon, PageNav } from 'idea-react';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
-import { MouseEvent, PureComponent } from 'react';
+import { PureComponent } from 'react';
 import { Button, Offcanvas } from 'react-bootstrap';
 import { sleep } from 'web-utility';
 
