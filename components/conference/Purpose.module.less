@@ -7,12 +7,10 @@
 
 .abstract {
     background: #F5F5F5;
-    //padding-bottom: 60px; 考虑用 pb-4 代替
-    // text-align: center; 考虑用 text-center
 
 
     h2 {
-        margin: 0; // 可以考虑用 m-0 代替
+        margin: 0; 
         font-size: 24px;
         padding:70px 0 34px;
     };
@@ -36,10 +34,10 @@
 }
 
 .animated{
-    -webkit-animation:animated .5s ease-in-out forwards;
+    animation:animated .5s ease-in-out forwards;
 }
 
-@-webkit-keyframes animated{
+@keyframes animated{
     0%{left:-50px;opacity:0.7;}
     100%{left:0;opacity:1;}
   }
