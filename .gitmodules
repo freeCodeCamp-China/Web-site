@@ -1,0 +1,3 @@
+[submodule "conf-archive"]
+	url = https://github.com/freeCodeCamp-China/conf
+	path = conf-archive
