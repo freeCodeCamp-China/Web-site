@@ -3,8 +3,8 @@ import { FC } from 'react';
 import styles from './ConferenceBase.module.less';
 
 export const ConferenceBase: FC = () => (
-  <div>
-    <div className={`${styles.abstract} pb-4 text-center`} id="section_2">
+  <div className={styles.base}>
+    <div className={`${styles.abstract} pb-4 text-center`} id="abstract">
       <section className={`${styles.container} ${styles.animated}`}>
         <h2>大会宗旨</h2>
         <p>
@@ -16,7 +16,7 @@ export const ConferenceBase: FC = () => (
         </p>
       </section>
     </div>
-    <div className={`${styles.review} text-center `} id="section_3">
+    <div className={`${styles.review} text-center`} id="review">
       <div className={`${styles.container} ${styles.animated}`}>
         <h2>往届活动回顾</h2>
         <div className={styles.review_item}>
@@ -24,7 +24,7 @@ export const ConferenceBase: FC = () => (
             className={styles.revImg}
             src="https://conf.freecodecamp.one/assets/review1.png"
           />
-          <p className="m-0">
+          <p>
             2017 年 11 月，freeCodeCamp 成都社区举办 Web
             前端交流大会，八百余人报名，四百余人参会，获得本地政府及全国各企业、媒体、社区的广泛关注与大力支持。
           </p>
@@ -34,7 +34,7 @@ export const ConferenceBase: FC = () => (
             className={styles.revImg}
             src="https://conf.freecodecamp.one/assets/review2.png"
           />
-          <p className="m-0">
+          <p>
             2018 年 5 月，freeCodeCamp
             中国参与主办首届全球石墨烯开发者大会，与会一千余名开发者。目前
             freeCodeCamp
@@ -46,13 +46,13 @@ export const ConferenceBase: FC = () => (
     <div className={`${styles.situation}`} id="section_4">
       <div className={`${styles.container}   ${styles.animated}`}>
         <h2>2018 freeCodeConf 概况</h2>
-        <ul className="sumary">
-          <li>
+        <ul className="sumary list-unstyled" >
+          <li >
             <strong>时间：</strong>
             <time dateTime="2018-11-10">2018 年 11 月 10 日</time>
           </li>
           <li>
-            <strong>地点:</strong>
+            <strong>地点：</strong>
             <span>
               上海、天津、深圳、成都、西安、杭州、广州、武汉、郑州、济南（北京站、重庆站因特殊原因取消，望谅解）
             </span>
