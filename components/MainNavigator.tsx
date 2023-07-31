@@ -3,7 +3,12 @@ import { Nav, Navbar } from 'react-bootstrap';
 
 export const MainNavigator: FC = () => {
   return (
-    <Navbar expand="lg" bg="success" data-bs-theme="dark" className="shadow-sm">
+    <Navbar
+      expand="lg"
+      bg="success"
+      data-bs-theme="dark"
+      className="shadow-sm sticky-top"
+    >
       <Navbar.Brand href="#">
         <img alt="logo" src="./freecodecamp_logo.svg" />
       </Navbar.Brand>
