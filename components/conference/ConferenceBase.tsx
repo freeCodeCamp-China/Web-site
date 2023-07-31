@@ -7,7 +7,7 @@ export const ConferenceBase: FC = () => (
     <div className={`${styles.abstract} pb-4 text-center`} id="abstract">
       <section className={`${styles.container} ${styles.animated}`}>
         <h2>大会宗旨</h2>
-        <p>
+        <p className='text-start w-75'>
           freeCodeConf 是 freeCodeCamp
           中国举办的每年一度大型联动技术大会，旨在联合 freeCodeCamp
           各城市本地开发者社区，促进高度垂直、高度人才集中、高度明星企业集结的互联网与软件行业技术交流。第一届
