@@ -1,8 +1,7 @@
 import { observer } from 'mobx-react';
 import { Container } from 'react-bootstrap';
 
-import { Purpose } from '../components/conference/Purpose';
-import { Review } from '../components/conference/Review';
+import { ConferenceBase } from '../components/conference/ConferenceBase';
 import { Situation } from '../components/conference/Situation';
 import { Snap } from '../components/conference/Snap';
 import { DrawerNav } from '../components/DrawerNav';
@@ -21,8 +20,7 @@ const ConferencePage = observer(() => (
     <h1>Hello Conference Page!</h1>
     <h2>Let&apos;s get our hands dirty!</h2>
     <DrawerNav />
-    <Purpose />
-    <Review />
+    <ConferenceBase />
     <Situation />
     <Snap />
   </Container>
