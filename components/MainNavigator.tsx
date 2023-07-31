@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import FC from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 
 export const MainNavigator: FC = () => {
