@@ -43,8 +43,8 @@ export const ConferenceBase: FC = () => (
         </div>
       </div>
     </div>
-    <div className={`${styles.situation}`} id="situation">
-      <div className={`${styles.container}   ${styles.animated}`}>
+    <div className={styles.situation} id="situation">
+      <div className={`${styles.container} ${styles.animated}`}>
         <h2>2018 freeCodeConf 概况</h2>
         <ul className="sumary list-unstyled" >
           <li >
@@ -72,10 +72,10 @@ export const ConferenceBase: FC = () => (
         </ul>
       </div>
     </div>
-    <div className={`${styles.snap}`} id="snap">
-      <div className={`${styles.container}  ${styles.animated}`}>
+    <div className={styles.snap} id="snap">
+      <div className={`${styles.container} ${styles.animated}`}>
         <h2>大会亮点</h2>
-        <ul className={`${styles.flex_box}  ${styles.sm_flex_warped} list-unstyled`}>
+        <ul className={`${styles.flex_box} ${styles.sm_flex_warped} list-unstyled`}>
           <li className={styles.media}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p>12 个城市社区同期举办，促进本地开发者技术分享与交流</p>
