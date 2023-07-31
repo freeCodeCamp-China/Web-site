@@ -2,8 +2,6 @@ import { observer } from 'mobx-react';
 import { Container } from 'react-bootstrap';
 
 import { ConferenceBase } from '../components/conference/ConferenceBase';
-import { Situation } from '../components/conference/Situation';
-import { Snap } from '../components/conference/Snap';
 import { DrawerNav } from '../components/DrawerNav';
 import { PageHead } from '../components/PageHead';
 import { i18n } from '../models/Translation';
