@@ -1,44 +1,26 @@
-import Link from 'next/link';
-import { FC, useState } from 'react';
-
-import styles from './MainNavigator.module.less';
+import { FC } from 'react';
+import { Nav, Navbar } from 'react-bootstrap';
 
 export const MainNavigator: FC = () => {
-  const [isNavVisible, setIsNavVisible] = useState(true);
-
-  const handleToggleClick = () => setIsNavVisible(!isNavVisible);
-
   return (
-    <nav className={`${styles.navigator} clearfix`}>
-      <ul className="clearfix">
-        <li className={styles.head_logo}>
-          <a href=".">
-            <img alt="logo" src="./freecodecamp_logo.svg" />
-          </a>
-        </li>
-        <li className={styles.nav_bar} hidden={!isNavVisible}>
-          <ul>
-            <li>
-              <a href="https://www.freecodecamp.org/chinese/learn/">课程</a>
-            </li>
-            <li>
-              <a href="https://forum.freecodecamp.org/c/chinese/">论坛</a>
-            </li>
-            <li>
-              <a href=".">社区</a>
-            </li>
-            <li>
-              <a href=".">志愿者</a>
-            </li>
-            <li>
-              <Link href="/conference">会议</Link>
-            </li>
-          </ul>
-        </li>
-        <li className={styles.nav_toggle} onClick={handleToggleClick}>
-          <img src="./toggle_holder.png" alt="toggle" />
-        </li>
-      </ul>
-    </nav>
+    <Navbar expand="lg" bg="success" data-bs-theme="dark" className="shadow-sm">
+      <Navbar.Brand href="#">
+        <img alt="logo" src="./freecodecamp_logo.svg" />
+      </Navbar.Brand>
+      <Navbar.Toggle className="border-0 shadow-none" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ms-auto align-items-center">
+          <Nav.Link href="https://www.freecodecamp.org/chinese/learn/">
+            课程
+          </Nav.Link>
+          <Nav.Link href="https://forum.freecodecamp.org/c/chinese/">
+            论坛
+          </Nav.Link>
+          <Nav.Link href="#">社区</Nav.Link>
+          <Nav.Link href="#">志愿者</Nav.Link>
+          <Nav.Link href="/conference">会议</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
