@@ -43,13 +43,13 @@ export const ConferenceBase: FC = () => (
         </div>
       </div>
     </div>
-    <div className={`${styles.situation}`} id="section_4">
+    <div className={`${styles.situation}`} id="situation">
       <div className={`${styles.container}   ${styles.animated}`}>
         <h2>2018 freeCodeConf 概况</h2>
         <ul className="sumary list-unstyled" >
           <li >
             <strong>时间：</strong>
-            <time dateTime="2018-11-10">2018 年 11 月 10 日</time>
+            <span>2018 年 11 月 10 日</span>
           </li>
           <li>
             <strong>地点：</strong>
@@ -72,23 +72,23 @@ export const ConferenceBase: FC = () => (
         </ul>
       </div>
     </div>
-    <div className={`${styles.snap}`} id="section_5">
-      <div className={`${styles.container}   ${styles.animated}`}>
+    <div className={`${styles.snap}`} id="snap">
+      <div className={`${styles.container}  ${styles.animated}`}>
         <h2>大会亮点</h2>
-        <div className={`${styles.flex_box}   ${styles.sm_flex_warped}`}>
-          <div className={styles.media}>
+        <ul className={`${styles.flex_box}  ${styles.sm_flex_warped} list-unstyled`}>
+          <li className={styles.media}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p>12 个城市社区同期举办，促进本地开发者技术分享与交流</p>
-          </div>
-          <div className={styles.media}>
+          </li>
+          <li className={styles.media}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p>与数十位前端、区块链等领域的优秀开发者、技术负责人面对面交流</p>
-          </div>
-          <div className={styles.media}>
+          </li>
+          <li className={styles.media}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p>部分城市设置现场招聘环节，为企业和开发者搭建沟通桥梁</p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
