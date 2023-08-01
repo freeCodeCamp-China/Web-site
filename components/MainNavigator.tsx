@@ -17,7 +17,7 @@ export const MainNavigator: FC = () => (
     </Navbar.Brand>
     <Navbar.Toggle className="border-0 shadow-none" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className={`ms-auto align-items-center ${styles.navbar}`}>
+      <Nav className={`ms-auto align-items-center ${styles.navBox}`}>
         <Nav.Link href="https://www.freecodecamp.org/chinese/learn/">
           课程
         </Nav.Link>
