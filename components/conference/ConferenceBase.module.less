@@ -1,126 +1,68 @@
-.base{
-
+.base {
   h2 {
-    margin: 0;
     font-size: 24px;
-    padding:70px 0 34px;
-    text-align:center;
   }
-
-  p{
-    margin: 0;
-  }
-
-  .container{
+  .container {
     max-width: 1200px;
-    margin: 0 auto; 
-    font-size: 14px; 
-    position:relative; 
-    left:-50px;
+    font-size: 14px;
   }
 
-  .abstract{
-    background: #F5F5F5;
-
-    p{
+  .abstract {
+    p {
       line-height: 1.6rem;
-      margin: 0 auto;
     }
   }
 
-  .review{
-    
-    .review_item+.review_item{
+  .review {
+    .review_item + .review_item {
       margin-top: 40px;
     }
-
-    .revImg{
-      width:600px;
-      margin-bottom:30px;
-    }
-
   }
 
-  .situation {
-    li {
-      margin: 36px 0;
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-  
-    span {
-      flex:2
-    }
-  
-    strong{
-      display: inline-block;
-      width: 220px;
-    }
-  }
-
-  .snap{
-    .flex_box{
-      display: -webkit-flex;
-      justify-content: space-between;
-    }
-  
-    .media{
-      text-align: center;
-      width: 20%;
-      
-      img{
-        width:80px;
-      }
-  
-      p{
-        margin-top: 15px;
+  .snap {
+    .media {
+      img {
+        width: 80px;
       }
     }
   }
 
-  .animated{
-    animation:animated .5s ease-in-out forwards;
+  .animated {
+    animation: -webkit-animation 0.5s ease-in-out forwards;
   }
 
-  @keyframes animated{
-    0%{left:-50px;opacity:0.7;}
-    100%{left:0;opacity:1;}
+  @keyframes animated {
+    0% {
+      left: -50px;
+      opacity: 0.7;
+    }
+    100% {
+      left: 0;
+      opacity: 1;
+    }
   }
-  
 }
 
-@media screen and (max-width:620px){
-  .container{padding:0 10px;}
-  .base h2{padding-top:34px;}
-  .abstract p{width: auto;}
-  .situation li{display:-webkit-flex;margin:15px 0;}
-  .situation strong{flex:1;}
-  .situation span{flex:2;}
-  
-  .snap .sm_flex_warped{flex-wrap:wrap}
-  .media{width:45%;margin-top: 20px;padding: 0 5px;}
-  .media+.media{margin-top:20px;}
-  .revImg{width:100%;}
+@media screen and (max-width: 620px) {
+  .situation li {
+    display: -webkit-flex;
+    margin: 15px 0;
+  }
+  .snap .sm_flex_warped {
+    -webkit-flex-wrap: wrap;
+  }
+  .media {
+    width: 45%;
+    margin-top: 20px;
+    padding: 0 5px;
+  }
+  .media + .media {
+    margin-top: 20px;
+  }
+  .revImg {
+    width: 100%;
+  }
+  .media img {
+    width: 100px;
+  }
 }
-
-
-
-
-
-
-  
-    
-
-
-        
-
-
-
-    
-
-
-    
-
-
-
