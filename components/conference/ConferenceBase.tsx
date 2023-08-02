@@ -21,8 +21,8 @@ export const ConferenceBase: FC = () => (
         </p>
       </section>
     </div>
-    <div className={`${styles.review} text-center`} id="review">
-      <div
+    <div className="text-center" id="review">
+      <section
         className={`${styles.container} m-0 position-relative p-sm-0  ${styles.animated}`}
       >
         <h2 className="m-0 py-5">往届活动回顾</h2>
@@ -48,67 +48,65 @@ export const ConferenceBase: FC = () => (
             正在开发区块链基础技术课程，并将持续致力于区块链开发者社群服务。
           </p>
         </div>
-      </div>
+      </section>
     </div>
-    <div className={`${styles.situation} text-start`} id="situation">
-      <div
+    <div className="text-start" id="situation">
+      <section
         className={`${styles.container} m-0 position-relative p-sm-0 ${styles.animated}`}
       >
         <h2 className="m-0 pb-5 text-center">2018 freeCodeConf 概况</h2>
         <ul className="list-unstyled">
-          <li className="d-sm-flex m-4 m-sm-4 mt-0">
+          <li className="d-sm-flex m-3 m-sm-3 d-flex my-3 mx-0">
             <strong className="d-block w-25 w-sm-25">时间：</strong>
             <span>2018 年 11 月 10 日</span>
           </li>
-          <li className="d-sm-flex m-4 m-sm-4 mt-0">
+          <li className="d-sm-flex m-3 m-sm-3 d-flex my-3 mx-0">
             <strong className="d-block w-25 w-sm-25">地点：</strong>
             <span className="w-75">
               上海、天津、深圳、成都、西安、杭州、广州、武汉、郑州、济南（北京站、重庆站因特殊原因取消，望谅解）
             </span>
           </li>
-          <li className="d-sm-flex m-4 m-sm-4 mt-0">
+          <li className="d-sm-flex m-3 m-sm-3 d-flex my-3 mx-0">
             <strong className="d-block w-25 w-sm-25">会议规模：</strong>
             <span className="w-75">1800+ 参会者</span>
           </li>
-          <li className="d-sm-flex m-4 m-sm-4 mt-0">
+          <li className="d-sm-flex m-3 m-sm-3 d-flex my-3 mx-0">
             <strong className="d-block w-25 w-sm-25">参会人员：</strong>
             <span className="w-75">
               前端开发者、区块链开发者、CTO、架构师、相关技术从业者
             </span>
           </li>
-          <li className="d-sm-flex m-4 m-sm-4 mt-0">
+          <li className="d-sm-flex m-3 m-sm-3 d-flex my-3 mx-0">
             <strong className="d-block w-25 w-sm-25">主办方：</strong>
             <span>freeCodeCamp 中文社区</span>
           </li>
         </ul>
-      </div>
+      </section>
     </div>
     <div className={styles.snap} id="snap">
-      <div className={`${styles.container} m-0  p-sm-0 ${styles.animated}`}>
+      <section className={`${styles.container} m-0  p-sm-0 ${styles.animated}`}>
         <h2 className="text-center py-3">大会亮点</h2>
-        <ul
-          className={`${styles.sm_flex_warped} d-flex flex-sm-wrap list-unstyled`}
-        >
-          <li className={`${styles.media} w-50 text-center`}>
+        <ul className="d-flex justify-content-between flex-wrap list-unstyled">
+          <li className={`${styles.media} d-block text-center`}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p className="m-0 mt-3">
               12 个城市社区同期举办，促进本地开发者技术分享与交流
             </p>
           </li>
-          <li className={`${styles.media} w-50 text-center`}>
+          <li className={`${styles.media} d-block w-sm-50 text-center`}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p className="m-0 mt-3">
               与数十位前端、区块链等领域的优秀开发者、技术负责人面对面交流
             </p>
           </li>
-          <li className={`${styles.media} w-50 text-center`}>
+          <li className={`${styles.media} d-block text-center`}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p className="m-0 mt-3">
               部分城市设置现场招聘环节，为企业和开发者搭建沟通桥梁
             </p>
           </li>
         </ul>
-      </div>
+      </section>
     </div>
   </div>
 );
