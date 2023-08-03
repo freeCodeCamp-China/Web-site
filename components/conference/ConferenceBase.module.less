@@ -1,0 +1,54 @@
+.base {
+  h2 {
+    font-size: 24px;
+  }
+  .container {
+    max-width: 1200px;
+    font-size: 14px;
+  }
+
+  .abstract p {
+    line-height: 1.6rem;
+  }
+
+  .review_item + .review_item {
+    margin-top: 40px;
+  }
+
+  .snap .media {
+    img {
+      width: 80px;
+    }
+    @media screen and (max-width: 620px) {
+      width: 45%;
+      margin-top: 20px;
+      padding: 0 5px;
+
+      & + .media {
+        margin-top: 20px;
+      }
+
+      img {
+        width: 100px;
+      }
+      .revImg {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.animated {
+  animation: -webkit-animation 0.5s ease-in-out forwards;
+}
+
+@keyframes animated {
+  0% {
+    left: -50px;
+    opacity: 0.7;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
