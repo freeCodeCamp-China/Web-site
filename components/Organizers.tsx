@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import * as cityData from '../pages/api/data.ts';
+import * as cityData from '../pages/api/data';
 
 export const Organizers: FC = () => {
   const organizers = Object.values(cityData.data).flatMap(
