@@ -9,13 +9,28 @@ export const Organizers: FC = () => {
 
   return (
     <div className="content">
-      <p className="list_head">社区组织者</p>
-      <div className="lists">
+      <p className="h1 mb-4">社区组织者</p>
+      <div className="d-flex flex-wrap">
         {organizers.map(item => (
-          <div className="list_item" key={item?.name}>
+          <div
+            className="list_item mb-5 text-center"
+            key={item?.name}
+            style={{ marginBottom: '50px', width: '20%' }}
+          >
             {item?.link ? (
-              <a href={`organiser.html?name=${item.link}`}>
-                <div className="img_content">
+              <a
+                className="text-dark"
+                href={`organiser.html?name=${item.link}`}
+                style={{ fontSize: '15px' }}
+              >
+                <div
+                  className="rounded-circle shadow-sm mx-auto"
+                  style={{
+                    width: '120px',
+                    height: '120px',
+                    overflow: 'hidden',
+                  }}
+                >
                   <div>
                     <img
                       src={`picPrefix + 'organiser/' + item.pic`}
@@ -23,17 +38,20 @@ export const Organizers: FC = () => {
                     />
                   </div>
                 </div>
-                <p>{item?.name}</p>
+                <p className="mt-3 mb-1">{item?.name}</p>
               </a>
             ) : (
-              <div className="img_content">
+              <div
+                className="rounded-circle shadow-sm mx-auto"
+                style={{ width: '120px', height: '120px', overflow: 'hidden' }}
+              >
                 <div>
                   <img
                     src={`picPrefix + 'organiser/' + item.pic`}
                     alt={item?.name}
                   />
                 </div>
-                <p>{item?.name}</p>
+                <p className="mt-3 mb-1">{item?.name}</p>
               </div>
             )}
           </div>
