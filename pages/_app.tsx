@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { Image } from 'react-bootstrap';
 
 import { MainNavigator } from '../components/MainNavigator';
+import { Organizers } from '../components/Organizers';
 import { isServer } from '../models/Base';
 import { i18n } from '../models/Translation';
 
@@ -23,7 +24,7 @@ const AppShell = observer(({ Component, pageProps }: AppProps) => (
     <MainNavigator />
 
     <div className="mt-5 pt-2">
-      <Component {...pageProps} />
+      <Organizers />
     </div>
 
     <footer className="flex-fill d-flex justify-content-center align-items-center border-top py-4">
