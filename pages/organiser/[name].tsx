@@ -1,3 +1,4 @@
+import { GetServerSidePropsContext } from 'next';
 import { FC } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 
@@ -7,7 +8,7 @@ interface VolunteerProps {
   volunteer: typeof Volunteer;
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { name } = context.query;
   const volunteer = Volunteer[name];
   if (!volunteer) {
