@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { Col,Container, Image, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 
 import { Volunteer } from '../api/organiser';
 
 interface VolunteerProps {
-  volunteer: Volunteer;
+  volunteer: typeof Volunteer;
 }
 
 export async function getServerSideProps(context) {
