@@ -39,6 +39,10 @@ export default class ConferencePage extends PureComponent<
         <DrawerNav />
         <ConferenceBase />
         <GuestInfo guests={this.props.guests} />
+        <OrganizationInfo
+          sponsors={this.props.sponsors}
+          partners={this.props.partners}
+        />
       </Container>
     );
   }
