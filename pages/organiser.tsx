@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
 import PersonCard from '../components/PersonCard';
-import { data } from './api/data';
+import * as data from './api/data';
 
 type OrganizersComponentProps = {
   picPrefix: string;

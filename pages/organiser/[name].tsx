@@ -2,15 +2,15 @@ import { GetServerSidePropsContext } from 'next';
 import { FC } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 
-import { Volunteer } from '../api/organiser';
+import * as volunteerData from '../api/organiser';
 
 interface VolunteerProps {
-  volunteer: typeof Volunteer;
+  volunteer: (typeof volunteerData)[keyof typeof volunteerData];
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { name } = context.query;
-  const volunteer = Volunteer[name as keyof typeof Volunteer];
+  const volunteer = volunteerData[name as keyof typeof volunteerData];
   if (!volunteer) {
     return {
       notFound: true,

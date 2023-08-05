@@ -1,5 +1,4 @@
-export const Volunteer = {
-  jiangyuzhen: {
+export const jiangyuzhen = {
     name: '姜玉珍',
     from: 'chengdu',
     zhFrom: '成都',
@@ -11,7 +10,7 @@ export const Volunteer = {
     ],
     profile: [],
   },
-  yuanmincheng: {
+  yuanmincheng = {
     name: '袁民成',
     from: 'chengdu',
     zhFrom: '成都',
@@ -29,7 +28,7 @@ export const Volunteer = {
       },
     ],
   },
-  heqingsong: {
+  heqingsong = {
     name: '何青松',
     from: 'chengdu',
     zhFrom: '成都',
@@ -69,7 +68,7 @@ export const Volunteer = {
       },
     ],
   },
-  kanziqiang: {
+  kanziqiang = {
     name: '阚自强',
     from: 'tianjin',
     zhFrom: '天津',
@@ -92,7 +91,7 @@ export const Volunteer = {
       },
     ],
   },
-  liuzhu: {
+  liuzhu = {
     name: '刘柱',
     from: 'tianjin',
     zhFrom: '天津',
@@ -116,7 +115,7 @@ export const Volunteer = {
       },
     ],
   },
-  yilina: {
+  yilina = {
     name: '伊丽娜',
     from: 'tianjin',
     zhFrom: '天津',
@@ -139,5 +138,4 @@ export const Volunteer = {
           '项目工作大致分为3个阶段：前期APP上线之前，不打无准备之仗，进行目标用户梳理，主要包括APP目标用户群体分析、目标用户群体画像、用户群体场所、竞品分析等。进行应用商店准备，包括APP的产品介绍、推荐语、口号等还包括相应的icon、应用市场缩略图，第三方应用商店下载渠道及账号等。第二阶段APP上线初期，召集种子用户是关键，APP上线后，召集种子用户到QQ群或者微信公众平台，收集用户的建议和反馈信息，以打磨APP的产品体验为主。APP发展后期，运用各种手段在最大程度上追求产品功能契合用户需求，周留存率达到25%，拥有一定市场份额。运营时间2年。',
       },
     ],
-  },
-};
+  };

@@ -1,5 +1,4 @@
-export const data = {
-  chengdu: {
+export const chengdu = {
     name: '成都',
     picPrefix: 'chengdu/',
     banner: 'banner.png',
@@ -104,7 +103,7 @@ export const data = {
       { name: '郑梦雨', pic: 'zhengmengyu.png', link: '' },
     ],
   },
-  chongqing: {
+  chongqing = {
     name: '重庆',
     picPrefix: 'chongqing/',
     banner: 'banner.png',
@@ -127,7 +126,7 @@ export const data = {
     ],
     partner: [],
   },
-  guangzhou: {
+  guangzhou = {
     name: '广州',
     picPrefix: 'guangzhou/',
     banner: 'banner.png',
@@ -148,7 +147,7 @@ export const data = {
     ],
     partner: [],
   },
-  hangzhou: {
+  hangzhou = {
     name: '杭州',
     picPrefix: 'hangzhou/',
     banner: 'banner.png',
@@ -166,7 +165,7 @@ export const data = {
     ],
     partner: [],
   },
-  jinan: {
+  jinan = {
     name: '济南',
     picPrefix: 'jinan/',
     banner: 'banner.png',
@@ -180,7 +179,7 @@ export const data = {
     organiser: [{ name: '王军', pic: 'wangjun.png', link: 'javascript;' }],
     partner: [],
   },
-  shanghai: {
+  shanghai = {
     name: '上海',
     picPrefix: 'shanghai/',
     banner: 'banner.png',
@@ -200,7 +199,7 @@ export const data = {
     ],
     partner: [],
   },
-  shenzhen: {
+  shenzhen = {
     name: '深圳',
     picPrefix: 'shenzhen/',
     banner: 'banner.png',
@@ -221,7 +220,7 @@ export const data = {
     ],
     partner: [],
   },
-  tianjin: {
+  tianjin = {
     name: '天津',
     picPrefix: 'tianjin/',
     banner: 'banner.png',
@@ -242,7 +241,7 @@ export const data = {
     ],
     partner: [],
   },
-  wuhan: {
+  wuhan = {
     name: '武汉',
     picPrefix: 'wuhan/',
     banner: 'banner.png',
@@ -262,7 +261,7 @@ export const data = {
     ],
     partner: [],
   },
-  xian: {
+  xian = {
     name: '西安',
     picPrefix: 'xian/',
     banner: 'banner.png',
@@ -283,7 +282,7 @@ export const data = {
     ],
     partner: [],
   },
-  zhengzhou: {
+  zhengzhou = {
     name: '郑州',
     picPrefix: 'zhengzhou/',
     banner: 'banner.png',
@@ -299,5 +298,4 @@ export const data = {
     speaker: [],
     organiser: [],
     partner: [],
-  },
-};
+  };
