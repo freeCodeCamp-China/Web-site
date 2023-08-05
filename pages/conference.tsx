@@ -4,10 +4,10 @@ import { PureComponent, ReactNode } from 'react';
 import { Container } from 'react-bootstrap';
 
 import { ConferenceBase } from '../components/conference/ConferenceBase';
-import GuestInfo, {
-  getConferenceData,
-  GuestProps,
-} from '../components/conference/Guest';
+import GuestInfo, { getGuestInfoData } from '../components/conference/Guest';
+import OrganizationInfo, {
+  getOrganizationInfoData,
+} from '../components/conference/Organization';
 import { DrawerNav } from '../components/DrawerNav';
 import { PageHead } from '../components/PageHead';
 import { i18n } from '../models/Translation';
@@ -15,10 +15,14 @@ import styles from '../styles/Home.module.less';
 import { withTranslation } from './api/core';
 
 export const getServerSideProps = withTranslation(async function () {
-  const guestsData = await getConferenceData();
+  const guestsData = await getGuestInfoData();
   const { guests } = guestsData;
+  const organizationInfo = await getOrganizationInfoData();
+  const { sponsors } = organizationInfo;
+  const { partners } = organizationInfo;
+
   return {
-    props: { guests },
+    props: { guests, sponsors, partners },
   };
 });
 
@@ -35,6 +39,10 @@ export default class ConferencePage extends PureComponent<
         <DrawerNav />
         <ConferenceBase />
         <GuestInfo guests={this.props.guests} />
+        <OrganizationInfo
+          sponsors={this.props.sponsors}
+          partners={this.props.partners}
+        />
       </Container>
     );
   }

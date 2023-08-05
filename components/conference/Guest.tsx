@@ -13,7 +13,7 @@ export interface GuestProps {
   guests: Guest[];
 }
 
-export async function getConferenceData(): Promise<GuestProps> {
+export async function getGuestInfoData(): Promise<GuestProps> {
   const filePath = path.join(process.cwd(), './components/data/GuestData.json');
   const text = fs.readFileSync(filePath, 'utf8');
   let guestJSON = JSON.parse(text) as GuestProps;
@@ -30,7 +30,11 @@ function GuestInfo({ guests }: GuestProps) {
         <ul className="d-flex justify-content-between flex-wrap list-unstyled">
           {guests.map((guest, index) => (
             <li className={`${styles.media} text-center mt-1`} key={index}>
-              <img src={guest.pic} />
+              <img
+                src={
+                  'https://conf.freecodecamp.one/assets/speakers/' + guest.pic
+                }
+              />
               <h4 className="fs-6">{guest.name}</h4>
               <p className="mt-3">
                 <span>{guest.position}</span>
