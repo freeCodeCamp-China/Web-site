@@ -10,7 +10,7 @@ interface VolunteerProps {
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { name } = context.query;
-  const volunteer = Volunteer[name];
+  const volunteer = Volunteer[name as keyof typeof Volunteer];
   if (!volunteer) {
     return {
       notFound: true,
