@@ -6,9 +6,9 @@ import Head from 'next/head';
 import { Image } from 'react-bootstrap';
 
 import { MainNavigator } from '../components/MainNavigator';
-import { Organizers } from '../components/Organizers';
 import { isServer } from '../models/Base';
 import { i18n } from '../models/Translation';
+import { Organizers } from './organiser';
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 useStaticRendering(isServer());
@@ -24,7 +24,7 @@ const AppShell = observer(({ Component, pageProps }: AppProps) => (
     <MainNavigator />
 
     <div className="mt-5 pt-2">
-      <Organizers />
+      <Component {...pageProps} />
     </div>
 
     <footer className="flex-fill d-flex justify-content-center align-items-center border-top py-4">
