@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import path from 'path';
+import { Col, Row } from 'react-bootstrap';
 
 import styles from './Guest.module.less';
 
@@ -24,12 +25,16 @@ function GuestInfo({ guests }: GuestProps) {
   return (
     <div className="d-block text-center" id="guests">
       <section
-        className={`${styles.container} mx-0 my-auto position-relative ${styles.animated}`}
+        className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
       >
         <h2 className="fs-4 m-0 py-5">演讲嘉宾（持续更新）</h2>
-        <ul className="d-flex justify-content-between flex-wrap list-unstyled">
+        <Row
+          xs={2}
+          sm={5}
+          className="d-flex justify-content-arond flex-wrap list-unstyled"
+        >
           {guests.map((guest, index) => (
-            <li className={`${styles.media} text-center mt-1`} key={index}>
+            <Col className={`${styles.media} text-center mt-1`} key={index}>
               <img
                 src={
                   'https://conf.freecodecamp.one/assets/speakers/' + guest.pic
@@ -39,9 +44,9 @@ function GuestInfo({ guests }: GuestProps) {
               <p className="mt-3">
                 <span>{guest.position}</span>
               </p>
-            </li>
+            </Col>
           ))}
-        </ul>
+        </Row>
       </section>
     </div>
   );

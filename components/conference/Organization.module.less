@@ -1,29 +1,48 @@
-.media {
-  width: 20%;
-  img {
-    border-radius: 50%;
-    width: 140px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-  }
-  h4 {
-    display: block;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-  }
-}
+.organizationInfo {
+  .host_item {
+    width: 80%;
+    a {
+      cursor: pointer;
+    }
 
-.container {
-  max-width: 1200px;
-  font-size: 14px;
+    p {
+      line-height: 1.6rem;
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    font-size: 14px;
+  }
+
+  .sponsor_item {
+    font-size: 18px;
+    img {
+      width: 54%;
+    }
+  }
+
+  .progress {
+    -webkit-align-items: center;
+    -webkit-flex-wrap: wrap;
+
+    .partner {
+      a {
+        box-sizing: border-box;
+      }
+      img {
+        max-width: 90%;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 620px) {
-  .media {
-    width: 45%;
-    padding: 30px 5px 0;
+  .container {
+    padding: 0 10px;
+  }
+  .host_item {
+    width: 100%;
   }
 }
 

@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import path from 'path';
+import { Col, Row } from 'react-bootstrap';
 
 import styles from './Organization.module.less';
 
@@ -31,12 +32,12 @@ export async function getOrganizationInfoData(): Promise<OrganizationInfoProps> 
 
 function paserSponsor(sponsor: Sponsor, index: any) {
   return (
-    <li className="sponsor_item" key={index}>
-      <p>{sponsor.level}</p>
+    <Col className={`${styles.sponsor_item} text-center d-block`} key={index}>
+      <p className="m-0 d-block">{sponsor.level}</p>
       <a target="_blank" href={sponsor.href} rel="noreferrer">
-        <img src={sponsor.imgSrc} />
+        <img className="my-3" src={sponsor.imgSrc} />
       </a>
-    </li>
+    </Col>
   );
 }
 
@@ -66,25 +67,36 @@ function OrganizationInfo(organizationInfoProps: OrganizationInfoProps) {
 
   const partnerItem = partners?.map((partner, index) => {
     return (
-      <li key={index}>
-        <a href={partner.href} target="_blank" rel="noreferrer">
-          <img src={partner.imgSrc} />
+      <Col className={`${styles.partner}`} key={index}>
+        <a
+          className="d-block mx-3"
+          href={partner.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img className="pb-5" src={partner.imgSrc} />
         </a>
-      </li>
+      </Col>
     );
   });
 
   return (
-    <div className={styles.OrganizationInfo}>
-      <section id="host">
-        <div className="container animated">
-          <h2>主办方</h2>
-          <div className="partners flex_box ">
-            <div className="host_item">
-              <a target="_blank" href="https://www.freecodecamp.one" rel="noreferrer">
+    <div className={`${styles.organizationInfo} d-block`}>
+      <section id="host" className="text-center">
+        <div
+          className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
+        >
+          <h2 className="fs-4 pt-5 px-0 pb-3">主办方</h2>
+          <div className="d-flex justify-content-between">
+            <div className={`${styles.host_item} mx-auto my-0`}>
+              <a
+                target="_blank"
+                href="https://www.freecodecamp.one"
+                rel="noreferrer"
+              >
                 <img src="https://conf.freecodecamp.one/assets/freecodecamp-logo.png" />
               </a>
-              <p>
+              <p className="text-start mt-4">
                 freeCodeCamp 是 GitHub 上 Star 第一的开源项目。自 2014
                 年在美国创立以来，因其符合人性的游戏化课程体系、开放共享的社区运营理念，迅速发展成为风靡全球的免费自学编程社区，更是引领编程新手进入
                 IT
@@ -99,11 +111,17 @@ function OrganizationInfo(organizationInfoProps: OrganizationInfoProps) {
           </div>
         </div>
 
-        <div className="container animated">
-          <h2>协办方（持续更新）</h2>
+        <div
+          className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
+        >
+          <h2 className="fs-4 pt-5 px-0 pb-3">协办方（持续更新）</h2>
           <div className="partners flex_box ">
             <div className="partner_item ml28">
-              <a target="_blank" href="https://juejin.im/timeline" rel="noreferrer">
+              <a
+                target="_blank"
+                href="https://juejin.im/timeline"
+                rel="noreferrer"
+              >
                 <img src="https://conf.freecodecamp.one/assets/logo/juejin.png" />
               </a>
             </div>
@@ -111,23 +129,49 @@ function OrganizationInfo(organizationInfoProps: OrganizationInfoProps) {
         </div>
       </section>
 
-      <section className="container sponsor animated" id="sponsor">
-        <h2>赞助商（持续更新）</h2>
+      <section
+        className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
+        id="sponsor"
+      >
+        <h2 className="fs-4 m-0 py-5">赞助商（持续更新）</h2>
 
-        <ul className="flex_box sm_flex_warped list-unstyled">
+        <Row
+          xs={2}
+          sm={5}
+          className={`${styles.flex_box} ${styles.sm_flex_warped} list-unstyled d-flex justify-content-around`}
+        >
           {platinumItem}
           {goldItem}
-        </ul>
-        <ul className="flex_box sm_flex_warped list-unstyled">
+        </Row>
+        <Row
+          xs={2}
+          sm={5}
+          className={`${styles.flex_box} ${styles.sm_flex_warped} list-unstyled d-flex justify-content-around`}
+        >
           {silverItem}
           {copperItem}
-        </ul>
-        <ul className="flex_box sm_flex_warped list-unstyled">{giftItem}</ul>
+        </Row>
+        <Row
+          xs={2}
+          sm={5}
+          className={`${styles.flex_box} ${styles.sm_flex_warped} list-unstyled d-flex justify-content-around`}
+        >
+          {giftItem}
+        </Row>
       </section>
 
-      <section className="container sponsor animated" id="partners">
-        <h2>合作伙伴 (持续更新)</h2>
-        <ul className="flex_box flex_wraped progress">{partnerItem}</ul>
+      <section
+        className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
+        id="partners"
+      >
+        <h2 className="fs-4 m-0 py-5 px-0 text-center">合作伙伴 (持续更新)</h2>
+        <Row
+          xs={2}
+          sm={5}
+          className={`${styles.flex_box} ${styles.sm_flex_warped} ${styles.progress} list-unstyled d-flex justify-content-arond`}
+        >
+          {partnerItem}
+        </Row>
       </section>
     </div>
   );
