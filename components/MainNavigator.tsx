@@ -5,7 +5,7 @@ export const MainNavigator: FC = () => {
   return (
     <Navbar expand="lg" bg="success" data-bs-theme="dark" className="shadow-sm">
       <Navbar.Brand href="#">
-        <img alt="logo" src="./freecodecamp_logo.svg" />
+        <img alt="logo" src={`./freecodecamp_logo.svg`} />
       </Navbar.Brand>
       <Navbar.Toggle className="border-0 shadow-none" />
       <Navbar.Collapse id="basic-navbar-nav">
