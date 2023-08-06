@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 import styles from './ConferenceBase.module.less';
 
@@ -88,26 +89,26 @@ export const ConferenceBase: FC = () => (
     <div className={styles.snap} id="snap">
       <section className={`${styles.container} m-0  p-sm-0 ${styles.animated}`}>
         <h2 className="text-center py-3">大会亮点</h2>
-        <ul className="d-flex justify-content-between flex-wrap list-unstyled">
-          <li className={`${styles.media} d-block w-sm-50 text-center`}>
+        <Row xs={2} sm={5} className="justify-content-between">
+          <Col className={`${styles.media} d-block w-sm-50 text-center`}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p className="m-0 mt-3 ">
               12 个城市社区同期举办，促进本地开发者技术分享与交流
             </p>
-          </li>
-          <li className={`${styles.media} d-block w-sm-50 text-center`}>
+          </Col>
+          <Col className={`${styles.media} d-block w-sm-50 text-center`}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p className="m-0 mt-3 ">
               与数十位前端、区块链等领域的优秀开发者、技术负责人面对面交流
             </p>
-          </li>
-          <li className={`${styles.media} d-block text-center`}>
+          </Col>
+          <Col className={`${styles.media} d-block text-center`}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p className="m-0 mt-3 ">
               部分城市设置现场招聘环节，为企业和开发者搭建沟通桥梁
             </p>
-          </li>
-        </ul>
+          </Col>
+        </Row>
       </section>
     </div>
   </div>

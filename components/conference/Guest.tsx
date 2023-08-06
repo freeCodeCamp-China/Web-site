@@ -28,13 +28,12 @@ function GuestInfo({ guests }: GuestProps) {
         className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
       >
         <h2 className="fs-4 m-0 py-5">演讲嘉宾（持续更新）</h2>
-        <Row
-          xs={2}
-          sm={5}
-          className="d-flex justify-content-arond flex-wrap list-unstyled"
-        >
+        <Row xs={2} sm={5} className="justify-content-center">
           {guests.map((guest, index) => (
-            <Col className={`${styles.media} text-center mt-1`} key={index}>
+            <Col
+              className={`${styles.media} text-center mt-1 pt-5 px-1`}
+              key={index}
+            >
               <img
                 src={
                   'https://conf.freecodecamp.one/assets/speakers/' + guest.pic

@@ -84,7 +84,7 @@ function OrganizationInfo(organizationInfoProps: OrganizationInfoProps) {
     <div className={`${styles.organizationInfo} d-block`}>
       <section id="host" className="text-center">
         <div
-          className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
+          className={`${styles.container} px-3 mx-auto my-0 position-relative ${styles.animated}`}
         >
           <h2 className="fs-4 pt-5 px-0 pb-3">主办方</h2>
           <div className="d-flex justify-content-between">
@@ -135,27 +135,15 @@ function OrganizationInfo(organizationInfoProps: OrganizationInfoProps) {
       >
         <h2 className="fs-4 m-0 py-5">赞助商（持续更新）</h2>
 
-        <Row
-          xs={2}
-          sm={5}
-          className={`${styles.flex_box} ${styles.sm_flex_warped} list-unstyled d-flex justify-content-around`}
-        >
+        <Row xs={2} sm={5} className="justify-content-around">
           {platinumItem}
           {goldItem}
         </Row>
-        <Row
-          xs={2}
-          sm={5}
-          className={`${styles.flex_box} ${styles.sm_flex_warped} list-unstyled d-flex justify-content-around`}
-        >
+        <Row xs={2} sm={5} className="justify-content-around">
           {silverItem}
           {copperItem}
         </Row>
-        <Row
-          xs={2}
-          sm={5}
-          className={`${styles.flex_box} ${styles.sm_flex_warped} list-unstyled d-flex justify-content-around`}
-        >
+        <Row xs={2} sm={5} className="justify-content-around">
           {giftItem}
         </Row>
       </section>
@@ -165,11 +153,7 @@ function OrganizationInfo(organizationInfoProps: OrganizationInfoProps) {
         id="partners"
       >
         <h2 className="fs-4 m-0 py-5 px-0 text-center">合作伙伴 (持续更新)</h2>
-        <Row
-          xs={2}
-          sm={5}
-          className={`${styles.flex_box} ${styles.sm_flex_warped} ${styles.progress} list-unstyled d-flex justify-content-arond`}
-        >
+        <Row xs={2} sm={5} className="justify-content-around">
           {partnerItem}
         </Row>
       </section>
