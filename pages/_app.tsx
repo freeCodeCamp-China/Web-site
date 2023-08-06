@@ -8,6 +8,7 @@ import { Image } from 'react-bootstrap';
 import { MainNavigator } from '../components/MainNavigator';
 import { isServer } from '../models/Base';
 import { i18n } from '../models/Translation';
+
 // eslint-disable-next-line react-hooks/rules-of-hooks
 useStaticRendering(isServer());
 
