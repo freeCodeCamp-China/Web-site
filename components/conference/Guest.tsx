@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import path from 'path';
+import { FC } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 import styles from './Guest.module.less';
@@ -21,34 +22,28 @@ export async function getGuestInfoData(): Promise<GuestProps> {
   return guestJSON;
 }
 
-function GuestInfo({ guests }: GuestProps) {
-  return (
-    <div className="d-block text-center" id="guests">
-      <section
-        className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
-      >
-        <h2 className="fs-4 m-0 py-5">演讲嘉宾（持续更新）</h2>
-        <Row xs={2} sm={5} className="justify-content-center">
-          {guests.map((guest, index) => (
-            <Col
-              className={`${styles.media} text-center mt-1 pt-5 px-1`}
-              key={index}
-            >
-              <img
-                src={
-                  'https://conf.freecodecamp.one/assets/speakers/' + guest.pic
-                }
-              />
-              <h4 className="fs-6">{guest.name}</h4>
-              <p className="mt-3">
-                <span>{guest.position}</span>
-              </p>
-            </Col>
-          ))}
-        </Row>
-      </section>
-    </div>
-  );
-}
-
-export default GuestInfo;
+export const GuestInfo: FC<GuestProps> = ({ guests }) => (
+  <div className="d-block text-center" id="guests">
+    <section
+      className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
+    >
+      <h2 className="fs-4 m-0 py-5">演讲嘉宾（持续更新）</h2>
+      <Row xs={2} sm={5} className="justify-content-center">
+        {guests.map((guest, index) => (
+          <Col
+            className={`${styles.media} text-center mt-1 pt-5 px-1`}
+            key={index}
+          >
+            <img
+              src={'https://conf.freecodecamp.one/assets/speakers/' + guest.pic}
+            />
+            <h4 className="fs-6">{guest.name}</h4>
+            <p className="mt-3">
+              <span>{guest.position}</span>
+            </p>
+          </Col>
+        ))}
+      </Row>
+    </section>
+  </div>
+);

@@ -4,7 +4,7 @@ import { PureComponent, ReactNode } from 'react';
 import { Container } from 'react-bootstrap';
 
 import { ConferenceBase } from '../components/conference/ConferenceBase';
-import GuestInfo, { getGuestInfoData } from '../components/conference/Guest';
+import { getGuestInfoData, GuestInfo } from '../components/conference/Guest';
 import OrganizationInfo, {
   getOrganizationInfoData,
 } from '../components/conference/Organization';
