@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react';
 import { Container } from 'react-bootstrap';
 
+import { ConferenceBase } from '../components/conference/ConferenceBase';
 import { DrawerNav } from '../components/DrawerNav';
 import { PageHead } from '../components/PageHead';
 import { i18n } from '../models/Translation';
@@ -14,9 +15,8 @@ const { t } = i18n;
 const ConferencePage = observer(() => (
   <Container as="main" className={styles.main}>
     <PageHead title="Hello Conference Page!" />
-    <h1>Hello Conference Page!</h1>
-    <h2>Let&apos;s get our hands dirty!</h2>
     <DrawerNav />
+    <ConferenceBase />
   </Container>
 ));
 
