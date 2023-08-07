@@ -3,7 +3,7 @@
     font-size: 24px;
   }
   .container {
-    max-width: 1200px;
+    max-width: 75rem;
     font-size: 14px;
   }
 
@@ -17,36 +17,21 @@
 
   .snap .media {
     img {
-      width: 80px;
+      width: 5rem;
     }
     @media screen and (max-width: 620px) {
       padding: 0 5px;
 
       & + .media {
-        margin-top: 20px;
+        margin-top: 1.25rem;
       }
 
       img {
-        width: 100px;
+        width: 6.25rem;
       }
       .revImg {
         width: 100%;
       }
     }
-  }
-}
-
-.animated {
-  animation: -webkit-animation 0.5s ease-in-out forwards;
-}
-
-@keyframes animated {
-  0% {
-    left: -50px;
-    opacity: 0.7;
-  }
-  100% {
-    left: 0;
-    opacity: 1;
   }
 }

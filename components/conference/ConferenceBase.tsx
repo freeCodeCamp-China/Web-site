@@ -27,8 +27,8 @@ export const ConferenceBase: FC = () => (
         className={`${styles.container} m-0 position-relative p-sm-0  ${styles.animated}`}
       >
         <h2 className="m-0 py-4">往届活动回顾</h2>
-        <ol className="list-unstyled">
-          <li className={styles.review_item}>
+        <Row xs={2} sm={3} as="ol" className="list-unstyled">
+          <Col as="li" className={styles.review_item}>
             <img
               className={`${styles.revImg} mb-3`}
               src="https://conf.freecodecamp.one/assets/review1.png"
@@ -37,8 +37,8 @@ export const ConferenceBase: FC = () => (
               2017 年 11 月，freeCodeCamp 成都社区举办 Web
               前端交流大会，八百余人报名，四百余人参会，获得本地政府及全国各企业、媒体、社区的广泛关注与大力支持。
             </p>
-          </li>
-          <li className={styles.review_item}>
+          </Col>
+          <Col className={styles.review_item}>
             <img
               className={`${styles.revImg} mb-3`}
               src="https://conf.freecodecamp.one/assets/review2.png"
@@ -49,8 +49,8 @@ export const ConferenceBase: FC = () => (
               freeCodeCamp
               正在开发区块链基础技术课程，并将持续致力于区块链开发者社群服务。
             </p>
-          </li>
-        </ol>
+          </Col>
+        </Row>
       </section>
     </div>
     <div className="text-start" id="situation">
@@ -89,20 +89,25 @@ export const ConferenceBase: FC = () => (
     <div className={styles.snap} id="snap">
       <section className={`${styles.container} m-0  p-sm-0 ${styles.animated}`}>
         <h2 className="text-center py-3">大会亮点</h2>
-        <Row xs={2} sm={5} className="justify-content-between">
-          <Col className={`${styles.media} d-block w-sm-50 text-center`}>
+        <Row
+          xs={2}
+          sm={5}
+          as="ul"
+          className="list-unstyled  justify-content-between  text-center"
+        >
+          <Col as="li" className={styles.media}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p className="m-0 mt-3 ">
               12 个城市社区同期举办，促进本地开发者技术分享与交流
             </p>
           </Col>
-          <Col className={`${styles.media} d-block w-sm-50 text-center`}>
+          <Col as="li" className={styles.media}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p className="m-0 mt-3 ">
               与数十位前端、区块链等领域的优秀开发者、技术负责人面对面交流
             </p>
           </Col>
-          <Col className={`${styles.media} d-block text-center`}>
+          <Col as="li" className={styles.media}>
             <img src="https://conf.freecodecamp.one/assets/meeting.png" />
             <p className="m-0 mt-3 ">
               部分城市设置现场招聘环节，为企业和开发者搭建沟通桥梁

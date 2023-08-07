@@ -30,51 +30,43 @@ export async function getOrganizationInfoData(): Promise<OrganizationInfoProps> 
   return guestJSON;
 }
 
-function paserSponsor(sponsor: Sponsor, index: any) {
+function paserSponsor({ level, href, imgSrc }: Sponsor) {
   return (
-    <Col className={`${styles.sponsor_item} text-center d-block`} key={index}>
-      <p className="m-0 d-block">{sponsor.level}</p>
-      <a target="_blank" href={sponsor.href} rel="noreferrer">
-        <img className="my-3" src={sponsor.imgSrc} />
+    <Col as="li" className={styles.sponsor_item} key={imgSrc}>
+      <p className="m-0">{level}</p>
+      <a target="_blank" href={href} rel="noreferrer">
+        <img className="my-3" src={imgSrc} />
       </a>
     </Col>
   );
 }
 
-function OrganizationInfo(organizationInfoProps: OrganizationInfoProps) {
-  const sponsors = organizationInfoProps['sponsors'];
-  const partners = organizationInfoProps['partners'];
-
+function OrganizationInfo({ sponsors, partners }: OrganizationInfoProps) {
   const platinumItem = sponsors
     ?.filter(sponsor => sponsor.level == '铂金赞助商')
-    .map((sponsor, index) => paserSponsor(sponsor, index));
+    .map(sponsor => paserSponsor(sponsor));
 
   const goldItem = sponsors
     ?.filter(sponsor => sponsor.level == '金牌赞助商')
-    .map((sponsor, index) => paserSponsor(sponsor, index));
+    .map(sponsor => paserSponsor(sponsor));
 
   const silverItem = sponsors
     ?.filter(sponsor => sponsor.level == '银牌赞助商')
-    .map((sponsor, index) => paserSponsor(sponsor, index));
+    .map(sponsor => paserSponsor(sponsor));
 
   const copperItem = sponsors
     ?.filter(sponsor => sponsor.level == '铜牌赞助商')
-    .map((sponsor, index) => paserSponsor(sponsor, index));
+    .map(sponsor => paserSponsor(sponsor));
 
   const giftItem = sponsors
     ?.filter(sponsor => sponsor.level == '礼品赞助')
-    .map((sponsor, index) => paserSponsor(sponsor, index));
+    .map(sponsor => paserSponsor(sponsor));
 
-  const partnerItem = partners?.map((partner, index) => {
+  const partnerItem = partners?.map(({ href, imgSrc }, index) => {
     return (
-      <Col className={`${styles.partner}`} key={index}>
-        <a
-          className="d-block mx-3"
-          href={partner.href}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img className="pb-5" src={partner.imgSrc} />
+      <Col as="li" className={styles.partner} key={index}>
+        <a className="mx-3" href={href} target="_blank" rel="noreferrer">
+          <img className="pb-5" src={imgSrc} />
         </a>
       </Col>
     );
@@ -135,15 +127,30 @@ function OrganizationInfo(organizationInfoProps: OrganizationInfoProps) {
       >
         <h2 className="fs-4 m-0 py-5">赞助商（持续更新）</h2>
 
-        <Row xs={2} sm={5} className="justify-content-around">
+        <Row
+          as="ul"
+          xs={2}
+          sm={5}
+          className="list-unstyled justify-content-around"
+        >
           {platinumItem}
           {goldItem}
         </Row>
-        <Row xs={2} sm={5} className="justify-content-around">
+        <Row
+          as="ul"
+          xs={2}
+          sm={5}
+          className="list-unstyled justify-content-around"
+        >
           {silverItem}
           {copperItem}
         </Row>
-        <Row xs={2} sm={5} className="justify-content-around">
+        <Row
+          as="ul"
+          xs={2}
+          sm={5}
+          className="list-unstyled justify-content-around"
+        >
           {giftItem}
         </Row>
       </section>
@@ -153,7 +160,12 @@ function OrganizationInfo(organizationInfoProps: OrganizationInfoProps) {
         id="partners"
       >
         <h2 className="fs-4 m-0 py-5 px-0 text-center">合作伙伴 (持续更新)</h2>
-        <Row xs={2} sm={5} className="justify-content-around">
+        <Row
+          as="ul"
+          xs={2}
+          sm={5}
+          className="list-unstyled justify-content-around"
+        >
           {partnerItem}
         </Row>
       </section>
