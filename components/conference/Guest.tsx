@@ -1,29 +1,19 @@
-import * as fs from 'fs';
-import path from 'path';
 import { FC } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
+import guestData from '../data/GuestData';
 import styles from './Guest.module.less';
 
-type Guest = {
-  name: string;
-  pic: string;
-  position: string;
-};
+type Guest = Record<'name' | 'pic' | 'position', string>;
 
 export interface GuestProps {
   guests: Guest[];
 }
 
-export async function getGuestInfoData(): Promise<GuestProps> {
-  const filePath = path.join(process.cwd(), './components/data/GuestData.json');
-  const text = fs.readFileSync(filePath, 'utf8');
-  let guestJSON = JSON.parse(text) as GuestProps;
-  return guestJSON;
-}
+const { guests } = guestData as GuestProps;
 
-export const GuestInfo: FC<GuestProps> = ({ guests }) => (
-  <div className="d-block text-center" id="guests">
+export const GuestInfo: FC = () => (
+  <div className="text-center" id="guests">
     <section
       className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
     >
@@ -36,7 +26,7 @@ export const GuestInfo: FC<GuestProps> = ({ guests }) => (
       >
         {guests.map(({ pic, name, position }) => (
           <Col as="li" className={`${styles.media} mt-1 pt-5 px-1`} key={pic}>
-            <img src={'https://conf.freecodecamp.one/assets/speakers/' + pic} />
+            <img src={'/image/speakers/' + pic} />
             <h4 className="fs-6">{name}</h4>
             <p className="mt-3">
               <span>{position}</span>

@@ -3,57 +3,57 @@
     {
       "level": "铂金赞助商",
       "href": "http://gbacenter.org/",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/gbac.png"
+      "imgSrc": "/image/logo/gbac.png"
     },
     {
       "level": "金牌赞助商",
       "href": "https://www.sxl.cn",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/shangxianle.png"
+      "imgSrc": "/image/logo/shangxianle.png"
     },
     {
       "level": "金牌赞助商",
       "href": "http://hpb.io",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/highpb.png"
+      "imgSrc": "/image//logo/highpb.png"
     },
     {
       "level": "银牌赞助商",
       "href": "http://www.knowhowchain.com",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/naohailian.png"
+      "imgSrc": "/image/logo/naohailian.png"
     },
     {
       "level": "银牌赞助商",
       "href": "http://www.baozun.com",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/baozun.jpg"
+      "imgSrc": "/image/logo/baozun.jpg"
     },
     {
       "level": "铜牌赞助商",
       "href": "http://www.huaweicloud.com",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/huawei.png"
+      "imgSrc": "/image/logo/huawei.png"
     },
     {
       "level": "礼品赞助",
       "href": "https://developer.ibm.com/cn/callforcode",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/call_for_code.png"
+      "imgSrc": "/image/logo/call_for_code.png"
     },
     {
       "level": "礼品赞助",
       "href": "https://www.talkingdata.com",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/talkingdata.png"
+      "imgSrc": "/image/logo/talkingdata.png"
     },
     {
       "level": "礼品赞助",
       "href": "https://coding.net",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/coding.svg"
+      "imgSrc": "/image/logo/coding.svg"
     },
     {
       "level": "礼品赞助",
       "href": "https://yoyow.org",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/yoyow.jpg"
+      "imgSrc": "/image/logo/yoyow.jpg"
     },
     {
       "level": "礼品赞助",
       "href": "https://www.epubit.com/",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/yibushequ.png"
+      "imgSrc": "/image/logo/yibushequ.png"
     }
   ],
   "partners": [
@@ -63,59 +63,59 @@
     },
     {
       "href": "http://blockgeek.org/",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/bgeek.png"
+      "imgSrc": "/image/logo/bgeek.png"
     },
     {
       "href": "https://www.getui.com/cn/index.html",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/getui.png"
+      "imgSrc": "/image/logo/getui.png"
     },
     {
       "href": "https://segmentfault.com",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/sf.png"
+      "imgSrc": "/image/assets/logo/sf.png"
     },
     {
       "href": "https://www.blockchaincentreglobal.com",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/shine.png"
+      "imgSrc": "/image/logo/shine.png"
     },
     {
       "href": "https://www.easemob.com",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/huanxin.png"
+      "imgSrc": "/image/logo/huanxin.png"
     },
     {
       "href": "https://m.ke.qq.com/index.html?_bid=167&amp;_wv=4097#from=other",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/tecent_ke.png"
+      "imgSrc": "/image/logo/tecent_ke.png"
     },
     {
       "href": "https://www.oschina.net",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/osc.jpg"
+      "imgSrc": "/image/logo/osc.jpg"
     },
     {
       "href": "https://www.apicloud.com/m",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/apicloud.png"
+      "imgSrc": "/image/logo/apicloud.png"
     },
     {
       "href": "http://www.techfantasy.com.cn/",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/techfantacy.png"
+      "imgSrc": "/image/logo/techfantacy.png"
     },
     {
       "href": "http://www.hxzy.cn/",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/huaxinzhiyuan.png"
+      "imgSrc": "/image/logo/huaxinzhiyuan.png"
     },
     {
       "href": "javascript:;",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/quancheng.png"
+      "imgSrc": "/image/logo/quancheng.png"
     },
     {
       "href": "javascript:;",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/wenna.png"
+      "imgSrc": "/image/logo/wenna.png"
     },
     {
       "href": "http://flink-china.org",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/flink-china.png"
+      "imgSrc": "/image/logo/flink-china.png"
     },
     {
       "href": "https://dbaplus.cn",
-      "imgSrc": "https://conf.freecodecamp.one/assets/logo/dbaplus.png"
+      "imgSrc": "/image/logo/dbaplus.png"
     }
   ]
 }

@@ -55,11 +55,6 @@
   "resolutions": {
     "@types/react": "17.0.62"
   },
-  "browser": {
-    "fs": false,
-    "os": false,
-    "path": false
-  },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all",
