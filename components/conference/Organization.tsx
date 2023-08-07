@@ -1,10 +1,15 @@
 import { FC } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { groupBy } from 'web-utility';
 
 import sponsorData from './../data/SponsorData.json';
 import styles from './Organization.module.less';
 
-type Sponsor = Record<'level' | 'href' | 'imgSrc', string>;
+type Sponsor = {
+  level: number;
+  href: string;
+  imgSrc: string;
+};
 
 type Partner = Record<'href' | 'imgSrc', string>;
 
@@ -15,43 +20,18 @@ export interface OrganizationInfoProps {
 
 const { sponsors, partners } = sponsorData as OrganizationInfoProps;
 
-const renderSponsor = ({ level, href, imgSrc }: Sponsor) => (
-  <Col as="li" className={styles.sponsor_item} key={imgSrc}>
-    <p className="m-0">{level}</p>
-    <a target="_blank" href={href} rel="noreferrer">
-      <img className="my-3" src={imgSrc} />
-    </a>
-  </Col>
-);
-
 export const OrganizationInfo: FC = () => {
-  const platinumItem = sponsors
-    ?.filter(sponsor => sponsor.level == '铂金赞助商')
-    .map(sponsor => renderSponsor(sponsor));
-
-  const goldItem = sponsors
-    ?.filter(sponsor => sponsor.level == '金牌赞助商')
-    .map(sponsor => renderSponsor(sponsor));
-
-  const silverItem = sponsors
-    ?.filter(sponsor => sponsor.level == '银牌赞助商')
-    .map(sponsor => renderSponsor(sponsor));
-
-  const copperItem = sponsors
-    ?.filter(sponsor => sponsor.level == '铜牌赞助商')
-    .map(sponsor => renderSponsor(sponsor));
-
-  const giftItem = sponsors
-    ?.filter(sponsor => sponsor.level == '礼品赞助')
-    .map(sponsor => renderSponsor(sponsor));
-
-  const partnerItem = partners?.map(({ href, imgSrc }) => (
-    <Col as="li" className={styles.partner} key={href}>
-      <a className="mx-3" href={href} target="_blank" rel="noreferrer">
-        <img className="pb-5" src={imgSrc} />
-      </a>
-    </Col>
-  ));
+  function renderLevel(level: number) {
+    return level === 0
+      ? '铂金赞助商'
+      : level === 1
+      ? '金牌赞助商'
+      : level === 2
+      ? '银牌赞助商'
+      : level === 3
+      ? '铜牌赞助商'
+      : '礼品赞助';
+  }
 
   return (
     <div className={styles.organizationInfo}>
@@ -61,13 +41,16 @@ export const OrganizationInfo: FC = () => {
       >
         <h2 className="fs-4 pt-5 px-0 pb-3">主办方</h2>
         <div className="d-flex justify-content-between">
-          <div className={`${styles.host_item} mx-auto my-0`}>
+          <div className="mx-auto my-0">
             <a
               target="_blank"
               href="https://www.freecodecamp.one"
               rel="noreferrer"
             >
-              <img src="/freecodecamp_logo.svg" />
+              <img
+                src="./freecodecamp-logo.png"
+                className={`${styles.logo} w-25`}
+              />
             </a>
             <p className="text-start mt-4">
               freeCodeCamp 是 GitHub 上 Star 第一的开源项目。自 2014
@@ -88,7 +71,7 @@ export const OrganizationInfo: FC = () => {
         className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
       >
         <h2 className="fs-4 pt-5 px-0 pb-3">协办方（持续更新）</h2>
-        <div className="partners flex_box ">
+        <div className="flex_box ">
           <div className={styles.partner_item}>
             <a
               target="_blank"
@@ -107,32 +90,26 @@ export const OrganizationInfo: FC = () => {
       >
         <h2 className="fs-4 m-0 py-5">赞助商（持续更新）</h2>
 
-        <Row
-          as="ul"
-          xs={2}
-          sm={5}
-          className="list-unstyled justify-content-around"
-        >
-          {platinumItem}
-          {goldItem}
-        </Row>
-        <Row
-          as="ul"
-          xs={2}
-          sm={5}
-          className="list-unstyled justify-content-around"
-        >
-          {silverItem}
-          {copperItem}
-        </Row>
-        <Row
-          as="ul"
-          xs={2}
-          sm={5}
-          className="list-unstyled justify-content-around"
-        >
-          {giftItem}
-        </Row>
+        {Object.values(groupBy(sponsors, 'level')!).map(
+          (sponsors: Sponsor[]) => (
+            <Row
+              as="ul"
+              xs={2}
+              sm={5}
+              className="list-unstyled justify-content-around p-1"
+              key={sponsors[0].level}
+            >
+              {sponsors.map(({ level, href, imgSrc }: Sponsor) => (
+                <Col as="li" className={styles.sponsor_item} key={imgSrc}>
+                  <p className="m-0">{renderLevel(level)}</p>
+                  <a target="_blank" href={href} rel="noreferrer">
+                    <img className="my-3 p-2" src={imgSrc} />
+                  </a>
+                </Col>
+              ))}
+            </Row>
+          ),
+        )}
       </section>
 
       <section
@@ -146,7 +123,13 @@ export const OrganizationInfo: FC = () => {
           sm={5}
           className="list-unstyled justify-content-around"
         >
-          {partnerItem}
+          {partners?.map(({ href, imgSrc }) => (
+            <Col as="li" className={styles.partner} key={href}>
+              <a className="mx-3" href={href} target="_blank" rel="noreferrer">
+                <img className="pb-5" src={imgSrc} />
+              </a>
+            </Col>
+          ))}
         </Row>
       </section>
     </div>

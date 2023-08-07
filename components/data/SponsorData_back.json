@@ -1,57 +1,57 @@
 {
   "sponsors": [
     {
-      "level": 1,
-      "href": "https://www.sxl.cn",
-      "imgSrc": "/image/logo/shangxianle.png"
-    },
-    {
-      "level": 0,
+      "level": "铂金赞助商",
       "href": "http://gbacenter.org/",
       "imgSrc": "/image/logo/gbac.png"
     },
     {
-      "level": 1,
+      "level": "金牌赞助商",
+      "href": "https://www.sxl.cn",
+      "imgSrc": "/image/logo/shangxianle.png"
+    },
+    {
+      "level": "金牌赞助商",
       "href": "http://hpb.io",
       "imgSrc": "/image//logo/highpb.png"
     },
     {
-      "level": 2,
+      "level": "银牌赞助商",
       "href": "http://www.knowhowchain.com",
       "imgSrc": "/image/logo/naohailian.png"
     },
     {
-      "level": 2,
+      "level": "银牌赞助商",
       "href": "http://www.baozun.com",
       "imgSrc": "/image/logo/baozun.jpg"
     },
     {
-      "level": 3,
+      "level": "铜牌赞助商",
       "href": "http://www.huaweicloud.com",
       "imgSrc": "/image/logo/huawei.png"
     },
     {
-      "level": 99,
+      "level": "礼品赞助",
       "href": "https://developer.ibm.com/cn/callforcode",
       "imgSrc": "/image/logo/call_for_code.png"
     },
     {
-      "level": 99,
+      "level": "礼品赞助",
       "href": "https://www.talkingdata.com",
       "imgSrc": "/image/logo/talkingdata.png"
     },
     {
-      "level": 99,
+      "level": "礼品赞助",
       "href": "https://coding.net",
       "imgSrc": "/image/logo/coding.svg"
     },
     {
-      "level": 99,
+      "level": "礼品赞助",
       "href": "https://yoyow.org",
       "imgSrc": "/image/logo/yoyow.jpg"
     },
     {
-      "level": 99,
+      "level": "礼品赞助",
       "href": "https://www.epubit.com/",
       "imgSrc": "/image/logo/yibushequ.png"
     }

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-import guestData from '../data/GuestData';
+import guestData from './../data/GuestData.json';
 import styles from './Guest.module.less';
 
 type Guest = Record<'name' | 'pic' | 'position', string>;
@@ -27,7 +27,7 @@ export const GuestInfo: FC = () => (
         {guests.map(({ pic, name, position }) => (
           <Col as="li" className={`${styles.media} mt-1 pt-5 px-1`} key={pic}>
             <img src={'/image/speakers/' + pic} />
-            <h4 className="fs-6">{name}</h4>
+            <p className="fs-6 fw-bloder">{name}</p>
             <p className="mt-3">
               <span>{position}</span>
             </p>

@@ -28,16 +28,16 @@ export const ConferenceBase: FC = () => (
       >
         <h2 className="m-0 py-4">往届活动回顾</h2>
         <ol className="list-unstyled">
-          <li as="li" className={styles.review_item}>
-            <img className={`${styles.revImg} mb-3`} src="/image/review1.png" />
-            <p className="text-center p-3">
+          <li className={styles.review_item}>
+            <img className={`${styles.revImg} mb-2`} src="/image/review1.png" />
+            <p className="px-1">
               2017 年 11 月，freeCodeCamp 成都社区举办 Web
               前端交流大会，八百余人报名，四百余人参会，获得本地政府及全国各企业、媒体、社区的广泛关注与大力支持。
             </p>
           </li>
           <li className={styles.review_item}>
-            <img className={`${styles.revImg} mb-3`} src="/image/review2.png" />
-            <p className="text-center p-3">
+            <img className={`${styles.revImg} mb-2`} src="/image/review2.png" />
+            <p className="px-1">
               2018 年 5 月，freeCodeCamp
               中国参与主办首届全球石墨烯开发者大会，与会一千余名开发者。目前
               freeCodeCamp
@@ -51,7 +51,7 @@ export const ConferenceBase: FC = () => (
       <section
         className={`${styles.container} m-0 position-relative p-sm-0 ${styles.animated}`}
       >
-        <h2 className="m-0 pb-5 text-center">2018 freeCodeConf 概况</h2>
+        <h2 className="m-0 py-5 text-center">2018 freeCodeConf 概况</h2>
         <ul className="list-unstyled">
           <li className="d-sm-flex m-3 m-sm-3 d-flex my-3 mx-0">
             <strong className="w-25 w-sm-25 ms-3">时间：</strong>
@@ -82,7 +82,7 @@ export const ConferenceBase: FC = () => (
     </div>
     <div className={styles.snap} id="snap">
       <section className={`${styles.container} m-0  p-sm-0 ${styles.animated}`}>
-        <h2 className="text-center py-3">大会亮点</h2>
+        <h2 className="text-center py-5">大会亮点</h2>
         <Row
           xs={2}
           sm={5}
