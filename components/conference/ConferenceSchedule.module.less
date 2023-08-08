@@ -1,61 +1,42 @@
 .container {
-  .timeline {
-    margin-top: 0;
-    width: 100%;
-    overflow-x: auto;
-    margin-bottom: 0;
-  }
-  .timeline {
-    height: 3rem;
-    -webkit-overflow-scrolling: touch;
-    color: #565656;
-  }
-  .timeline .active {
-    border-color: #029950;
-  }
-  .timeline .open {
-    color: #333;
-  }
-  .timeline div {
-    min-width: 910px;
-    position: relative;
-  }
-  .timeline > div:after {
-    content: '';
-    width: 100%;
-    display: block;
-    background: #e6e6e6;
-    position: absolute;
-    bottom: -10px;
-    height: 2px;
-  }
-  .timeline span {
-    cursor: pointer;
-    font-size: 15px;
-    padding: 5px 20px 10px;
-    position: relative;
-    z-index: 3;
-    border-bottom: 2px solid transparent;
-  }
-
-  .table_box {
-    display: none;
-  }
   .table_box:first-child {
     display: block;
   }
-  .table_box,
-  .timeline {
+
+  .table_box {
     margin-top: 0;
     width: 100%;
     overflow-x: auto;
     margin-bottom: 0;
+
+    a {
+      color: #1890ff;
+      width: 10rem;
+    }
   }
-  .table_box a {
-    color: #1890ff;
-    font-weight: 400;
-    font-size: 14px;
-    display: block;
-    margin-top: 20px;
+
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 10%;
+    max-width: 200px;
+  }
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 20%;
+    max-width: 400px;
+  }
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 30%;
+  }
+
+  @media screen and (max-width: 620px) {
+    td {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .cityLine {
+      width: 100% !important;
+    }
   }
 }
