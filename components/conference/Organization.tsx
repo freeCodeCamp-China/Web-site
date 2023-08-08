@@ -90,7 +90,7 @@ export const OrganizationInfo: FC = () => {
       >
         <h2 className="fs-4 m-0 py-5">赞助商（持续更新）</h2>
 
-        {Object.values(groupBy(sponsors, 'level')?).map(
+        {Object.values(groupBy(sponsors?, 'level')).map(
           (sponsors: Sponsor[]) => (
             <Row
               as="ul"
