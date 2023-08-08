@@ -1,0 +1,40 @@
+.container {
+  .timeline {
+    margin-top: 0;
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 0;
+  }
+  .timeline {
+    height: 3rem;
+    -webkit-overflow-scrolling: touch;
+    color: #565656;
+  }
+  .timeline .active {
+    border-color: #029950;
+  }
+  .timeline .open {
+    color: #333;
+  }
+  .timeline div {
+    min-width: 910px;
+    position: relative;
+  }
+  .timeline > div:after {
+    content: '';
+    width: 100%;
+    display: block;
+    background: #e6e6e6;
+    position: absolute;
+    bottom: -10px;
+    height: 2px;
+  }
+  .timeline span {
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px 20px 10px;
+    position: relative;
+    z-index: 3;
+    border-bottom: 2px solid transparent;
+  }
+}

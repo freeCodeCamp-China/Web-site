@@ -1,0 +1,142 @@
+{
+  "citySchedulesList": [
+    {
+      "city": "成都",
+      "href": "https://web-conf.tk/2018/",
+      "schedules": [
+        {
+          "time": "09:00 - 09:30",
+          "topic": "签到与逛“市集"
+        },
+        {
+          "time": "09:30 - 10:20",
+          "topic": "《fHow does freeCodeCamp help people learn to code for free and become developers》",
+          "guest": "Quincy Larson，freeCodeCamp 创始人"
+        },
+        {
+          "time": "10:20 - 11:10",
+          "topic": "《给 Node.js 插上 C++ 的翅膀》",
+          "guest": "死月，蚂蚁金服体验技术部研发工程师"
+        },
+        {
+          "time": "11:10 - 12:00",
+          "topic": "《开源项目维护》",
+          "guest": "余澈，京东凹凸实验室前端工程师"
+        },
+        {
+          "time": "12:00 - 13:55",
+          "topic": "园区餐厅午餐与逛“市集”"
+        },
+        {
+          "time": "13:55 - 14:00",
+          "topic": "抽奖环节"
+        },
+        {
+          "time": "14:00 - 14:50",
+          "topic": "《敏捷中国史》",
+          "guest": "熊节，宝尊电商成都研发中心总经理"
+        },
+        {
+          "time": "14:50 - 15:40",
+          "topic": "《高效 H5 动画开发方式》",
+          "guest": "郭林烁，腾讯 AlloyTeam 前端工程师"
+        },
+        {
+          "time": "15:40 - 16:10",
+          "topic": "休息&现场交流&逛“市集”&彩蛋环节"
+        },
+        {
+          "time": "16:10 - 17:00",
+          "topic": "《高可用 React 服务端渲染》",
+          "guest": "郭达峰，Strikingly CTO"
+        },
+        {
+          "time": "17:00 - 17:50",
+          "topic": "《打造 Vue 组件库》",
+          "guest": "黄轶，前滴滴 WebApp 前端架构组负责人"
+        },
+        {
+          "time": "17:50 - 17:55",
+          "topic": "抽奖环节"
+        }
+      ]
+    },
+    {
+      "city": "天津",
+      "href": "http://www.huodongxing.com/event/8456879034700?from=singlemessage&isappinstalled=0",
+      "schedules": [
+        {
+          "time": "string",
+          "topic": "string",
+          "guest": "string"
+        }
+      ]
+    },
+    {
+      "city": "深圳",
+      "href": "http://www.huodongxing.com/event/6462473567300",
+      "schedules": [
+        {
+          "time": "string",
+          "topic": "string",
+          "guest": "string"
+        }
+      ]
+    },
+    {
+      "city": "广州",
+      "href": "http://www.huodongxing.com/event/2463195011800",
+      "schedules": [
+        {
+          "time": "string",
+          "topic": "string",
+          "guest": "string"
+        }
+      ]
+    },
+    {
+      "city": "杭州",
+      "href": "http://www.huodongxing.com/event/4462597580400",
+      "schedules": [
+        {
+          "time": "string",
+          "topic": "string",
+          "guest": "string"
+        }
+      ]
+    },
+    {
+      "city": "上海",
+      "href": "http://www.huodongxing.com/event/5462486665000"
+    },
+    {
+      "city": "郑州",
+      "href": "http://www.huodongxing.com/event/8463765479100"
+    },
+    {
+      "city": "武汉"
+    },
+    {
+      "city": "济南",
+      "href": "http://www.huodongxing.com/event/7463770445900",
+      "schedules": [
+        {
+          "time": "string",
+          "topic": "string",
+          "guest": "string"
+        }
+      ]
+    },
+    {
+      "city": "西安",
+      "href": "http://www.huodongxing.com/event/9462767739200",
+      "schedules": [
+        {
+          "time": "string",
+          "topic": "string",
+          "guest": "string"
+        }
+      ]
+    }
+  ]
+}

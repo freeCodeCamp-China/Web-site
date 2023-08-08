@@ -1,9 +1,7 @@
-import * as fs from 'fs';
-import { type } from 'os';
-import path from 'path';
-import { Col, Row } from 'react-bootstrap';
+import { FC } from 'react';
 
-import styles from './Guest.module.less';
+import citySchedulesData from './../data/CitySchedulesData.json';
+import styles from './ConferenceSchedule.module.less';
 
 type Schedule = {
   time: string;
@@ -13,84 +11,65 @@ type Schedule = {
 
 type CitySchedules = {
   city: string;
-  href: string;
-  schedules: Schedule[];
+  href?: string;
+  schedules?: Schedule[];
 };
 
 export interface CityScheduleProps {
-  citySchedules: CitySchedules[];
+  citySchedulesList: CitySchedules[];
 }
 
-export async function getScheduleInfoData(): Promise<CityScheduleProps> {
-  const filePath = path.join(
-    process.cwd(),
-    './components/data/CityScheduleData.json',
-  );
-  const text = fs.readFileSync(filePath, 'utf8');
-  let guestJSON = JSON.parse(text) as CityScheduleProps;
-  return guestJSON;
-}
+const { citySchedulesList } = citySchedulesData as CityScheduleProps;
 
-function CityScheduleInfo({ citySchedules }: CityScheduleProps) {
-  const cityList = citySchedules?.map((citySchedule, index) => {
-    return (
-      <span className="open" key={index}>
-        {citySchedule.city}
-      </span>
-    );
-  });
-
-  const citySchedulesInfo = citySchedules?.map((citySchedule, index) => {
-    return (
-      <div
-        className="table_box"
-        data-city={citySchedule.city}
-        style={{ display: 'block' }}
-        key={index}
-      >
-        <a target="_blank" href={citySchedule.href} rel="noreferrer">
-          点此报名
-        </a>
-        if ({citySchedule.schedules} !== undefined)
-        {
-          <table>
-            <thead>
-              <tr>
-                <th>时间</th>
-                <th>主题</th>
-                <th>演讲嘉宾</th>
-              </tr>
-            </thead>
-            <tbody>
-              {citySchedule.schedules?.map((schedule, sub) => {
-                return (
-                  <tr key={sub}>
-                    <td>{schedule.time}</td>
-                    <td>{schedule.topic}</td>
-                    <td>{schedule.guest}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        }
+export const CityScheduleInfo: FC = () => (
+  <div className="text-center" id="schedule">
+    <section
+      className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
+    >
+      <h2>大会日程与报名通道</h2>
+      <div className={styles.timeline}>
+        {citySchedulesList?.map(({ city }) => (
+          <span className="open p-3" key={city}>
+            {city}
+          </span>
+        ))}
       </div>
-    );
-  });
-
-  return (
-    <div className="d-block text-center" id="schedule">
-      <section
-        className={`${styles.container} mx-auto my-0 position-relative ${styles.animated}`}
-      >
-        <h2>大会日程与报名通道</h2>
-        <h4 className="timeline">
-          <div>{cityList}</div>
-        </h4>
-        {citySchedulesInfo}
-      </section>
-    </div>
-  );
-}
-
-export default CityScheduleInfo;
+      <div>
+        {citySchedulesList?.map(({ city, href, schedules }) => (
+          <div
+            className="table_box"
+            data-city={city}
+            style={{ display: 'block' }}
+            key={city}
+          >
+            <a target="_blank" href={href} rel="noreferrer">
+              {href ? '点此报名' : '报名通道即将开启'}
+            </a>
+            {schedules === undefined || schedules?.length === 0 ? (
+              <></>
+            ) : (
+              <table>
+                <thead>
+                  <tr>
+                    <th>时间</th>
+                    <th>主题</th>
+                    <th>演讲嘉宾</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {schedules.map(({ time, topic, guest }) => (
+                    <tr key={topic}>
+                      <td>{time}</td>
+                      <td>{topic}</td>
+                      {guest !== undefined ? <td>{guest}</td> : <></>}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+);
