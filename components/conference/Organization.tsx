@@ -16,19 +16,8 @@ export interface OrganizationInfoProps {
 
 const { sponsors, partners } = sponsorData as OrganizationInfoProps;
 
-interface numberKeyObj {
-  [key: number]: string;
-}
-
-const sponsorshipLevels: numberKeyObj = {
-  [0]: '铂金赞助商',
-  [1]: '金牌赞助商',
-  [2]: '银牌赞助商',
-  [3]: '铜牌赞助商',
-  [99]: '礼品赞助',
-};
-
-const renderLevel = (level: number) => sponsorshipLevels[level];
+const renderLevel = (level: number) =>
+  ['铂金赞助商', '金牌赞助商', '银牌赞助商', '铜牌赞助商'][level] || '礼品赞助';
 
 export const OrganizationInfo: FC = () => {
   return (
