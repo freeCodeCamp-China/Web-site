@@ -2,7 +2,9 @@ import { observer } from 'mobx-react';
 import { Container } from 'react-bootstrap';
 
 import { ConferenceBase } from '../components/conference/ConferenceBase';
-import { CityScheduleInfo } from '../components/conference/ConferenceSchedule';
+import { CityScheduleInfo } from '../components/conference/conferenceSchedule';
+import { GuestInfo } from '../components/conference/Guest';
+import { OrganizationInfo } from '../components/conference/Organization';
 import { DrawerNav } from '../components/DrawerNav';
 import { PageHead } from '../components/PageHead';
 import { i18n } from '../models/Translation';
@@ -18,7 +20,9 @@ const ConferencePage = observer(() => (
     <PageHead title="Hello Conference Page!" />
     <DrawerNav />
     <ConferenceBase />
+    <GuestInfo />
     <CityScheduleInfo />
+    <OrganizationInfo />
   </Container>
 ));
 

@@ -1,0 +1,134 @@
+{
+  "guests": [
+    {
+      "name": "郭达峰",
+      "pic": "guo_dafeng.jpeg",
+      "position": "Strikingly CTO"
+    },
+    {
+      "name": "Quincy Larson",
+      "pic": "quincy.jpeg",
+      "position": "freeCodeCamp 创始人"
+    },
+    {
+      "name": "郭林烁",
+      "pic": "guo_linshuo.jpeg",
+      "position": "腾讯 AlloyTeam 前端工程师"
+    },
+    {
+      "name": "黄轶",
+      "pic": "huang_yi.jpeg",
+      "position": "前滴滴 WebApp 前端架构组负责人"
+    },
+    {
+      "name": "余澈",
+      "pic": "yu_che.jpeg",
+      "position": "京东凹凸实验室前端工程师"
+    },
+    {
+      "name": "熊节",
+      "pic": "xiong_jie.jpeg",
+      "position": "宝尊电商成都研发中心总经理"
+    },
+    {
+      "name": "死月",
+      "pic": "si_yue.png",
+      "position": "蚂蚁金服体验技术部研发工程师"
+    },
+    {
+      "name": "朱东宇",
+      "pic": "zhudongyu.jpeg",
+      "position": "信天鸿科技高级研发"
+    },
+    {
+      "name": "李志刚",
+      "pic": "lizhigang.png",
+      "position": "TalkingData人口大数据计算实验室前端研发工程师"
+    },
+    {
+      "name": "张付新",
+      "pic": "zhangfuxin.png",
+      "position": "泰凡科技高级研发"
+    },
+    {
+      "name": "黄治豪",
+      "pic": "huangzhihao.jpeg",
+      "position": "网易游戏前端工程师"
+    },
+    {
+      "name": "徐远朝",
+      "pic": "xuyuanchao.png",
+      "position": "腾讯高级 UI 工程师"
+    },
+    {
+      "name": "谢梓洪",
+      "pic": "xiezhihong.png",
+      "position": "腾讯空间 H5 游戏前端工程师"
+    },
+    {
+      "name": "彭瑞",
+      "pic": "pengrui.png",
+      "position": "美团高级前端工程师"
+    },
+    {
+      "name": "徐健",
+      "pic": "xujian.png",
+      "position": "瓜子二手车前端工程师"
+    },
+    {
+      "name": "尚春",
+      "pic": "shangchun.png",
+      "position": "TubiTV 技术总监"
+    },
+    {
+      "name": "谢宏中",
+      "pic": "xiehonzhong.png",
+      "position": "脑海链 CEO"
+    },
+    {
+      "name": "土星",
+      "pic": "hpb.png",
+      "position": "HPB 芯链 技术社区负责人,Blockgeek.org 技术论坛首席跑腿"
+    },
+    {
+      "name": "王圣松",
+      "pic": "wangshensong.jpg",
+      "position": "开源众包"
+    },
+    {
+      "name": "毛宾奇",
+      "pic": "maobingq.jpg",
+      "position": "点融借款端 后端开发Leader"
+    },
+    {
+      "name": "王昊",
+      "pic": "wanghao.jpg",
+      "position": "everiToken 公有链 CTO"
+    },
+    {
+      "name": "徐晓孟",
+      "pic": "xumeng.jpg",
+      "position": "比特兔交易所兔基社区前端总监"
+    },
+    {
+      "name": "崔毅然",
+      "pic": "cuiyiran.jpg",
+      "position": "LeanCloud Play 产品负责人"
+    },
+    {
+      "name": "冯超能",
+      "pic": "fengchaoneng.jpg",
+      "position": "齿轮易创 技术负责人"
+    },
+    {
+      "name": "朱礼廷",
+      "pic": "zhulitiing.jpg",
+      "position": "公信宝 区块链架构师"
+    },
+    {
+      "name": "楼云龙",
+      "pic": "louyunlong.jpg",
+      "position": "微医前端运营支撑 团队负责人"
+    }
+  ]
+}
