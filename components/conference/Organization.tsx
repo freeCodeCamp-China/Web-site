@@ -5,13 +5,9 @@ import { groupBy } from 'web-utility';
 import sponsorData from './../data/SponsorData.json';
 import styles from './Organization.module.less';
 
-type Sponsor = {
-  level: number;
-  href: string;
-  imgSrc: string;
-};
-
 type Partner = Record<'href' | 'imgSrc', string>;
+
+type Sponsor = Partner & { level: number };
 
 export interface OrganizationInfoProps {
   sponsors: Sponsor[];
@@ -20,19 +16,21 @@ export interface OrganizationInfoProps {
 
 const { sponsors, partners } = sponsorData as OrganizationInfoProps;
 
-export const OrganizationInfo: FC = () => {
-  function renderLevel(level: number) {
-    return level === 0
-      ? '铂金赞助商'
-      : level === 1
-      ? '金牌赞助商'
-      : level === 2
-      ? '银牌赞助商'
-      : level === 3
-      ? '铜牌赞助商'
-      : '礼品赞助';
-  }
+interface numberKeyObj {
+  [key: number]: string;
+}
 
+const sponsorshipLevels: numberKeyObj = {
+  [0]: '铂金赞助商',
+  [1]: '金牌赞助商',
+  [2]: '银牌赞助商',
+  [3]: '铜牌赞助商',
+  [99]: '礼品赞助',
+};
+
+const renderLevel = (level: number) => sponsorshipLevels[level];
+
+export const OrganizationInfo: FC = () => {
   return (
     <div className={styles.organizationInfo}>
       <section
@@ -42,14 +40,10 @@ export const OrganizationInfo: FC = () => {
         <h2 className="fs-4 pt-5 px-0 pb-3">主办方</h2>
         <div className="d-flex justify-content-between">
           <div className="mx-auto my-0">
-            <a
-              target="_blank"
-              href="https://www.freecodecamp.one"
-              rel="noreferrer"
-            >
+            <a target="_blank" href="/" rel="noreferrer">
               <img
-                src="./freecodecamp-logo.png"
                 className={`${styles.logo} w-25`}
+                src="./freecodecamp-logo.png"
               />
             </a>
             <p className="text-start mt-4">
@@ -71,8 +65,8 @@ export const OrganizationInfo: FC = () => {
         className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
       >
         <h2 className="fs-4 pt-5 px-0 pb-3">协办方（持续更新）</h2>
-        <div className="flex_box ">
-          <div className={styles.partner_item}>
+        <ul className="list-unstyled ">
+          <li className={styles.partner_item}>
             <a
               target="_blank"
               href="https://juejin.im/timeline"
@@ -80,8 +74,8 @@ export const OrganizationInfo: FC = () => {
             >
               <img src="/image/logo/juejin.png" />
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
       </section>
 
       <section
@@ -90,26 +84,24 @@ export const OrganizationInfo: FC = () => {
       >
         <h2 className="fs-4 m-0 py-5">赞助商（持续更新）</h2>
 
-        {Object.values(groupBy(sponsors, 'level')!).map(
-          (sponsors: Sponsor[]) => (
-            <Row
-              as="ul"
-              xs={2}
-              sm={5}
-              className="list-unstyled justify-content-around p-1"
-              key={sponsors[0].level}
-            >
-              {sponsors.map(({ level, href, imgSrc }: Sponsor) => (
-                <Col as="li" className={styles.sponsor_item} key={imgSrc}>
-                  <p className="m-0">{renderLevel(level)}</p>
-                  <a target="_blank" href={href} rel="noreferrer">
-                    <img className="my-3 p-2" src={imgSrc} />
-                  </a>
-                </Col>
-              ))}
-            </Row>
-          ),
-        )}
+        {Object.values(groupBy(sponsors, 'level')).map(sponsors => (
+          <Row
+            as="ul"
+            xs={2}
+            sm={5}
+            className="list-unstyled justify-content-around p-1"
+            key={sponsors[0].level}
+          >
+            {sponsors.map(({ level, href, imgSrc }) => (
+              <Col as="li" className={styles.sponsor_item} key={imgSrc}>
+                <p className="m-0">{renderLevel(level)}</p>
+                <a target="_blank" href={href} rel="noreferrer">
+                  <img className="my-3 p-2" src={imgSrc} />
+                </a>
+              </Col>
+            ))}
+          </Row>
+        ))}
       </section>
 
       <section
@@ -123,7 +115,7 @@ export const OrganizationInfo: FC = () => {
           sm={5}
           className="list-unstyled justify-content-around"
         >
-          {partners?.map(({ href, imgSrc }) => (
+          {partners.map(({ href, imgSrc }) => (
             <Col as="li" className={styles.partner} key={href}>
               <a className="mx-3" href={href} target="_blank" rel="noreferrer">
                 <img className="pb-5" src={imgSrc} />
