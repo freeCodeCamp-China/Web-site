@@ -28,7 +28,7 @@ const OrganiserPeople: FC<Volunteer> = ({
         <Image rounded fluid src={img} />
       </Col>
       <Col md={9}>
-        <h2>{name}</h2>
+        <h1>{name}</h1>
         <div className="d-flex justify-content-center align-items-center">
           <span>{zhFrom}</span>
           <i className="d-inline-block bg-dark rounded-circle mx-2 w-5 h-5"></i>
@@ -44,28 +44,26 @@ const OrganiserPeople: FC<Volunteer> = ({
     </Row>
     <h2>我与FCC的故事</h2>
     <Row className="mt-4 fs-5 lh-base">
-      {storyWithFCC.map((item, index) => (
-        <Col className="mt-4" key={index}>
+      {storyWithFCC.map(item => (
+        <Col className="mt-4" key={item}>
           {item}
         </Col>
       ))}
     </Row>
     {profile[0] && (
       <>
-        <h3>项目经历</h3>
+        <h2>项目经历</h2>
         <Row className="mt-4 fs-5 lh-base">
-          <Col>
-            {profile.map(({ title, content }) => (
-              <Col as="section" key={title}>
-                {title && (
-                  <h4 className="d-inline-block bg-success text-white text-center rounded-pill h-100 fs-5 px-4">
-                    {title}
-                  </h4>
-                )}
-                <p className="mt-4">{content}</p>
-              </Col>
-            ))}
-          </Col>
+          {profile.map(({ title, content }) => (
+            <Col as="section" key={title}>
+              {title && (
+                <h3 className="d-inline-block bg-success text-white text-center rounded-pill h-100 fs-5 px-4">
+                  {title}
+                </h3>
+              )}
+              <p className="mt-4">{content}</p>
+            </Col>
+          ))}
         </Row>
       </>
     )}
