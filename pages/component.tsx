@@ -1,20 +1,19 @@
-// eslint-disable-next-line simple-import-sort/imports
-import dynamic from 'next/dynamic';
-import { textJoin } from 'mobx-i18n';
-import { observer } from 'mobx-react';
-import Head from 'next/head';
-import { FC } from 'react';
-import { Container } from 'react-bootstrap';
-import { CodeBlock, EditorHTML } from 'idea-react';
-
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-tsx';
 
+import { CodeBlock, EditorHTML } from 'idea-react';
+import { textJoin } from 'mobx-i18n';
+import { observer } from 'mobx-react';
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
+import { cache, compose, translator } from 'next-ssr-middleware';
+import { FC } from 'react';
+import { Container } from 'react-bootstrap';
+
 import { PageHead } from '../components/PageHead';
 import { i18n } from '../models/Translation';
-import { withTranslation } from './api/core';
 import RichEditData from './api/rich-edit.json';
 
 const HTMLEditor = dynamic(() => import('../components/HTMLEditor'), {
@@ -35,7 +34,7 @@ const Example: FC<{ title: string }> = ({ title, children }) => (
   </>
 );
 
-export const getServerSideProps = withTranslation();
+export const getServerSideProps = compose(cache(), translator(i18n));
 
 const ComponentPage = observer(() => {
   const { t } = i18n;
@@ -72,4 +71,5 @@ const ComponentPage = observer(() => {
     </>
   );
 });
+
 export default ComponentPage;
