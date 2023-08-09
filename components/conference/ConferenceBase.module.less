@@ -1,13 +1,13 @@
 .base {
-  h2 {
-    font-size: 24px;
-  }
   .container {
     max-width: 75rem;
   }
 
-  .abstract p {
-    line-height: 1.6rem;
+  .abstract {
+    max-width: 75rem;
+    p {
+      line-height: 1.6rem;
+    }
   }
 
   .review_item + .review_item {
@@ -21,10 +21,6 @@
     @media screen and (max-width: 620px) {
       padding: 0 5px;
       margin-top: 1.25rem;
-
-      .revImg {
-        width: 100%;
-      }
     }
   }
 }
