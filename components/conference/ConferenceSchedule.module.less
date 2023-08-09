@@ -1,42 +1,28 @@
-.container {
-  .table_box:first-child {
-    display: block;
+@media screen and (max-width: 620px) {
+  .sm_max_width {
+    width: 100% !important;
+  }
+}
+
+.table_box {
+  a {
+    width: 10rem;
   }
 
-  .table_box {
-    margin-top: 0;
-    width: 100%;
-    overflow-x: auto;
-    margin-bottom: 0;
-
-    a {
-      color: #1890ff;
-      width: 10rem;
-    }
+  &:first-child {
+    display: block;
   }
 
   th:nth-child(1),
   td:nth-child(1) {
-    width: 10%;
-    max-width: 200px;
+    width: 15%;
   }
   th:nth-child(2),
   td:nth-child(2) {
     width: 20%;
-    max-width: 400px;
   }
   th:nth-child(3),
   td:nth-child(3) {
     width: 30%;
-  }
-
-  @media screen and (max-width: 620px) {
-    td {
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-    .cityLine {
-      width: 100% !important;
-    }
   }
 }
