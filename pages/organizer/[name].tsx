@@ -1,19 +1,20 @@
 import { GetServerSidePropsContext } from 'next';
 import { FC } from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 
-import * as volunteerData from '../api/organiser';
+import * as volunteerData from '../api/organizer';
 
 type Volunteer = (typeof volunteerData)[keyof typeof volunteerData];
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const { name } = context.query;
-  const volunteer = volunteerData[name as keyof typeof volunteerData];
+export async function getServerSideProps({
+  params,
+}: GetServerSidePropsContext) {
+  const volunteer = volunteerData[params!.name as keyof typeof volunteerData];
 
   return !volunteer ? { notFound: true } : { props: volunteer };
 }
 
-const OrganiserPeople: FC<Volunteer> = ({
+const OrganizerPeople: FC<Volunteer> = ({
   name,
   img,
   zhFrom,
@@ -57,9 +58,9 @@ const OrganiserPeople: FC<Volunteer> = ({
           {profile.map(({ title, content }) => (
             <Col as="section" key={title}>
               {title && (
-                <h3 className="d-inline-block bg-success text-white text-center rounded-pill h-100 fs-5 px-4">
+                <Badge as="h3" className="fs-5" bg="success" pill>
                   {title}
-                </h3>
+                </Badge>
               )}
               <p className="mt-4">{content}</p>
             </Col>
@@ -70,4 +71,4 @@ const OrganiserPeople: FC<Volunteer> = ({
   </Container>
 );
 
-export default OrganiserPeople;
+export default OrganizerPeople;
