@@ -31,7 +31,7 @@ const OrganiserPeople: FC<Volunteer> = ({
         <h1>{name}</h1>
         <div className="d-flex justify-content-center align-items-center">
           <span>{zhFrom}</span>
-          <i className="d-inline-block bg-dark rounded-circle mx-2 w-5 h-5"></i>
+          <i className="d-inline-block bg-dark rounded-circle mx-2 w-5 h-5" />
           <span>城市志愿者</span>
         </div>
         {github && (
