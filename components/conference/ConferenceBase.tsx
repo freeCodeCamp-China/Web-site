@@ -78,7 +78,7 @@ export const ConferenceBase: FC = () => (
 
     <section
       id="snap"
-      className={`${styles.snap} ${styles.container} m-0  p-sm-0 ${styles.animated}`}
+      className={`${styles.snap} ${styles.container} m-0 p-sm-0 ${styles.animated}`}
     >
       <h2 className="text-center pt-5 pb-3 fs-4">大会亮点</h2>
       <Row
