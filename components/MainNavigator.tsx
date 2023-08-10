@@ -13,7 +13,7 @@ export const MainNavigator: FC = () => (
     collapseOnSelect
   >
     <Navbar.Brand href="/" className="ps-2">
-      <img alt="logo" src="./freecodecamp_logo.svg" className={styles.logo} />
+      <img alt="logo" src="/freecodecamp_logo.svg" className={styles.logo} />
     </Navbar.Brand>
     <Navbar.Toggle className="border-0 shadow-none" />
     <Navbar.Collapse id="basic-navbar-nav">
@@ -25,7 +25,7 @@ export const MainNavigator: FC = () => (
           论坛
         </Nav.Link>
         <Nav.Link href="#">社区</Nav.Link>
-        <Nav.Link href="#">志愿者</Nav.Link>
+        <Nav.Link href="/organizer">志愿者</Nav.Link>
         <Nav.Link href="/conference">会议</Nav.Link>
       </Nav>
     </Navbar.Collapse>
