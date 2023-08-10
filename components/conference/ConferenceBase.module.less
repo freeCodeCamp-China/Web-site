@@ -1,26 +1,20 @@
-.base {
-  .container {
-    max-width: 75rem;
+.abstract {
+  max-width: 75rem;
+  p {
+    line-height: 1.6rem;
   }
+}
 
-  .abstract {
-    max-width: 75rem;
-    p {
-      line-height: 1.6rem;
-    }
+.review_item + .review_item {
+  margin-top: 40px;
+}
+
+.snap .media {
+  img {
+    width: 6.25rem;
   }
-
-  .review_item + .review_item {
-    margin-top: 40px;
-  }
-
-  .snap .media {
-    img {
-      width: 6.25rem;
-    }
-    @media screen and (max-width: 620px) {
-      padding: 0 5px;
-      margin-top: 1.25rem;
-    }
+  @media screen and (max-width: 620px) {
+    padding: 0 5px;
+    margin-top: 1.25rem;
   }
 }

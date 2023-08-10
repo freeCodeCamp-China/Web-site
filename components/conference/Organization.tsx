@@ -5,22 +5,13 @@ import { groupBy } from 'web-utility';
 import sponsorData from './../data/SponsorData.json';
 import styles from './Organization.module.less';
 
-type Partner = Record<'href' | 'imgSrc', string>;
-
-type Sponsor = Partner & { level: number };
-
-export interface OrganizationInfoProps {
-  sponsors: Sponsor[];
-  partners: Partner[];
-}
-
-const { sponsors, partners } = sponsorData as OrganizationInfoProps;
+const { sponsors, partners } = sponsorData;
 
 const renderLevel = (level: number) =>
   ['铂金赞助商', '金牌赞助商', '银牌赞助商', '铜牌赞助商'][level] || '礼品赞助';
 
 export const OrganizationInfo: FC = () => (
-  <div className={styles.organizationInfo}>
+  <>
     <section
       id="host"
       className={`${styles.container} text-center px-3 mx-auto my-0 position-relative ${styles.animated}`}
@@ -77,7 +68,9 @@ export const OrganizationInfo: FC = () => (
         >
           {sponsors.map(({ level, href, imgSrc }) => (
             <Col as="li" className={styles.sponsor_item} key={imgSrc}>
-              <Badge className="m-0 bg-info">{renderLevel(level)}</Badge>
+              <Badge className="m-0" bg="info">
+                {renderLevel(level)}
+              </Badge>
               <a target="_blank" href={href} rel="noreferrer">
                 <img className="my-3 p-2" src={imgSrc} />
               </a>
@@ -91,7 +84,7 @@ export const OrganizationInfo: FC = () => (
       className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
       id="partners"
     >
-      <h2 className="fs-4 m-0 py-5 px-0 ">合作伙伴 (持续更新)</h2>
+      <h2 className="fs-4 m-0 py-5 px-0">合作伙伴 (持续更新)</h2>
       <Row
         as="ul"
         xs={2}
@@ -107,5 +100,5 @@ export const OrganizationInfo: FC = () => (
         ))}
       </Row>
     </section>
-  </div>
+  </>
 );
