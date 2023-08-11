@@ -13,11 +13,7 @@ export const CityScheduleInfo: FC = () => (
         大会日程与报名通道
       </h2>
 
-      <Tabs
-        variant="pills"
-        className={`${styles.sm_max_width} w-75 mb-2`}
-        justify
-      >
+      <Tabs className="w-100 mb-2" variant="pills" justify>
         {citySchedulesData.map(({ city, href, schedules }) => (
           <Tab className="p-3" key={city} eventKey={city} title={city}>
             <div
@@ -29,12 +25,12 @@ export const CityScheduleInfo: FC = () => (
                 target="_blank"
                 href={href}
                 rel="noreferrer"
-                className="px-3 pb-3 text-start d-block"
+                className="px-3 pb-3 text-start d-inline-block"
               >
                 {href ? '点此报名' : '报名通道即将开启'}
               </a>
-              {schedules !== undefined && schedules.length !== 0 ? (
-                <table className={`${styles.sm_max_width} text-start w-75`}>
+              {schedules?.[0] && (
+                <table className={`${styles.sm_max_width} text-start w-100`}>
                   <thead>
                     <tr>
                       <th className="px-3 py-3 ">时间</th>
@@ -47,13 +43,11 @@ export const CityScheduleInfo: FC = () => (
                       <tr key={topic}>
                         <td className="px-3 py-2">{time}</td>
                         <td className="py-2">{topic}</td>
-                        {guest ? <td className="py-2">{guest}</td> : <></>}
+                        <td className="py-2">{guest}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
-              ) : (
-                <></>
               )}
             </div>
           </Tab>
