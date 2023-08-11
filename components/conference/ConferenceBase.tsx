@@ -1,15 +1,16 @@
 import { FC } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Carousel, Col, Container, Image, Row } from 'react-bootstrap';
 
 import styles from './ConferenceBase.module.less';
 
 export const ConferenceBase: FC = () => (
-  <>
+  <Container>
     <section
-      id="abstract"
       className={`${styles.abstract} ${styles.container} m-0 position-relative p-sm-0 pb-5 text-center bg-light ${styles.animated}`}
     >
-      <h2 className="m-0 py-4 fs-4">大会宗旨</h2>
+      <h2 id="abstract" className="m-0 py-4 fs-4">
+        大会宗旨
+      </h2>
       <p className="text-start w-auto m-auto p-3 ">
         freeCodeConf 是 freeCodeCamp
         中国举办的每年一度大型联动技术大会，旨在联合 freeCodeCamp
@@ -19,35 +20,47 @@ export const ConferenceBase: FC = () => (
       </p>
     </section>
     <section
-      id="review"
       className={`${styles.container} text-center m-0 position-relative p-sm-0 ${styles.animated}`}
     >
-      <h2 className="m-0 py-4 fs-4">往届活动回顾</h2>
-      <ol className="list-unstyled">
-        <li className={styles.review_item}>
-          <img className="w-100 mb-2" src="/image/review1.png" />
-          <p className="px-1">
-            2017 年 11 月，freeCodeCamp 成都社区举办 Web
-            前端交流大会，八百余人报名，四百余人参会，获得本地政府及全国各企业、媒体、社区的广泛关注与大力支持。
-          </p>
-        </li>
-        <li className={styles.review_item}>
-          <img className="w-100 mb-2" src="/image/review2.png" />
-          <p className="px-1">
-            2018 年 5 月，freeCodeCamp
-            中国参与主办首届全球石墨烯开发者大会，与会一千余名开发者。目前
-            freeCodeCamp
-            正在开发区块链基础技术课程，并将持续致力于区块链开发者社群服务。
-          </p>
-        </li>
-      </ol>
+      <h2 id="review" className="m-0 py-4 fs-4">
+        往届活动回顾
+      </h2>
+      <Carousel data-bs-theme="dark">
+        <Carousel.Item>
+          <Image
+            className="d-block w-100 mb-2"
+            src="/image/review1.png"
+            alt="review1"
+          />
+          <Carousel.Caption>
+            <p className="text-light">
+              2017 年 11 月，freeCodeCamp
+              成都社区举办Web前端交流大会，八百余人报名，四百余人参会，获得本地政府及全国各企业、媒体、社区的广泛关注与大力支持。
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Image
+            className="d-block w-100 mb-2"
+            src="/image/review2.png"
+            alt="review2"
+          />
+          <Carousel.Caption>
+            <p className="text-light">
+              2018 年 5
+              月，freeCodeCamp中国参与主办首届全球石墨烯开发者大会，与会一千余名开发者。目前freeCodeCamp正在开发区块链基础技术课程，并将持续致力于区块链开发者社群服务。
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
     </section>
 
     <section
-      id="situation"
       className={`${styles.container} text-start m-0 position-relative p-sm-0 ${styles.animated}`}
     >
-      <h2 className="m-0 py-5 text-center fs-4">2018 freeCodeConf 概况</h2>
+      <h2 id="situation" className="m-0 py-5 text-center fs-4">
+        2018 freeCodeConf 概况
+      </h2>
       <ul className="list-unstyled">
         <li className="m-sm-3 d-flex my-3 mx-0">
           <strong className="w-25 ms-3">时间：</strong>
@@ -77,10 +90,11 @@ export const ConferenceBase: FC = () => (
     </section>
 
     <section
-      id="snap"
       className={`${styles.snap} ${styles.container} m-0 p-sm-0 ${styles.animated}`}
     >
-      <h2 className="text-center pt-5 pb-3 fs-4">大会亮点</h2>
+      <h2 id="snap" className="text-center pt-5 pb-3 fs-4">
+        大会亮点
+      </h2>
       <Row
         xs={2}
         sm={5}
@@ -107,5 +121,5 @@ export const ConferenceBase: FC = () => (
         </Col>
       </Row>
     </section>
-  </>
+  </Container>
 );
