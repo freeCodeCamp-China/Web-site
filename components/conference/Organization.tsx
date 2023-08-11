@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Badge, Col, Row } from 'react-bootstrap';
+import { Badge, Col, Image, Row } from 'react-bootstrap';
 import { groupBy } from 'web-utility';
 
 import sponsorData from './../data/SponsorData.json';
@@ -43,13 +43,13 @@ export const OrganizationInfo: FC = () => (
       className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
     >
       <h2 className="fs-4 pt-5 px-0 pb-3">协办方（持续更新）</h2>
-      <ul className="list-unstyled">
-        <li className={styles.partner_item}>
+      <Row as="ul" className="list-unstyled">
+        <Col as="li" className={styles.partner_item}>
           <a target="_blank" href="https://juejin.im/timeline" rel="noreferrer">
-            <img src="/image/logo/juejin.png" />
+            <Image src="/image/logo/juejin.png" />
           </a>
-        </li>
-      </ul>
+        </Col>
+      </Row>
     </section>
 
     <section
@@ -72,7 +72,7 @@ export const OrganizationInfo: FC = () => (
                 {renderLevel(level)}
               </Badge>
               <a target="_blank" href={href} rel="noreferrer">
-                <img className="my-3 p-2" src={imgSrc} />
+                <Image className="my-3 p-2" src={imgSrc} />
               </a>
             </Col>
           ))}
@@ -94,7 +94,7 @@ export const OrganizationInfo: FC = () => (
         {partners.map(({ href, imgSrc }) => (
           <Col as="li" className={styles.partner} key={href}>
             <a className="mx-3" href={href} target="_blank" rel="noreferrer">
-              <img className="pb-5" src={imgSrc} />
+              <Image className="pb-5" src={imgSrc} />
             </a>
           </Col>
         ))}
