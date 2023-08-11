@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react';
 import { Container } from 'react-bootstrap';
 
+import { CityScheduleInfo } from '../components/conference/CityScheduleInfo';
 import { ConferenceBase } from '../components/conference/ConferenceBase';
-import { CityScheduleInfo } from '../components/conference/conferenceSchedule';
 import { GuestInfo } from '../components/conference/Guest';
 import { OrganizationInfo } from '../components/conference/Organization';
 import { DrawerNav } from '../components/DrawerNav';

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Container, Tab, Tabs } from 'react-bootstrap';
 
-import citySchedulesData from './../data/CitySchedulesData.json';
+import citySchedulesData from '../data/CitySchedulesData.json';
 import styles from './ConferenceSchedule.module.less';
 
 export const CityScheduleInfo: FC = () => (
@@ -25,7 +25,7 @@ export const CityScheduleInfo: FC = () => (
                 target="_blank"
                 href={href}
                 rel="noreferrer"
-                className="px-3 pb-3 text-start d-inline-block"
+                className="px-3 pb-3 text-start"
               >
                 {href ? '点此报名' : '报名通道即将开启'}
               </a>
