@@ -21,8 +21,8 @@ const ConferencePage = observer(() => (
     <DrawerNav />
     <ConferenceBase />
     <GuestInfo />
-    <OrganizationInfo />
     <CityScheduleInfo />
+    <OrganizationInfo />
   </Container>
 ));
 
