@@ -1,30 +1,24 @@
 import { FC } from 'react';
-import { Tab, Tabs } from 'react-bootstrap';
+import { Container, Tab, Tabs } from 'react-bootstrap';
 
 import citySchedulesData from './../data/CitySchedulesData.json';
 import styles from './ConferenceSchedule.module.less';
 
-type Schedule = Record<'time' | 'topic', string> & { guest?: string };
-
-type CitySchedules = Record<'city', string> & {
-  href?: string;
-  schedules?: Schedule[];
-};
-
 export const CityScheduleInfo: FC = () => (
-  <section
-    className={`${styles.container} mx-auto my-0 position-relative ${styles.animated} text-center`}
-    id="schedule"
-  >
-    <h2 className="fs-4 py-5">大会日程与报名通道</h2>
-
-    <Tabs
-      variant="pills"
-      className={`${styles.sm_max_width} w-75 mb-2`}
-      justify
+  <Container>
+    <section
+      className={`${styles.container} mx-auto my-0 position-relative ${styles.animated} text-center`}
     >
-      {(citySchedulesData as CitySchedules[]).map(
-        ({ city, href, schedules }) => (
+      <h2 id="schedule" className="fs-4 py-5">
+        大会日程与报名通道
+      </h2>
+
+      <Tabs
+        variant="pills"
+        className={`${styles.sm_max_width} w-75 mb-2`}
+        justify
+      >
+        {citySchedulesData.map(({ city, href, schedules }) => (
           <Tab className="p-3" key={city} eventKey={city} title={city}>
             <div
               className={`${styles.table_box} w-100 overflow-x-auto`}
@@ -63,8 +57,8 @@ export const CityScheduleInfo: FC = () => (
               )}
             </div>
           </Tab>
-        ),
-      )}
-    </Tabs>
-  </section>
+        ))}
+      </Tabs>
+    </section>
+  </Container>
 );
