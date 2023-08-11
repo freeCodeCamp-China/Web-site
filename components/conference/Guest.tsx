@@ -7,10 +7,11 @@ import styles from './Guest.module.less';
 export const GuestInfo: FC = () => (
   <Container>
     <section
-      id="guests"
       className={`${styles.container} text-center mx-auto my-0 position-relative ${styles.animated}`}
     >
-      <h2 className="fs-4 m-0 py-5">演讲嘉宾（持续更新）</h2>
+      <h2 id="guests" className="fs-4 m-0 py-5">
+        演讲嘉宾（持续更新）
+      </h2>
       <Row
         as="ul"
         xs={2}

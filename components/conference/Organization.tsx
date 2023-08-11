@@ -57,9 +57,10 @@ export const OrganizationInfo: FC = () => (
 
     <section
       className={`${styles.container} mx-auto position-relative text-center ${styles.animated}`}
-      id="sponsor"
     >
-      <h2 className="fs-4 m-0 py-5">赞助商（持续更新）</h2>
+      <h2 id="sponsor" className="fs-4 m-0 py-5">
+        赞助商（持续更新）
+      </h2>
 
       {Object.values(groupBy(sponsors, 'level')).map(sponsors => (
         <Row
@@ -85,9 +86,10 @@ export const OrganizationInfo: FC = () => (
 
     <section
       className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
-      id="partners"
     >
-      <h2 className="fs-4 m-0 py-5 px-0">合作伙伴 (持续更新)</h2>
+      <h2 id="partners" className="fs-4 m-0 py-5 px-0">
+        合作伙伴 (持续更新)
+      </h2>
       <Row
         as="ul"
         xs={2}
