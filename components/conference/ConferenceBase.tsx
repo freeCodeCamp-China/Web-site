@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Carousel, Col, Container, Image, Row } from 'react-bootstrap';
+import { Carousel, Col, Container, Row } from 'react-bootstrap';
 
 import styles from './ConferenceBase.module.less';
 
@@ -25,28 +25,21 @@ export const ConferenceBase: FC = () => (
       <h2 id="review" className="m-0 py-4 fs-4">
         往届活动回顾
       </h2>
-      <Carousel data-bs-theme="dark">
+
+      <Carousel data-bs-theme="dark" className="h-25">
         <Carousel.Item>
-          <Image
-            className="d-block w-100 mb-2"
-            src="/image/review1.png"
-            alt="review1"
-          />
+          <img className="w-100 mb-2" src="/image/review1.png" alt="review1" />
           <Carousel.Caption>
-            <p className="text-light">
-              2017 年 11 月，freeCodeCamp
-              成都社区举办Web前端交流大会，八百余人报名，四百余人参会，获得本地政府及全国各企业、媒体、社区的广泛关注与大力支持。
+            <p className={`text-light ${styles.textShadow}`}>
+              2017 年 11 月，freeCodeCamp 成都社区举办
+              Web前端交流大会，八百余人报名，四百余人参会，获得本地政府及全国各企业、媒体、社区的广泛关注与大力支持。
             </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <Image
-            className="d-block w-100 mb-2"
-            src="/image/review2.png"
-            alt="review2"
-          />
+          <img className="w-100 mb-2" src="/image/review2.png" alt="review2" />
           <Carousel.Caption>
-            <p className="text-light">
+            <p className={`text-light ${styles.textShadow}`}>
               2018 年 5
               月，freeCodeCamp中国参与主办首届全球石墨烯开发者大会，与会一千余名开发者。目前freeCodeCamp正在开发区块链基础技术课程，并将持续致力于区块链开发者社群服务。
             </p>
