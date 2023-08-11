@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Container, Tab, Tabs } from 'react-bootstrap';
 
 import citySchedulesData from '../data/CitySchedulesData.json';
-import styles from './ConferenceSchedule.module.less';
+import styles from './CityScheduleInfo.module.less';
 
 export const CityScheduleInfo: FC = () => (
   <Container>
@@ -22,15 +22,15 @@ export const CityScheduleInfo: FC = () => (
               key={city}
             >
               <a
+                className="px-3 pb-3 text-start"
                 target="_blank"
                 href={href}
                 rel="noreferrer"
-                className="px-3 pb-3 text-start"
               >
                 {href ? '点此报名' : '报名通道即将开启'}
               </a>
               {schedules?.[0] && (
-                <table className={`${styles.sm_max_width} text-start w-100`}>
+                <table className="text-start w-100`">
                   <thead>
                     <tr>
                       <th className="px-3 py-3 ">时间</th>

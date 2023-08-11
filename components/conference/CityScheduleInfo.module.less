@@ -1,32 +1,24 @@
-@media screen and (max-width: 620px) {
-  .table_box {
-    th:nth-child(1),
-    td:nth-child(1) {
-      width: 20% !important;
-    }
-    th:nth-child(2),
-    td:nth-child(2) {
-      width: 30% !important;
-    }
-  }
-}
-
 .table_box {
   a {
     width: 10rem;
     display: inline-block;
   }
-
-  th:nth-child(1),
-  td:nth-child(1) {
-    width: 15%;
-  }
-  th:nth-child(2),
-  td:nth-child(2) {
-    width: 20%;
-  }
-  th:nth-child(3),
-  td:nth-child(3) {
-    width: 30%;
+  th,
+  td {
+    &:nth-child(1) {
+      width: 15%;
+      @media screen and (max-width: 620px) {
+        width: 20% !important;
+      }
+    }
+    &:nth-child(2) {
+      width: 20%;
+      @media screen and (max-width: 620px) {
+        width: 30% !important;
+      }
+    }
+    &:nth-child(3) {
+      width: 30%;
+    }
   }
 }
