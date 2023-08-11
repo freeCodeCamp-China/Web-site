@@ -14,8 +14,8 @@ export const GuestInfo: FC = () => (
       {guestData.map(({ pic, name, position }) => (
         <Col as="li" className={`${styles.media} mt-1 pt-5 px-1`} key={pic}>
           <Image style={{ width: '8.75rem' }} src={`/image/speakers/${pic}`} />
-          <ul className="list-unstyled">
-            <li className="fs-6 fw-bolder mt-3">{name}</li>
+          <ul className="list-unstyled mt-3">
+            <li className="fs-6 fw-bolder mt-1">{name}</li>
             <li className="mt-1">{position}</li>
           </ul>
         </Col>
