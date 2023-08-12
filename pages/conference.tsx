@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react';
 import { Container } from 'react-bootstrap';
 
+import { CityScheduleInfo } from '../components/conference/CityScheduleInfo';
 import { ConferenceBase } from '../components/conference/ConferenceBase';
 import { GuestInfo } from '../components/conference/Guest';
 import { OrganizationInfo } from '../components/conference/Organization';
@@ -20,6 +21,7 @@ const ConferencePage = observer(() => (
     <DrawerNav />
     <ConferenceBase />
     <GuestInfo />
+    <CityScheduleInfo />
     <OrganizationInfo />
   </Container>
 ));
