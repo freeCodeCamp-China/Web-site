@@ -21,14 +21,16 @@ export const CityScheduleInfo: FC = () => (
               data-city={city}
               key={city}
             >
-              <a
-                className="px-3 pb-3 text-start"
-                target="_blank"
-                href={href}
-                rel="noreferrer"
-              >
-                {href ? '点此报名' : '报名通道即将开启'}
-              </a>
+              <div className="d-flex">
+                <a
+                  className="px-3 pb-3 text-start"
+                  target="_blank"
+                  href={href}
+                  rel="noreferrer"
+                >
+                  {href ? '点此报名' : '报名通道即将开启'}
+                </a>
+              </div>
               {schedules?.[0] && (
                 <table className="text-start w-100`">
                   <thead>
