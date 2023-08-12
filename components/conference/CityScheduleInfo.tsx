@@ -32,12 +32,12 @@ export const CityScheduleInfo: FC = () => (
                 </a>
               </div>
               {schedules?.[0] && (
-                <table className="text-start w-100`">
+                <table className="text-start w-100">
                   <thead>
                     <tr>
-                      <th className="px-3 py-3 ">时间</th>
-                      <th className="px-3 py-3 ">主题</th>
-                      <th className="px-3 py-3">演讲嘉宾</th>
+                      <th className="p-3">时间</th>
+                      <th className="p-3">主题</th>
+                      <th className="p-3">演讲嘉宾</th>
                     </tr>
                   </thead>
                   <tbody>
