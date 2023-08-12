@@ -13,10 +13,11 @@ const renderLevel = (level: number) =>
 export const OrganizationInfo: FC = () => (
   <Container>
     <section
-      id="host"
       className={`${styles.container} text-center px-3 mx-auto my-0 position-relative ${styles.animated}`}
     >
-      <h2 className="fs-4 pt-5 px-0 pb-3">主办方</h2>
+      <h2 id="host" className="fs-4 pt-5 px-0 pb-3">
+        主办方
+      </h2>
       <div className="d-flex justify-content-between">
         <div className="mx-auto my-0">
           <a target="_blank" href="/" rel="noreferrer">
@@ -42,7 +43,9 @@ export const OrganizationInfo: FC = () => (
     <section
       className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
     >
-      <h2 className="fs-4 pt-5 px-0 pb-3">协办方（持续更新）</h2>
+      <h2 id="co-organizer" className="fs-4 pt-5 px-0 pb-3">
+        协办方（持续更新）
+      </h2>
       <Row as="ul" className="list-unstyled">
         <Col as="li" className={styles.partner_item}>
           <a target="_blank" href="https://juejin.im/timeline" rel="noreferrer">
@@ -54,9 +57,10 @@ export const OrganizationInfo: FC = () => (
 
     <section
       className={`${styles.container} mx-auto position-relative text-center ${styles.animated}`}
-      id="sponsor"
     >
-      <h2 className="fs-4 m-0 py-5">赞助商（持续更新）</h2>
+      <h2 id="sponsor" className="fs-4 m-0 py-5">
+        赞助商（持续更新）
+      </h2>
 
       {Object.values(groupBy(sponsors, 'level')).map(sponsors => (
         <Row
@@ -82,9 +86,10 @@ export const OrganizationInfo: FC = () => (
 
     <section
       className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
-      id="partners"
     >
-      <h2 className="fs-4 m-0 py-5 px-0">合作伙伴 (持续更新)</h2>
+      <h2 id="partners" className="fs-4 m-0 py-5 px-0">
+        合作伙伴 (持续更新)
+      </h2>
       <Row
         as="ul"
         xs={2}
