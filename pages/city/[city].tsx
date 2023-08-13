@@ -3,16 +3,13 @@ import { FC } from 'react';
 import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 
 import { PersonCard } from '../../components/PersonCard';
-import * as communityData from '../../data/city/cityListData.json';
+import * as communityData from '../../data/city/CommunityCityListData.json';
 
 type Community = (typeof communityData)[keyof typeof communityData];
 
 export async function getServerSideProps({
   params,
 }: GetServerSidePropsContext) {
-  console.log(params);
-  console.log(communityData);
-
   const community = communityData[params!.city as keyof typeof community];
   console.log(community);
   return !community ? { notFound: true } : { props: community };

@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 
-import cityDatas from '../data/city/cityListData.json';
-import styles from './CityList.module.less';
+import cityDatas from '../data/city/CommunityCityListData.json';
+import styles from './CommunityCityList.module.less';
 
-export const CityList: FC = () => (
+export const CommunityCityList: FC = () => (
   <Container>
     <section
       className={`${styles.container} text-center mx-auto my-0 position-relative ${styles.animated}`}
