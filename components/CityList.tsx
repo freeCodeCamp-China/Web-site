@@ -1,16 +1,16 @@
 import { FC } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 
-import guestData from '../../data/conference/GuestData.json';
+import guestData from './../data/GuestData.json';
 import styles from './Guest.module.less';
 
-export const GuestInfo: FC = () => (
+export const CityList: FC = () => (
   <Container>
     <section
       className={`${styles.container} text-center mx-auto my-0 position-relative ${styles.animated}`}
     >
-      <h2 id="guests" className="fs-4 m-0 py-5">
-        演讲嘉宾（持续更新）
+      <h2 id="citys" className="fs-4 m-0 py-5">
+        社区城市
       </h2>
       <Row
         as="ul"

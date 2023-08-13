@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 import { groupBy } from 'web-utility';
 
-import sponsorData from './../data/SponsorData.json';
+import sponsorData from '../../data/conference/SponsorData.json';
 import styles from './Organization.module.less';
 
 const { sponsors, partners } = sponsorData;

@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 
+import { CityList } from '../components/CityList';
 import { GitCard } from '../components/Git/Card';
 import { PageHead } from '../components/PageHead';
 import { i18n } from '../models/Translation';
@@ -18,6 +19,7 @@ const HomePage = observer(() => {
       <PageHead />
 
       <Container as="main" className={styles.main}>
+        <CityList />
         <h1 className={`m-0 text-center ${styles.title}`}>
           {t('welcome_to')}
           <a className="text-primary mx-2" href="https://nextjs.org">
