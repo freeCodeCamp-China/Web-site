@@ -7,15 +7,6 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@editorjs/code": "^2.8.0",
-    "@editorjs/editorjs": "^2.27.2",
-    "@editorjs/header": "^2.7.0",
-    "@editorjs/image": "^2.8.1",
-    "@editorjs/link": "^2.5.0",
-    "@editorjs/list": "^1.8.0",
-    "@editorjs/paragraph": "^2.10.0",
-    "@editorjs/quote": "^2.5.0",
-    "editorjs-html": "^3.4.3",
     "idea-react": "^1.0.0-rc.10",
     "koajax": "^0.8.4",
     "less": "^4.2.0",
@@ -30,12 +21,9 @@
     "next-pwa": "~5.6.0",
     "next-ssr-middleware": "^0.5.0",
     "next-with-less": "^2.0.5",
-    "prismjs": "^1.29.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.8.0",
-    "react-bootstrap-editor": "^1.0.1",
     "react-dom": "^17.0.2",
-    "react-editor-js": "^2.1.0",
     "web-utility": "^4.1.0"
   },
   "devDependencies": {

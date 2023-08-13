@@ -8,33 +8,6 @@ overrides:
   '@types/react': 17.0.62
 
 dependencies:
-  '@editorjs/code':
-    specifier: ^2.8.0
-    version: 2.8.0
-  '@editorjs/editorjs':
-    specifier: ^2.27.2
-    version: 2.27.2
-  '@editorjs/header':
-    specifier: ^2.7.0
-    version: 2.7.0
-  '@editorjs/image':
-    specifier: ^2.8.1
-    version: 2.8.1
-  '@editorjs/link':
-    specifier: ^2.5.0
-    version: 2.5.0
-  '@editorjs/list':
-    specifier: ^1.8.0
-    version: 1.8.0
-  '@editorjs/paragraph':
-    specifier: ^2.10.0
-    version: 2.10.0
-  '@editorjs/quote':
-    specifier: ^2.5.0
-    version: 2.5.0
-  editorjs-html:
-    specifier: ^3.4.3
-    version: 3.4.3
   idea-react:
     specifier: ^1.0.0-rc.10
     version: 1.0.0-rc.10(@types/react@17.0.62)(jsdom@21.1.2)(react-dom@17.0.2)(react@17.0.2)(typescript@5.1.6)
@@ -77,24 +50,15 @@ dependencies:
   next-with-less:
     specifier: ^2.0.5
     version: 2.0.5(less-loader@11.1.3)(less@4.2.0)(next@12.3.4)
-  prismjs:
-    specifier: ^1.29.0
-    version: 1.29.0
   react:
     specifier: ^17.0.2
     version: 17.0.2
   react-bootstrap:
     specifier: ^2.8.0
     version: 2.8.0(@types/react@17.0.62)(react-dom@17.0.2)(react@17.0.2)
-  react-bootstrap-editor:
-    specifier: ^1.0.1
-    version: 1.0.1(react-dom@17.0.2)(react@17.0.2)(typescript@5.1.6)
   react-dom:
     specifier: ^17.0.2
     version: 17.0.2(react@17.0.2)
-  react-editor-js:
-    specifier: ^2.1.0
-    version: 2.1.0(@editorjs/editorjs@2.27.2)(@editorjs/paragraph@2.10.0)(react@17.0.2)
   web-utility:
     specifier: ^4.1.0
     version: 4.1.0(typescript@5.1.6)
@@ -1328,14 +1292,6 @@ packages:
     resolution: {integrity: sha512-V8N/TY2TGyas4wLrPIFq7bcow68b3gu8DfDt1+rrHPtXxcexadKauRJL6eQgfG7Z0LCrN4boLRawR4S9gjIh/Q==}
     dev: false
 
-  /@codexteam/icons@0.0.5:
-    resolution: {integrity: sha512-s6H2KXhLz2rgbMZSkRm8dsMJvyUNZsEjxobBEg9ztdrb1B2H3pEzY6iTwI4XUPJWJ3c3qRKwV4TrO3J5jUdoQA==}
-    dev: false
-
-  /@codexteam/icons@0.0.6:
-    resolution: {integrity: sha512-L7Q5PET8PjKcBT5wp7VR+FCjwCi5PUp7rd/XjsgQ0CI5FJz0DphyHGRILMuDUdCW2MQT9NHbVr4QP31vwAkS/A==}
-    dev: false
-
   /@cspotcode/source-map-support@0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
@@ -1343,51 +1299,14 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@editorjs/code@2.8.0:
-    resolution: {integrity: sha512-qlv1OqSEPKnLv/ZQgNFmVgqsMbGDkh/qgTEnbVWsS+yujo1nlwgVkqCB8tOkQGVsrpmAYLiWRlA413nKxxCN5w==}
-    dependencies:
-      '@codexteam/icons': 0.0.5
-    dev: false
-
   /@editorjs/editorjs@2.27.2:
     resolution: {integrity: sha512-k4LavGJijAP0F1wATQ0fTo10xtBSny9z6yWaP3ANqqtyKr+pBMind5NQzckqYI0yPp31GObpcS/HsFGsFOGcug==}
-    dev: false
-
-  /@editorjs/header@2.7.0:
-    resolution: {integrity: sha512-4fGKGe2ZYblVqR/P/iw5ieG00uXInFgNMftBMqJRYcB2hUPD30kuu7Sn6eJDcLXoKUMOeqi8Z2AlUxYAmvw7zQ==}
-    dependencies:
-      '@codexteam/icons': 0.0.5
-    dev: false
-
-  /@editorjs/image@2.8.1:
-    resolution: {integrity: sha512-4WscDAoi6OO0F6L7N1mkQymADwj8hHgH/ICk5wGRPdkesUZW1TgldX8XvSmy+f5VylsEi3F/gUggaZsrYxu2sA==}
-    dependencies:
-      '@codexteam/icons': 0.0.6
-    dev: false
-
-  /@editorjs/link@2.5.0:
-    resolution: {integrity: sha512-3Oa1VweBY7Sscjzw8pv1QcWGyP+XdPl6+yu+gXnSETyjz9TQRZUjved0qw2OomYOjMZ3RumrdDJXxoALlZdvuQ==}
-    dependencies:
-      '@babel/runtime': 7.22.10
-      '@codexteam/icons': 0.0.4
-    dev: false
-
-  /@editorjs/list@1.8.0:
-    resolution: {integrity: sha512-Vq6cjyTXBzgegYv/MtTfuDdiz59yGhDEc/yAVXr6lmvoWAFs9cJ4TLuh4/9SbrbhIptcQLDvUjMDKmRrV6v2NQ==}
-    dependencies:
-      '@codexteam/icons': 0.0.4
     dev: false
 
   /@editorjs/paragraph@2.10.0:
     resolution: {integrity: sha512-AzaGxR9DQAdWhx43yupBcwqtwH0WWi5jBDOCSeALIK86IYOnO6Lp4anEbH8IYmYrE/5MdnRiTwdU8/Xs8W15Nw==}
     dependencies:
       '@codexteam/icons': 0.0.4
-    dev: false
-
-  /@editorjs/quote@2.5.0:
-    resolution: {integrity: sha512-24Mu8cESaj34a0kg1Enj7qiZ3yiCOsZI59+8xpfXLO/NkO7hBYWNForVcBy5yIWs/VLlEZK11FP37f/mHrKugQ==}
-    dependencies:
-      '@codexteam/icons': 0.0.5
     dev: false
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.47.0):
@@ -2430,10 +2349,6 @@ packages:
     dependencies:
       fill-range: 7.0.1
 
-  /browser-fs-access@0.34.1:
-    resolution: {integrity: sha512-HPaRf2yimp8kWSuWJXc8Mi78dPbDzfduA+Gyq14H4jlMvd6XNfIRm36Y2yRLaa4x0gwcGuepj4zf14oiTlxrxQ==}
-    dev: false
-
   /browserslist@4.21.10:
     resolution: {integrity: sha512-bipEBdZfVH5/pwrvqc+Ub0kUPVfGUhlKxbvfD+z1BDnPEO/X98ruXGA1WP5ASpAFKan7Qr6j736IacbZQuAlKQ==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
@@ -2770,14 +2685,6 @@ packages:
 
   /editorjs-html@3.4.3:
     resolution: {integrity: sha512-HMqQ3BCE98uhSpJsbfH0c3CoMctUMCHlap2Eq/7/VjaHas+g3IJqyf+ERtMByoQCzvcW22ISYaZEeE7rGkd8Xg==}
-    dev: false
-
-  /edkit@1.0.1:
-    resolution: {integrity: sha512-WbOe6R/tmD5/RsKdsMIN9HTaeZCnqNEjly1qQAep5mYVAQLh+WiYd8+2ctLmwxxQSTmy0qJtWo3kp1dNDh6fTw==}
-    dependencies:
-      '@swc/helpers': 0.4.14
-      browser-fs-access: 0.34.1
-      regenerator-runtime: 0.13.11
     dev: false
 
   /ejs@3.1.9:
@@ -4840,24 +4747,6 @@ packages:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
     dependencies:
       safe-buffer: 5.2.1
-    dev: false
-
-  /react-bootstrap-editor@1.0.1(react-dom@17.0.2)(react@17.0.2)(typescript@5.1.6):
-    resolution: {integrity: sha512-CLtteHCwplUu1vmvUcXrO+wMZrvTSkdaSohs8WUAp1l42mv0ghaDmASftgln0Icse3FFwghUASj6/HDvNN3KtA==}
-    peerDependencies:
-      react: '>=16'
-      react-dom: '>=16'
-    dependencies:
-      '@swc/helpers': 0.4.14
-      edkit: 1.0.1
-      mobx: 5.15.7
-      mobx-react: 6.3.1(mobx@5.15.7)(react-dom@17.0.2)(react@17.0.2)
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
-      web-utility: 4.1.0(typescript@5.1.6)
-    transitivePeerDependencies:
-      - react-native
-      - typescript
     dev: false
 
   /react-bootstrap@2.8.0(@types/react@17.0.62)(react-dom@17.0.2)(react@17.0.2):
