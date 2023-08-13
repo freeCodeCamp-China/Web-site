@@ -83,7 +83,7 @@ devDependencies:
     specifier: ^12.3.4
     version: 12.3.4(eslint@8.47.0)(typescript@5.1.6)
   eslint-config-prettier:
-    specifier: ^9.0.00
+    specifier: ^9.0.0
     version: 9.0.0(eslint@8.47.0)
   eslint-plugin-simple-import-sort:
     specifier: ^10.0.0
