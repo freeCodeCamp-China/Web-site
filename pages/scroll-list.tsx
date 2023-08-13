@@ -13,8 +13,8 @@ import { i18n } from '../models/Translation';
 
 export const getServerSideProps = compose(
   cache(),
-  translator(i18n),
   errorLogger,
+  translator(i18n),
   async () => {
     const list = await new RepositoryModel().getList();
 
