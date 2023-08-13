@@ -27,7 +27,7 @@ export const ConferenceBase: FC = () => (
       </h2>
 
       <Carousel data-bs-theme="dark" className="h-25">
-        <Carousel.Item>
+        <Carousel.Item interval={1000}>
           <img className="w-100 mb-2" src="/image/review1.png" alt="review1" />
           <Carousel.Caption>
             <p className={`text-light ${styles.textShadow}`}>
@@ -36,7 +36,7 @@ export const ConferenceBase: FC = () => (
             </p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item>
+        <Carousel.Item interval={1000}>
           <img className="w-100 mb-2" src="/image/review2.png" alt="review2" />
           <Carousel.Caption>
             <p className={`text-light ${styles.textShadow}`}>
