@@ -2,7 +2,7 @@ import { text2color } from 'idea-react';
 import { computed } from 'mobx';
 import { observer } from 'mobx-react';
 import { Column, RestTable } from 'mobx-restful-table';
-import { cache, compose, translator } from 'next-ssr-middleware';
+import { compose, translator } from 'next-ssr-middleware';
 import { PureComponent } from 'react';
 import { Badge, Container } from 'react-bootstrap';
 
@@ -10,14 +10,14 @@ import { PageHead } from '../components/PageHead';
 import repositoryStore, { GitRepository } from '../models/Repository';
 import { i18n } from '../models/Translation';
 
-export const getServerSideProps = compose(cache(), translator(i18n));
+export const getServerSideProps = compose(translator(i18n));
+
+const { t } = i18n;
 
 @observer
 export default class PaginationPage extends PureComponent {
   @computed
   get columns(): Column<GitRepository>[] {
-    const { t } = i18n;
-
     return [
       {
         key: 'full_name',
@@ -55,8 +55,6 @@ export default class PaginationPage extends PureComponent {
   }
 
   render() {
-    const { t } = i18n;
-
     return (
       <Container style={{ height: '91vh' }}>
         <PageHead title={t('pagination')} />
