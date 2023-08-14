@@ -17,7 +17,8 @@ type Community = (typeof communityData)[keyof typeof communityData];
 export async function getServerSideProps({
   params,
 }: GetServerSidePropsContext) {
-  const community = communityData[params!.city as keyof typeof community];
+  const community = communityData[params!.city as keyof typeof communityData];
+
   return !community ? { notFound: true } : { props: community };
 }
 
