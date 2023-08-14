@@ -46,7 +46,7 @@ export const OrganizationInfo: FC = () => (
       <Row as="ul" className="list-unstyled">
         <Col as="li" className={styles.partner_item}>
           <a target="_blank" href="https://juejin.im/timeline" rel="noreferrer">
-            <Image src="/image/logo/juejin.png" />
+            <Image src="/image/partner/juejin.png" />
           </a>
         </Col>
       </Row>

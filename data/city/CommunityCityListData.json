@@ -2,7 +2,7 @@
   "chengdu": {
     "name": "成都",
     "nameOfPy": "chengdu",
-    "banner": "banner.png",
+    "banner": "chengdu.png",
     "website": "https://web-conf.tk",
     "wechat": "qrcode.png",
     "weibo": "https://weibo.com/u/6165665516?is_all=1",
@@ -107,7 +107,7 @@
   "chongqing": {
     "name": "重庆",
     "nameOfPy": "chongqing",
-    "banner": "banner.png",
+    "banner": "chongqing.png",
     "website": "",
     "wechat": "qrcode.png",
     "weibo": "",
@@ -130,7 +130,7 @@
   "guangzhou": {
     "name": "广州",
     "nameOfPy": "guangzhou",
-    "banner": "banner.png",
+    "banner": "guangzhou.png",
     "website": "",
     "wechat": "qrcode.png",
     "weibo": "",
@@ -151,7 +151,7 @@
   "hangzhou": {
     "name": "杭州",
     "nameOfPy": "hangzhou",
-    "banner": "banner.png",
+    "banner": "hangzhou.png",
     "website": "",
     "wechat": "qrcode.png",
     "weibo": "",
@@ -169,7 +169,7 @@
   "jinan": {
     "name": "济南",
     "nameOfPy": "jinan",
-    "banner": "banner.png",
+    "banner": "jinan.png",
     "website": "",
     "wechat": "qrcode.png",
     "weibo": "",
@@ -183,7 +183,7 @@
   "shanghai": {
     "name": "上海",
     "nameOfPy": "shanghai",
-    "banner": "banner.png",
+    "banner": "shanghai.png",
     "website": "",
     "wechat": "qrcode.png",
     "weibo": "",
@@ -203,7 +203,7 @@
   "shenzhen": {
     "name": "深圳",
     "nameOfPy": "shenzhen",
-    "banner": "banner.png",
+    "banner": "shenzhen.png",
     "website": "",
     "wechat": "qrcode.png",
     "weibo": "",
@@ -224,7 +224,7 @@
   "tianjin": {
     "name": "天津",
     "nameOfPy": "tianjin",
-    "banner": "banner.png",
+    "banner": "tianjin.png",
     "website": "",
     "wechat": "qrcode.png",
     "weibo": "",
@@ -245,7 +245,7 @@
   "wuhan": {
     "name": "武汉",
     "nameOfPy": "wuhan",
-    "banner": "banner.png",
+    "banner": "wuhan.png",
     "website": "",
     "wechat": "qrcode.png",
     "weibo": "",
@@ -265,7 +265,7 @@
   "xian": {
     "name": "西安",
     "nameOfPy": "xian",
-    "banner": "banner.png",
+    "banner": "xian.png",
     "website": "",
     "wechat": "qrcode.png",
     "weibo": "",
@@ -286,7 +286,7 @@
   "zhengzhou": {
     "name": "郑州",
     "nameOfPy": "zhengzhou",
-    "banner": "banner.png",
+    "banner": "zhengzhou.png",
     "website": "",
     "wechat": "qrcode.png",
     "weibo": "",
