@@ -79,7 +79,7 @@ const OrganizerPeople: FC<Community> = ({
             <Row as="ul" className="ms-4 pt-3" xs={1}>
               <Col as="li" id="websiteLink" className="py-1 ">
                 <a
-                  href={website}
+                  href={website ? website : '/'}
                   target="_blank"
                   className="text-success"
                   rel="noreferrer"
@@ -105,7 +105,7 @@ const OrganizerPeople: FC<Community> = ({
               </Col>
               <Col as="li" id="weiboLink" className="py-1">
                 <a
-                  href={weibo}
+                  href={weibo ? weibo : '/'}
                   target="_blank"
                   className="text-success"
                   rel="noreferrer"
@@ -115,7 +115,7 @@ const OrganizerPeople: FC<Community> = ({
               </Col>
               <Col as="li" id="githubLink" className="py-1">
                 <a
-                  href={github}
+                  href={github ? github : '/'}
                   target="_blank"
                   className="text-success"
                   rel="noreferrer"

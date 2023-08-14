@@ -26,8 +26,8 @@ export const CommunityCityList: FC = () => (
           >
             <a className="text-dark" href={`city/${nameOfPy}`}>
               <Image
-                style={{ width: '10rem', height: '8rem' }}
-                src="https://design-style-guide.freecodecamp.org/downloads/fcc_primary_small.jpg"
+                style={{ width: '10rem', height: '10rem' }}
+                src="/city_logo.png"
               />
             </a>
 
