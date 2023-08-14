@@ -41,33 +41,36 @@ const OrganizerPeople: FC<Community> = ({
     <Container>
       <PageHead title={`${name}社区`} />
       <section id="info" className="d-flex justify-content-evenly">
-        <div
-          className="w-50"
-          onMouseOver={() => setShow(true)}
-          onMouseOut={() => setShow(false)}
-          style={{ position: 'relative' }}
-        >
-          <Image
-            src={`/image/banner/${banner}`}
-            className="h-100 w-100"
-            style={{ position: 'absolute', left: '0', top: '0' }}
-            alt={banner}
-          />
-          {show && briefs?.[0] && (
-            <div
-              className={`${styles.shadowin} w-100 h-100 text-light d-flex justify-content-center align-items-center`}
+        {banner && (
+          <div
+            className="w-50"
+            onMouseOver={() => setShow(true)}
+            onMouseOut={() => setShow(false)}
+            style={{ position: 'relative' }}
+          >
+            <Image
+              src={`/image/banner/${banner}`}
+              className="h-100 w-100"
               style={{ position: 'absolute', left: '0', top: '0' }}
-            >
-              <ul className="list-unstyled">
-                {briefs.map(brief => (
-                  <li key={brief}>
-                    <p className="m-3">{brief}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
+              alt={banner}
+            />
+            {show && briefs?.[0] && (
+              <div
+                className={`${styles.shadowin} w-100 h-100 text-light d-flex justify-content-center align-items-center`}
+                style={{ position: 'absolute', left: '0', top: '0' }}
+              >
+                <ul className="list-unstyled">
+                  {briefs.map(brief => (
+                    <li key={brief}>
+                      <p className="m-3">{brief}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
+
         <div className="w-25">
           <div className="text-center fs-3 pt-3">
             欢迎加入
@@ -77,52 +80,60 @@ const OrganizerPeople: FC<Community> = ({
             <span>{name}</span>社区
           </div>
           <Row as="ul" className="ms-4 pt-3" xs={1}>
-            <Col as="li" id="websiteLink" className="py-1 ">
-              <a
-                href={website ? website : '/'}
-                target="_blank"
-                className="text-success"
-                rel="noreferrer"
-              >
-                网站
-              </a>
-            </Col>
-            <Col as="li" id="qrcodeLink" className="py-1">
-              <OverlayTrigger
-                overlay={
-                  <Tooltip id="tooltip-disabled">
-                    <Image
-                      src={`/image/qrcode/${wechat}`}
-                      className="w-75 h-75"
-                      alt={name}
-                    />
-                  </Tooltip>
-                }
-                placement="right"
-              >
-                <span className="d-inline-block text-success">微信</span>
-              </OverlayTrigger>
-            </Col>
-            <Col as="li" id="weiboLink" className="py-1">
-              <a
-                href={weibo ? weibo : '/'}
-                target="_blank"
-                className="text-success"
-                rel="noreferrer"
-              >
-                微博
-              </a>
-            </Col>
-            <Col as="li" id="githubLink" className="py-1">
-              <a
-                href={github ? github : '/'}
-                target="_blank"
-                className="text-success"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-            </Col>
+            {website && (
+              <Col as="li" id="websiteLink" className="py-1 ">
+                <a
+                  href={website}
+                  target="_blank"
+                  className="text-success"
+                  rel="noreferrer"
+                >
+                  网站
+                </a>
+              </Col>
+            )}
+            {wechat && (
+              <Col as="li" id="qrcodeLink" className="py-1">
+                <OverlayTrigger
+                  overlay={
+                    <Tooltip id="tooltip-disabled">
+                      <Image
+                        src={`/image/qrcode/${wechat}`}
+                        className="w-75 h-75"
+                        alt={name}
+                      />
+                    </Tooltip>
+                  }
+                  placement="right"
+                >
+                  <span className="d-inline-block text-success">微信</span>
+                </OverlayTrigger>
+              </Col>
+            )}
+            {weibo && (
+              <Col as="li" id="weiboLink" className="py-1">
+                <a
+                  href={weibo}
+                  target="_blank"
+                  className="text-success"
+                  rel="noreferrer"
+                >
+                  微博
+                </a>
+              </Col>
+            )}
+            {github && (
+              <Col as="li" id="githubLink" className="py-1">
+                <a
+                  href={github ? github : '/'}
+                  target="_blank"
+                  className="text-success"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+              </Col>
+            )}
           </Row>
         </div>
       </section>
