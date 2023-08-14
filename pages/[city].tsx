@@ -9,8 +9,8 @@ import {
   Tooltip,
 } from 'react-bootstrap';
 
-import { PageHead } from '../../components/PageHead';
-import * as communityData from '../../data/city/CommunityCityListData.json';
+import { PageHead } from '../components/PageHead';
+import * as communityData from '../data/city/CommunityCityListData.json';
 import styles from './city.module.less';
 
 type Community = (typeof communityData)[keyof typeof communityData];
@@ -23,7 +23,15 @@ export async function getServerSideProps({
   return !community ? { notFound: true } : { props: community };
 }
 
-const OrganizerPeople: FC<Community> = ({
+export const renderContactLabel = (href: string, name: string) => (
+  <Col as="li" className="py-1 ">
+    <a className="text-success" href={href} target="_blank" rel="noreferrer">
+      {name}
+    </a>
+  </Col>
+);
+
+const OrganiserPeople: FC<Community> = ({
   name,
   organisers,
   speakers,
@@ -56,7 +64,7 @@ const OrganizerPeople: FC<Community> = ({
             />
             {show && briefs?.[0] && (
               <div
-                className={`${styles.shadowin} w-100 h-100 text-light d-flex justify-content-center align-items-center`}
+                className={`${styles.shadowIn} w-100 h-100 text-light d-flex justify-content-center align-items-center`}
                 style={{ position: 'absolute', left: '0', top: '0' }}
               >
                 <ul className="list-unstyled">
@@ -79,21 +87,10 @@ const OrganizerPeople: FC<Community> = ({
             <br />
             <span>{name}</span>社区
           </div>
-          <Row as="ul" className="ms-4 pt-3" xs={1}>
-            {website && (
-              <Col as="li" id="websiteLink" className="py-1 ">
-                <a
-                  href={website}
-                  target="_blank"
-                  className="text-success"
-                  rel="noreferrer"
-                >
-                  网站
-                </a>
-              </Col>
-            )}
+          <Row as="ul" className="pt-3" xs={1}>
+            {website && renderContactLabel(website, '网站')}
             {wechat && (
-              <Col as="li" id="qrcodeLink" className="py-1">
+              <Col as="li" className="py-1">
                 <OverlayTrigger
                   overlay={
                     <Tooltip id="tooltip-disabled">
@@ -110,37 +107,15 @@ const OrganizerPeople: FC<Community> = ({
                 </OverlayTrigger>
               </Col>
             )}
-            {weibo && (
-              <Col as="li" id="weiboLink" className="py-1">
-                <a
-                  href={weibo}
-                  target="_blank"
-                  className="text-success"
-                  rel="noreferrer"
-                >
-                  微博
-                </a>
-              </Col>
-            )}
-            {github && (
-              <Col as="li" id="githubLink" className="py-1">
-                <a
-                  href={github ? github : '/'}
-                  target="_blank"
-                  className="text-success"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
-              </Col>
-            )}
+            {weibo && renderContactLabel(weibo, '微博')}
+            {github && renderContactLabel(github, 'GitHub')}
           </Row>
         </div>
       </section>
 
       {organisers?.[0] && (
         <section className="text-center mx-auto my-0">
-          <h2 id="organisers" className="fs-4 m-0 py-5 text-start">
+          <h2 id="organisers" className="fs-4 m-0 ps-5 py-5 text-start">
             社区组织者
           </h2>
           <Row
@@ -158,11 +133,11 @@ const OrganizerPeople: FC<Community> = ({
                 {link ? (
                   <a
                     className="text-dark"
-                    href={link ? `/organizer/${link}` : ``}
+                    href={link ? `/organiser/${link}` : ``}
                   >
                     <Image
                       style={{ width: '9rem', height: '9rem' }}
-                      src={`/image/organizer/${pic}`}
+                      src={`/image/organiser/${pic}`}
                       alt={name}
                     />
                     <ul className="list-unstyled mt-3">
@@ -173,7 +148,7 @@ const OrganizerPeople: FC<Community> = ({
                   <>
                     <Image
                       style={{ width: '9rem', height: '9rem' }}
-                      src={`/image/organizer/${pic}`}
+                      src={`/image/organiser/${pic}`}
                       alt={name}
                     />
                     <ul className="list-unstyled mt-3">
@@ -189,7 +164,7 @@ const OrganizerPeople: FC<Community> = ({
 
       {speakers?.[0] && (
         <section className="text-center mx-auto my-0">
-          <h2 id="speakers" className="fs-4 m-0 pt-5 text-start">
+          <h2 id="speakers" className="fs-4 m-0 ps-5 pt-5 text-start">
             演讲嘉宾
           </h2>
           <Row
@@ -220,7 +195,7 @@ const OrganizerPeople: FC<Community> = ({
 
       {partners?.[0] && (
         <section className="mx-auto my-0 position-relative text-center">
-          <h2 id="partners" className="fs-4 m-0 py-5 px-0 text-start">
+          <h2 id="partners" className="fs-4 m-0 ps-5 py-5 px-0 text-start">
             合作企业
           </h2>
           <Row
@@ -230,7 +205,7 @@ const OrganizerPeople: FC<Community> = ({
             className="list-unstyled justify-content-around"
           >
             {partners.map(({ pic, link }) => (
-              <Col as="li" className="" key={link}>
+              <Col as="li" key={link}>
                 <a
                   className="mx-3"
                   href={link}
@@ -238,7 +213,7 @@ const OrganizerPeople: FC<Community> = ({
                   rel="noreferrer"
                 >
                   <Image
-                    className="pb-5"
+                    className="pb-5 object-fit-fill align-items-center"
                     style={{ width: '9rem', height: '9rem' }}
                     src={`/image/partner/${pic}`}
                     alt={pic}
@@ -252,4 +227,4 @@ const OrganizerPeople: FC<Community> = ({
     </Container>
   );
 };
-export default OrganizerPeople;
+export default OrganiserPeople;

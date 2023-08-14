@@ -96,7 +96,10 @@ export const OrganizationInfo: FC = () => (
         {partners.map(({ href, imgSrc }) => (
           <Col as="li" className={styles.partner} key={href}>
             <a className="mx-3" href={href} target="_blank" rel="noreferrer">
-              <Image className="pb-5" src={imgSrc} />
+              <Image
+                className="pb-5 object-fit-fill align-items-center"
+                src={imgSrc}
+              />
             </a>
           </Col>
         ))}

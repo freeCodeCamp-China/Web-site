@@ -1,13 +1,12 @@
 import { FC } from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Card, Col, Container, Image, Row } from 'react-bootstrap';
 
-import cityDatas from '../data/city/CommunityCityListData.json';
-import styles from './CommunityCityList.module.less';
+import cityData from '../data/city/CommunityCityListData.json';
 
 export const CommunityCityList: FC = () => (
   <Container>
     <section className="text-center mx-auto my-0 position-relative">
-      <h2 id="citys" className="fs-4 m-0 py-5">
+      <h2 id="cities" className="fs-4 m-0 py-5">
         社区城市
       </h2>
       <Row
@@ -16,21 +15,24 @@ export const CommunityCityList: FC = () => (
         sm={5}
         className="list-unstyled justify-content-center"
       >
-        {Object.values(cityDatas).map(({ name, nameOfPy }) => (
-          <Col
-            as="li"
-            className={`${styles.media} mt-1 pt-5 px-1`}
-            key={nameOfPy}
-          >
-            <a className="text-dark" href={`city/${nameOfPy}`}>
-              <Image
-                style={{ width: '10rem', height: '10rem' }}
-                src="/city_logo.png"
-              />
-            </a>
-            <ul className="list-unstyled mt-3">
-              <li className="fs-6 fw-bolder mt-1">{name}</li>
-            </ul>
+        {Object.values(cityData).map(({ name, nameOfPy }) => (
+          <Col as="li" className="mt-1 p-5 px-auto" key={nameOfPy}>
+            <Card
+              className="rounded-circle"
+              style={{ width: '8.75rem', height: '8.75rem' }}
+            >
+              <a href={nameOfPy}>
+                <Card.Img
+                  className="rounded-circle"
+                  variant="top"
+                  src="/city_logo.png"
+                  alt={name}
+                />
+              </a>
+              <Card.Body>
+                <Card.Text className="fs-5">{name}</Card.Text>
+              </Card.Body>
+            </Card>
           </Col>
         ))}
       </Row>
