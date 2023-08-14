@@ -1,5 +1,6 @@
+import Image from 'next/image';
 import { FC } from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 import cityDatas from '../data/city/CommunityCityListData.json';
 import styles from './CommunityCityList.module.less';
