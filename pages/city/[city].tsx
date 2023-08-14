@@ -1,7 +1,13 @@
 import { GetServerSidePropsContext } from 'next';
-import Image from 'next/image';
 import { FC, useState } from 'react';
-import { Col, Container, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
+import {
+  Col,
+  Container,
+  Image,
+  OverlayTrigger,
+  Row,
+  Tooltip,
+} from 'react-bootstrap';
 
 import * as communityData from '../../data/city/CommunityCityListData.json';
 import styles from './city.module.less';
@@ -71,7 +77,12 @@ const OrganizerPeople: FC<Community> = ({
             </div>
             <Row as="ul" className="ms-4 pt-3" xs={1}>
               <Col as="li" id="websiteLink" className="py-1 ">
-                <a href={website} target="_blank" className="text-success" rel="noreferrer">
+                <a
+                  href={website}
+                  target="_blank"
+                  className="text-success"
+                  rel="noreferrer"
+                >
                   网站
                 </a>
               </Col>
@@ -92,12 +103,22 @@ const OrganizerPeople: FC<Community> = ({
                 </OverlayTrigger>
               </Col>
               <Col as="li" id="weiboLink" className="py-1">
-                <a href={weibo} target="_blank" className="text-success" rel="noreferrer">
+                <a
+                  href={weibo}
+                  target="_blank"
+                  className="text-success"
+                  rel="noreferrer"
+                >
                   微博
                 </a>
               </Col>
               <Col as="li" id="githubLink" className="py-1">
-                <a href={github} target="_blank" className="text-success" rel="noreferrer">
+                <a
+                  href={github}
+                  target="_blank"
+                  className="text-success"
+                  rel="noreferrer"
+                >
                   GitHub
                 </a>
               </Col>
