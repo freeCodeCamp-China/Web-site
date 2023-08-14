@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from 'react-bootstrap';
 
+import { PageHead } from '../../components/PageHead';
 import * as communityData from '../../data/city/CommunityCityListData.json';
 import styles from './city.module.less';
 
@@ -38,6 +39,7 @@ const OrganizerPeople: FC<Community> = ({
 
   return (
     <Container>
+      <PageHead title={`${name}社区`} />
       <section id="info" className="d-flex justify-content-evenly">
         <div
           className="w-50"
