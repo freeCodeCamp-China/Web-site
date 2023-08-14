@@ -21,10 +21,7 @@ export const OrganizationInfo: FC = () => (
       <div className="d-flex justify-content-between">
         <div className="mx-auto my-0">
           <a target="_blank" href="/" rel="noreferrer">
-            <img
-              className={`${styles.logo} w-25`}
-              src="/freecodecamp-logo.png"
-            />
+            <img className={styles.logo} src="/freecodecamp-logo.png" />
           </a>
           <p className="text-start mt-4">
             freeCodeCamp 是 GitHub 上 Star 第一的开源项目。自 2014

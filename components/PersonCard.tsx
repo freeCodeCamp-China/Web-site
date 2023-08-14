@@ -14,7 +14,7 @@ export const PersonCard: FC<PersonCardProps> = ({ avatar, name }) => (
     <Card.Img
       className="rounded-circle object-fit-cover"
       variant="top"
-      src={`/image/organizer/${avatar}`}
+      src={avatar}
       alt={name}
     />
     <Card.Body>

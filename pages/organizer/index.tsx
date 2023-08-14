@@ -17,10 +17,10 @@ const Organizer: FC = () => (
         <Col as="li" key={name}>
           {link ? (
             <a className="text-dark" href={`organizer/${link}`}>
-              <PersonCard avatar={pic} name={name} />
+              <PersonCard avatar={`/image/organizer/${pic}`} name={name} />
             </a>
           ) : (
-            <PersonCard avatar={pic} name={name} />
+            <PersonCard avatar={`/image/organizer/${pic}`} name={name} />
           )}
         </Col>
       ))}
