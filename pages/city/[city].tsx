@@ -58,7 +58,6 @@ const CommunityCity: FC<CommunityCityProps> = ({
               {brief?.[0] && (
                 <div
                   className={`${styles.shadowIn}  w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
-                  id="tryAgaim"
                 >
                   <ul className="list-unstyled">
                     {brief.map(brief => (
@@ -95,7 +94,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
                   }
                   placement="bottom"
                 >
-                  <span className="d-inline-block text-success">微信</span>
+                  <span className="text-success">微信</span>
                 </OverlayBox>
               </Col>
             )}
