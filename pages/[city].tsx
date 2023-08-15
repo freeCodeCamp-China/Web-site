@@ -40,63 +40,72 @@ const organiserPeople: FC<Community> = ({
   return (
     <Container>
       <PageHead title={`${name}社区`} />
-      <section id="info" className="d-flex justify-content-evenly">
-        {banner && (
-          <div id="try" className="w-50 position-relative">
-            <Image
-              fluid
-              src={`/image/banner/${banner}`}
-              alt={banner}
-              onMouseMove={() => console.log('i get it')}
-            />
-            {brief?.[0] && (
-              <div
-                className={`${styles.shadowIn}  w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
-                id="tryAgaim"
-              >
-                <ul className="list-unstyled">
-                  {brief.map(brief => (
-                    <li key={brief} className="m-3">
-                      {brief}
-                    </li>
-                  ))}
-                </ul>
+      <section>
+        <Row
+          as="ul"
+          className="list-unstyled justify-content-center"
+          xs={1}
+          sm={2}
+        >
+          <Col as="li" className={styles.banner}>
+            {banner && (
+              <div className="position-relative">
+                <Image
+                  className="object-fit-cover"
+                  fluid
+                  src={`/image/banner/${banner}`}
+                  alt={banner}
+                  onMouseMove={() => console.log('i get it')}
+                />
+                {brief?.[0] && (
+                  <div
+                    className={`${styles.shadowIn}  w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
+                    id="tryAgaim"
+                  >
+                    <ul className="list-unstyled">
+                      {brief.map(brief => (
+                        <li key={brief} className="m-3">
+                          {brief}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
-          </div>
-        )}
+          </Col>
+          <Col as="li" className={styles.join}>
+            <div className="text-center fs-3 pt-3">
+              欢迎加入
+              <br />
+              freeCodeCamp
+              <br />
+              <span>{name}</span>社区
+            </div>
 
-        <div className="w-25">
-          <div className="text-center fs-3 pt-3">
-            欢迎加入
-            <br />
-            freeCodeCamp
-            <br />
-            <span>{name}</span>社区
-          </div>
-
-          <Row as="ul" className="pt-3" xs={1}>
-            {website && renderContactLabel(website, '网站')}
-            {wechat && (
-              <Col as="li" className="py-1">
-                <OverlayBox
-                  title={
-                    <Image
-                      src={`/image/qrcode/${wechat}`}
-                      className="w-75 h-75"
-                      alt={name}
-                    />
-                  }
-                  placement="bottom"
-                >
-                  <span className="d-inline-block text-success">微信</span>
-                </OverlayBox>
-              </Col>
-            )}
-            {weibo && renderContactLabel(weibo, '微博')}
-            {github && renderContactLabel(github, 'GitHub')}
-          </Row>
-        </div>
+            <Row as="ul" className="pt-3 justify-content-center" xs={4} sm={1}>
+              {website && renderContactLabel(website, '网站')}
+              {wechat && (
+                <Col as="li" className="py-1">
+                  <OverlayBox
+                    title={
+                      <Image
+                        src={`/image/qrcode/${wechat}`}
+                        className="w-75 h-75"
+                        alt={name}
+                      />
+                    }
+                    placement="bottom"
+                  >
+                    <span className="d-inline-block text-success">微信</span>
+                  </OverlayBox>
+                </Col>
+              )}
+              {weibo && renderContactLabel(weibo, '微博')}
+              {github && renderContactLabel(github, 'GitHub')}
+            </Row>
+          </Col>
+        </Row>
       </section>
 
       {organisers?.[0] && (
