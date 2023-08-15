@@ -1,20 +1,20 @@
 import { OverlayBox } from 'idea-react';
 import { GetServerSidePropsContext } from 'next';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Card, Col, Container, Image, Row } from 'react-bootstrap';
 
 import { PageHead } from '../../components/PageHead';
 import * as communityData from '../api/data';
 import styles from './city.module.less';
 
-type Community = (typeof communityData)[keyof typeof communityData];
+type CommunityCityProps = (typeof communityData)[keyof typeof communityData];
 
 export async function getServerSideProps({
   params,
 }: GetServerSidePropsContext) {
-  const community = communityData[params!.city as keyof typeof communityData];
+  const cityInfo = communityData[params!.city as keyof typeof communityData];
 
-  return !community ? { notFound: true } : { props: community };
+  return !cityInfo ? { notFound: true } : { props: cityInfo };
 }
 
 export const renderContactLabel = (href: string, name: string) => (
@@ -25,7 +25,7 @@ export const renderContactLabel = (href: string, name: string) => (
   </Col>
 );
 
-const OrganiserPeople: FC<Community> = ({
+const CommunityCity: FC<CommunityCityProps> = ({
   name,
   organisers,
   speakers,
@@ -205,4 +205,4 @@ const OrganiserPeople: FC<Community> = ({
   </Container>
 );
 
-export default OrganiserPeople;
+export default CommunityCity;
