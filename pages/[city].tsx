@@ -1,14 +1,7 @@
+import { OverlayBox } from 'idea-react';
 import { GetServerSidePropsContext } from 'next';
 import { FC, useState } from 'react';
-import {
-  Card,
-  Col,
-  Container,
-  Image,
-  OverlayTrigger,
-  Row,
-  Tooltip,
-} from 'react-bootstrap';
+import { Card, Col, Container, Image, Row } from 'react-bootstrap';
 
 import { PageHead } from '../components/PageHead';
 import * as communityData from './api/data';
@@ -55,7 +48,7 @@ const OrganizerPeople: FC<Community> = ({
             <Image fluid src={`/image/banner/${banner}`} alt={banner} />
             {brief?.[0] && (
               <div
-                className={`${styles.shadowin} w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
+                className={`${styles.shadowIn} w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
               >
                 <ul className="list-unstyled">
                   {brief.map(brief => (
@@ -81,20 +74,18 @@ const OrganizerPeople: FC<Community> = ({
             {website && renderContactLabel(website, '网站')}
             {wechat && (
               <Col as="li" className="py-1">
-                <OverlayTrigger
-                  overlay={
-                    <Tooltip id="tooltip-disabled">
-                      <Image
-                        src={`/image/qrcode/${wechat}`}
-                        className="w-75 h-75"
-                        alt={name}
-                      />
-                    </Tooltip>
+                <OverlayBox
+                  title={
+                    <Image
+                      src={`/image/qrcode/${wechat}`}
+                      className="w-75 h-75"
+                      alt={name}
+                    />
                   }
-                  placement="right"
+                  placement="bottom"
                 >
                   <span className="d-inline-block text-success">微信</span>
-                </OverlayTrigger>
+                </OverlayBox>
               </Col>
             )}
             {weibo && renderContactLabel(weibo, '微博')}
@@ -117,7 +108,7 @@ const OrganizerPeople: FC<Community> = ({
             {organizers.map(({ name, link, pic }) => (
               <Col
                 as="li"
-                className={`${styles.media} mt-1 pt-5 pb-3 position-relative`}
+                className="media mt-1 pt-5 pb-3 position-relative"
                 key={pic}
               >
                 <Card
@@ -157,11 +148,7 @@ const OrganizerPeople: FC<Community> = ({
             sm={5}
           >
             {speakers.map(({ pic, name }) => (
-              <Col
-                as="li"
-                className={`${styles.media} mt-1 pt-5 px-1`}
-                key={pic}
-              >
+              <Col as="li" className="mt-1 pt-5 px-1" key={pic}>
                 <Image
                   style={{ width: '9rem', height: '9rem' }}
                   src={`/image/speaker/${pic}`}

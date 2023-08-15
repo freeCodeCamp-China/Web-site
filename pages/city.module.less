@@ -1,11 +1,14 @@
-.media img {
-  border-radius: 50%;
-  width: 8.75rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-}
-
 .shadowIn {
   background: rgba(0, 0, 0, 0.6);
   font-size: 14px;
   z-index: 3;
+}
+
+#info {
+  img + * {
+    display: none;
+  }
+  img:hover + * {
+    display: block;
+  }
 }

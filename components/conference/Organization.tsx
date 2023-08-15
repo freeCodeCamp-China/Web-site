@@ -12,9 +12,7 @@ const renderLevel = (level: number) =>
 
 export const OrganizationInfo: FC = () => (
   <Container>
-    <section
-      className={`${styles.container} text-center px-3 mx-auto my-0 position-relative ${styles.animated}`}
-    >
+    <section className="container text-center px-3 mx-auto my-0 position-relative animated">
       <h2 id="host" className="fs-4 pt-5 px-0 pb-3">
         主办方
       </h2>
@@ -37,9 +35,7 @@ export const OrganizationInfo: FC = () => (
       </div>
     </section>
 
-    <section
-      className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
-    >
+    <section className="container mx-auto my-0 position-relative text-center animated">
       <h2 id="co-organizer" className="fs-4 pt-5 px-0 pb-3">
         协办方（持续更新）
       </h2>
@@ -52,9 +48,7 @@ export const OrganizationInfo: FC = () => (
       </Row>
     </section>
 
-    <section
-      className={`${styles.container} mx-auto position-relative text-center ${styles.animated}`}
-    >
+    <section className="container mx-auto position-relative text-center animated">
       <h2 id="sponsor" className="fs-4 m-0 py-5">
         赞助商（持续更新）
       </h2>
@@ -81,9 +75,7 @@ export const OrganizationInfo: FC = () => (
       ))}
     </section>
 
-    <section
-      className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
-    >
+    <section className="container mx-auto my-0 position-relative text-center animated">
       <h2 id="partners" className="fs-4 m-0 py-5 px-0">
         合作伙伴 (持续更新)
       </h2>
