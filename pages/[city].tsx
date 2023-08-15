@@ -52,6 +52,7 @@ const organiserPeople: FC<Community> = ({
             {brief?.[0] && (
               <div
                 className={`${styles.shadowIn}  w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
+                id="tryAgaim"
               >
                 <ul className="list-unstyled">
                   {brief.map(brief => (
@@ -73,6 +74,7 @@ const organiserPeople: FC<Community> = ({
             <br />
             <span>{name}</span>社区
           </div>
+
           <Row as="ul" className="pt-3" xs={1}>
             {website && renderContactLabel(website, '网站')}
             {wechat && (

@@ -30,7 +30,6 @@ export const MainNavigator: FC = () => (
         >
           论坛
         </Nav.Link>
-
         <Nav.Link href="/organiser">志愿者</Nav.Link>
         <Nav.Link href="/conference">会议</Nav.Link>
       </Nav>
