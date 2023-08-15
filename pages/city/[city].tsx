@@ -27,7 +27,7 @@ export const renderContactLabel = (href: string, name: string) => (
 
 const CommunityCity: FC<CommunityCityProps> = ({
   name,
-  organisers,
+  organizers,
   speakers,
   partners,
   website,
@@ -105,9 +105,9 @@ const CommunityCity: FC<CommunityCityProps> = ({
       </Row>
     </section>
 
-    {organisers?.[0] && (
+    {organizers?.[0] && (
       <section className="text-center mx-auto my-0">
-        <h2 id="organisers" className="fs-4 m-0 ps-5 py-5 text-start">
+        <h2 id="organizers" className="fs-4 m-0 ps-5 py-5 text-start">
           社区组织者
         </h2>
         <Row
@@ -116,21 +116,21 @@ const CommunityCity: FC<CommunityCityProps> = ({
           xs={2}
           sm={5}
         >
-          {organisers.map(({ name, link, pic }) => (
+          {organizers.map(({ name, link, pic }) => (
             <Col as="li" className="media mt-1 pt-5 pb-3" key={pic}>
               <Card className="border border-0">
                 <Card.Img
                   className="mx-3"
                   style={{ width: '10rem', height: '10rem' }}
                   variant="top"
-                  src={`/image/organiser/${pic}`}
+                  src={`/image/organizer/${pic}`}
                   alt={name}
                 />
                 <Card.Body>
                   <Card.Title
                     as="a"
                     className="stretched-link text-dark fw-bolder mt-3 text-center mx-2"
-                    href={link ? `/organiser/${link}` : '#'}
+                    href={link ? `/organizer/${link}` : '#'}
                   >
                     {name}
                   </Card.Title>

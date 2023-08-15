@@ -5,7 +5,7 @@ import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
 import * as data from '../api/data';
 
-const organisers = Object.values(data).flatMap(({ organisers }) => organisers);
+const organizers = Object.values(data).flatMap(({ organizers }) => organizers);
 
 const Organizer: FC = () => (
   <Container>
@@ -13,14 +13,14 @@ const Organizer: FC = () => (
     <h1 className="mb-4">社区组织者</h1>
 
     <Row as="ul" className="list-unstyled text-center g-5" xs={2} sm={6}>
-      {organisers.map(({ name, link, pic }) => (
+      {organizers.map(({ name, link, pic }) => (
         <Col as="li" key={name}>
           {link ? (
-            <a className="text-dark" href={`organiser/${link}`}>
-              <PersonCard avatar={`/image/organiser/${pic}`} name={name} />
+            <a className="text-dark" href={`organizer/${link}`}>
+              <PersonCard avatar={`/image/organizer/${pic}`} name={name} />
             </a>
           ) : (
-            <PersonCard avatar={`/image/organiser/${pic}`} name={name} />
+            <PersonCard avatar={`/image/organizer/${pic}`} name={name} />
           )}
         </Col>
       ))}

@@ -2,7 +2,7 @@ import { GetServerSidePropsContext } from 'next';
 import { FC } from 'react';
 import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 
-import * as volunteerData from '../api/organiser';
+import * as volunteerData from '../api/organizer';
 
 type Volunteer = (typeof volunteerData)[keyof typeof volunteerData];
 
@@ -14,7 +14,7 @@ export async function getServerSideProps({
   return !volunteer ? { notFound: true } : { props: volunteer };
 }
 
-const OrganiserPeople: FC<Volunteer> = ({
+const OrganizerPeople: FC<Volunteer> = ({
   name,
   img,
   zhFrom,
@@ -26,7 +26,7 @@ const OrganiserPeople: FC<Volunteer> = ({
   <Container>
     <Row className="text-center pt-4">
       <Col md={3} className="text-md-start">
-        <Image rounded fluid src={`/image/organiser/${img}`} alt={name} />
+        <Image rounded fluid src={`/image/organizer/${img}`} alt={name} />
       </Col>
       <Col md={9}>
         <h1>{name}</h1>
@@ -71,4 +71,4 @@ const OrganiserPeople: FC<Volunteer> = ({
   </Container>
 );
 
-export default OrganiserPeople;
+export default OrganizerPeople;

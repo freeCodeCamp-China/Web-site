@@ -76,7 +76,7 @@ export const chengdu = {
     { pic: 'shangxianle.png', link: 'https://www.sxl.cn/' },
     { pic: 'xiaoyang.png', link: '' },
   ],
-  organisers: [
+  organizers: [
     { name: '袁民成', pic: 'yuanmincheng.png', link: 'yuanmincheng' },
     { name: '姜玉珍', pic: 'jiangyuzhen.png', link: 'jiangyuzhen' },
     { name: '石垚', pic: 'shiyao.png', link: '' },
@@ -117,7 +117,7 @@ export const chongqing = {
   ],
   history: [],
   speakers: [],
-  organisers: [
+  organizers: [
     { name: '冯中梅', pic: 'fengzhongmei.png', link: '' },
     { name: '刘东', pic: 'liudong.png', link: '' },
     { name: '满远荣', pic: 'manyuanrong.png', link: '' },
@@ -140,7 +140,7 @@ export const guangzhou = {
   ],
   history: [{ name: '程晓琳', pic: 'chengxiaolin.png', link: '' }],
   speakers: [{ name: '魏朝欣', pic: 'weichaoxin.png', link: '' }],
-  organisers: [
+  organizers: [
     { name: '梁彩仪', pic: 'liangcaiyi.png', link: '' },
     { name: '吴亚楠', pic: 'wuyanan.png', link: '' },
     { name: '伍裕平', pic: 'wuyuping.png', link: '' },
@@ -158,7 +158,7 @@ export const hangzhou = {
   brief: [],
   history: [],
   speakers: [],
-  organisers: [
+  organizers: [
     { name: '陈杰', pic: 'chenjie.png', link: '' },
     { name: '黄金良', pic: 'huangjinliang.png', link: '' },
     { name: '李序锴', pic: 'lixukai.png', link: '' },
@@ -176,7 +176,7 @@ export const jinan = {
   brief: [],
   history: [],
   speakers: [],
-  organisers: [{ name: '王军', pic: 'wangjun.png', link: 'javascript;' }],
+  organizers: [{ name: '王军', pic: 'wangjun.png', link: 'javascript;' }],
   partners: [],
 };
 export const shanghai = {
@@ -193,7 +193,7 @@ export const shanghai = {
   ],
   history: [],
   speakers: [],
-  organisers: [
+  organizers: [
     { name: '唐小芳', pic: 'tangxiaofang.png', link: '' },
     { name: '于航', pic: 'yuhang.png', link: '' },
   ],
@@ -213,7 +213,7 @@ export const shenzhen = {
   ],
   history: [],
   speakers: [],
-  organisers: [
+  organizers: [
     { name: '陈钦潮', pic: 'chenqinchao.png', link: '' },
     { name: '陈志成', pic: 'chenzhicheng.png', link: '' },
     { name: '游首杰', pic: 'youshoujie.png', link: '' },
@@ -234,7 +234,7 @@ export const tianjin = {
   ],
   history: [],
   speakers: [],
-  organisers: [
+  organizers: [
     { name: '阚自强', pic: 'kanziqiang.png', link: 'kanziqiang' },
     { name: '刘柱', pic: 'liuzhu.png', link: 'liuzhu' },
     { name: '伊丽娜', pic: 'yilina.png', link: 'yilina' },
@@ -255,7 +255,7 @@ export const wuhan = {
   ],
   history: [],
   speakers: [],
-  organisers: [
+  organizers: [
     { name: '王川', pic: 'wangchuan.png', link: '' },
     { name: '王圣松', pic: 'wangshengsong.png', link: '' },
   ],
@@ -275,7 +275,7 @@ export const xian = {
   ],
   history: [],
   speakers: [],
-  organisers: [
+  organizers: [
     { name: '韩亦乐', pic: 'hanyile.png', link: '' },
     { name: '薛开麒', pic: 'xuekaiqi.png', link: '' },
     { name: '张峰涛', pic: 'zhangfengtao.png', link: '' },
@@ -296,6 +296,6 @@ export const zhengzhou = {
     '我们致力于为热爱前端，热爱技术的小伙伴提供一个可以交流、学习的社群氛围，在让大家能力提升的同时，努力成为当地有温度的属于技术爱好者家门口的技术社区。',
   ],
   speakers: [],
-  organisers: [],
+  organizers: [],
   partners: [],
 };
