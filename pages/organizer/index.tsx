@@ -5,7 +5,7 @@ import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
 import * as data from '../api/data';
 
-const organizers = Object.values(data).flatMap(({ organizer }) => organizer);
+const organizers = Object.values(data).flatMap(({ organizers }) => organizers);
 
 const Organizer: FC = () => (
   <Container>
