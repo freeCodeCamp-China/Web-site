@@ -18,16 +18,16 @@ export async function getServerSideProps({
 }
 
 export const renderContactLabel = (href: string, name: string) => (
-  <Col as="li" className="py-1 ">
+  <Col as="li" className="py-1">
     <a className="text-success" href={href} target="_blank" rel="noreferrer">
       {name}
     </a>
   </Col>
 );
 
-const OrganizerPeople: FC<Community> = ({
+const organiserPeople: FC<Community> = ({
   name,
-  organizers,
+  organisers,
   speakers,
   partners,
   website,
@@ -37,18 +37,21 @@ const OrganizerPeople: FC<Community> = ({
   banner,
   brief,
 }) => {
-  const [show, setShow] = useState(false);
-
   return (
     <Container>
       <PageHead title={`${name}社区`} />
       <section id="info" className="d-flex justify-content-evenly">
         {banner && (
-          <div className="w-50 position-relative">
-            <Image fluid src={`/image/banner/${banner}`} alt={banner} />
+          <div id="try" className="w-50 position-relative">
+            <Image
+              fluid
+              src={`/image/banner/${banner}`}
+              alt={banner}
+              onMouseMove={() => console.log('i get it')}
+            />
             {brief?.[0] && (
               <div
-                className={`${styles.shadowIn} w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
+                className={`${styles.shadowIn}  w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
               >
                 <ul className="list-unstyled">
                   {brief.map(brief => (
@@ -94,9 +97,9 @@ const OrganizerPeople: FC<Community> = ({
         </div>
       </section>
 
-      {organizers?.[0] && (
+      {organisers?.[0] && (
         <section className="text-center mx-auto my-0">
-          <h2 id="organizers" className="fs-4 m-0 ps-5 py-5 text-start">
+          <h2 id="organisers" className="fs-4 m-0 ps-5 py-5 text-start">
             社区组织者
           </h2>
           <Row
@@ -105,29 +108,24 @@ const OrganizerPeople: FC<Community> = ({
             xs={2}
             sm={5}
           >
-            {organizers.map(({ name, link, pic }) => (
-              <Col
-                as="li"
-                className="media mt-1 pt-5 pb-3 position-relative"
-                key={pic}
-              >
-                <Card
-                  className="rounded-circle mx-5"
-                  style={{ width: '10rem', height: '10rem' }}
-                >
+            {organisers.map(({ name, link, pic }) => (
+              <Col as="li" className="media mt-1 pt-5 pb-3" key={pic}>
+                <Card className="border-white">
                   <Card.Img
+                    className="mx-3"
                     style={{ width: '10rem', height: '10rem' }}
                     variant="top"
-                    src={`/image/organizer/${pic}`}
+                    src={`/image/organiser/${pic}`}
                     alt={name}
                   />
                   <Card.Body>
-                    <a
-                      className="stretched-link text-dark fw-bolder mt-3"
-                      href={link ? `/organizer/${link}` : '#'}
+                    <Card.Title
+                      as="a"
+                      className="stretched-link text-dark fw-bolder mt-3 text-center mx-2"
+                      href={link ? `/organiser/${link}` : '#'}
                     >
-                      <Card.Text>{name}</Card.Text>
-                    </a>
+                      {name}
+                    </Card.Title>
                   </Card.Body>
                 </Card>
               </Col>
@@ -148,15 +146,24 @@ const OrganizerPeople: FC<Community> = ({
             sm={5}
           >
             {speakers.map(({ pic, name }) => (
-              <Col as="li" className="mt-1 pt-5 px-1" key={pic}>
-                <Image
-                  style={{ width: '9rem', height: '9rem' }}
-                  src={`/image/speaker/${pic}`}
-                  alt={name}
-                />
-                <ul className="list-unstyled mt-3">
-                  <li className="fs-6 fw-bolder mt-1">{name}</li>
-                </ul>
+              <Col as="li" className="media mt-1 pt-5 pb-3" key={pic}>
+                <Card className="border-white">
+                  <Card.Img
+                    className="mx-4"
+                    style={{ width: '9rem', height: '9rem' }}
+                    variant="top"
+                    src={`/image/speaker/${pic}`}
+                    alt={name}
+                  />
+                  <Card.Body>
+                    <Card.Text
+                      as="a"
+                      className="text-dark fw-bolder mt-3 text-center mx-2"
+                    >
+                      {name}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
               </Col>
             ))}
           </Row>
@@ -197,4 +204,4 @@ const OrganizerPeople: FC<Community> = ({
     </Container>
   );
 };
-export default OrganizerPeople;
+export default organiserPeople;

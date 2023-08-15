@@ -28,9 +28,13 @@ export const CommunityCityList: FC = () => (
                 alt={name}
               />
               <Card.Body>
-                <a className="stretched-link text-dark " href={picPrefix}>
-                  <Card.Text>{name}</Card.Text>
-                </a>
+                <Card.Title
+                  as="a"
+                  className="stretched-link text-dark"
+                  href={picPrefix}
+                >
+                  {name}
+                </Card.Title>
               </Card.Body>
             </Card>
           </Col>
