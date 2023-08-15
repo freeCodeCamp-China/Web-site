@@ -31,7 +31,7 @@ export const CommunityCityList: FC = () => (
                 <Card.Title
                   as="a"
                   className="stretched-link text-dark"
-                  href={picPrefix}
+                  href={`city/${picPrefix}`}
                 >
                   {name}
                 </Card.Title>
