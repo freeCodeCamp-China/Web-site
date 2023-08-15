@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Card, Col, Container, Image, Row } from 'react-bootstrap';
 
-import cityData from '../data/city/CommunityCityListData.json';
+import * as cityData from '../pages/api/data';
 
 export const CommunityCityList: FC = () => (
   <Container>
@@ -15,22 +15,22 @@ export const CommunityCityList: FC = () => (
         sm={5}
         className="list-unstyled justify-content-center"
       >
-        {Object.values(cityData).map(({ name, nameOfPy }) => (
-          <Col as="li" className="mt-1 p-5 px-auto" key={nameOfPy}>
+        {Object.values(cityData).map(({ name, picPrefix }) => (
+          <Col as="li" className="mt-1 p-5 px-auto" key={picPrefix}>
             <Card
               className="rounded-circle"
               style={{ width: '8.75rem', height: '8.75rem' }}
             >
-              <a href={nameOfPy}>
-                <Card.Img
-                  className="rounded-circle"
-                  variant="top"
-                  src="/city_logo.png"
-                  alt={name}
-                />
-              </a>
+              <Card.Img
+                className="rounded-circle"
+                variant="top"
+                src="/city_logo.png"
+                alt={name}
+              />
               <Card.Body>
-                <Card.Text className="fs-5">{name}</Card.Text>
+                <a className="stretched-link text-dark " href={picPrefix}>
+                  <Card.Text>{name}</Card.Text>
+                </a>
               </Card.Body>
             </Card>
           </Col>

@@ -1,6 +1,7 @@
 import { GetServerSidePropsContext } from 'next';
 import { FC, useState } from 'react';
 import {
+  Card,
   Col,
   Container,
   Image,
@@ -10,7 +11,7 @@ import {
 } from 'react-bootstrap';
 
 import { PageHead } from '../components/PageHead';
-import * as communityData from '../data/city/CommunityCityListData.json';
+import * as communityData from './api/data';
 import styles from './city.module.less';
 
 type Community = (typeof communityData)[keyof typeof communityData];
@@ -31,9 +32,9 @@ export const renderContactLabel = (href: string, name: string) => (
   </Col>
 );
 
-const OrganiserPeople: FC<Community> = ({
+const OrganizerPeople: FC<Community> = ({
   name,
-  organisers,
+  organizers,
   speakers,
   partners,
   website,
@@ -41,7 +42,7 @@ const OrganiserPeople: FC<Community> = ({
   github,
   wechat,
   banner,
-  briefs,
+  brief,
 }) => {
   const [show, setShow] = useState(false);
 
@@ -50,27 +51,16 @@ const OrganiserPeople: FC<Community> = ({
       <PageHead title={`${name}社区`} />
       <section id="info" className="d-flex justify-content-evenly">
         {banner && (
-          <div
-            className="w-50"
-            onMouseOver={() => setShow(true)}
-            onMouseOut={() => setShow(false)}
-            style={{ position: 'relative' }}
-          >
-            <Image
-              src={`/image/banner/${banner}`}
-              className="h-100 w-100"
-              style={{ position: 'absolute', left: '0', top: '0' }}
-              alt={banner}
-            />
-            {show && briefs?.[0] && (
+          <div className="w-50 position-relative">
+            <Image fluid src={`/image/banner/${banner}`} alt={banner} />
+            {brief?.[0] && (
               <div
-                className={`${styles.shadowIn} w-100 h-100 text-light d-flex justify-content-center align-items-center`}
-                style={{ position: 'absolute', left: '0', top: '0' }}
+                className={`${styles.shadowin} w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
               >
                 <ul className="list-unstyled">
-                  {briefs.map(brief => (
-                    <li key={brief}>
-                      <p className="m-3">{brief}</p>
+                  {brief.map(brief => (
+                    <li key={brief} className="m-3">
+                      {brief}
                     </li>
                   ))}
                 </ul>
@@ -113,9 +103,9 @@ const OrganiserPeople: FC<Community> = ({
         </div>
       </section>
 
-      {organisers?.[0] && (
+      {organizers?.[0] && (
         <section className="text-center mx-auto my-0">
-          <h2 id="organisers" className="fs-4 m-0 ps-5 py-5 text-start">
+          <h2 id="organizers" className="fs-4 m-0 ps-5 py-5 text-start">
             社区组织者
           </h2>
           <Row
@@ -124,38 +114,31 @@ const OrganiserPeople: FC<Community> = ({
             xs={2}
             sm={5}
           >
-            {organisers.map(({ name, link, pic }) => (
+            {organizers.map(({ name, link, pic }) => (
               <Col
                 as="li"
-                className={`${styles.media} mt-1 pt-5 px-1`}
+                className={`${styles.media} mt-1 pt-5 pb-3 position-relative`}
                 key={pic}
               >
-                {link ? (
-                  <a
-                    className="text-dark"
-                    href={link ? `/organiser/${link}` : ``}
-                  >
-                    <Image
-                      style={{ width: '9rem', height: '9rem' }}
-                      src={`/image/organiser/${pic}`}
-                      alt={name}
-                    />
-                    <ul className="list-unstyled mt-3">
-                      <li className="fs-6 fw-bolder mt-1">{name}</li>
-                    </ul>
-                  </a>
-                ) : (
-                  <>
-                    <Image
-                      style={{ width: '9rem', height: '9rem' }}
-                      src={`/image/organiser/${pic}`}
-                      alt={name}
-                    />
-                    <ul className="list-unstyled mt-3">
-                      <li className="fs-6 fw-bolder mt-1">{name}</li>
-                    </ul>
-                  </>
-                )}
+                <Card
+                  className="rounded-circle mx-5"
+                  style={{ width: '10rem', height: '10rem' }}
+                >
+                  <Card.Img
+                    style={{ width: '10rem', height: '10rem' }}
+                    variant="top"
+                    src={`/image/organizer/${pic}`}
+                    alt={name}
+                  />
+                  <Card.Body>
+                    <a
+                      className="stretched-link text-dark fw-bolder mt-3"
+                      href={link ? `/organizer/${link}` : '#'}
+                    >
+                      <Card.Text>{name}</Card.Text>
+                    </a>
+                  </Card.Body>
+                </Card>
               </Col>
             ))}
           </Row>
@@ -227,4 +210,4 @@ const OrganiserPeople: FC<Community> = ({
     </Container>
   );
 };
-export default OrganiserPeople;
+export default OrganizerPeople;
