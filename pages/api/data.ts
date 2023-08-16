@@ -2,8 +2,8 @@ export const chengdu = {
   name: '成都',
   picPrefix: 'chengdu/',
   banner: 'chengdu.png',
-  website: 'https://web-conf.tk/',
-  wechat: 'qrcode_chengdu.png',
+  website: 'https://fcc-cd.dev/',
+  wechat: 'gh_b8b06d05cfa6',
   weibo: 'https://weibo.com/u/6165665516?is_all=1',
   github: 'https://github.com/FreeCodeCamp-Chengdu',
   brief: [
@@ -108,7 +108,7 @@ export const chongqing = {
   picPrefix: 'chongqing/',
   banner: 'chongqing.png',
   website: '',
-  wechat: 'qrcode_chongqing.png',
+  wechat: '',
   weibo: '',
   github: '',
   brief: [
@@ -131,7 +131,7 @@ export const guangzhou = {
   picPrefix: 'guangzhou/',
   banner: 'guangzhou.png',
   website: '',
-  wechat: 'qrcode_guangzhou.png',
+  wechat: 'FCC_GuangZhou',
   weibo: '',
   github: '',
   brief: [
@@ -152,7 +152,7 @@ export const hangzhou = {
   picPrefix: 'hangzhou/',
   banner: 'hangzhou.png',
   website: '',
-  wechat: 'qrcode_hangzhou.png',
+  wechat: 'TianXing_Community',
   weibo: '',
   github: '',
   brief: [],
@@ -184,7 +184,7 @@ export const shanghai = {
   picPrefix: 'shanghai/',
   banner: 'shanghai.png',
   website: '',
-  wechat: 'qrcode_shanghai.png',
+  wechat: 'FCCShangHai',
   weibo: '',
   github: '',
   brief: [
@@ -204,7 +204,7 @@ export const shenzhen = {
   picPrefix: 'shenzhen/',
   banner: 'shenzhen.png',
   website: '',
-  wechat: 'qrcode_shenzhen.png',
+  wechat: 'nixibuxisala',
   weibo: '',
   github: '',
   brief: [
@@ -225,7 +225,7 @@ export const tianjin = {
   picPrefix: 'tianjin/',
   banner: 'tianjin.png',
   website: '',
-  wechat: 'qrcode_tianjin.png',
+  wechat: '',
   weibo: '',
   github: '',
   brief: [
@@ -246,7 +246,7 @@ export const wuhan = {
   picPrefix: 'wuhan/',
   banner: 'wuhan.png',
   website: '',
-  wechat: 'qrcode_wuhan.png',
+  wechat: '',
   weibo: '',
   github: '',
   brief: [
@@ -266,7 +266,7 @@ export const xian = {
   picPrefix: 'xian/',
   banner: 'xian.png',
   website: '',
-  wechat: 'qrcode_xian.png',
+  wechat: 'gh_a964d2836db4',
   weibo: '',
   github: '',
   brief: [

@@ -87,8 +87,8 @@ const CommunityCity: FC<CommunityCityProps> = ({
                 <OverlayBox
                   title={
                     <Image
-                      src={`/image/qrcode/${wechat}`}
                       className="w-75 h-75"
+                      src={`https://open.weixin.qq.com/qr/code?username=${wechat}`}
                       alt={name}
                     />
                   }
