@@ -11,9 +11,9 @@ export const CommunityCityList: FC = () => (
       </h2>
       <Row
         as="ul"
+        className="list-unstyled justify-content-center"
         xs={2}
         sm={5}
-        className="list-unstyled justify-content-center"
       >
         {Object.values(cityData).map(({ name, picPrefix }) => (
           <Col as="li" className="mt-1 p-5 px-auto" key={picPrefix}>
