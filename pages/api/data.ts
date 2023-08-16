@@ -1,9 +1,9 @@
 export const chengdu = {
   name: '成都',
   picPrefix: 'chengdu/',
-  banner: 'banner.png',
+  banner: 'chengdu.png',
   website: 'https://web-conf.tk/',
-  wechat: 'qrcode.png',
+  wechat: 'qrcode_chengdu.png',
   weibo: 'https://weibo.com/u/6165665516?is_all=1',
   github: 'https://github.com/FreeCodeCamp-Chengdu',
   brief: [
@@ -11,7 +11,7 @@ export const chengdu = {
     '成都社区主要活动有前端大会、黑客松、编程静修日、小的分享沙龙、技术专场活动、编程道场等，社区在每一个月都会输出相应的技术活动，社区秉承“为开发者服务”的理念，努力搭建一个友好的交流、学习、互助的平台，帮助开发者、技术爱好者提升个人技术能力，同时帮助当地企业解决人才问题。',
   ],
   history: [],
-  speaker: [
+  speakers: [
     { name: 'Adieu', pic: 'Adieu.png' },
     { name: 'Ak', pic: 'Ak.png' },
     { name: 'Helen', pic: 'Helen.png' },
@@ -66,7 +66,7 @@ export const chengdu = {
     { name: '张伟', pic: 'zhangwei.png' },
     { name: '赵芝明', pic: 'zhaozhiming.png' },
   ],
-  partner: [
+  partners: [
     { pic: 'BBD.png', link: '' },
     { pic: 'baozun.png', link: 'http://www.baozun.com/' },
     { pic: 'coding.png', link: 'https://coding.net' },
@@ -76,7 +76,7 @@ export const chengdu = {
     { pic: 'shangxianle.png', link: 'https://www.sxl.cn/' },
     { pic: 'xiaoyang.png', link: '' },
   ],
-  organizer: [
+  organizers: [
     { name: '袁民成', pic: 'yuanmincheng.png', link: 'yuanmincheng' },
     { name: '姜玉珍', pic: 'jiangyuzhen.png', link: 'jiangyuzhen' },
     { name: '石垚', pic: 'shiyao.png', link: '' },
@@ -106,9 +106,9 @@ export const chengdu = {
 export const chongqing = {
   name: '重庆',
   picPrefix: 'chongqing/',
-  banner: 'banner.png',
+  banner: 'chongqing.png',
   website: '',
-  wechat: 'qrcode.png',
+  wechat: 'qrcode_chongqing.png',
   weibo: '',
   github: '',
   brief: [
@@ -116,22 +116,22 @@ export const chongqing = {
     'freeCodeCamp 重庆社区成立第二天即举办了首次线下碰面会，快速确定了志愿者的分工形成自己独特的团队文化，并在中国国际智能产业博览会现场崭露头角，让更多人认识了freeCodeCamp，freeCodeCamp重庆社区链接人与技术，共创共赢，共建一个有爱有温度的技术社区。',
   ],
   history: [],
-  speaker: [],
-  organizer: [
+  speakers: [],
+  organizers: [
     { name: '冯中梅', pic: 'fengzhongmei.png', link: '' },
     { name: '刘东', pic: 'liudong.png', link: '' },
     { name: '满远荣', pic: 'manyuanrong.png', link: '' },
     { name: '唐友华', pic: 'tangyouhua.png', link: '' },
     { name: '朱晓鹏', pic: 'zhuxiaopeng.png', link: '' },
   ],
-  partner: [],
+  partners: [],
 };
 export const guangzhou = {
   name: '广州',
   picPrefix: 'guangzhou/',
-  banner: 'banner.png',
+  banner: 'guangzhou.png',
   website: '',
-  wechat: 'qrcode.png',
+  wechat: 'qrcode_guangzhou.png',
   weibo: '',
   github: '',
   brief: [
@@ -139,52 +139,52 @@ export const guangzhou = {
     '社区成立以来曾经组织过20多次活动，活动类型包括：结对编程、研bug会、技术分享会、技术沙龙。freeCodeCamp广州社区历届志愿者均致力于：用技术重新点亮广州这座千年老城。',
   ],
   history: [{ name: '程晓琳', pic: 'chengxiaolin.png', link: '' }],
-  speaker: [{ name: '魏朝欣', pic: 'weichaoxin.png', link: '' }],
-  organizer: [
+  speakers: [{ name: '魏朝欣', pic: 'weichaoxin.png', link: '' }],
+  organizers: [
     { name: '梁彩仪', pic: 'liangcaiyi.png', link: '' },
     { name: '吴亚楠', pic: 'wuyanan.png', link: '' },
     { name: '伍裕平', pic: 'wuyuping.png', link: '' },
   ],
-  partner: [],
+  partners: [],
 };
 export const hangzhou = {
   name: '杭州',
   picPrefix: 'hangzhou/',
-  banner: 'banner.png',
+  banner: 'hangzhou.png',
   website: '',
-  wechat: 'qrcode.png',
+  wechat: 'qrcode_hangzhou.png',
   weibo: '',
   github: '',
   brief: [],
   history: [],
-  speaker: [],
-  organizer: [
+  speakers: [],
+  organizers: [
     { name: '陈杰', pic: 'chenjie.png', link: '' },
     { name: '黄金良', pic: 'huangjinliang.png', link: '' },
     { name: '李序锴', pic: 'lixukai.png', link: '' },
   ],
-  partner: [],
+  partners: [],
 };
 export const jinan = {
   name: '济南',
   picPrefix: 'jinan/',
-  banner: 'banner.png',
+  banner: '',
   website: '',
-  wechat: 'qrcode.png',
+  wechat: '',
   weibo: '',
   github: '',
   brief: [],
   history: [],
-  speaker: [],
-  organizer: [{ name: '王军', pic: 'wangjun.png', link: 'javascript;' }],
-  partner: [],
+  speakers: [],
+  organizers: [{ name: '王军', pic: 'wangjun.png', link: 'javascript;' }],
+  partners: [],
 };
 export const shanghai = {
   name: '上海',
   picPrefix: 'shanghai/',
-  banner: 'banner.png',
+  banner: 'shanghai.png',
   website: '',
-  wechat: 'qrcode.png',
+  wechat: 'qrcode_shanghai.png',
   weibo: '',
   github: '',
   brief: [
@@ -192,19 +192,19 @@ export const shanghai = {
     '社区成立以来共举办了3次30人左右的小型沙龙活动，以及2次100人左右的中型主题分享会，即freeCodeCamp上海四季分享会的夏季和秋季场。freeCodeCamp上海社区的目标是：为上海的互联网技术开发者提供一个可以进行交流的平台。',
   ],
   history: [],
-  speaker: [],
-  organizer: [
+  speakers: [],
+  organizers: [
     { name: '唐小芳', pic: 'tangxiaofang.png', link: '' },
     { name: '于航', pic: 'yuhang.png', link: '' },
   ],
-  partner: [],
+  partners: [],
 };
 export const shenzhen = {
   name: '深圳',
   picPrefix: 'shenzhen/',
-  banner: 'banner.png',
+  banner: 'shenzhen.png',
   website: '',
-  wechat: 'qrcode.png',
+  wechat: 'qrcode_shenzhen.png',
   weibo: '',
   github: '',
   brief: [
@@ -212,20 +212,20 @@ export const shenzhen = {
     '社区成立以来共举办了10次100人左右的线下活动，以及3次大型主题分享会。从0到1，线下社区成员已有467人。深圳社区的主要目标和责任是做有趣有料的线下活动，目前深圳社区将会致力于发展 Coffee and Code 的形式，丰富线下编程学习的场景。',
   ],
   history: [],
-  speaker: [],
-  organizer: [
+  speakers: [],
+  organizers: [
     { name: '陈钦潮', pic: 'chenqinchao.png', link: '' },
     { name: '陈志成', pic: 'chenzhicheng.png', link: '' },
     { name: '游首杰', pic: 'youshoujie.png', link: '' },
   ],
-  partner: [],
+  partners: [],
 };
 export const tianjin = {
   name: '天津',
   picPrefix: 'tianjin/',
-  banner: 'banner.png',
+  banner: 'tianjin.png',
   website: '',
-  wechat: 'qrcode.png',
+  wechat: 'qrcode_tianjin.png',
   weibo: '',
   github: '',
   brief: [
@@ -233,20 +233,20 @@ export const tianjin = {
     '社区成立以来共举办14次 Coffee and Code 活动和一次技术主题分享会。天津社区的目标和责任是：让天津的互联网技术氛围因有我的存在而有一点点不同。',
   ],
   history: [],
-  speaker: [],
-  organizer: [
+  speakers: [],
+  organizers: [
     { name: '阚自强', pic: 'kanziqiang.png', link: 'kanziqiang' },
     { name: '刘柱', pic: 'liuzhu.png', link: 'liuzhu' },
     { name: '伊丽娜', pic: 'yilina.png', link: 'yilina' },
   ],
-  partner: [],
+  partners: [],
 };
 export const wuhan = {
   name: '武汉',
   picPrefix: 'wuhan/',
-  banner: 'banner.png',
+  banner: 'wuhan.png',
   website: '',
-  wechat: 'qrcode.png',
+  wechat: 'qrcode_wuhan.png',
   weibo: '',
   github: '',
   brief: [
@@ -254,19 +254,19 @@ export const wuhan = {
     '成立来，除了定期举办线下交流活动，给予大家的线下交流机会，线上也会带领大家参与诸如官网页面开发等实战项目。',
   ],
   history: [],
-  speaker: [],
-  organizer: [
+  speakers: [],
+  organizers: [
     { name: '王川', pic: 'wangchuan.png', link: '' },
     { name: '王圣松', pic: 'wangshengsong.png', link: '' },
   ],
-  partner: [],
+  partners: [],
 };
 export const xian = {
   name: '西安',
   picPrefix: 'xian/',
-  banner: 'banner.png',
+  banner: 'xian.png',
   website: '',
-  wechat: 'qrcode.png',
+  wechat: 'qrcode_xian.png',
   weibo: '',
   github: '',
   brief: [
@@ -274,20 +274,20 @@ export const xian = {
     '在发起人韩亦乐的主导下，社区两年来已举办近十次线下技术交流活动和一场前端大会。freeCodeCamp西安社区将以开源、活动和招聘三大板块为发展重心，逐步搭建更完整的技术社区，服务更多的西安本土开发者、企业，努力让每一个社区成员能够在这里得到成长。',
   ],
   history: [],
-  speaker: [],
-  organizer: [
+  speakers: [],
+  organizers: [
     { name: '韩亦乐', pic: 'hanyile.png', link: '' },
     { name: '薛开麒', pic: 'xuekaiqi.png', link: '' },
     { name: '张峰涛', pic: 'zhangfengtao.png', link: '' },
   ],
-  partner: [],
+  partners: [],
 };
 export const zhengzhou = {
   name: '郑州',
   picPrefix: 'zhengzhou/',
-  banner: 'banner.png',
+  banner: 'zhengzhou.png',
   website: '',
-  wechat: 'qrcode.png',
+  wechat: '',
   weibo: '',
   github: '',
   history: [],
@@ -295,7 +295,7 @@ export const zhengzhou = {
     'freeCodeCamp 郑州社区由石中玉发起并开始组织相关交流活动，核心组织成员有石中玉、徐启、张银龙。于2017年3月22日组织第一次线下沙龙，我们先后尝试了线上和线下分享相结合的方式来探索社区运营方式和思路。',
     '我们致力于为热爱前端，热爱技术的小伙伴提供一个可以交流、学习的社群氛围，在让大家能力提升的同时，努力成为当地有温度的属于技术爱好者家门口的技术社区。',
   ],
-  speaker: [],
-  organizer: [],
-  partner: [],
+  speakers: [],
+  organizers: [],
+  partners: [],
 };

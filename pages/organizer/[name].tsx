@@ -26,7 +26,7 @@ const OrganizerPeople: FC<Volunteer> = ({
   <Container>
     <Row className="text-center pt-4">
       <Col md={3} className="text-md-start">
-        <Image rounded fluid src={img} />
+        <Image rounded fluid src={`/image/organizer/${img}`} alt={name} />
       </Col>
       <Col md={9}>
         <h1>{name}</h1>

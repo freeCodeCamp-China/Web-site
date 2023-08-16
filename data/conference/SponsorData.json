@@ -3,57 +3,57 @@
     {
       "level": 1,
       "href": "https://www.sxl.cn",
-      "imgSrc": "/image/logo/shangxianle.png"
+      "imgSrc": "/image/partner/shangxianle.png"
     },
     {
       "level": 0,
       "href": "http://gbacenter.org/",
-      "imgSrc": "/image/logo/gbac.png"
+      "imgSrc": "/image/partner/gbac.png"
     },
     {
       "level": 1,
       "href": "http://hpb.io",
-      "imgSrc": "/image//logo/highpb.png"
+      "imgSrc": "/image/partner/highpb.png"
     },
     {
       "level": 2,
       "href": "http://www.knowhowchain.com",
-      "imgSrc": "/image/logo/naohailian.png"
+      "imgSrc": "/image/partner/naohailian.png"
     },
     {
       "level": 2,
       "href": "http://www.baozun.com",
-      "imgSrc": "/image/logo/baozun.jpg"
+      "imgSrc": "/image/partner/baozun.jpg"
     },
     {
       "level": 3,
       "href": "http://www.huaweicloud.com",
-      "imgSrc": "/image/logo/huawei.png"
+      "imgSrc": "/image/partner/huawei.png"
     },
     {
       "level": 99,
       "href": "https://developer.ibm.com/cn/callforcode",
-      "imgSrc": "/image/logo/call_for_code.png"
+      "imgSrc": "/image/partner/call_for_code.png"
     },
     {
       "level": 99,
       "href": "https://www.talkingdata.com",
-      "imgSrc": "/image/logo/talkingdata.png"
+      "imgSrc": "/image/partner/talkingdata.png"
     },
     {
       "level": 99,
       "href": "https://coding.net",
-      "imgSrc": "/image/logo/coding.svg"
+      "imgSrc": "/image/partner/coding.svg"
     },
     {
       "level": 99,
       "href": "https://yoyow.org",
-      "imgSrc": "/image/logo/yoyow.jpg"
+      "imgSrc": "/image/partner/yoyow.jpg"
     },
     {
       "level": 99,
       "href": "https://www.epubit.com/",
-      "imgSrc": "/image/logo/yibushequ.png"
+      "imgSrc": "/image/partner/yibushequ.png"
     }
   ],
   "partners": [
@@ -63,59 +63,59 @@
     },
     {
       "href": "http://blockgeek.org/",
-      "imgSrc": "/image/logo/bgeek.png"
+      "imgSrc": "/image/partner/bgeek.png"
     },
     {
       "href": "https://www.getui.com/cn/index.html",
-      "imgSrc": "/image/logo/getui.png"
+      "imgSrc": "/image/partner/getui.png"
     },
     {
       "href": "https://segmentfault.com",
-      "imgSrc": "/image/logo/sf.png"
+      "imgSrc": "/image/partner/sf.png"
     },
     {
       "href": "https://www.blockchaincentreglobal.com",
-      "imgSrc": "/image/logo/shine.png"
+      "imgSrc": "/image/partner/shine.png"
     },
     {
       "href": "https://www.easemob.com",
-      "imgSrc": "/image/logo/huanxin.png"
+      "imgSrc": "/image/partner/huanxin.png"
     },
     {
       "href": "https://m.ke.qq.com/index.html?_bid=167&amp;_wv=4097#from=other",
-      "imgSrc": "/image/logo/tecent_ke.png"
+      "imgSrc": "/image/partner/tecent_ke.png"
     },
     {
       "href": "https://www.oschina.net",
-      "imgSrc": "/image/logo/osc.jpg"
+      "imgSrc": "/image/partner/osc.jpg"
     },
     {
       "href": "https://www.apicloud.com/m",
-      "imgSrc": "/image/logo/apicloud.png"
+      "imgSrc": "/image/partner/apicloud.png"
     },
     {
       "href": "http://www.techfantasy.com.cn/",
-      "imgSrc": "/image/logo/techfantacy.png"
+      "imgSrc": "/image/partner/techfantacy.png"
     },
     {
       "href": "http://www.hxzy.cn/",
-      "imgSrc": "/image/logo/huaxinzhiyuan.png"
+      "imgSrc": "/image/partner/huaxinzhiyuan.png"
     },
     {
       "href": "javascript:;",
-      "imgSrc": "/image/logo/quancheng.png"
+      "imgSrc": "/image/partner/quancheng.png"
     },
     {
       "href": "javascript:;",
-      "imgSrc": "/image/logo/wenna.png"
+      "imgSrc": "/image/partner/wenna.png"
     },
     {
       "href": "http://flink-china.org",
-      "imgSrc": "/image/logo/flink-china.png"
+      "imgSrc": "/image/partner/flink-china.png"
     },
     {
       "href": "https://dbaplus.cn",
-      "imgSrc": "/image/logo/dbaplus.png"
+      "imgSrc": "/image/partner/dbaplus.png"
     }
   ]
 }

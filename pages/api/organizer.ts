@@ -2,7 +2,7 @@ export const jiangyuzhen = {
   name: '姜玉珍',
   from: 'chengdu',
   zhFrom: '成都',
-  img: '/image/organizer/jiangyuzhen.png',
+  img: 'jiangyuzhen.png',
   github: '',
   motto: '',
   storyWithFCC: [
@@ -14,7 +14,7 @@ export const yuanmincheng = {
   name: '袁民成',
   from: 'chengdu',
   zhFrom: '成都',
-  img: '/image/organizer/yuanmincheng.png',
+  img: 'yuanmincheng.png',
   github: '',
   motto: '世界上只有一种真正的英雄主义，那就是在认清生活真相之后依然热爱生活',
   storyWithFCC: [
@@ -32,7 +32,7 @@ export const heqingsong = {
   name: '何青松',
   from: 'chengdu',
   zhFrom: '成都',
-  img: '/image/organizer/heqingsong.png',
+  img: 'heqingsong.png',
   github: '',
   motto: '居安思危，未雨绸缪',
   storyWithFCC: [
@@ -73,7 +73,7 @@ export const kanziqiang = {
   from: 'tianjin',
   zhFrom: '天津',
   github: 'https://github.com/topqiang',
-  img: '/image/organizer/kanziqiang.png',
+  img: 'kanziqiang.png',
   motto: '把每一件小事做的更精彩',
   storyWithFCC: [
     '加入FCC源于2017PHP全球开发者大会结识Miya，也因自己对技术交流的一种渴望，希望可以通过社区技术交流帮助更多开发者成长，结识更多同路人。作为天津一名互联网技术从业者看到起步较早的天津在技术大环境氛围上被一些二三线城市迅速赶超，深感一份担忧和责任，也希望自己可以做点事情让更多的技术相关人活跃起来，更好地促进彼此的成长，更好地拉动整个天津的技术氛围。我相信，加入FCC我们可以”让天津的互联网技术氛围因有我的存在而有一点点不同。”',
@@ -96,7 +96,7 @@ export const liuzhu = {
   from: 'tianjin',
   zhFrom: '天津',
   github: 'https://github.com/simengphp/',
-  img: '/image/organizer/liuzhu.png',
+  img: 'liuzhu.png',
   motto: '做一个实实在在的内行人',
   storyWithFCC: [
     '结识FCC得益于工作中的小伙伴阚自强（@Topqiang），加之本身也是一名公益组织思梦php的发起者，因此加入这个推动开源事业以及帮助更多爱好编程的朋友更好更快的入门的这样一个团队，所在团队是FCC天津地区，作为一名天津人以及天津的互联网从业者，对天津互联网大环境的一种失望，想通过自己的一点小努力去做一点小改变。',
@@ -120,7 +120,7 @@ export const yilina = {
   from: 'tianjin',
   zhFrom: '天津',
   github: '',
-  img: '/image/organizer/yilina.png',
+  img: 'yilina.png',
   motto: '',
   storyWithFCC: [
     '我是FCC天津社区成员伊丽娜，我与FCC的相识是从一个普通大众思维向互联网思维转变的过程，改变了我的职业观及工作思维方式。因工作原因，我结识了FCC天津社区发起人阚自强（TOPQiang），虽然我比较年长，但是我习惯性的称呼他为强哥。强哥带我走进了FCC，认识了许多优秀的科技人才和有志青年，拓展了我的视野及思维。严格来讲，我的工作是互联网运营岗，所以对技术钻研不深，但是我个人觉得，产品、技术、运营保持交流是十分必要的。',

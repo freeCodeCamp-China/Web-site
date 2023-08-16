@@ -1,14 +1,12 @@
 import { FC } from 'react';
 import { Container, Tab, Tabs } from 'react-bootstrap';
 
-import citySchedulesData from '../data/CitySchedulesData.json';
+import citySchedulesData from '../../data/conference/CitySchedulesData.json';
 import styles from './CityScheduleInfo.module.less';
 
 export const CityScheduleInfo: FC = () => (
   <Container>
-    <section
-      className={`${styles.container} mx-auto my-0 position-relative ${styles.animated} text-center`}
-    >
+    <section className="container mx-auto my-0 position-relative animated text-center">
       <h2 id="schedule" className="fs-4 py-5">
         大会日程与报名通道
       </h2>

@@ -5,7 +5,7 @@ import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
 import * as data from '../api/data';
 
-const organizers = Object.values(data).flatMap(({ organizer }) => organizer);
+const organizers = Object.values(data).flatMap(({ organizers }) => organizers);
 
 const Organizer: FC = () => (
   <Container>
@@ -17,10 +17,10 @@ const Organizer: FC = () => (
         <Col as="li" key={name}>
           {link ? (
             <a className="text-dark" href={`organizer/${link}`}>
-              <PersonCard avatar={pic} name={name} />
+              <PersonCard avatar={`/image/organizer/${pic}`} name={name} />
             </a>
           ) : (
-            <PersonCard avatar={pic} name={name} />
+            <PersonCard avatar={`/image/organizer/${pic}`} name={name} />
           )}
         </Col>
       ))}

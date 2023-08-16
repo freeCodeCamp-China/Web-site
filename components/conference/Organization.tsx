@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 import { groupBy } from 'web-utility';
 
-import sponsorData from './../data/SponsorData.json';
+import sponsorData from '../../data/conference/SponsorData.json';
 import styles from './Organization.module.less';
 
 const { sponsors, partners } = sponsorData;
@@ -12,19 +12,14 @@ const renderLevel = (level: number) =>
 
 export const OrganizationInfo: FC = () => (
   <Container>
-    <section
-      className={`${styles.container} text-center px-3 mx-auto my-0 position-relative ${styles.animated}`}
-    >
+    <section className="container text-center px-3 mx-auto my-0 position-relative animated">
       <h2 id="host" className="fs-4 pt-5 px-0 pb-3">
         主办方
       </h2>
       <div className="d-flex justify-content-between">
         <div className="mx-auto my-0">
           <a target="_blank" href="/" rel="noreferrer">
-            <img
-              className={`${styles.logo} w-25`}
-              src="/freecodecamp-logo.png"
-            />
+            <img className={styles.logo} src="/freecodecamp-logo.png" />
           </a>
           <p className="text-start mt-4">
             freeCodeCamp 是 GitHub 上 Star 第一的开源项目。自 2014
@@ -40,24 +35,20 @@ export const OrganizationInfo: FC = () => (
       </div>
     </section>
 
-    <section
-      className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
-    >
+    <section className="container mx-auto my-0 position-relative text-center animated">
       <h2 id="co-organizer" className="fs-4 pt-5 px-0 pb-3">
         协办方（持续更新）
       </h2>
       <Row as="ul" className="list-unstyled">
         <Col as="li" className={styles.partner_item}>
           <a target="_blank" href="https://juejin.im/timeline" rel="noreferrer">
-            <Image src="/image/logo/juejin.png" />
+            <Image src="/image/partner/juejin.png" />
           </a>
         </Col>
       </Row>
     </section>
 
-    <section
-      className={`${styles.container} mx-auto position-relative text-center ${styles.animated}`}
-    >
+    <section className="container mx-auto position-relative text-center animated">
       <h2 id="sponsor" className="fs-4 m-0 py-5">
         赞助商（持续更新）
       </h2>
@@ -65,9 +56,9 @@ export const OrganizationInfo: FC = () => (
       {Object.values(groupBy(sponsors, 'level')).map(sponsors => (
         <Row
           as="ul"
+          className="list-unstyled justify-content-around p-1"
           xs={2}
           sm={5}
-          className="list-unstyled justify-content-around p-1"
           key={sponsors[0].level}
         >
           {sponsors.map(({ level, href, imgSrc }) => (
@@ -84,22 +75,23 @@ export const OrganizationInfo: FC = () => (
       ))}
     </section>
 
-    <section
-      className={`${styles.container} mx-auto my-0 position-relative text-center ${styles.animated}`}
-    >
+    <section className="container mx-auto my-0 position-relative text-center animated">
       <h2 id="partners" className="fs-4 m-0 py-5 px-0">
         合作伙伴 (持续更新)
       </h2>
       <Row
         as="ul"
+        className="list-unstyled justify-content-around"
         xs={2}
         sm={5}
-        className="list-unstyled justify-content-around"
       >
         {partners.map(({ href, imgSrc }) => (
           <Col as="li" className={styles.partner} key={href}>
             <a className="mx-3" href={href} target="_blank" rel="noreferrer">
-              <Image className="pb-5" src={imgSrc} />
+              <Image
+                className="pb-5 object-fit-fill align-items-center"
+                src={imgSrc}
+              />
             </a>
           </Col>
         ))}

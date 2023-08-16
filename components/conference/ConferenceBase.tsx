@@ -6,7 +6,7 @@ import styles from './ConferenceBase.module.less';
 export const ConferenceBase: FC = () => (
   <Container>
     <section
-      className={`${styles.abstract} ${styles.container} m-0 position-relative p-sm-0 pb-5 text-center bg-light ${styles.animated}`}
+      className={`${styles.abstract} container m-0 position-relative p-sm-0 pb-5 text-center bg-light animated`}
     >
       <h2 id="abstract" className="m-0 py-4 fs-4">
         大会宗旨
@@ -19,15 +19,13 @@ export const ConferenceBase: FC = () => (
         个城市同期举办，诚邀广大开发者共享技术盛宴。
       </p>
     </section>
-    <section
-      className={`${styles.container} text-center m-0 position-relative p-sm-0 ${styles.animated}`}
-    >
+    <section className="container text-center m-0 position-relative p-sm-0 animated">
       <h2 id="review" className="m-0 py-4 fs-4">
         往届活动回顾
       </h2>
 
       <Carousel data-bs-theme="dark" className="h-25">
-        <Carousel.Item>
+        <Carousel.Item interval={1000}>
           <img className="w-100 mb-2" src="/image/review1.png" alt="review1" />
           <Carousel.Caption>
             <p className={`text-light ${styles.textShadow}`}>
@@ -36,7 +34,7 @@ export const ConferenceBase: FC = () => (
             </p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item>
+        <Carousel.Item interval={1000}>
           <img className="w-100 mb-2" src="/image/review2.png" alt="review2" />
           <Carousel.Caption>
             <p className={`text-light ${styles.textShadow}`}>
@@ -48,9 +46,7 @@ export const ConferenceBase: FC = () => (
       </Carousel>
     </section>
 
-    <section
-      className={`${styles.container} text-start m-0 position-relative p-sm-0 ${styles.animated}`}
-    >
+    <section className="container text-start m-0 position-relative p-sm-0 animated">
       <h2 id="situation" className="m-0 py-5 text-center fs-4">
         2018 freeCodeConf 概况
       </h2>
@@ -82,9 +78,7 @@ export const ConferenceBase: FC = () => (
       </ul>
     </section>
 
-    <section
-      className={`${styles.snap} ${styles.container} m-0 p-sm-0 ${styles.animated}`}
-    >
+    <section className={`${styles.snap} container m-0 p-sm-0 animated`}>
       <h2 id="snap" className="text-center pt-5 pb-3 fs-4">
         大会亮点
       </h2>

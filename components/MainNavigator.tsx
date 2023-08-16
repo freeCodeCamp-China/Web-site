@@ -18,13 +18,18 @@ export const MainNavigator: FC = () => (
     <Navbar.Toggle className="border-0 shadow-none" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className={`ms-auto align-items-center ${styles.navBox}`}>
-        <Nav.Link href="https://www.freecodecamp.org/chinese/learn/">
+        <Nav.Link
+          href="https://www.freecodecamp.org/chinese/learn/"
+          target="_blank"
+        >
           课程
         </Nav.Link>
-        <Nav.Link href="https://forum.freecodecamp.org/c/chinese/">
+        <Nav.Link
+          href="https://forum.freecodecamp.org/c/chinese/"
+          target="_blank"
+        >
           论坛
         </Nav.Link>
-        <Nav.Link href="#">社区</Nav.Link>
         <Nav.Link href="/organizer">志愿者</Nav.Link>
         <Nav.Link href="/conference">会议</Nav.Link>
       </Nav>
