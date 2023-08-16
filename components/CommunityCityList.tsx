@@ -6,7 +6,7 @@ import * as cityData from '../pages/api/data';
 export const CommunityCityList: FC = () => (
   <Container>
     <section className="text-center mx-auto my-0 position-relative">
-      <h2 id="cities" className="fs-4 m-0 py-5">
+      <h2 id="cities" className="fs-4 m-0 py-3">
         社区城市
       </h2>
       <Row
@@ -16,7 +16,7 @@ export const CommunityCityList: FC = () => (
         sm={5}
       >
         {Object.values(cityData).map(({ name, picPrefix }) => (
-          <Col as="li" className="mt-1 p-5 px-auto" key={picPrefix}>
+          <Col as="li" className="mt-1 py-5 px-4" key={picPrefix}>
             <Card
               className="rounded-circle"
               style={{ width: '8.75rem', height: '8.75rem' }}
