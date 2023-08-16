@@ -56,9 +56,9 @@ export const OrganizationInfo: FC = () => (
       {Object.values(groupBy(sponsors, 'level')).map(sponsors => (
         <Row
           as="ul"
+          className="list-unstyled justify-content-around p-1"
           xs={2}
           sm={5}
-          className="list-unstyled justify-content-around p-1"
           key={sponsors[0].level}
         >
           {sponsors.map(({ level, href, imgSrc }) => (
@@ -81,9 +81,9 @@ export const OrganizationInfo: FC = () => (
       </h2>
       <Row
         as="ul"
+        className="list-unstyled justify-content-around"
         xs={2}
         sm={5}
-        className="list-unstyled justify-content-around"
       >
         {partners.map(({ href, imgSrc }) => (
           <Col as="li" className={styles.partner} key={href}>
