@@ -2,10 +2,8 @@ import { FC } from 'react';
 import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 import { groupBy } from 'web-utility';
 
-import sponsorData from '../../data/conference/SponsorData.json';
+import { partners, sponsors } from '../../data/conference/SponsorData';
 import styles from './Organization.module.less';
-
-const { sponsors, partners } = sponsorData;
 
 const renderLevel = (level: number) =>
   ['铂金赞助商', '金牌赞助商', '银牌赞助商', '铜牌赞助商'][level] || '礼品赞助';
