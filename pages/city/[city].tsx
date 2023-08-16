@@ -107,21 +107,28 @@ const CommunityCity: FC<CommunityCityProps> = ({
 
     {organizers?.[0] && (
       <section className="text-center mx-auto my-0">
-        <h2 id="organizers" className="fs-4 m-0 ps-5 py-5 text-start">
+        <h2
+          id="organizers"
+          className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+        >
           社区组织者
         </h2>
         <Row
           as="ul"
-          className="list-unstyled text-center justify-content-around g-5"
+          className="list-unstyled justify-content-center"
           xs={2}
           sm={5}
         >
           {organizers.map(({ name, link, pic }) => (
-            <Col as="li" className="media mt-1 pt-5 pb-3" key={pic}>
-              <Card className="border border-0">
+            <Col
+              as="li"
+              className="my-3 d-flex justify-content-center"
+              key={pic}
+            >
+              <Card className="border-0">
                 <Card.Img
-                  className="mx-3"
-                  style={{ width: '10rem', height: '10rem' }}
+                  className="rounded-circle"
+                  style={{ width: '8rem' }}
                   variant="top"
                   src={`/image/organizer/${pic}`}
                   alt={name}
@@ -129,7 +136,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
                 <Card.Body>
                   <Card.Title
                     as="a"
-                    className="stretched-link text-dark fw-bolder mt-3 text-center mx-2"
+                    className="stretched-link text-dark"
                     href={link ? `/organizer/${link}` : '#'}
                   >
                     {name}
