@@ -1,34 +1,22 @@
 import { FC } from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 import guestData from '../../data/conference/GuestData.json';
+import { PersonCard } from '../PersonCard';
 
 export const GuestInfo: FC = () => (
-  <Container>
-    <section className="container animated text-center mx-auto my-0 position-relative">
-      <h2 id="guests" className="fs-4 m-0 py-5">
-        演讲嘉宾（持续更新）
-      </h2>
-      <Row
-        as="ul"
-        className="list-unstyled justify-content-center"
-        xs={2}
-        sm={5}
-      >
-        {guestData.map(({ pic, name, position }) => (
-          <Col as="li" className="media mt-1 pt-5 px-1" key={pic}>
-            <Image
-              style={{ width: '8.75rem' }}
-              src={`/image/speaker/${pic}`}
-              alt={name}
-            />
-            <ul className="list-unstyled mt-3">
-              <li className="fs-6 fw-bolder mt-1">{name}</li>
-              <li className="mt-1">{position}</li>
-            </ul>
-          </Col>
-        ))}
-      </Row>
-    </section>
+  <Container className="text-center mx-auto my-0">
+    <h2 id="guests" className="fs-4 m-0 py-5">
+      演讲嘉宾（持续更新）
+    </h2>
+    <Row as="ul" className="list-unstyled" xs={2} sm={4}>
+      {guestData.map(({ pic, name, position }, index) => (
+        <PersonCard
+          avatar={`/image/speaker/${pic}`}
+          key={index}
+          {...{ name, position }}
+        />
+      ))}
+    </Row>
   </Container>
 );

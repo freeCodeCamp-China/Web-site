@@ -1,9 +1,10 @@
 import { OverlayBox } from 'idea-react';
 import { GetServerSidePropsContext } from 'next';
 import { FC } from 'react';
-import { Card, Col, Container, Image, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 
 import { PageHead } from '../../components/PageHead';
+import { PersonCard } from '../../components/PersonCard';
 import * as communityData from '../api/data';
 import styles from './city.module.less';
 
@@ -119,31 +120,13 @@ const CommunityCity: FC<CommunityCityProps> = ({
           xs={2}
           sm={5}
         >
-          {organizers.map(({ name, link, pic }) => (
-            <Col
-              as="li"
-              className="my-3 d-flex justify-content-center"
-              key={pic}
-            >
-              <Card className="border-0">
-                <Card.Img
-                  className="rounded-circle"
-                  style={{ width: '8rem' }}
-                  variant="top"
-                  src={`/image/organizer/${pic}`}
-                  alt={name}
-                />
-                <Card.Body>
-                  <Card.Title
-                    as="a"
-                    className="stretched-link text-dark"
-                    href={link ? `/organizer/${link}` : '#'}
-                  >
-                    {name}
-                  </Card.Title>
-                </Card.Body>
-              </Card>
-            </Col>
+          {organizers.map(({ name, link, pic }, index) => (
+            <PersonCard
+              avatar={`/image/organizer/${pic}`}
+              link={`/organizer/${link}` || '#'}
+              key={index}
+              {...{ name }}
+            />
           ))}
         </Row>
       </section>
@@ -151,7 +134,10 @@ const CommunityCity: FC<CommunityCityProps> = ({
 
     {speakers?.[0] && (
       <section className="text-center mx-auto my-0">
-        <h2 id="speakers" className="fs-4 m-0 ps-5 pt-5 text-start">
+        <h2
+          id="speakers"
+          className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+        >
           演讲嘉宾
         </h2>
         <Row
@@ -160,23 +146,12 @@ const CommunityCity: FC<CommunityCityProps> = ({
           xs={2}
           sm={5}
         >
-          {speakers.map(({ pic, name }) => (
-            <Col as="li" className="media mt-1 pt-5 pb-3" key={pic}>
-              <Card className="border border-0">
-                <Card.Img
-                  className="mx-4"
-                  style={{ width: '9rem', height: '9rem' }}
-                  variant="top"
-                  src={`/image/speaker/${pic}`}
-                  alt={name}
-                />
-                <Card.Body>
-                  <Card.Title className="fw-bolder text-dark text-center mt-3 mx-2">
-                    {name}
-                  </Card.Title>
-                </Card.Body>
-              </Card>
-            </Col>
+          {speakers.map(({ pic, name }, index) => (
+            <PersonCard
+              avatar={`/image/speaker/${pic}`}
+              key={index}
+              {...{ name }}
+            />
           ))}
         </Row>
       </section>
@@ -184,7 +159,10 @@ const CommunityCity: FC<CommunityCityProps> = ({
 
     {partners?.[0] && (
       <section className="mx-auto my-0 position-relative text-center">
-        <h2 id="partners" className="fs-4 m-0 ps-5 py-5 px-0 text-start">
+        <h2
+          id="partners"
+          className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+        >
           合作企业
         </h2>
         <Row
