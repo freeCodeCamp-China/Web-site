@@ -120,12 +120,12 @@ const CommunityCity: FC<CommunityCityProps> = ({
           xs={2}
           sm={5}
         >
-          {organizers.map(({ name, link, pic }, index) => (
+          {organizers.map(({ name, link, pic }) => (
             <PersonCard
               avatar={`/image/organizer/${pic}`}
               link={`/organizer/${link}` || '#'}
-              key={index}
-              {...{ name }}
+              key={name}
+              name={name}
             />
           ))}
         </Row>
@@ -146,11 +146,11 @@ const CommunityCity: FC<CommunityCityProps> = ({
           xs={2}
           sm={5}
         >
-          {speakers.map(({ pic, name }, index) => (
+          {speakers.map(({ pic, name }) => (
             <PersonCard
               avatar={`/image/speaker/${pic}`}
-              key={index}
-              {...{ name }}
+              key={name}
+              name={name}
             />
           ))}
         </Row>

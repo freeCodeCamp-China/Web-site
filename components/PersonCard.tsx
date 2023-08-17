@@ -6,7 +6,6 @@ export type PersonCardProps = {
   name: string;
   link?: string;
   position?: string;
-  key: number;
 };
 
 export const PersonCard: FC<PersonCardProps> = ({

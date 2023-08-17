@@ -19,12 +19,12 @@ const Organizer: FC = () => (
       sm={5}
       md={6}
     >
-      {organizers.map(({ name, link, pic }, index) => (
+      {organizers.map(({ name, link, pic }) => (
         <PersonCard
           avatar={`/image/organizer/${pic}`}
           link={`/organizer/${link}` || '#'}
-          key={index}
-          {...{ name }}
+          key={name}
+          name={name}
         />
       ))}
     </Row>
