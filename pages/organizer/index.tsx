@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
@@ -10,19 +10,22 @@ const organizers = Object.values(data).flatMap(({ organizers }) => organizers);
 const Organizer: FC = () => (
   <Container>
     <PageHead title="社区组织者" />
-    <h1 className="mb-4">社区组织者</h1>
+    <h1 className="py-5 text-center text-md-start ps-md-4">社区组织者</h1>
 
-    <Row as="ul" className="list-unstyled text-center g-5" xs={2} sm={6}>
+    <Row
+      as="ul"
+      className="list-unstyled justify-content-center text-center"
+      xs={2}
+      sm={5}
+      md={6}
+    >
       {organizers.map(({ name, link, pic }) => (
-        <Col as="li" key={name}>
-          {link ? (
-            <a className="text-dark" href={`organizer/${link}`}>
-              <PersonCard avatar={`/image/organizer/${pic}`} name={name} />
-            </a>
-          ) : (
-            <PersonCard avatar={`/image/organizer/${pic}`} name={name} />
-          )}
-        </Col>
+        <PersonCard
+          avatar={`/image/organizer/${pic}`}
+          link={`/organizer/${link}` || '#'}
+          key={name}
+          name={name}
+        />
       ))}
     </Row>
   </Container>
