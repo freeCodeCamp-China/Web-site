@@ -22,7 +22,7 @@ const Organizer: FC = () => (
       {organizers.map(({ name, link, pic }) => (
         <PersonCard
           avatar={`/image/organizer/${pic}`}
-          link={`/organizer/${link}` || '#'}
+          link={link && `/organizer/${link}`}
           key={name}
           name={name}
         />

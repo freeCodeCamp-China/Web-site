@@ -2,6 +2,7 @@ import { GetServerSidePropsContext } from 'next';
 import { FC } from 'react';
 import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 
+import { PageHead } from '../../components/PageHead';
 import * as volunteerData from '../api/organizer';
 
 type Volunteer = (typeof volunteerData)[keyof typeof volunteerData];
@@ -24,6 +25,8 @@ const OrganizerPeople: FC<Volunteer> = ({
   storyWithFCC,
 }) => (
   <Container>
+    <PageHead title={`${name} - ${zhFrom}志愿者`} />
+
     <Row className="text-center pt-4">
       <Col md={3} className="text-md-start">
         <Image rounded fluid src={`/image/organizer/${img}`} alt={name} />

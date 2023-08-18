@@ -7,7 +7,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "idea-react": "^1.0.0-rc.10",
+    "idea-react": "^1.0.0-rc.12",
     "koajax": "^0.8.6",
     "less": "^4.2.0",
     "less-loader": "^11.1.3",
@@ -41,8 +41,11 @@
     "ts-node": "^10.9.1",
     "typescript": "~5.1.6"
   },
-  "resolutions": {
-    "@types/react": "17.0.62"
+  "pnpm": {
+    "overrides": {
+      "@swc/helpers@~0.4": "0.4.36",
+      "@types/react": "^17"
+    }
   },
   "prettier": {
     "singleQuote": true,

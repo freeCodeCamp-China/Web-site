@@ -14,8 +14,8 @@ export const PersonCard: FC<PersonCardProps> = ({
   link,
   position,
 }) => (
-  <Col as="li" className="my-3 d-flex  justify-content-center">
-    <Card className="border-0 align-items-center">
+  <Col as="li" className="my-3 d-flex justify-content-center">
+    <Card className="border-0 align-items-center position-relative">
       <Card.Img
         className="rounded-circle"
         style={{ width: '8rem' }}
@@ -24,7 +24,7 @@ export const PersonCard: FC<PersonCardProps> = ({
         alt={name}
       />
       <Card.Body>
-        <Card.Title as="a" className="fs-6" href={link}>
+        <Card.Title as="a" className="fs-6 stretched-link" href={link || '#'}>
           {name}
         </Card.Title>
         <Card.Subtitle className="fw-light mt-2">{position}</Card.Subtitle>
