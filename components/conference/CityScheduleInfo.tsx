@@ -5,7 +5,7 @@ import citySchedulesData from '../../data/conference/CitySchedulesData.json';
 import styles from './CityScheduleInfo.module.less';
 
 export const CityScheduleInfo: FC = () => {
-  const [selectedCity, setSelectedCity] = useState(citySchedulesData[0].city); // 初始化为第一个城市
+  const [selectedCity, setSelectedCity] = useState<string | null>(null); // 初始化为第一个城市
 
   return (
     <Container>
