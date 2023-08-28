@@ -5,7 +5,7 @@ import citySchedulesData from '../../data/conference/CitySchedulesData.json';
 import styles from './CityScheduleInfo.module.less';
 
 export const CityScheduleInfo: FC = () => {
-  const [selectedCity, setSelectedCity] = useState<string | null>(
+  const [selectedCity, setSelectedCity] = useState<string>(
     citySchedulesData[0].city,
   );
 
