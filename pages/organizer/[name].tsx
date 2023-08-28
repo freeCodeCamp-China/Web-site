@@ -60,9 +60,9 @@ const OrganizerPeople: FC<Volunteer> = ({
     {profile[0] && (
       <section>
         <h2 className="pt-3">项目经历</h2>
-        <Row className="my-3 fs-5" xs={1}>
+        <Row as="ul" className="my-3 fs-5 list-unstyled" xs={1}>
           {profile.map(({ title, content }) => (
-            <Col key={title}>
+            <Col as="li" key={title}>
               {title && (
                 <Badge
                   as="h3"
