@@ -5,7 +5,9 @@ import citySchedulesData from '../../data/conference/CitySchedulesData.json';
 import styles from './CityScheduleInfo.module.less';
 
 export const CityScheduleInfo: FC = () => {
-  const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [selectedCity, setSelectedCity] = useState<string | null>(
+    citySchedulesData[0].city,
+  );
 
   return (
     <Container>
