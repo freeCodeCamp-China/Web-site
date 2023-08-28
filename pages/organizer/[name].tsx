@@ -27,8 +27,8 @@ const OrganizerPeople: FC<Volunteer> = ({
   <Container>
     <PageHead title={`${name} - ${zhFrom}志愿者`} />
 
-    <Row className="text-center pt-4">
-      <Col md={3} className="text-md-start">
+    <Row as="ul" className="text-center pt-4 list-unstyled">
+      <Col as="li" md={3} className="text-md-start">
         <Image rounded fluid src={`/image/organizer/${img}`} alt={name} />
       </Col>
       <Col md={9}>
@@ -48,9 +48,9 @@ const OrganizerPeople: FC<Volunteer> = ({
     </Row>
     <section>
       <h2 className="py-3">我与FCC的故事</h2>
-      <Row className="mt-1 fs-5" xs={1}>
+      <Row as="ul" className="mt-1 fs-5 list-unstyled" xs={1}>
         {storyWithFCC.map(item => (
-          <Col key={item}>
+          <Col as="li" key={item}>
             <p className="first-line-indent">{item}</p>
           </Col>
         ))}
