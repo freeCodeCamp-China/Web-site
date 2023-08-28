@@ -34,7 +34,7 @@ export const OrganizationInfo: FC = () => (
     </section>
 
     <section className="container mx-auto my-0 position-relative text-center animated">
-      <h2 id="co-organizer" className="fs-4 pt-5 px-0 pb-3">
+      <h2 id="co-organizer" className="fs-4 py-4">
         协办方（持续更新）
       </h2>
       <Row as="ul" className="list-unstyled">
@@ -66,7 +66,7 @@ export const OrganizationInfo: FC = () => (
                 className="list-unstyled  justify-content-center align-items-center p-0"
                 xs={1}
               >
-                <Badge className="m-2 w-75" bg="info">
+                <Badge className="m-1 w-75" bg="info">
                   {renderLevel(level)}
                 </Badge>
                 <a target="_blank" href={href} rel="noreferrer">
@@ -90,12 +90,9 @@ export const OrganizationInfo: FC = () => (
         sm={5}
       >
         {partners.map(({ href, imgSrc }) => (
-          <Col as="li" className={`${styles.partner} p-0 `} key={href}>
+          <Col as="li" className={styles.partner} key={href}>
             <a href={href} target="_blank" rel="noreferrer">
-              <Image
-                className="object-fit-fill align-items-center"
-                src={imgSrc}
-              />
+              <Image className="object-fit-fill" src={imgSrc} />
             </a>
           </Col>
         ))}
