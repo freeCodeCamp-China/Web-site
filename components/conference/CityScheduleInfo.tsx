@@ -5,8 +5,6 @@ import citySchedulesData from '../../data/conference/CitySchedulesData.json';
 import styles from './CityScheduleInfo.module.less';
 
 export const CityScheduleInfo: FC = () => {
-  const [selectedCity, setSelectedCity] = useState(citySchedulesData[0].city);
-
   return (
     <Container>
       <section className="container mx-auto my-0 position-relative animated text-center">
@@ -14,13 +12,7 @@ export const CityScheduleInfo: FC = () => {
           大会日程与报名通道
         </h2>
 
-        <Tabs
-          className="flex-nowrap overflow-x-auto py-2"
-          variant="pills"
-          fill
-          activeKey={selectedCity}
-          onSelect={key => setSelectedCity(key)}
-        >
+        <Tabs className="flex-nowrap overflow-x-auto py-2" variant="pills" fill>
           {citySchedulesData.map(({ city }) => (
             <Tab key={city} eventKey={city} title={city} id={city}>
               <div data-city={city} key={city}></div>
