@@ -61,18 +61,17 @@ export const OrganizationInfo: FC = () => (
         >
           {sponsors.map(({ level, href, imgSrc }) => (
             <Col as="li" className={styles.sponsor_item} key={imgSrc}>
-              <Row
-                as="ul"
-                className="list-unstyled  justify-content-center align-items-center p-0"
-                xs={1}
+              <Badge className="d-inline-block align-middle m-1 w-75" bg="info">
+                {renderLevel(level)}
+              </Badge>
+              <a
+                className="d-inline-block align-middle"
+                target="_blank"
+                href={href}
+                rel="noreferrer"
               >
-                <Badge className="m-1 w-75" bg="info">
-                  {renderLevel(level)}
-                </Badge>
-                <a target="_blank" href={href} rel="noreferrer">
-                  <Image className="object-fit-contain" src={imgSrc} />
-                </a>
-              </Row>
+                <Image className="object-fit-contain" src={imgSrc} />
+              </a>
             </Col>
           ))}
         </Row>

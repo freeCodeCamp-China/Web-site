@@ -27,7 +27,7 @@ const OrganizerPeople: FC<Volunteer> = ({
   <Container>
     <PageHead title={`${name} - ${zhFrom}志愿者`} />
 
-    <Row as="ul" className="text-center pt-4 list-unstyled">
+    <Row as="ul" className="list-unstyled text-center pt-4">
       <Col as="li" md={3} className="text-md-start">
         <Image rounded fluid src={`/image/organizer/${img}`} alt={name} />
       </Col>
@@ -48,19 +48,17 @@ const OrganizerPeople: FC<Volunteer> = ({
     </Row>
     <section>
       <h2 className="py-3">我与FCC的故事</h2>
-      <Row as="ul" className="mt-1 fs-5 list-unstyled" xs={1}>
-        {storyWithFCC.map(item => (
-          <Col as="li" key={item}>
-            <p className="first-line-indent">{item}</p>
-          </Col>
-        ))}
-      </Row>
+      {storyWithFCC.map(item => (
+        <p key={item} className="first-line-indent fs-5 mt-1">
+          {item}
+        </p>
+      ))}
     </section>
 
     {profile[0] && (
       <section>
         <h2 className="pt-3">项目经历</h2>
-        <Row as="ul" className="my-3 fs-5 list-unstyled" xs={1}>
+        <Row as="ul" className="list-unstyled my-3 fs-5" xs={1}>
           {profile.map(({ title, content }) => (
             <Col as="li" key={title}>
               {title && (

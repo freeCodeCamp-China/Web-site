@@ -33,32 +33,29 @@ export const CityScheduleInfo: FC = () => {
           .filter(({ city }) => city === selectedCity)
           .map(({ city, href, schedules }) => (
             <div className={styles.table_box} key={city}>
-              <div className="d-flex">
-                <a
-                  className="px-3 py-2 text-start"
-                  target="_blank"
-                  href={href}
-                  rel="noreferrer"
-                >
-                  {href ? '点此报名' : '报名通道即将开启'}
-                </a>
-              </div>
-
+              <a
+                className="px-3 py-2 text-start d-flex w-50"
+                target="_blank"
+                href={href}
+                rel="noreferrer"
+              >
+                {href ? '点此报名' : '报名通道即将开启'}
+              </a>
               {schedules?.[0] && (
                 <table className="text-start">
                   <thead>
                     <tr>
-                      <th className="p-2 align-top">时间</th>
-                      <th className="p-2 align-top">主题</th>
-                      <th className="p-2 align-top">演讲嘉宾</th>
+                      <th className="p-2 align-middle">时间</th>
+                      <th className="p-2 align-middle">主题</th>
+                      <th className="p-2 align-middle">演讲嘉宾</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {schedules.map(({ time, topic, guest }, index) => (
-                      <tr key={index}>
-                        <td className="p-2 align-top">{time}</td>
-                        <td className="p-2 align-top">{topic}</td>
-                        <td className="p-2 align-top">{guest}</td>
+                    {schedules.map(({ time, topic, guest }) => (
+                      <tr key={time}>
+                        <td className="p-2 align-middle">{time}</td>
+                        <td className="p-2 align-middle">{topic}</td>
+                        <td className="p-2 align-middle">{guest}</td>
                       </tr>
                     ))}
                   </tbody>
