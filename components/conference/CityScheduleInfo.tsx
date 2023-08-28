@@ -19,7 +19,6 @@ export const CityScheduleInfo: FC = () => {
           variant="pills"
           fill
           activeKey={selectedCity}
-          onSelect={key => setSelectedCity(key)}
         >
           {citySchedulesData.map(({ city }) => (
             <Tab key={city} eventKey={city} title={city} id={city}>
