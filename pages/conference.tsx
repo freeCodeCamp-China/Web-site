@@ -10,12 +10,10 @@ import styles from '../styles/Home.module.less';
 
 const ConferencePage = () => (
   <Container as="main" className={styles.main}>
-    {/*
     <PageHead title="freeCodeConf" />
     <DrawerNav />
     <ConferenceBase />
     <GuestInfo />
-    */}
     <CityScheduleInfo />
     <OrganizationInfo />
   </Container>
