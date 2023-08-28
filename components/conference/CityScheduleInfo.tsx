@@ -5,7 +5,7 @@ import citySchedulesData from '../../data/conference/CitySchedulesData.json';
 import styles from './CityScheduleInfo.module.less';
 
 export const CityScheduleInfo: FC = () => {
-  const [selectedCity, setSelectedCity] = useState<string | null>(null); // 初始化为第一个城市
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);
 
   return (
     <Container>
@@ -19,7 +19,7 @@ export const CityScheduleInfo: FC = () => {
           variant="pills"
           fill
           activeKey={selectedCity}
-          onSelect={k => setSelectedCity(k)}
+          onSelect={k => k || setSelectedCity(k)}
         >
           {citySchedulesData.map(({ city }) => (
             <Tab key={city} eventKey={city} title={city} id={city}>
