@@ -70,7 +70,7 @@ export const OrganizationInfo: FC = () => (
                   {renderLevel(level)}
                 </Badge>
                 <a target="_blank" href={href} rel="noreferrer">
-                  <Image src={imgSrc} />
+                  <Image className="object-fit-contain" src={imgSrc} />
                 </a>
               </Row>
             </Col>
@@ -92,7 +92,7 @@ export const OrganizationInfo: FC = () => (
         {partners.map(({ href, imgSrc }) => (
           <Col as="li" className={styles.partner} key={href}>
             <a href={href} target="_blank" rel="noreferrer">
-              <Image className="object-fit-fill" src={imgSrc} />
+              <Image className="object-fit-contain" src={imgSrc} />
             </a>
           </Col>
         ))}
