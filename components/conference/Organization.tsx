@@ -54,19 +54,25 @@ export const OrganizationInfo: FC = () => (
       {Object.values(groupBy(sponsors, 'level')).map(sponsors => (
         <Row
           as="ul"
-          className="list-unstyled justify-content-around p-1"
+          className="list-unstyled justify-content-around p-0"
           xs={2}
           sm={5}
           key={sponsors[0].level}
         >
           {sponsors.map(({ level, href, imgSrc }) => (
             <Col as="li" className={styles.sponsor_item} key={imgSrc}>
-              <Badge className="m-0" bg="info">
-                {renderLevel(level)}
-              </Badge>
-              <a target="_blank" href={href} rel="noreferrer">
-                <Image className="my-3 p-2" src={imgSrc} />
-              </a>
+              <Row
+                as="ul"
+                className="list-unstyled  justify-content-center align-items-center p-0"
+                xs={1}
+              >
+                <Badge className="m-2 w-75" bg="info">
+                  {renderLevel(level)}
+                </Badge>
+                <a target="_blank" href={href} rel="noreferrer">
+                  <Image src={imgSrc} />
+                </a>
+              </Row>
             </Col>
           ))}
         </Row>
@@ -79,15 +85,15 @@ export const OrganizationInfo: FC = () => (
       </h2>
       <Row
         as="ul"
-        className="list-unstyled justify-content-around"
+        className="list-unstyled justify-content-around align-items-center"
         xs={2}
         sm={5}
       >
         {partners.map(({ href, imgSrc }) => (
-          <Col as="li" className={styles.partner} key={href}>
-            <a className="mx-3" href={href} target="_blank" rel="noreferrer">
+          <Col as="li" className={`${styles.partner} p-0 `} key={href}>
+            <a href={href} target="_blank" rel="noreferrer">
               <Image
-                className="pb-5 object-fit-fill align-items-center"
+                className="object-fit-fill align-items-center"
                 src={imgSrc}
               />
             </a>

@@ -5,8 +5,9 @@ import styles from './ConferenceBase.module.less';
 
 export const ConferenceBase: FC = () => (
   <Container>
+    <h1 className="m-0 pb-5 text-center">2018 freeCodeConf</h1>
     <section
-      className={`${styles.abstract} container m-0 position-relative p-sm-0 pb-5 text-center bg-light animated`}
+      className={`${styles.abstract} container m-0 position-relative p-sm-0 pb-5 text-center`}
     >
       <h2 id="abstract" className="m-0 py-4 fs-4">
         大会宗旨
@@ -46,9 +47,9 @@ export const ConferenceBase: FC = () => (
       </Carousel>
     </section>
 
-    <section className="container text-start m-0 position-relative p-sm-0 animated">
+    <section className="container text-start m-0 position-relative p-sm-0">
       <h2 id="situation" className="m-0 py-5 text-center fs-4">
-        2018 freeCodeConf 概况
+        会议概况
       </h2>
       <ul className="list-unstyled">
         <li className="m-sm-3 d-flex my-3 mx-0">
@@ -78,7 +79,7 @@ export const ConferenceBase: FC = () => (
       </ul>
     </section>
 
-    <section className={`${styles.snap} container m-0 p-sm-0 animated`}>
+    <section className={`${styles.snap} container m-0 p-sm-0`}>
       <h2 id="snap" className="text-center pt-5 pb-3 fs-4">
         大会亮点
       </h2>
