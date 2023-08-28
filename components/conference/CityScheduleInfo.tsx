@@ -22,7 +22,7 @@ export const CityScheduleInfo: FC = () => {
           onSelect={key => setSelectedCity(key)}
         >
           {citySchedulesData.map(({ city }) => (
-            <Tab className="" key={city} eventKey={city} title={city} id={city}>
+            <Tab key={city} eventKey={city} title={city} id={city}>
               <div data-city={city} key={city}></div>
             </Tab>
           ))}
