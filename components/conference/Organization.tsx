@@ -63,7 +63,7 @@ export const OrganizationInfo: FC = () => (
             <Col as="li" className={styles.sponsor_item} key={imgSrc}>
               <Row
                 as="ul"
-                className="list-unstyled  justify-content-center align-items-center p-0"
+                className="list-unstyled justify-content-center align-items-center p-0"
                 xs={1}
               >
                 <Badge className="m-1 w-75" bg="info">
