@@ -14,7 +14,13 @@ export const CityScheduleInfo: FC = () => {
           大会日程与报名通道
         </h2>
 
-        <Tabs className="flex-nowrap overflow-x-auto py-2" variant="pills" fill>
+        <Tabs
+          className="flex-nowrap overflow-x-auto py-2"
+          variant="pills"
+          fill
+          activeKey={selectedCity}
+          onSelect={key => setSelectedCity(key)}
+        >
           {citySchedulesData.map(({ city }) => (
             <Tab key={city} eventKey={city} title={city} id={city}>
               <div data-city={city} key={city}></div>
