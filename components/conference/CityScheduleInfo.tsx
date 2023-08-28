@@ -20,8 +20,8 @@ export const CityScheduleInfo: FC = () => {
           activeKey={selectCity}
           onSelect={key => setSelectCity(key)}
         >
-          {citySchedulesData.map(({ city, href }) => (
-            <Tab className="" key={city} eventKey={city} title={city} id={href}>
+          {citySchedulesData.map(({ city }) => (
+            <Tab className="" key={city} eventKey={city} title={city} id={city}>
               <div data-city={city} key={city}></div>
             </Tab>
           ))}
@@ -52,8 +52,8 @@ export const CityScheduleInfo: FC = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {schedules.map(({ time, topic, guest }) => (
-                      <tr key={topic}>
+                    {schedules.map(({ time, topic, guest }, index) => (
+                      <tr key={index}>
                         <td className="p-2 align-top">{time}</td>
                         <td className="p-2 align-top">{topic}</td>
                         <td className="p-2 align-top">{guest}</td>

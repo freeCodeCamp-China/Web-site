@@ -46,30 +46,38 @@ const OrganizerPeople: FC<Volunteer> = ({
         <p className="text-muted fs-6">{motto}</p>
       </Col>
     </Row>
-    <h2>我与FCC的故事</h2>
-    <Row className="mt-4 fs-5 lh-base">
-      {storyWithFCC.map(item => (
-        <Col className="mt-4" key={item}>
-          {item}
-        </Col>
-      ))}
-    </Row>
+    <section>
+      <h2 className="py-3">我与FCC的故事</h2>
+      <Row className="mt-1 fs-5" xs={1}>
+        {storyWithFCC.map(item => (
+          <Col key={item}>
+            <p className="first-line-indent">{item}</p>
+          </Col>
+        ))}
+      </Row>
+    </section>
+
     {profile[0] && (
-      <>
-        <h2>项目经历</h2>
-        <Row className="mt-4 fs-5 lh-base">
+      <section>
+        <h2 className="pt-3">项目经历</h2>
+        <Row className="my-3 fs-5" xs={1}>
           {profile.map(({ title, content }) => (
-            <Col as="section" key={title}>
+            <Col key={title}>
               {title && (
-                <Badge as="h3" className="fs-5" bg="success" pill>
+                <Badge
+                  as="h3"
+                  className="fs-5 text-wrap text-start"
+                  bg="success"
+                  pill
+                >
                   {title}
                 </Badge>
               )}
-              <p className="mt-4">{content}</p>
+              <p className="mb-4 first-line-indent">{content}</p>
             </Col>
           ))}
         </Row>
-      </>
+      </section>
     )}
   </Container>
 );
