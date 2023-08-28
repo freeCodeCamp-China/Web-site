@@ -48,7 +48,7 @@ export const ConferenceBase: FC = () => (
     </section>
 
     <section className="container text-start m-0 position-relative p-sm-0">
-      <h2 id="situation" className="m-0 py-5 text-center fs-4">
+      <h2 id="situation" className="m-0 pt-5 pb-3 text-center fs-4">
         会议概况
       </h2>
       <ul className="list-unstyled">
