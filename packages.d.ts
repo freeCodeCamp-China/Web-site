@@ -3,3 +3,9 @@ declare module '*.less' {
 
   export default map;
 }
+
+declare module '@editorjs/*' {
+  const Plugin: import('@editorjs/editorjs').ToolConstructable;
+
+  export default Plugin;
+}
