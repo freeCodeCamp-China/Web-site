@@ -34,7 +34,7 @@ export const OrganizationInfo: FC = () => (
     </section>
 
     <section className="container mx-auto my-0 position-relative text-center animated">
-      <h2 id="co-organizer" className="fs-4 pt-5 px-0 pb-3">
+      <h2 id="co-organizer" className="fs-4 py-4">
         协办方（持续更新）
       </h2>
       <Row as="ul" className="list-unstyled">
@@ -54,18 +54,23 @@ export const OrganizationInfo: FC = () => (
       {Object.values(groupBy(sponsors, 'level')).map(sponsors => (
         <Row
           as="ul"
-          className="list-unstyled justify-content-around p-1"
+          className="list-unstyled justify-content-around p-0"
           xs={2}
           sm={5}
           key={sponsors[0].level}
         >
           {sponsors.map(({ level, href, imgSrc }) => (
             <Col as="li" className={styles.sponsor_item} key={imgSrc}>
-              <Badge className="m-0" bg="info">
+              <Badge className="d-inline-block align-middle m-1 w-75" bg="info">
                 {renderLevel(level)}
               </Badge>
-              <a target="_blank" href={href} rel="noreferrer">
-                <Image className="my-3 p-2" src={imgSrc} />
+              <a
+                className="d-inline-block align-middle"
+                target="_blank"
+                href={href}
+                rel="noreferrer"
+              >
+                <Image className="object-fit-contain" src={imgSrc} />
               </a>
             </Col>
           ))}
@@ -79,17 +84,14 @@ export const OrganizationInfo: FC = () => (
       </h2>
       <Row
         as="ul"
-        className="list-unstyled justify-content-around"
+        className="list-unstyled justify-content-around align-items-center"
         xs={2}
         sm={5}
       >
         {partners.map(({ href, imgSrc }) => (
           <Col as="li" className={styles.partner} key={href}>
-            <a className="mx-3" href={href} target="_blank" rel="noreferrer">
-              <Image
-                className="pb-5 object-fit-fill align-items-center"
-                src={imgSrc}
-              />
+            <a href={href} target="_blank" rel="noreferrer">
+              <Image className="object-fit-contain" src={imgSrc} />
             </a>
           </Col>
         ))}

@@ -27,8 +27,8 @@ const OrganizerPeople: FC<Volunteer> = ({
   <Container>
     <PageHead title={`${name} - ${zhFrom}志愿者`} />
 
-    <Row className="text-center pt-4">
-      <Col md={3} className="text-md-start">
+    <Row as="ul" className="list-unstyled text-center pt-4">
+      <Col as="li" md={3} className="text-md-start">
         <Image rounded fluid src={`/image/organizer/${img}`} alt={name} />
       </Col>
       <Col md={9}>
@@ -46,30 +46,36 @@ const OrganizerPeople: FC<Volunteer> = ({
         <p className="text-muted fs-6">{motto}</p>
       </Col>
     </Row>
-    <h2>我与FCC的故事</h2>
-    <Row className="mt-4 fs-5 lh-base">
+    <section>
+      <h2 className="py-3">我与FCC的故事</h2>
       {storyWithFCC.map(item => (
-        <Col className="mt-4" key={item}>
+        <p key={item} className="first-line-indent fs-5 mt-1">
           {item}
-        </Col>
+        </p>
       ))}
-    </Row>
+    </section>
+
     {profile[0] && (
-      <>
-        <h2>项目经历</h2>
-        <Row className="mt-4 fs-5 lh-base">
+      <section>
+        <h2 className="pt-3">项目经历</h2>
+        <Row as="ul" className="list-unstyled my-3 fs-5" xs={1}>
           {profile.map(({ title, content }) => (
-            <Col as="section" key={title}>
+            <Col as="li" key={title}>
               {title && (
-                <Badge as="h3" className="fs-5" bg="success" pill>
+                <Badge
+                  as="h3"
+                  className="fs-5 text-wrap text-start"
+                  bg="success"
+                  pill
+                >
                   {title}
                 </Badge>
               )}
-              <p className="mt-4">{content}</p>
+              <p className="mb-4 first-line-indent">{content}</p>
             </Col>
           ))}
         </Row>
-      </>
+      </section>
     )}
   </Container>
 );
