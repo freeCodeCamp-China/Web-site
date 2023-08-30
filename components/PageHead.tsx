@@ -16,8 +16,7 @@ export const PageHead: FC<PageHeadProps> = ({
 }) => (
   <Head>
     <title>
-      {title}
-      {title && ' - '}
+      {title && `${title} - `}
       {Name}
     </title>
 
