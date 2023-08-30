@@ -1,20 +1,20 @@
 {
-  "name": "Next-Bootstrap.ts scaffold",
-  "short_name": "Next.ts demo",
+  "name": "freeCodeCamp 中文社区",
+  "short_name": "fCC 中文",
   "start_url": ".",
-  "description": "React project scaffold based on TypeScript, Next.js, Bootstrap & Workbox.",
+  "description": "欢迎来到 freeCodeCamp 中文社区！与编程爱好者们一起探索全国不同城市的线下技术社区，从技术交流到结对编程，与我们一起分享，共同成长。",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",
-  "lang": "en-US",
+  "lang": "zh-CN",
   "dir": "ltr",
   "theme_color": "rgba(0,0,0,0.5)",
   "background_color": "transparent",
   "icons": [
     {
-      "src": "typescript.png",
+      "src": "https://design-style-guide.freecodecamp.org/downloads/fcc_secondary_small.png",
       "type": "image/png",
-      "sizes": "280x280"
+      "sizes": "712x484"
     }
   ]
 }
