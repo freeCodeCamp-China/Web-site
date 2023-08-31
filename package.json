@@ -1,7 +1,7 @@
 {
   "name": "@fcc-china/ows",
   "version": "2.0.0",
-  "description": "React project scaffold based on TypeScript, Next.js, Bootstrap & Workbox.",
+  "description": "欢迎来到 freeCodeCamp 中文社区！与编程爱好者们一起探索全国不同城市的线下技术社区，从技术交流到结对编程，与我们一起分享，共同成长。",
   "private": true,
   "engines": {
     "node": ">=18"
