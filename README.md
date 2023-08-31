@@ -43,10 +43,10 @@ pnpm dev
 
 `pages/api` 目录映射为 `/api/*`。此目录中的文件被视为 [API routes][13] 而不是 React 页面。
 
-- [Next.js Documentation][14] - 了解 Next.js 功能和 API
-- [Learn Next.js][15] - 一个交互式 Next.js 教程
+- [Next.js 文档][14] - 了解 Next.js 功能和 API
+- [学习 Next.js][15] - 一个交互式 Next.js 教程
 
-你可以查看 Next.js 的 [GitHub Repository][16] - 欢迎提供反馈和贡献！
+你可以查看 Next.js 的 [GitHub 仓库][16] - 欢迎提供反馈和贡献！
 
 ### 部署
 
