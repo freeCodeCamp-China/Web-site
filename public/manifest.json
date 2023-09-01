@@ -12,9 +12,9 @@
   "background_color": "transparent",
   "icons": [
     {
-      "src": "https://design-style-guide.freecodecamp.org/downloads/fcc_secondary_small.png",
+      "src": "city_logo.png",
       "type": "image/png",
-      "sizes": "712x484"
+      "sizes": "475x475"
     }
   ]
 }
