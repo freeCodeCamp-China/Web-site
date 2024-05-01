@@ -24,7 +24,7 @@ const AppShell = observer(({ Component, pageProps }: AppProps) => (
 
     <MainNavigator />
 
-    <div className="mt-5 pt-2">
+    <div className="pt-2">
       <Component {...pageProps} />
     </div>
 
