@@ -17,7 +17,7 @@ export const ownClient = new HTTPClient({
 });
 
 export const githubClient = new HTTPClient({
-  baseURI: 'https://api.github.com/',
+  baseURI: isServer() ? 'https://api.github.com/' : `${API_Host}/api/GitHub/`,
   responseType: 'json',
 }).use(({ request }, next) => {
   if (GithubToken)
