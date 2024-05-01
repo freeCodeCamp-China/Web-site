@@ -42,7 +42,7 @@ const IssuesPage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
             {allItems.map(
               repository =>
                 !repository.archived &&
-                repository.issues[0] && (
+                repository.issues?.[0] && (
                   <IssuePanel key={repository.name} {...repository} />
                 ),
             )}
