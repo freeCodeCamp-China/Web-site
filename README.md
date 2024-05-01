@@ -13,11 +13,13 @@
 加入我们，和志同道合的小伙伴们一起，在编程的海洋里畅游。无论你是想要成为全职开发者，还是仅仅把编程当作一项有趣的业余爱好，这里都是你展翅高飞的起点。
 
 快来 freeCodeCamp 中文社区，让我们一起编织梦想，点亮代码的星空！让技术的火花，在这里绽放无限可能！
+
 ## Next-Bootstrap.ts
 
 该项目是使用 [`create-next-app`][6] 脚手架引导安装，基于 [TypeScript][2]、[Next.js][3]、[Bootstrap][4] 和 [Workbox][5] 的 [React][1] 项目。
 
 <!--[![NPM Dependency](https://david-dm.org/idea2app/next-bootstrap-ts.svg)][7]-->
+
 [![CI & CD](https://github.com/idea2app/Next-Bootstrap-ts/actions/workflows/main.yml/badge.svg)][8]
 
 ### 项目技术栈
@@ -32,6 +34,7 @@
 ### 启动
 
 第一步, 运行开发服务器:
+
 ```bash
 npm i pnpm -g
 pnpm dev
@@ -57,12 +60,13 @@ pnpm dev
 - 查看 [Next.js 部署文档][17] 了解更多详细信息。
 
 #### Docker
+
 ```shell
 pnpm pack-image
 pnpm container
 ```
 
-[1]: https://reactjs.org/
+[1]: https://react.dev/
 [2]: https://www.typescriptlang.org/
 [3]: https://nextjs.org/
 [4]: https://getbootstrap.com/
@@ -70,7 +74,7 @@ pnpm container
 [6]: https://github.com/vercel/next.js/tree/canary/packages/create-next-app
 [7]: https://david-dm.org/idea2app/next-bootstrap-ts
 [8]: https://github.com/idea2app/Next-Bootstrap-ts/actions/workflows/main.yml
-[9]: https://github.com/mobxjs/mobx/tree/mobx4and5/docs
+[9]: https://zh.mobx.js.org/
 [11]: https://github.com/features/actions
 [12]: https://vercel.com/new?filter=next.js
 [13]: https://nextjs.org/docs/api-routes/introduction
