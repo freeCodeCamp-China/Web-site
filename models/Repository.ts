@@ -1,17 +1,19 @@
 import { components } from '@octokit/openapi-types';
 import { memoize } from 'lodash';
 import { Filter, ListModel, Stream, toggle } from 'mobx-restful';
-import { averageOf, buildURLData } from 'web-utility';
+import { averageOf, buildURLData, groupBy } from 'web-utility';
 
 import { githubClient } from './Base';
 
-type Repository = components['schemas']['minimal-repository'];
+export type Repository = components['schemas']['minimal-repository'];
 export type Organization = components['schemas']['organization-full'];
+export type Contributor = Required<components['schemas']['contributor']>;
 export type Issue = components['schemas']['issue'];
 
 export interface GitRepository extends Repository {
-  issues: Issue[];
+  issues?: Issue[];
   languages?: string[];
+  contributors?: Contributor[];
 }
 
 export interface RepositoryFilter extends Filter<GitRepository> {
@@ -33,11 +35,17 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
   indexKey = 'full_name' as const;
 
   relation = {
+    contributors: memoize(async (URI: string) => {
+      const { body } = await this.client.get<Contributor[]>(
+        `repos/${URI}/contributors?per_page=100`,
+      );
+      return body!.sort((a, b) => b.contributions - a.contributions);
+    }),
     issues: memoize(async (URI: string) => {
-      const { body: issuesList } = await this.client.get<Issue[]>(
+      const { body } = await this.client.get<Issue[]>(
         `repos/${URI}/issues?per_page=100`,
       );
-      return issuesList!.filter(({ pull_request }) => !pull_request);
+      return body!.filter(({ pull_request }) => !pull_request);
     }),
     languages: memoize(async (URI: string) => {
       const { body: languageCount } = await this.client.get<
@@ -95,7 +103,7 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
     this.totalCount ||= 0;
     this.totalCount += await this.getRepositoryCount(organization);
 
-    for (let page = 1, count = 0; ; page++) {
+    for (let page = 1, count = 0; count < page * per_page; page++) {
       const { body: list } = await this.client.get<Repository[]>(
         `orgs/${organization}/repos?${buildURLData({
           type: 'public',
@@ -106,8 +114,6 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
       );
       count += list!.length;
 
-      if (count < page * per_page) break;
-
       const pageData = await Promise.all(
         list!.map(async ({ full_name, ...item }) => ({
           ...item,
@@ -115,8 +121,6 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
           ...(await this.getOneRelation(full_name, relation)),
         })),
       );
-      console.log(pageData);
-
       yield* pageData as GitRepository[];
     }
   }
@@ -124,7 +128,29 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
   async *openStream({ relation }: RepositoryFilter) {
     yield await this.getOne('freeCodeCamp/chinese', relation);
 
+    this.totalCount = 1;
+
     yield* this.getRepository('freeCodeCamp-China', relation);
+  }
+
+  async getAllContributors() {
+    const repositories = await this.getAll({ relation: ['contributors'] });
+
+    const contributors = repositories
+      .filter(({ fork, archived }) => !fork && !archived)
+      .flatMap(({ contributors }) => contributors!);
+
+    const userGroup = groupBy(contributors, 'login');
+
+    return Object.entries(userGroup)
+      .map(([login, list]) => ({
+        ...list[0],
+        contributions: list.reduce(
+          (sum, { contributions }) => sum + contributions,
+          0,
+        ),
+      }))
+      .sort((a, b) => b.contributions - a.contributions);
   }
 }
 
