@@ -10,14 +10,16 @@ import { RepositoryModel } from '../../models/Repository';
 import * as data from '../api/data';
 
 export const getServerSideProps = compose(cache(), errorLogger, async () => {
+  const organizers = Object.values(data).flatMap(
+    ({ organizers }) => organizers || [],
+  );
   const contributors = await new RepositoryModel().getAllContributors();
 
-  return { props: { contributors } };
+  return { props: { organizers, contributors } };
 });
 
-const organizers = Object.values(data).flatMap(({ organizers }) => organizers);
-
 const Organizer: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
+  organizers,
   contributors,
 }) => (
   <Container>
@@ -54,7 +56,7 @@ const Organizer: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
       {organizers.map(({ name, link, pic }) => (
         <PersonCard
           key={name}
-          name={name}
+          name={name!}
           avatar={`/image/organizer/${pic}`}
           link={link && `/volunteer/${link}`}
         />

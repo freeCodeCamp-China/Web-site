@@ -43,7 +43,7 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
       const { body } = await this.client.get<Contributor[]>(
         `repos/${URI}/contributors?per_page=100`,
       );
-      return body!.sort((a, b) => b.contributions - a.contributions);
+      return body?.sort((a, b) => b.contributions - a.contributions) || [];
     }),
     issues: memoize(async (URI: string) => {
       const { body } = await this.client.get<Issue[]>(
@@ -146,7 +146,7 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
     const repositories = await this.getAll({ relation: ['contributors'] });
 
     const contributors = repositories
-      .filter(({ archived }) => !archived)
+      .filter(({ fork, archived }) => !fork && !archived)
       .flatMap(({ contributors }) => contributors!);
 
     const userGroup = groupBy(contributors, 'login');

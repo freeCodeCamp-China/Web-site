@@ -1,6 +1,20 @@
-export const chengdu = {
+export interface Person {
+  name?: string;
+  pic: string;
+  link?: string;
+}
+
+export interface CityCommunityMeta
+  extends Partial<
+    Record<'banner' | 'website' | 'wechat' | 'weibo' | 'github', string> &
+      Record<'organizers' | 'speakers' | 'partners' | 'history', Person[]>
+  > {
+  name: string;
+  brief?: string[];
+}
+
+export const chengdu: CityCommunityMeta = {
   name: '成都',
-  picPrefix: 'chengdu/',
   banner: 'chengdu.png',
   website: 'https://fcc-cd.dev/',
   wechat: 'gh_b8b06d05cfa6',
@@ -103,14 +117,14 @@ export const chengdu = {
     { name: '郑梦雨', pic: 'zhengmengyu.png', link: '' },
   ],
 };
-export const chongqing = {
+
+export const chongqing: CityCommunityMeta = {
   name: '重庆',
-  picPrefix: 'chongqing/',
   banner: 'chongqing.png',
-  website: '',
+  website: 'https://freecodecamp-chongqing.github.io/',
   wechat: '',
   weibo: '',
-  github: '',
+  github: 'https://github.com/FreeCodeCamp-Chongqing',
   brief: [
     'freeCodeCamp 重庆社区成立在第三届重庆前端交流大会上正式宣告成立，社区核心组织者有程江东，冯中梅，吴建军，满远荣，唐天强，张元英等，目前社区成员有120余人。',
     'freeCodeCamp 重庆社区成立第二天即举办了首次线下碰面会，快速确定了志愿者的分工形成自己独特的团队文化，并在中国国际智能产业博览会现场崭露头角，让更多人认识了freeCodeCamp，freeCodeCamp重庆社区链接人与技术，共创共赢，共建一个有爱有温度的技术社区。',
@@ -126,14 +140,14 @@ export const chongqing = {
   ],
   partners: [],
 };
-export const guangzhou = {
+
+export const guangzhou: CityCommunityMeta = {
   name: '广州',
-  picPrefix: 'guangzhou/',
   banner: 'guangzhou.png',
-  website: '',
+  website: 'https://freecodecamp-guangzhou.github.io/',
   wechat: 'FCC_GuangZhou',
   weibo: '',
-  github: '',
+  github: 'https://github.com/FreeCodeCamp-Guangzhou',
   brief: [
     'freeCodeCamp 广州社区由梁彩仪发起，期间由程晓琳接任，目前由吴亚楠接管负责全面对外接洽和组织活动，由伍裕平负责技术支持，线下社区成员共有480多人，并在不断增加中。',
     '社区成立以来曾经组织过20多次活动，活动类型包括：结对编程、研bug会、技术分享会、技术沙龙。freeCodeCamp广州社区历届志愿者均致力于：用技术重新点亮广州这座千年老城。',
@@ -147,14 +161,14 @@ export const guangzhou = {
   ],
   partners: [],
 };
-export const hangzhou = {
+
+export const hangzhou: CityCommunityMeta = {
   name: '杭州',
-  picPrefix: 'hangzhou/',
   banner: 'hangzhou.png',
-  website: '',
+  website: 'https://fcchz.github.io/FCCHangZhou/',
   wechat: 'TianXing_Community',
   weibo: '',
-  github: '',
+  github: 'https://github.com/FCCHZ',
   brief: [],
   history: [],
   speakers: [],
@@ -165,28 +179,28 @@ export const hangzhou = {
   ],
   partners: [],
 };
-export const jinan = {
+
+export const jinan: CityCommunityMeta = {
   name: '济南',
-  picPrefix: 'jinan/',
   banner: '',
   website: '',
   wechat: '',
   weibo: '',
-  github: '',
+  github: 'https://github.com/jinanfreeCodeCamp',
   brief: [],
   history: [],
   speakers: [],
   organizers: [{ name: '王军', pic: 'wangjun.png', link: 'javascript;' }],
   partners: [],
 };
-export const shanghai = {
+
+export const shanghai: CityCommunityMeta = {
   name: '上海',
-  picPrefix: 'shanghai/',
   banner: 'shanghai.png',
-  website: '',
+  website: 'https://freecodecamp-shanghai.github.io/',
   wechat: 'FCCShangHai',
   weibo: '',
-  github: '',
+  github: 'https://github.com/FreeCodeCamp-Shanghai',
   brief: [
     'freeCodeCamp 上海社区拥有众多组织者，他们是：王皓、范弘琰、吴杨、潘娜娜、梁健、于益、陈天宇、唐小芳、龚雪薇、陶永。线下社区成员共有385人，并在不断增加之中。',
     '社区成立以来共举办了3次30人左右的小型沙龙活动，以及2次100人左右的中型主题分享会，即freeCodeCamp上海四季分享会的夏季和秋季场。freeCodeCamp上海社区的目标是：为上海的互联网技术开发者提供一个可以进行交流的平台。',
@@ -199,14 +213,14 @@ export const shanghai = {
   ],
   partners: [],
 };
-export const shenzhen = {
+
+export const shenzhen: CityCommunityMeta = {
   name: '深圳',
-  picPrefix: 'shenzhen/',
   banner: 'shenzhen.png',
-  website: '',
+  website: 'https://freecodecamp-shenzhen.github.io/',
   wechat: 'nixibuxisala',
   weibo: '',
-  github: '',
+  github: 'https://github.com/FreeCodeCamp-ShenZhen',
   brief: [
     'freeCodeCamp 深圳社区目前由陈志成和游首杰负责现阶段的整体运营工作。社区核心组织者有聂鹏程、钦潮、郑惠君、霍文艺、徐家俊等人。',
     '社区成立以来共举办了10次100人左右的线下活动，以及3次大型主题分享会。从0到1，线下社区成员已有467人。深圳社区的主要目标和责任是做有趣有料的线下活动，目前深圳社区将会致力于发展 Coffee and Code 的形式，丰富线下编程学习的场景。',
@@ -220,9 +234,9 @@ export const shenzhen = {
   ],
   partners: [],
 };
-export const tianjin = {
+
+export const tianjin: CityCommunityMeta = {
   name: '天津',
-  picPrefix: 'tianjin/',
   banner: 'tianjin.png',
   website: '',
   wechat: '',
@@ -241,9 +255,9 @@ export const tianjin = {
   ],
   partners: [],
 };
-export const wuhan = {
+
+export const wuhan: CityCommunityMeta = {
   name: '武汉',
-  picPrefix: 'wuhan/',
   banner: 'wuhan.png',
   website: '',
   wechat: '',
@@ -261,14 +275,14 @@ export const wuhan = {
   ],
   partners: [],
 };
-export const xian = {
+
+export const xian: CityCommunityMeta = {
   name: '西安',
-  picPrefix: 'xian/',
   banner: 'xian.png',
-  website: '',
+  website: 'https://freecodecamp-xian.github.io/activity-network/',
   wechat: 'gh_a964d2836db4',
   weibo: '',
-  github: '',
+  github: 'https://github.com/freeCodeCamp-XiAn',
   brief: [
     'freeCodeCamp 西安社区现阶段拥有多位组织者：张峰涛、薛开麒、罗铭、王晨宇、谷中仁、易海门，线下社区成员共计350余人。',
     '在发起人韩亦乐的主导下，社区两年来已举办近十次线下技术交流活动和一场前端大会。freeCodeCamp西安社区将以开源、活动和招聘三大板块为发展重心，逐步搭建更完整的技术社区，服务更多的西安本土开发者、企业，努力让每一个社区成员能够在这里得到成长。',
@@ -282,14 +296,14 @@ export const xian = {
   ],
   partners: [],
 };
-export const zhengzhou = {
+
+export const zhengzhou: CityCommunityMeta = {
   name: '郑州',
-  picPrefix: 'zhengzhou/',
   banner: 'zhengzhou.png',
-  website: '',
+  website: 'https://freecodecamp-zhengzhou.github.io/',
   wechat: '',
   weibo: '',
-  github: '',
+  github: 'https://github.com/FreeCodeCamp-Zhengzhou',
   history: [],
   brief: [
     'freeCodeCamp 郑州社区由石中玉发起并开始组织相关交流活动，核心组织成员有石中玉、徐启、张银龙。于2017年3月22日组织第一次线下沙龙，我们先后尝试了线上和线下分享相结合的方式来探索社区运营方式和思路。',
@@ -298,4 +312,15 @@ export const zhengzhou = {
   speakers: [],
   organizers: [],
   partners: [],
+};
+
+export const HongKong: CityCommunityMeta = {
+  name: '香港',
+  website: 'https://freecodecamphongkong.github.io/',
+  github: 'https://github.com/FreeCodeCampHongKong',
+};
+
+export const TaiWan: CityCommunityMeta = {
+  name: '台湾',
+  github: 'https://github.com/freeCodeCampTaiwan',
 };

@@ -1,29 +1,46 @@
 import { OverlayBox } from 'idea-react';
-import { InferGetServerSidePropsType } from 'next';
 import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
-import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 
+import { GitCard } from '../../components/Git/Card';
 import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
 import { SectionTitle } from '../../components/SectionTitle';
-import { Contributor, RepositoryModel } from '../../models/Repository';
+import {
+  Contributor,
+  GitRepository,
+  RepositoryModel,
+} from '../../models/Repository';
 import * as communityData from '../api/data';
 import styles from './city.module.less';
 
-type CommunityCityProps = (typeof communityData)[keyof typeof communityData];
+type CommunityCityProps = {
+  city: communityData.CityCommunityMeta;
+  repositories: GitRepository[];
+  contributors: Contributor[];
+};
 
 export const getServerSideProps = compose<
   { city: keyof typeof communityData },
-  { city: CommunityCityProps; contributors: Contributor[] }
+  CommunityCityProps
 >(cache(), errorLogger, async ({ params }) => {
   const city = communityData[params!.city],
-    organization = city.github.split('/').at(-1);
+    organization = city.github?.split('/').at(-1);
+  console.log();
 
-  const contributors = organization
-    ? await new RepositoryModel(organization).getAllContributors()
-    : [];
-  return !city ? { notFound: true } : { props: { city, contributors } };
+  const repositoryStore = organization
+    ? new RepositoryModel(organization)
+    : null;
+  const repositories =
+    (await repositoryStore?.getAll({ relation: ['contributors'] }))?.filter(
+      ({ fork }) => !fork,
+    ) || [];
+  const contributors = (await repositoryStore?.getAllContributors()) || [];
+
+  return !city
+    ? { notFound: true }
+    : { props: { city, repositories, contributors } };
 });
 
 const renderContactLabel = (href: string, name: string) => (
@@ -34,9 +51,7 @@ const renderContactLabel = (href: string, name: string) => (
   </Col>
 );
 
-const CommunityCity: FC<
-  InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({
+const CommunityCity: FC<CommunityCityProps> = ({
   city: {
     name,
     organizers,
@@ -49,6 +64,7 @@ const CommunityCity: FC<
     banner,
     brief,
   },
+  repositories,
   contributors,
 }) => (
   <Container>
@@ -136,10 +152,10 @@ const CommunityCity: FC<
         >
           {organizers.map(({ name, link, pic }) => (
             <PersonCard
+              key={name}
+              name={name!}
               avatar={`/image/organizer/${pic}`}
               link={link && `/volunteer/${link}`}
-              key={name}
-              name={name}
             />
           ))}
         </Row>
@@ -163,9 +179,9 @@ const CommunityCity: FC<
         >
           {speakers.map(({ pic, name }) => (
             <PersonCard
-              avatar={`/image/speaker/${pic}`}
               key={name}
-              name={name}
+              name={name!}
+              avatar={`/image/speaker/${pic}`}
             />
           ))}
         </Row>
@@ -196,6 +212,25 @@ const CommunityCity: FC<
               link={html_url}
               count={contributions}
             />
+          ))}
+        </Row>
+      </section>
+    )}
+
+    {repositories?.[0] && (
+      <section className="mx-auto my-0 position-relative">
+        <SectionTitle
+          id="repositories"
+          className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+          count={repositories.length}
+        >
+          开源项目
+        </SectionTitle>
+        <Row as="ul" className="list-unstyled g-3" xs={1} sm={2} lg={4}>
+          {repositories.map(repository => (
+            <Col as="li" key={repository.id}>
+              <GitCard className="h-100" {...repository} />
+            </Col>
           ))}
         </Row>
       </section>

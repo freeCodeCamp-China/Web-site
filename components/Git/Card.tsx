@@ -35,7 +35,7 @@ export const GitCard: FC<GitCardProps> = observer(
           {topics.map(topic => (
             <Badge
               key={topic}
-              className="me-1"
+              className="me-1 text-decoration-none"
               bg={text2color(topic, ['light'])}
               as="a"
               target="_blank"
