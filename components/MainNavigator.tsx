@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 
-import styles from '../styles/MainNavigator.module.less';
+import styles from './MainNavigator.module.less';
 
 export const MainNavigator: FC = () => (
   <Navbar

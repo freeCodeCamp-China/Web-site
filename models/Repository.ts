@@ -34,12 +34,16 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
   client = githubClient;
   indexKey = 'full_name' as const;
 
+  constructor(public organization = 'freeCodeCamp-China') {
+    super();
+  }
+
   relation = {
     contributors: memoize(async (URI: string) => {
       const { body } = await this.client.get<Contributor[]>(
         `repos/${URI}/contributors?per_page=100`,
       );
-      return body!.sort((a, b) => b.contributions - a.contributions);
+      return body?.sort((a, b) => b.contributions - a.contributions) || [];
     }),
     issues: memoize(async (URI: string) => {
       const { body } = await this.client.get<Issue[]>(
@@ -103,7 +107,7 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
     this.totalCount ||= 0;
     this.totalCount += await this.getRepositoryCount(organization);
 
-    for (let page = 1, count = 0; count < page * per_page; page++) {
+    for (let page = 1, count = 0; count <= this.totalCount; page++) {
       const { body: list } = await this.client.get<Repository[]>(
         `orgs/${organization}/repos?${buildURLData({
           type: 'public',
@@ -112,6 +116,8 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
           per_page,
         })}`,
       );
+      if (!list?.length) break;
+
       count += list!.length;
 
       const pageData = await Promise.all(
@@ -126,11 +132,14 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
   }
 
   async *openStream({ relation }: RepositoryFilter) {
-    yield await this.getOne('freeCodeCamp/chinese', relation);
+    const { organization } = this;
 
-    this.totalCount = 1;
+    if (organization === 'freeCodeCamp-China') {
+      yield await this.getOne('freeCodeCamp/chinese', relation);
 
-    yield* this.getRepository('freeCodeCamp-China', relation);
+      this.totalCount = 1;
+    }
+    yield* this.getRepository(organization, relation);
   }
 
   async getAllContributors() {
