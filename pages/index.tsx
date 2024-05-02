@@ -37,7 +37,7 @@ const HomePage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
         className="py-5 text-center text-md-start ps-lg-5 ps-md-4"
         count={cities.length}
       >
-        社区城市
+        城市社区
       </SectionTitle>
       <Row as="ul" className="list-unstyled" xs={2} sm={4} lg={6}>
         {cities.map(({ key, name, github }) => (

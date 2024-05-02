@@ -3,6 +3,7 @@ import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 
+import { CommentBox } from '../../components/CommentBox';
 import { GitCard } from '../../components/Git/Card';
 import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
@@ -27,7 +28,6 @@ export const getServerSideProps = compose<
 >(cache(), errorLogger, async ({ params }) => {
   const city = communityData[params!.city],
     organization = city.github?.split('/').at(-1);
-  console.log();
 
   const repositoryStore = organization
     ? new RepositoryModel(organization)
@@ -266,6 +266,8 @@ const CommunityCity: FC<CommunityCityProps> = ({
         </Row>
       </section>
     )}
+
+    <CommentBox />
   </Container>
 );
 

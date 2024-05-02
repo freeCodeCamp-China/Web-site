@@ -1,12 +1,13 @@
 {
   "name": "@fcc-china/ows",
-  "version": "2.2.0",
+  "version": "2.4.0",
   "description": "欢迎来到 freeCodeCamp 中文社区！与编程爱好者们一起探索全国不同城市的线下技术社区，从技术交流到结对编程，与我们一起分享，共同成长。",
   "private": true,
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
+    "@giscus/react": "^3.0.0",
     "idea-react": "^2.0.0-rc.2",
     "koajax": "^1.0.0",
     "less": "^4.2.0",
