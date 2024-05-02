@@ -34,6 +34,10 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
   client = githubClient;
   indexKey = 'full_name' as const;
 
+  constructor(public organization = 'freeCodeCamp-China') {
+    super();
+  }
+
   relation = {
     contributors: memoize(async (URI: string) => {
       const { body } = await this.client.get<Contributor[]>(
@@ -128,18 +132,21 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
   }
 
   async *openStream({ relation }: RepositoryFilter) {
-    yield await this.getOne('freeCodeCamp/chinese', relation);
+    const { organization } = this;
 
-    this.totalCount = 1;
+    if (organization === 'freeCodeCamp-China') {
+      yield await this.getOne('freeCodeCamp/chinese', relation);
 
-    yield* this.getRepository('freeCodeCamp-China', relation);
+      this.totalCount = 1;
+    }
+    yield* this.getRepository(organization, relation);
   }
 
   async getAllContributors() {
     const repositories = await this.getAll({ relation: ['contributors'] });
 
     const contributors = repositories
-      .filter(({ fork, archived }) => !fork && !archived)
+      .filter(({ archived }) => !archived)
       .flatMap(({ contributors }) => contributors!);
 
     const userGroup = groupBy(contributors, 'login');

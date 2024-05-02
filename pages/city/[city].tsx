@@ -1,24 +1,32 @@
 import { OverlayBox } from 'idea-react';
-import { GetServerSidePropsContext } from 'next';
+import { InferGetServerSidePropsType } from 'next';
+import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 
 import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
+import { SectionTitle } from '../../components/SectionTitle';
+import { Contributor, RepositoryModel } from '../../models/Repository';
 import * as communityData from '../api/data';
 import styles from './city.module.less';
 
 type CommunityCityProps = (typeof communityData)[keyof typeof communityData];
 
-export async function getServerSideProps({
-  params,
-}: GetServerSidePropsContext) {
-  const cityInfo = communityData[params!.city as keyof typeof communityData];
+export const getServerSideProps = compose<
+  { city: keyof typeof communityData },
+  { city: CommunityCityProps; contributors: Contributor[] }
+>(cache(), errorLogger, async ({ params }) => {
+  const city = communityData[params!.city],
+    organization = city.github.split('/').at(-1);
 
-  return !cityInfo ? { notFound: true } : { props: cityInfo };
-}
+  const contributors = organization
+    ? await new RepositoryModel(organization).getAllContributors()
+    : [];
+  return !city ? { notFound: true } : { props: { city, contributors } };
+});
 
-export const renderContactLabel = (href: string, name: string) => (
+const renderContactLabel = (href: string, name: string) => (
   <Col as="li" className="py-1">
     <a className="text-success" href={href} target="_blank" rel="noreferrer">
       {name}
@@ -26,17 +34,22 @@ export const renderContactLabel = (href: string, name: string) => (
   </Col>
 );
 
-const CommunityCity: FC<CommunityCityProps> = ({
-  name,
-  organizers,
-  speakers,
-  partners,
-  website,
-  weibo,
-  github,
-  wechat,
-  banner,
-  brief,
+const CommunityCity: FC<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+> = ({
+  city: {
+    name,
+    organizers,
+    speakers,
+    partners,
+    website,
+    weibo,
+    github,
+    wechat,
+    banner,
+    brief,
+  },
+  contributors,
 }) => (
   <Container>
     <PageHead title={`${name}社区`} />
@@ -108,12 +121,13 @@ const CommunityCity: FC<CommunityCityProps> = ({
 
     {organizers?.[0] && (
       <section className="text-center mx-auto my-0">
-        <h2
+        <SectionTitle
           id="organizers"
           className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+          count={organizers.length}
         >
           社区组织者
-        </h2>
+        </SectionTitle>
         <Row
           as="ul"
           className="list-unstyled justify-content-center"
@@ -134,12 +148,13 @@ const CommunityCity: FC<CommunityCityProps> = ({
 
     {speakers?.[0] && (
       <section className="text-center mx-auto my-0">
-        <h2
+        <SectionTitle
           id="speakers"
           className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+          count={speakers.length}
         >
           演讲嘉宾
-        </h2>
+        </SectionTitle>
         <Row
           as="ul"
           className="list-unstyled justify-content-around"
@@ -157,14 +172,44 @@ const CommunityCity: FC<CommunityCityProps> = ({
       </section>
     )}
 
+    {contributors[0] && (
+      <section className="text-center mx-auto my-0">
+        <SectionTitle
+          id="speakers"
+          className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+          count={contributors.length}
+        >
+          线上开源志愿者
+        </SectionTitle>
+        <Row
+          as="ul"
+          className="list-unstyled justify-content-center text-center"
+          xs={2}
+          sm={5}
+          md={6}
+        >
+          {contributors.map(({ login, html_url, contributions }) => (
+            <PersonCard
+              key={login}
+              name={login}
+              avatar={`https://github.com/${login}.png`}
+              link={html_url}
+              count={contributions}
+            />
+          ))}
+        </Row>
+      </section>
+    )}
+
     {partners?.[0] && (
       <section className="mx-auto my-0 position-relative text-center">
-        <h2
+        <SectionTitle
           id="partners"
           className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+          count={partners.length}
         >
           合作企业
-        </h2>
+        </SectionTitle>
         <Row
           as="ul"
           xs={2}

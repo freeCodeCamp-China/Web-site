@@ -31,7 +31,11 @@ export const PersonCard: FC<PersonCardProps> = ({
         alt={name}
       />
       <Card.Body>
-        <Card.Title as="a" className="fs-6 stretched-link" href={link || '#'}>
+        <Card.Title
+          as="a"
+          className="fs-6 text-decoration-none stretched-link"
+          href={link || '#'}
+        >
           {name}
         </Card.Title>
         <Card.Subtitle className="fw-light mt-2">{position}</Card.Subtitle>
