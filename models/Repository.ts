@@ -103,7 +103,7 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
     this.totalCount ||= 0;
     this.totalCount += await this.getRepositoryCount(organization);
 
-    for (let page = 1, count = 0; count < page * per_page; page++) {
+    for (let page = 1, count = 0; count <= this.totalCount; page++) {
       const { body: list } = await this.client.get<Repository[]>(
         `orgs/${organization}/repos?${buildURLData({
           type: 'public',
@@ -112,6 +112,8 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
           per_page,
         })}`,
       );
+      if (!list?.length) break;
+
       count += list!.length;
 
       const pageData = await Promise.all(

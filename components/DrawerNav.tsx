@@ -8,7 +8,7 @@ import { sleep } from 'web-utility';
 @observer
 export class DrawerNav extends PureComponent {
   @observable
-  drawerShown = false;
+  accessor drawerShown = false;
 
   closeDrawer = async () => {
     let { scrollTop } = document.scrollingElement || {};

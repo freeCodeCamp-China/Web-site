@@ -1,5 +1,3 @@
-import '../styles/globals.less';
-
 import { configure } from 'mobx';
 import { enableStaticRendering, observer } from 'mobx-react';
 import type { AppProps } from 'next/app';

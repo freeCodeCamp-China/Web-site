@@ -6,10 +6,9 @@ import { GuestInfo } from '../components/conference/Guest';
 import { OrganizationInfo } from '../components/conference/Organization';
 import { DrawerNav } from '../components/DrawerNav';
 import { PageHead } from '../components/PageHead';
-import styles from '../styles/Home.module.less';
 
 const ConferencePage = () => (
-  <Container as="main" className={styles.main}>
+  <Container as="main">
     <PageHead title="freeCodeConf" />
     <DrawerNav />
     <ConferenceBase />
