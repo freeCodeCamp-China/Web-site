@@ -2,6 +2,7 @@ import { GetServerSidePropsContext } from 'next';
 import { FC } from 'react';
 import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 
+import { CommentBox } from '../../components/CommentBox';
 import { PageHead } from '../../components/PageHead';
 import * as volunteerData from '../api/organizer';
 
@@ -77,6 +78,8 @@ const OrganizerPeople: FC<Volunteer> = ({
         </Row>
       </section>
     )}
+
+    <CommentBox />
   </Container>
 );
 

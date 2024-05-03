@@ -3,10 +3,12 @@ import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 
+import { CommentBox } from '../../components/CommentBox';
 import { GitCard } from '../../components/Git/Card';
 import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
 import { SectionTitle } from '../../components/SectionTitle';
+import { SocialIconBar } from '../../components/SocialIconBar';
 import {
   Contributor,
   GitRepository,
@@ -27,7 +29,6 @@ export const getServerSideProps = compose<
 >(cache(), errorLogger, async ({ params }) => {
   const city = communityData[params!.city],
     organization = city.github?.split('/').at(-1);
-  console.log();
 
   const repositoryStore = organization
     ? new RepositoryModel(organization)
@@ -70,13 +71,8 @@ const CommunityCity: FC<CommunityCityProps> = ({
   <Container>
     <PageHead title={`${name}社区`} />
     <section>
-      <Row
-        as="ul"
-        className="list-unstyled justify-content-center"
-        xs={1}
-        sm={2}
-      >
-        <Col as="li" className={styles.banner}>
+      <Row as="ul" className="list-unstyled justify-content-center">
+        <Col as="li" xs={12} sm={8}>
           {banner && (
             <div className="position-relative">
               <Image
@@ -87,7 +83,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
               />
               {brief?.[0] && (
                 <div
-                  className={`${styles.shadowIn}  w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
+                  className={`${styles.shadowIn} w-100 h-100 position-absolute start-0 top-0 text-light d-flex justify-content-center align-items-center`}
                 >
                   <ul className="list-unstyled">
                     {brief.map(brief => (
@@ -101,7 +97,12 @@ const CommunityCity: FC<CommunityCityProps> = ({
             </div>
           )}
         </Col>
-        <Col as="li" className={styles.join}>
+        <Col
+          as="li"
+          xs={12}
+          sm={4}
+          className="d-flex flex-column justify-content-around gap-4"
+        >
           <div className="text-center fs-3 pt-3">
             欢迎加入
             <br />
@@ -110,27 +111,15 @@ const CommunityCity: FC<CommunityCityProps> = ({
             <span>{name}</span>社区
           </div>
 
-          <Row as="ul" className="pt-3 justify-content-center" xs={4} sm={1}>
-            {website && renderContactLabel(website, '网站')}
-            {wechat && (
-              <Col as="li" className="py-1">
-                <OverlayBox
-                  title={
-                    <Image
-                      className="w-75 h-75"
-                      src={`https://open.weixin.qq.com/qr/code?username=${wechat}`}
-                      alt={name}
-                    />
-                  }
-                  placement="bottom"
-                >
-                  <span className="text-success">微信</span>
-                </OverlayBox>
-              </Col>
-            )}
-            {weibo && renderContactLabel(weibo, '微博')}
-            {github && renderContactLabel(github, 'GitHub')}
-          </Row>
+          <SocialIconBar
+            size="2x"
+            {...{
+              website,
+              wechat: `https://open.weixin.qq.com/qr/code?username=${wechat}`,
+              weibo,
+              github,
+            }}
+          />
         </Col>
       </Row>
     </section>
@@ -266,6 +255,8 @@ const CommunityCity: FC<CommunityCityProps> = ({
         </Row>
       </section>
     )}
+
+    <CommentBox />
   </Container>
 );
 
