@@ -7,6 +7,10 @@
     "node": ">=18"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@giscus/react": "^3.0.0",
     "idea-react": "^2.0.0-rc.2",
     "koajax": "^1.0.0",
