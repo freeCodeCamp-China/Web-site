@@ -29,16 +29,19 @@ export type SocialIconBarProps = Pick<FontAwesomeIconProps, 'size'> &
 
 export const SocialIconBar: FC<SocialIconBarProps> = ({ size, ...URLs }) => (
   <ul className="list-inline m-0 d-flex flex-wrap justify-content-center gap-3">
-    {Object.entries(URLs).map(([key, URI]) => (
-      <li key={key} className="list-inline-item">
-        <a target="_blank" href={URI} rel="noreferrer">
-          <FontAwesomeIcon
-            className={`text-${IconMap[key as keyof typeof IconMap].color}`}
-            size={size}
-            icon={IconMap[key as keyof typeof IconMap].icon}
-          />
-        </a>
-      </li>
-    ))}
+    {Object.entries(URLs).map(
+      ([key, URI]) =>
+        URI && (
+          <li key={key} className="list-inline-item">
+            <a target="_blank" href={URI} rel="noreferrer">
+              <FontAwesomeIcon
+                className={`text-${IconMap[key as keyof typeof IconMap].color}`}
+                size={size}
+                icon={IconMap[key as keyof typeof IconMap].icon}
+              />
+            </a>
+          </li>
+        ),
+    )}
   </ul>
 );
