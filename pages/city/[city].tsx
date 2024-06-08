@@ -1,4 +1,4 @@
-import { OverlayBox } from 'idea-react';
+import { Contributor, GitRepository } from 'mobx-github';
 import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
@@ -9,11 +9,7 @@ import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
 import { SectionTitle } from '../../components/SectionTitle';
 import { SocialIconBar } from '../../components/SocialIconBar';
-import {
-  Contributor,
-  GitRepository,
-  RepositoryModel,
-} from '../../models/Repository';
+import { RepositoryModel } from '../../models/Repository';
 import * as communityData from '../api/data';
 import styles from './city.module.less';
 
@@ -37,20 +33,13 @@ export const getServerSideProps = compose<
     (await repositoryStore?.getAll({ relation: ['contributors'] }))?.filter(
       ({ fork }) => !fork,
     ) || [];
+  // @ts-ignore
   const contributors = (await repositoryStore?.getAllContributors()) || [];
 
   return !city
     ? { notFound: true }
     : { props: { city, repositories, contributors } };
 });
-
-const renderContactLabel = (href: string, name: string) => (
-  <Col as="li" className="py-1">
-    <a className="text-success" href={href} target="_blank" rel="noreferrer">
-      {name}
-    </a>
-  </Col>
-);
 
 const CommunityCity: FC<CommunityCityProps> = ({
   city: {
@@ -196,7 +185,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
           {contributors.map(({ login, html_url, contributions }) => (
             <PersonCard
               key={login}
-              name={login}
+              name={login!}
               avatar={`https://github.com/${login}.png`}
               link={html_url}
               count={contributions}

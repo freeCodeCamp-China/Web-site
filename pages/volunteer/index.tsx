@@ -1,3 +1,4 @@
+import { Contributor } from 'mobx-github';
 import { InferGetServerSidePropsType } from 'next';
 import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
@@ -13,7 +14,9 @@ export const getServerSideProps = compose(cache(), errorLogger, async () => {
   const organizers = Object.values(data).flatMap(
     ({ organizers }) => organizers || [],
   );
-  const contributors = await new RepositoryModel().getAllContributors();
+  const contributors: Contributor[] =
+    // @ts-ignore
+    await new RepositoryModel().getAllContributors();
 
   return { props: { organizers, contributors } };
 });
@@ -37,7 +40,7 @@ const Organizer: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
       {contributors.map(({ login, html_url, contributions }) => (
         <PersonCard
           key={login}
-          name={login}
+          name={login!}
           avatar={`https://github.com/${login}.png`}
           link={html_url}
           count={contributions}

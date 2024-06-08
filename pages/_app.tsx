@@ -27,7 +27,7 @@ const AppShell = observer(({ Component, pageProps }: AppProps) => (
       <Component {...pageProps} />
     </div>
 
-    <footer className="flex-fill d-flex flex-wrap justify-content-around align-items-center border-top py-4">
+    <footer className="flex-fill d-flex flex-wrap justify-content-around align-items-center border-top py-4 gap-3">
       <a
         className="d-flex justify-content-center align-items-center"
         href="https://vercel.com?utm_source=create-next-app&amp;utm_medium=default-template&amp;utm_campaign=create-next-app"
