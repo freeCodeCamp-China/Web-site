@@ -149,15 +149,18 @@ export const guangzhou: CityCommunityMeta = {
   weibo: '',
   github: 'https://github.com/FreeCodeCamp-Guangzhou',
   brief: [
-    'freeCodeCamp 广州社区由梁彩仪发起，期间由程晓琳接任，目前由吴亚楠接管负责全面对外接洽和组织活动，由伍裕平负责技术支持，线下社区成员共有480多人，并在不断增加中。',
-    '社区成立以来曾经组织过20多次活动，活动类型包括：结对编程、研bug会、技术分享会、技术沙龙。freeCodeCamp广州社区历届志愿者均致力于：用技术重新点亮广州这座千年老城。',
+    'freeCodeCamp 广州社区由梁彩仪发起，期间由程晓琳、吴亚楠接任，目前由伍裕平、梁莹接管负责全面对外接洽和组织活动，由伍裕平负责技术支持、梁莹负责对外合作和活动组织，线下社区成员共有480多人，并在不断增加中。',
+    '社区成立以来曾经组织过30多次活动，活动类型包括：结对编程、研bug会、技术分享会、技术沙龙。freeCodeCamp广州社区历届志愿者均致力于：用技术重新点亮广州这座千年老城。',
   ],
-  history: [{ name: '程晓琳', pic: 'chengxiaolin.png', link: '' }],
-  speakers: [{ name: '魏朝欣', pic: 'weichaoxin.png', link: '' }],
-  organizers: [
+  history: [
+    { name: '程晓琳', pic: 'chengxiaolin.png', link: '' },
     { name: '梁彩仪', pic: 'liangcaiyi.png', link: '' },
     { name: '吴亚楠', pic: 'wuyanan.png', link: '' },
+  ],
+  speakers: [{ name: '魏朝欣', pic: 'weichaoxin.png', link: '' }],
+  organizers: [
     { name: '伍裕平', pic: 'wuyuping.png', link: '' },
+    { name: 'Christy Leung 梁莹', pic: 'christyleung.png', link: '' },
   ],
   partners: [],
 };
