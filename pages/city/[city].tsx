@@ -10,7 +10,7 @@ import { PersonCard } from '../../components/PersonCard';
 import { SectionTitle } from '../../components/SectionTitle';
 import { SocialIconBar } from '../../components/SocialIconBar';
 import { RepositoryModel } from '../../models/Repository';
-import * as communityData from '../api/data';
+import * as communityData from '../api/city';
 import styles from './city.module.less';
 
 type CommunityCityProps = {

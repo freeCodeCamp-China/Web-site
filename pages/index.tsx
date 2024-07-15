@@ -9,7 +9,7 @@ import { PageHead } from '../components/PageHead';
 import { PersonCard } from '../components/PersonCard';
 import { SectionTitle } from '../components/SectionTitle';
 import { RepositoryModel } from '../models/Repository';
-import * as cityData from '../pages/api/data';
+import * as cityData from './api/city';
 
 export const getServerSideProps = compose(cache(), errorLogger, async () => {
   const cities = Object.entries(cityData)

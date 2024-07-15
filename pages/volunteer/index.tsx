@@ -8,10 +8,10 @@ import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
 import { SectionTitle } from '../../components/SectionTitle';
 import { RepositoryModel } from '../../models/Repository';
-import * as data from '../api/data';
+import * as cityData from '../api/city';
 
 export const getServerSideProps = compose(cache(), errorLogger, async () => {
-  const organizers = Object.values(data).flatMap(
+  const organizers = Object.values(cityData).flatMap(
     ({ organizers }) => organizers || [],
   );
   const contributors: Contributor[] =

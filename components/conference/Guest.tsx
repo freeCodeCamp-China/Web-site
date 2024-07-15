@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Container, Row } from 'react-bootstrap';
 
-import guestData from '../../data/conference/GuestData.json';
+import guestData from '../../pages/api/conference/GuestData.json';
 import { PersonCard } from '../PersonCard';
 
 export const GuestInfo: FC = () => (
