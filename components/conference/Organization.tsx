@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 import { groupBy } from 'web-utility';
 
-import { partners, sponsors } from '../../data/conference/SponsorData';
+import { partners, sponsors } from '../../pages/api/conference/SponsorData';
 import styles from './Organization.module.less';
 
 const renderLevel = (level: number) =>

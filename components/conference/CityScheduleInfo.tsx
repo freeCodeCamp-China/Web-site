@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Button, Container, Nav, Tab } from 'react-bootstrap';
 
-import citySchedulesData from '../../data/conference/CitySchedulesData.json';
+import citySchedulesData from '../../pages/api/conference/CitySchedulesData.json';
 import styles from './CityScheduleInfo.module.less';
 
 export const CityScheduleInfo: FC = () => (
