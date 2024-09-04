@@ -1,3 +1,4 @@
+import { GitRepository } from 'mobx-github';
 import { observer } from 'mobx-react';
 import { InferGetServerSidePropsType } from 'next';
 import { cache, compose, errorLogger } from 'next-ssr-middleware';
@@ -23,7 +24,10 @@ export const getServerSideProps = compose(cache(), errorLogger, async () => {
       ({ archived }) => !archived,
     );
   return {
-    props: { cities, repositories },
+    props: {
+      cities,
+      repositories: JSON.parse(JSON.stringify(repositories)) as GitRepository[],
+    },
   };
 });
 

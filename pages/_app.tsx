@@ -1,3 +1,4 @@
+import { HTTPError } from 'koajax';
 import { configure } from 'mobx';
 import { enableStaticRendering, observer } from 'mobx-react';
 import type { AppProps } from 'next/app';
@@ -14,6 +15,15 @@ configure({ enforceActions: 'never' });
 enableStaticRendering(isServer());
 
 const { t } = i18n;
+
+globalThis.addEventListener?.('unhandledrejection', ({ reason }) => {
+  var { message, response } = reason as HTTPError;
+  const { statusText, body } = response || {};
+
+  message = body?.message || statusText || message;
+
+  if (message) alert(message);
+});
 
 const AppShell = observer(({ Component, pageProps }: AppProps) => (
   <>
