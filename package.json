@@ -7,47 +7,52 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
-    "@fortawesome/free-brands-svg-icons": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@giscus/react": "^3.0.0",
     "idea-react": "^2.0.0-rc.2",
-    "koajax": "^1.1.2",
+    "koajax": "^3.0.1",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "lodash": "^4.17.21",
-    "marked": "^13.0.2",
-    "mobx": "^6.13.0",
-    "mobx-github": "^0.3.2",
+    "marked": "^14.1.1",
+    "mobx": "^6.13.1",
+    "mobx-github": "^0.3.4",
     "mobx-i18n": "^0.5.0",
     "mobx-react": "^9.1.1",
-    "mobx-restful": "^0.7.0-rc.0",
-    "mobx-restful-table": "^2.0.0-rc.1",
-    "next": "^14.2.5",
+    "mobx-restful": "^1.0.1",
+    "mobx-restful-table": "^2.0.0",
+    "next": "^14.2.7",
     "next-pwa": "~5.6.0",
-    "next-ssr-middleware": "^0.8.2",
+    "next-ssr-middleware": "^0.8.7",
     "next-with-less": "^3.0.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
+    "undici": "^6.19.8",
     "web-utility": "^4.4.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.24.7",
-    "@babel/plugin-transform-typescript": "^7.24.8",
+    "@babel/plugin-transform-typescript": "^7.25.2",
     "@babel/preset-react": "^7.24.7",
-    "@types/lodash": "^4.17.6",
-    "@types/node": "^18.19.39",
-    "@types/react": "^18.3.3",
+    "@types/lodash": "^4.17.7",
+    "@types/next-pwa": "^5.6.9",
+    "@types/node": "^20.16.4",
+    "@types/react": "^18.3.5",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.5",
+    "eslint-config-next": "^14.2.7",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.7",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "typescript": "~5.5.3"
+    "typescript": "~5.5.4"
+  },
+  "resolutions": {
+    "native-file-system-adapter": "npm:@tech_query/native-file-system-adapter@^3.0.1"
   },
   "prettier": {
     "singleQuote": true,
@@ -55,8 +60,8 @@
     "arrowParens": "avoid"
   },
   "lint-staged": {
-    "*.{html,md,less,json,yml,js,ts,tsx}": "prettier --write",
-    "*.{js,jsx,ts,tsx}": "eslint --fix"
+    "*.{html,md,less,json,yml,js,mjs,ts,tsx}": "prettier --write",
+    "*.{js,mjs,ts,tsx}": "eslint --fix"
   },
   "scripts": {
     "prepare": "husky install",
@@ -65,7 +70,7 @@
     "export": "next build  &&  next export",
     "start": "next start",
     "lint": "next lint",
-    "test": "lint-staged  &&  npm run lint",
+    "test": "lint-staged  &&  npm run lint  &&  tsc --noEmit",
     "pack-image": "docker build -t next-bootstrap-ts:latest .",
     "container": "docker rm -f next-bootstrap-ts  &&  docker run --name next-bootstrap-ts -p 3000:3000 -d next-bootstrap-ts:latest"
   }

@@ -13,8 +13,6 @@ const GithubToken = process.env.GITHUB_TOKEN;
 if (!isServer()) githubClient.baseURI = `${API_Host}/api/GitHub/`;
 
 githubClient.use(({ request }, next) => {
-  console.log(request.path);
-
   if (GithubToken)
     request.headers = {
       authorization: `Bearer ${GithubToken}`,
@@ -30,21 +28,11 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
 ) {
   constructor(public owner = MainOrganization) {
     super(owner);
-    // remove next line on Node.js `require('esm')` fully supported & MobX-RESTful 1.x installed
-    this.baseURI = owner ? `orgs/${owner}/repos` : 'user/repos';
   }
 
   async *openStream(filter: RepositoryFilter) {
-    const { owner: organization } = this;
-
-    if (organization === MainOrganization) {
-      // @ts-ignore
-      yield await this.getOne('freeCodeCamp/chinese', filter.relation);
-
-      this.totalCount = 1;
-    } else this.totalCount = 0;
-
-    const { loadPage } = GitRepoModel.prototype;
+    const { loadPage } = GitRepoModel.prototype,
+      hasAdditional = this.owner === MainOrganization;
 
     for (let i = 1; ; i++) {
       const { pageData, totalCount } = await loadPage.call(
@@ -55,11 +43,15 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
       );
       if (!pageData[0]) break;
 
-      if (i === 1) this.totalCount += totalCount;
+      this.totalCount = totalCount + (hasAdditional ? 1 : 0);
       yield* pageData;
 
       if (pageData.length < this.pageSize) break;
     }
+
+    if (hasAdditional)
+      // @ts-ignore
+      yield await this.getOne('freeCodeCamp/chinese', filter.relation);
   }
 }
 
