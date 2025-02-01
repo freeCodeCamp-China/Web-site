@@ -8,21 +8,19 @@ import { Image } from 'react-bootstrap';
 import { MainNavigator } from '../components/MainNavigator';
 import { SocialIconBar } from '../components/SocialIconBar';
 import { isServer } from '../models/Base';
-import { i18n } from '../models/Translation';
+import { i18n, t } from '../models/Translation';
 
 configure({ enforceActions: 'never' });
 
 enableStaticRendering(isServer());
 
-const { t } = i18n;
-
 globalThis.addEventListener?.('unhandledrejection', ({ reason }) => {
-  var { message, response } = reason as HTTPError;
+  const { message, response } = reason as HTTPError;
   const { statusText, body } = response || {};
 
-  message = body?.message || statusText || message;
+  const tips = body?.message || statusText || message;
 
-  if (message) alert(message);
+  if (tips) alert(tips);
 });
 
 const AppShell = observer(({ Component, pageProps }: AppProps) => (

@@ -53,14 +53,14 @@ export const OrganizationInfo: FC = () => (
 
       {Object.values(groupBy(sponsors, 'level')).map(sponsors => (
         <Row
+          key={sponsors[0].level}
           as="ul"
           className="list-unstyled justify-content-around p-0"
           xs={2}
           sm={5}
-          key={sponsors[0].level}
         >
           {sponsors.map(({ level, href, imgSrc }) => (
-            <Col as="li" className={styles.sponsor_item} key={imgSrc}>
+            <Col key={imgSrc} as="li" className={styles.sponsor_item}>
               <Badge className="d-inline-block align-middle m-1 w-75" bg="info">
                 {renderLevel(level)}
               </Badge>
@@ -89,7 +89,7 @@ export const OrganizationInfo: FC = () => (
         sm={5}
       >
         {partners.map(({ href, imgSrc }) => (
-          <Col as="li" className={styles.partner} key={href}>
+          <Col key={href} as="li" className={styles.partner}>
             <a href={href} target="_blank" rel="noreferrer">
               <Image className="object-fit-contain" src={imgSrc} />
             </a>

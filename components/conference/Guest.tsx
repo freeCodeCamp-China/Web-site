@@ -12,8 +12,8 @@ export const GuestInfo: FC = () => (
     <Row as="ul" className="list-unstyled" xs={2} sm={4}>
       {guestData.map(({ pic, name, position }) => (
         <PersonCard
-          avatar={`/image/speaker/${pic}`}
           key={name}
+          avatar={`/image/speaker/${pic}`}
           {...{ name, position }}
         />
       ))}

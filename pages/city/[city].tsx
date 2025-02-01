@@ -33,7 +33,7 @@ export const getServerSideProps = compose<
     (await repositoryStore?.getAll({ relation: ['contributors'] }))?.filter(
       ({ fork }) => !fork,
     ) || [];
-  // @ts-ignore
+  // @ts-expect-error Upstream Type compatibility issue
   const contributors = (await repositoryStore?.getAllContributors()) || [];
 
   return !city
@@ -206,7 +206,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
         </SectionTitle>
         <Row as="ul" className="list-unstyled g-3" xs={1} sm={2} lg={4}>
           {repositories.map(repository => (
-            <Col as="li" key={repository.id}>
+            <Col key={repository.id} as="li">
               <GitCard className="h-100" {...repository} />
             </Col>
           ))}
@@ -230,7 +230,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
           className="list-unstyled justify-content-around"
         >
           {partners.map(({ pic, link }) => (
-            <Col as="li" key={link}>
+            <Col key={link} as="li">
               <a className="mx-3" href={link} target="_blank" rel="noreferrer">
                 <Image
                   className="pb-5 object-fit-fill align-items-center"

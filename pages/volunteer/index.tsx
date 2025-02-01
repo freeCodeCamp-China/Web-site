@@ -15,7 +15,7 @@ export const getServerSideProps = compose(cache(), errorLogger, async () => {
     ({ organizers }) => organizers || [],
   );
   const contributors: Contributor[] =
-    // @ts-ignore
+    // @ts-expect-error Upstream Type compatibility issue
     await new RepositoryModel().getAllContributors();
 
   return { props: { organizers, contributors } };
