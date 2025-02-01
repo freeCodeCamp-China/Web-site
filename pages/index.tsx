@@ -63,7 +63,7 @@ const HomePage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
       </SectionTitle>
       <Row as="ul" className="list-unstyled g-3" xs={1} sm={2} lg={4}>
         {repositories.map(repository => (
-          <Col as="li" key={repository.id}>
+          <Col key={repository.id} as="li">
             <GitCard className="h-100" {...repository} />
           </Col>
         ))}

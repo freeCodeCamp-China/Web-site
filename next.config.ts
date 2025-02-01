@@ -1,5 +1,5 @@
 import setPWA from 'next-pwa';
-// @ts-ignore
+// @ts-expect-error No types available
 import withLess from 'next-with-less';
 
 const { NODE_ENV, CI } = process.env,
