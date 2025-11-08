@@ -12,14 +12,13 @@ import {
 
 import { CommentBox } from '../../components/CommentBox';
 import { PageHead } from '../../components/PageHead';
-import * as userData from '../api/user';
-
-type UserProfile = (typeof userData)[keyof typeof userData];
+import { getUserProfile, UserProfile } from '../api/user';
 
 export async function getServerSideProps({
   params,
 }: GetServerSidePropsContext) {
-  const user = userData[params!.username as keyof typeof userData];
+  const username = params!.username as string;
+  const user = await getUserProfile(username);
 
   return !user ? { notFound: true } : { props: user };
 }
