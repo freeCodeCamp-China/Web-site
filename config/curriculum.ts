@@ -1,6 +1,3 @@
-// Stable/Legacy curriculum configuration based on freeCodeCamp's archived courses
-// Data source: https://github.com/freeCodeCamp/freeCodeCamp/blob/94c53c6144a6fa264801aeff9724c52b082b3461/shared/config/curriculum.ts
-
 export interface Course {
   id: string;
   title: string;
@@ -8,7 +5,10 @@ export interface Course {
   link: string;
 }
 
-// Legacy/Stable courses from freeCodeCamp
+/**
+ * Stable/Legacy curriculum configuration based on freeCodeCamp's archived courses
+ * @see {@link https://github.com/freeCodeCamp/freeCodeCamp/blob/94c53c6144a6fa264801aeff9724c52b082b3461/shared/config/curriculum.ts}
+ */
 export const stableCourses: Course[] = [
   {
     id: 'responsive-web-design-22',
