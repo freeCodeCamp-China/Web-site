@@ -24,6 +24,7 @@ export const MainNavigator: FC = () => (
         >
           课程
         </Nav.Link>
+        <Nav.Link href="/learn/archive">稳定版课程</Nav.Link>
         <Nav.Link
           href="https://forum.freecodecamp.org/c/chinese/"
           target="_blank"
