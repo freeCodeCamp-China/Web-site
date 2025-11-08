@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
