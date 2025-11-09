@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 import styles from './MainNavigator.module.less';
 
@@ -18,12 +18,15 @@ export const MainNavigator: FC = () => (
     <Navbar.Toggle className="border-0 shadow-none" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className={`ms-auto align-items-center ${styles.navBox}`}>
-        <Nav.Link
-          href="https://www.freecodecamp.org/chinese/learn/"
-          target="_blank"
-        >
-          课程
-        </Nav.Link>
+        <NavDropdown title="课程">
+          <NavDropdown.Item href="/course">中文稳定版</NavDropdown.Item>
+          <NavDropdown.Item
+            href="https://www.freecodecamp.org/chinese/learn/"
+            target="_blank"
+          >
+            英文最新版
+          </NavDropdown.Item>
+        </NavDropdown>
         <Nav.Link
           href="https://forum.freecodecamp.org/c/chinese/"
           target="_blank"

@@ -13,11 +13,11 @@ import { RepositoryModel } from '../../models/Repository';
 import * as communityData from '../api/city';
 import styles from './city.module.less';
 
-type CommunityCityProps = {
+interface CommunityCityProps {
   city: communityData.CityCommunityMeta;
   repositories: GitRepository[];
   contributors: Contributor[];
-};
+}
 
 export const getServerSideProps = compose<
   { city: keyof typeof communityData },
@@ -38,7 +38,9 @@ export const getServerSideProps = compose<
 
   return !city
     ? { notFound: true }
-    : { props: { city, repositories, contributors } };
+    : {
+        props: JSON.parse(JSON.stringify({ city, repositories, contributors })),
+      };
 });
 
 const CommunityCity: FC<CommunityCityProps> = ({

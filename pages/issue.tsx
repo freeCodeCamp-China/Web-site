@@ -2,24 +2,20 @@ import { Loading } from 'idea-react';
 import { GitRepository } from 'mobx-github';
 import { observer } from 'mobx-react';
 import { ScrollList } from 'mobx-restful-table';
-import { cache, compose, translator } from 'next-ssr-middleware';
-import { FC } from 'react';
+import { cache, compose, errorLogger } from 'next-ssr-middleware';
+import { FC, useContext } from 'react';
 import { Container, Row } from 'react-bootstrap';
 
 import { IssuePanel } from '../components/Git/Issue/Panel';
 import { PageHead } from '../components/PageHead';
 import repositoryStore, { RepositoryModel } from '../models/Repository';
-import { i18n } from '../models/Translation';
+import { I18nContext } from '../models/Translation';
 
-export const getServerSideProps = compose(
-  cache(),
-  translator(i18n),
-  async () => {
-    const list = await new RepositoryModel().getList({ relation: ['issues'] });
+export const getServerSideProps = compose(cache(), errorLogger, async () => {
+  const list = await new RepositoryModel().getList({ relation: ['issues'] });
 
-    return { props: JSON.parse(JSON.stringify({ list })) };
-  },
-);
+  return { props: JSON.parse(JSON.stringify({ list })) };
+});
 
 const IssuesPage: FC<{ list: GitRepository[] }> = observer(({ list }) => (
   <Container className="py-5">
@@ -30,7 +26,7 @@ const IssuesPage: FC<{ list: GitRepository[] }> = observer(({ list }) => (
     {repositoryStore.downloading > 0 && <Loading />}
 
     <ScrollList
-      translator={i18n}
+      translator={useContext(I18nContext)}
       store={repositoryStore}
       filter={{
         relation: ['issues'],

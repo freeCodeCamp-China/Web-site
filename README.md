@@ -18,14 +18,14 @@
 
 该项目是使用 [`create-next-app`][6] 脚手架引导安装，基于 [TypeScript][2]、[Next.js][3]、[Bootstrap][4] 和 [Workbox][5] 的 [React][1] 项目。
 
-<!--[![NPM Dependency](https://david-dm.org/idea2app/next-bootstrap-ts.svg)][7]-->
+<!--[![NPM Dependency](https://david-dm.org/freecodecamp-china/web-site.svg)][7]-->
 
-[![CI & CD](https://github.com/idea2app/Next-Bootstrap-ts/actions/workflows/main.yml/badge.svg)][8]
+[![CI & CD](https://github.com/freeCodeCamp-China/Web-site/actions/workflows/main.yml/badge.svg)][8]
 
 ### 项目技术栈
 
 - 编程语言: [TypeScript v5][2]
-- 组件引擎: [Nextjs v14][3]
+- 组件引擎: [Nextjs v16][3]
 - 组件套件: [Bootstrap v5][4]
 - PWA 框架: [Workbox v6][5]
 - 状态管理: [MobX v6][9]
@@ -72,8 +72,8 @@ pnpm container
 [4]: https://getbootstrap.com/
 [5]: https://developers.google.com/web/tools/workbox
 [6]: https://github.com/vercel/next.js/tree/canary/packages/create-next-app
-[7]: https://david-dm.org/idea2app/next-bootstrap-ts
-[8]: https://github.com/idea2app/Next-Bootstrap-ts/actions/workflows/main.yml
+[7]: https://david-dm.org/freecodecamp-china/web-site
+[8]: https://github.com/freeCodeCamp-China/Web-site/actions/workflows/main.yml
 [9]: https://zh.mobx.js.org/
 [11]: https://github.com/features/actions
 [12]: https://vercel.com/new?filter=next.js
