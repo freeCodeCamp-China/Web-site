@@ -28,12 +28,7 @@ const CoursePage: FC = observer(() => (
               <Card.Text className="text-muted flex-grow-1">
                 {description}
               </Card.Text>
-              <Button
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="primary"
-              >
+              <Button href={link} target="_blank" variant="primary">
                 开始学习
               </Button>
             </Card.Body>

@@ -89,7 +89,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "test": "lint-staged  &&  tsc --noEmit",
-    "pack-image": "docker build -t next-bootstrap-ts:latest .",
-    "container": "docker rm -f next-bootstrap-ts  &&  docker run --name next-bootstrap-ts -p 3000:3000 -d next-bootstrap-ts:latest"
+    "pack-image": "docker build -t freecodecamp-china/web-site:latest .",
+    "container": "docker rm -f web-site  &&  docker run --name web-site -p 3000:3000 -d freecodecamp-china/web-site:latest"
   }
 }
