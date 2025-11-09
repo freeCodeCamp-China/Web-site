@@ -58,9 +58,7 @@ export const IssueCard: FC<IssueCardProps> = ({
     </Card.Header>
     <Card.Body
       as="article"
-      dangerouslySetInnerHTML={{
-        __html: marked.parse(body || '', { async: false }) as string,
-      }}
+      dangerouslySetInnerHTML={{ __html: marked(body || '') }}
     />
     <Card.Footer className="d-flex justify-content-between align-items-center">
       {user && <Nameplate name={user.name || ''} avatar={user.avatar_url} />}

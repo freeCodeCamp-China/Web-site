@@ -14,7 +14,7 @@ export const stableCourses: Course[] = [
     description:
       '在响应式网页设计课程中，你将学习开发人员用来编写网页的语言：HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。',
     link: 'https://www.freecodecamp.org/chinese/learn/2022/responsive-web-design/',
-    icon: 'palette',
+    icon: 'css',
   },
   {
     id: 'javascript-algorithms-and-data-structures-v8',
@@ -22,7 +22,7 @@ export const stableCourses: Course[] = [
     description:
       '在 JavaScript 算法和数据结构课程中，你将学习 JavaScript 的基础知识，包括变量、数组、对象、循环和函数。',
     link: 'https://www.freecodecamp.org/chinese/learn/javascript-algorithms-and-data-structures-v8/',
-    icon: 'code-slash',
+    icon: 'javascript',
   },
   {
     id: 'front-end-development-libraries',
@@ -110,6 +110,6 @@ export const stableCourses: Course[] = [
     description:
       '机器学习有许多实际应用。通过 Python 机器学习课程，你将学习使用 TensorFlow 框架构建几个神经网络，并探索更高级的技术，如自然语言处理和强化学习。',
     link: 'https://www.freecodecamp.org/chinese/learn/machine-learning-with-python/',
-    icon: 'lightbulb',
+    icon: 'robot',
   },
 ];

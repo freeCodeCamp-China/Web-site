@@ -42,7 +42,7 @@ export default class CustomApp extends App<I18nProps> {
   }
 
   render() {
-    const { Component, pageProps, router } = this.props,
+    const { Component, pageProps } = this.props,
       { t } = this.i18nStore;
 
     return (
