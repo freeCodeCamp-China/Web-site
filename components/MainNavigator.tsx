@@ -18,7 +18,7 @@ export const MainNavigator: FC = () => (
     <Navbar.Toggle className="border-0 shadow-none" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className={`ms-auto align-items-center ${styles.navBox}`}>
-        <NavDropdown title="课程" id="course-nav-dropdown">
+        <NavDropdown title="课程">
           <NavDropdown.Item href="/course">中文稳定版</NavDropdown.Item>
           <NavDropdown.Item
             href="https://www.freecodecamp.org/chinese/learn/"

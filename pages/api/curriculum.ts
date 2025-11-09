@@ -1,9 +1,4 @@
-export interface Course {
-  id: string;
-  title: string;
-  description: string;
-  link: string;
-}
+export type Course = Record<'id' | 'title' | 'description' | 'link', string>;
 
 /**
  * Stable/Legacy curriculum configuration based on freeCodeCamp's archived courses

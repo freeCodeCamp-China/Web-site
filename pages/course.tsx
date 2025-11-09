@@ -4,7 +4,7 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 
 import { PageHead } from '../components/PageHead';
 import { SectionTitle } from '../components/SectionTitle';
-import { stableCourses } from '../config/curriculum';
+import { stableCourses } from './api/curriculum';
 
 const CoursePage: FC = observer(() => (
   <Container as="main">
