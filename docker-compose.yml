@@ -4,8 +4,8 @@ networks:
   idea2app:
 
 services:
-  next-bootstrap-ts:
-    image: idea2app/next-bootstrap-ts
+  web-site:
+    image: freecodecamp-china/web-site
     environment:
       - NODE_ENV=production
       - PORT=3000
@@ -15,11 +15,11 @@ services:
       - idea2app
   caddy:
     depends_on:
-      - next-bootstrap-ts
+      - web-site
     image: caddy
     ports:
       - 80:80
       - 443:443
     networks:
       - idea2app
-    command: caddy reverse-proxy --from your.domain.com --to next-bootstrap-ts:3000
+    command: caddy reverse-proxy --from your.domain.com --to web-site:3000

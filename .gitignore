@@ -5,11 +5,13 @@
 /.pnp
 .pnp.js
 package-lock.json
+yarn.lock
 
 # testing
 /coverage
 
 # next.js
+next-env.d.ts
 /.next/
 /out/
 
