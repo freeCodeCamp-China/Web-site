@@ -1,4 +1,4 @@
-import { GetServerSidePropsContext } from 'next';
+import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
 import {
   Badge,
@@ -12,18 +12,19 @@ import {
 
 import { CommentBox } from '../../components/CommentBox';
 import { PageHead } from '../../components/PageHead';
-import { getUserProfile, UserProfile } from '../api/user';
+import { getUserProfile, FCCUserProfile } from '../api/user';
 
-export async function getServerSideProps({
-  params,
-}: GetServerSidePropsContext) {
-  const username = params!.username as string;
-  const user = await getUserProfile(username);
+export const getServerSideProps = compose<{ username: string }>(
+  cache(),
+  errorLogger,
+  async ({ params }) => {
+    const props = await getUserProfile(params!.username);
 
-  return !user ? { notFound: true } : { props: user };
-}
+    return { props };
+  },
+);
 
-const UserProfilePage: FC<UserProfile> = ({
+const UserProfilePage: FC<FCCUserProfile> = ({
   username,
   name,
   location,

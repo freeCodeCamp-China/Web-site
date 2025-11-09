@@ -1,67 +1,82 @@
-export interface UserProfile {
-  username: string;
-  name: string;
-  location?: string;
-  bio?: string;
-  githubProfile?: string;
-  twitter?: string;
-  linkedin?: string;
-  website?: string;
-  avatar: string;
-  joinDate: string;
-  points: number;
-  certifications?: Array<{
-    title: string;
-    completedDate: string;
-    certPath?: string;
-  }>;
-  completedChallenges?: number;
-  currentStreak?: number;
-  longestStreak?: number;
+import { HTTPClient } from 'koajax';
+
+export type FCCUserBase = Record<
+  | 'name'
+  | `username${'' | 'Display'}`
+  | 'picture'
+  | 'about'
+  | 'location'
+  | 'website'
+  | 'linkedIn'
+  | 'githubProfile',
+  string
+>;
+
+export type FCCUserStatus = Record<
+  'isHonest' | 'isCheater' | 'isDonating',
+  boolean
+>;
+
+export type FCCCertificationUserStatus = Record<
+  | 'is2018DataVisCert'
+  | 'is2018FullStackCert'
+  | 'isA2EnglishCert'
+  | 'isApisMicroservicesCert'
+  | 'isBackEndCert'
+  | 'isCollegeAlgebraPyCertV8'
+  | 'isDataAnalysisPyCertV7'
+  | 'isDataVisCert'
+  | 'isFoundationalCSharpCertV8'
+  | 'isFrontEndCert'
+  | 'isFrontEndLibsCert'
+  | 'isFullStackCert'
+  | 'isJavascriptCertV9'
+  | 'isInfosecCertV7'
+  | 'isInfosecQaCert'
+  | 'isJsAlgoDataStructCert'
+  | 'isJsAlgoDataStructCertV8'
+  | 'isMachineLearningPyCertV7'
+  | 'isQaCertV7'
+  | 'isRelationalDatabaseCertV8'
+  | 'isRespWebDesignCert'
+  | 'isRespWebDesignCertV9'
+  | 'isSciCompPyCertV7',
+  boolean
+>;
+
+export interface CompletedChallenge {
+  id: string;
+  completedDate: number;
+  files: any[];
 }
 
-export async function getUserProfile(
-  username: string,
-): Promise<UserProfile | null> {
-  try {
-    const response = await fetch(
-      `https://api.freecodecamp.org/users/get-public-profile?username=${username}`,
-    );
+export interface FCCUserProfile
+  extends FCCUserBase,
+    FCCUserStatus,
+    FCCCertificationUserStatus {
+  joinDate: Date;
+  calendar: Record<string, number>;
+  completedChallenges: CompletedChallenge[];
+  completedExams: any[];
+  points: number;
+  portfolio: any[];
+  profileUI: Record<string, boolean>;
+  yearsTopContributor: string[];
+}
 
-    if (!response.ok) {
-      return null;
-    }
+const fccClient = new HTTPClient({
+  baseURI: 'https://api.freecodecamp.org/',
+  responseType: 'json',
+});
 
-    const data = await response.json();
+interface FCCUserQuery {
+  entities: { user: Record<string, FCCUserProfile> };
+  result: string;
+}
 
-    if (!data || !data.entities || !data.entities.user) {
-      return null;
-    }
-
-    const userData = data.entities.user[data.result?.username];
-
-    if (!userData) return null;
-
-    // Map the API response to our UserProfile interface
-    return {
-      username: userData.username,
-      name: userData.name,
-      location: userData.location,
-      bio: userData.about,
-      githubProfile: userData.githubProfile,
-      twitter: userData.twitter,
-      linkedin: userData.linkedin,
-      website: userData.website,
-      avatar: userData.picture || `https://github.com/${userData.username}.png`,
-      joinDate: userData.joinDate,
-      points: userData.points || 0,
-      completedChallenges:
-        userData.completedChallenges || userData.completedChallengeCount || 0,
-      currentStreak: userData.currentStreak || 0,
-      longestStreak: userData.longestStreak || 0,
-    };
-  } catch (error) {
-    console.error('Error fetching user profile:', error);
-    return null;
-  }
+export async function getUserProfile(username: string) {
+  const { body } = await fccClient.get<FCCUserQuery>(
+    `users/get-public-profile?${new URLSearchParams({ username })}`,
+  );
+  return body!.entities.user[body!.result];
 }
