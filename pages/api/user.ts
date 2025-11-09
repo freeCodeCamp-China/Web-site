@@ -50,6 +50,12 @@ export interface CompletedChallenge {
   files: any[];
 }
 
+export type FCCUserPrivacySettings = Record<
+  | 'isLocked'
+  | `show${'About' | 'Certs' | 'Donation' | 'HeatMap' | 'Location' | 'Name' | 'Points' | 'Portfolio' | 'TimeLine'}`,
+  boolean
+>;
+
 export interface FCCUserProfile
   extends FCCUserBase,
     FCCUserStatus,
@@ -60,7 +66,7 @@ export interface FCCUserProfile
   completedExams: any[];
   points: number;
   portfolio: any[];
-  profileUI: Record<string, boolean>;
+  profileUI: FCCUserPrivacySettings;
   yearsTopContributor: string[];
 }
 
@@ -78,5 +84,6 @@ export async function getUserProfile(username: string) {
   const { body } = await fccClient.get<FCCUserQuery>(
     `users/get-public-profile?${new URLSearchParams({ username })}`,
   );
+
   return body!.entities.user[body!.result];
 }
