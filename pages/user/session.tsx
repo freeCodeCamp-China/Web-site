@@ -7,7 +7,7 @@ import { Container } from 'react-bootstrap';
 import { PageHead } from '../../components/PageHead';
 import { i18n, I18nContext } from '../../models/Translation';
 import { UserModel } from '../../models/User';
-import { githubSigner } from '../api/core';
+import { githubSigner } from '../api/GitHub/core';
 
 export const getServerSideProps = compose(githubSigner);
 

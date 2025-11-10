@@ -29,6 +29,9 @@ importers:
       idea-react:
         specifier: ^2.0.0-rc.13
         version: 2.0.0-rc.13(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react-is@16.13.1)(react@19.2.0)(typescript@5.9.3)
+      koa:
+        specifier: ^3.1.1
+        version: 3.1.1
       koajax:
         specifier: ^3.1.2
         version: 3.1.2(typescript@5.9.3)
@@ -123,6 +126,9 @@ importers:
       '@types/eslint-config-prettier':
         specifier: ^6.11.3
         version: 6.11.3
+      '@types/koa':
+        specifier: ^3.0.1
+        version: 3.0.1
       '@types/lodash':
         specifier: ^4.17.20
         version: 4.17.20

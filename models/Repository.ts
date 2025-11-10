@@ -1,25 +1,9 @@
 import {
-  githubClient,
   GitRepository,
   RepositoryFilter,
   RepositoryModel as GitRepoModel,
 } from 'mobx-github';
 import { Stream } from 'mobx-restful';
-
-import { API_Host, isServer } from './Base';
-
-const GithubToken = process.env.GITHUB_TOKEN;
-
-if (!isServer()) githubClient.baseURI = `${API_Host}/api/GitHub/`;
-
-githubClient.use(({ request }, next) => {
-  if (GithubToken)
-    request.headers = {
-      authorization: `Bearer ${GithubToken}`,
-      ...request.headers,
-    };
-  return next();
-});
 
 const MainOrganization = 'freeCodeCamp-China';
 
@@ -50,7 +34,7 @@ export class RepositoryModel extends Stream<GitRepository, RepositoryFilter>(
     }
 
     if (hasAdditional)
-      // @ts-ignore
+      // @ts-expect-error Mixin type issue
       yield await this.getOne('freeCodeCamp/chinese', filter.relation);
   }
 }
