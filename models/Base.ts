@@ -14,3 +14,9 @@ export const ownClient = new HTTPClient({
   baseURI: `${API_Host}/api/`,
   responseType: 'json',
 });
+
+export interface Base {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+}

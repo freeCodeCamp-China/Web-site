@@ -1,5 +1,6 @@
 import { HTTPError } from 'koajax';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { githubOAuth2 } from 'next-ssr-middleware';
 import { ProxyAgent, setGlobalDispatcher } from 'undici';
 
 const { HTTP_PROXY } = process.env;
@@ -20,6 +21,7 @@ export function safeAPI(handler: NextAPI): NextAPI {
         console.error(error);
 
         res.status(400);
+
         return res.send({ message: (error as Error).message });
       }
       const { message, response } = error;
@@ -42,3 +44,15 @@ export function safeAPI(handler: NextAPI): NextAPI {
     }
   };
 }
+
+const client_id = process.env.GITHUB_OAUTH_CLIENT_ID!,
+  client_secret = process.env.GITHUB_OAUTH_CLIENT_SECRET!;
+
+export const ProxyBaseURL = 'https://chinese.fcc-cd.dev/proxy';
+
+export const githubSigner = githubOAuth2({
+  rootBaseURL: process.env.VERCEL ? undefined : `${ProxyBaseURL}/github.com/`,
+  client_id,
+  client_secret,
+  scopes: ['user:email', 'read:user', 'public_repo', 'read:project'],
+});
