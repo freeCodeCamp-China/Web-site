@@ -1,6 +1,8 @@
 import {
   faBilibili,
+  faFreeCodeCamp,
   faGithub,
+  faLinkedin,
   faTwitter,
   faWeibo,
   faWeixin,
@@ -22,6 +24,8 @@ const IconMap = {
   youtube: { icon: faYoutube, color: 'danger' },
   bilibili: { icon: faBilibili, color: 'primary' },
   podcast: { icon: faPodcast, color: 'warning' },
+  fcc: { icon: faFreeCodeCamp, color: 'success' },
+  linkedin: { icon: faLinkedin, color: 'primary' },
 };
 
 export type SocialIconBarProps = Pick<FontAwesomeIconProps, 'size'> &
