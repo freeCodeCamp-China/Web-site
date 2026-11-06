@@ -1,42 +1,96 @@
-import { FC } from 'react';
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import {
+  Container,
+  Drawer,
+  Menu,
+  MenuItem,
+  Navbar,
+  NavbarBrand,
+  NavbarNav,
+  NavbarToggler,
+  NavLink,
+} from 'idea-react';
+import { action, observable } from 'mobx';
+import { observer } from 'mobx-react';
+import { Component } from 'react';
 
 import styles from './MainNavigator.module.less';
 
-export const MainNavigator: FC = () => (
-  <Navbar
-    className="shadow-sm"
-    bg="success"
-    data-bs-theme="dark"
-    expand="lg"
-    sticky="top"
-    collapseOnSelect
-  >
-    <Navbar.Brand href="/" className="ps-2">
-      <img alt="logo" src="/freecodecamp_logo.svg" className={styles.logo} />
-    </Navbar.Brand>
-    <Navbar.Toggle className="border-0 shadow-none" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className={`ms-auto align-items-center ${styles.navBox}`}>
-        <NavDropdown title="课程">
-          <NavDropdown.Item href="/course">中文稳定版</NavDropdown.Item>
-          <NavDropdown.Item
-            href="https://www.freecodecamp.org/chinese/learn/"
-            target="_blank"
+@observer
+export class MainNavigator extends Component {
+  @observable accessor open = false;
+
+  show = action(() => (this.open = true));
+
+  hide = action(() => (this.open = false));
+
+  render() {
+    const { open, show, hide } = this;
+
+    return (
+      <Navbar
+        className="shadow-sm theme-success sticky-top"
+        theme="dark"
+        expand="lg"
+      >
+        <Container>
+          <NavbarBrand href="/" className="ps-2">
+            <img
+              alt="logo"
+              src="/freecodecamp_logo.svg"
+              className={styles.logo}
+            />
+          </NavbarBrand>
+
+          <NavbarToggler
+            expanded={open}
+            className="border-0 shadow-none"
+            onClick={show}
+          />
+
+          <Drawer
+            className="w-100"
+            bodyClassName="d-flex"
+            title="导航菜单"
+            responsive="lg"
+            placement="end"
+            open={open}
+            onDismiss={hide}
           >
-            英文最新版
-          </NavDropdown.Item>
-        </NavDropdown>
-        <Nav.Link
-          href="https://forum.freecodecamp.org/c/chinese/"
-          target="_blank"
-        >
-          论坛
-        </Nav.Link>
-        <Nav.Link href="/issue">开源参与</Nav.Link>
-        <Nav.Link href="/volunteer">志愿者</Nav.Link>
-        <Nav.Link href="/conference">会议</Nav.Link>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-);
+            <NavbarNav
+              className={`ms-auto align-items-center ${styles.navBox}`}
+            >
+              <Menu as="li" nav label="课程">
+                <MenuItem href="/course" onClick={hide}>
+                  中文稳定版
+                </MenuItem>
+                <MenuItem
+                  href="https://www.freecodecamp.org/chinese/learn/"
+                  target="_blank"
+                  onClick={hide}
+                >
+                  英文最新版
+                </MenuItem>
+              </Menu>
+              <NavLink
+                href="https://forum.freecodecamp.org/c/chinese/"
+                target="_blank"
+                onClick={hide}
+              >
+                论坛
+              </NavLink>
+              <NavLink href="/issue" onClick={hide}>
+                开源参与
+              </NavLink>
+              <NavLink href="/volunteer" onClick={hide}>
+                志愿者
+              </NavLink>
+              <NavLink href="/conference" onClick={hide}>
+                会议
+              </NavLink>
+            </NavbarNav>
+          </Drawer>
+        </Container>
+      </Navbar>
+    );
+  }
+}

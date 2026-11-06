@@ -1,6 +1,6 @@
+import { Badge, Col, Container, Image, Row } from 'idea-react';
 import { GetServerSidePropsContext } from 'next';
 import { FC } from 'react';
-import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 
 import { CommentBox } from '../../components/CommentBox';
 import { PageHead } from '../../components/PageHead';
@@ -29,8 +29,12 @@ const OrganizerPeople: FC<Volunteer> = ({
     <PageHead title={`${name} - ${zhFrom}志愿者`} />
 
     <Row as="ul" className="list-unstyled text-center pt-4">
-      <Col as="li" md={3} className="text-md-start">
-        <Image rounded fluid src={`/image/organizer/${img}`} alt={name} />
+      <Col as="li" md={3} className="md:text-start">
+        <Image
+          className="rounded img-fluid"
+          src={`/image/organizer/${img}`}
+          alt={name}
+        />
       </Col>
       <Col md={9}>
         <h1>{name}</h1>
@@ -59,14 +63,14 @@ const OrganizerPeople: FC<Volunteer> = ({
     {profile[0] && (
       <section>
         <h2 className="pt-3">项目经历</h2>
-        <Row as="ul" className="list-unstyled my-3 fs-5" xs={1}>
+        <Row as="ul" className="list-unstyled my-3 fs-5" cols={1}>
           {profile.map(({ title, content }) => (
             <Col key={title} as="li">
               {title && (
                 <Badge
                   as="h3"
                   className="fs-5 text-wrap text-start"
-                  bg="success"
+                  theme="success"
                   pill
                 >
                   {title}

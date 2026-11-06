@@ -1,8 +1,8 @@
+import { Container } from 'idea-react';
 import { observer } from 'mobx-react';
 import { ObservedComponent } from 'mobx-react-helper';
 import { RestForm } from 'mobx-restful-table';
 import { compose } from 'next-ssr-middleware';
-import { Container } from 'react-bootstrap';
 
 import { PageHead } from '../../components/PageHead';
 import { i18n, I18nContext } from '../../models/Translation';
