@@ -1,8 +1,7 @@
-import { Icon, PageNav } from 'idea-react';
+import { Button, Drawer, Icon, PageNav } from 'idea-react';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 import { Component } from 'react';
-import { Button, Offcanvas } from 'react-bootstrap';
 import { sleep } from 'web-utility';
 
 @observer
@@ -31,20 +30,18 @@ export class DrawerNav extends Component {
     return (
       <>
         <div className="fixed-bottom p-3">
-          <Button onClick={() => (this.drawerShown = true)}>
+          <Button theme="primary" onClick={() => (this.drawerShown = true)}>
             <Icon name="layout-text-sidebar" />
           </Button>
         </div>
 
-        <Offcanvas
+        <Drawer
           style={{ width: 'max-content' }}
-          show={drawerShown}
-          onHide={closeDrawer}
+          open={drawerShown}
+          onDismiss={closeDrawer}
         >
-          <Offcanvas.Body>
-            <PageNav onItemClick={this.closeDrawer} />
-          </Offcanvas.Body>
-        </Offcanvas>
+          <PageNav onItemClick={this.closeDrawer} />
+        </Drawer>
       </>
     );
   }

@@ -1,9 +1,9 @@
+import { Image } from 'idea-react';
 import { HTTPError } from 'koajax';
 import { configure } from 'mobx';
 import { enableStaticRendering, observer } from 'mobx-react';
 import App, { AppContext } from 'next/app';
 import Head from 'next/head';
-import { Image } from 'react-bootstrap';
 
 import { MainNavigator } from '../components/MainNavigator';
 import { SocialIconBar } from '../components/SocialIconBar';

@@ -10,4 +10,21 @@ const { NODE_ENV, CI } = process.env,
     disable: NODE_ENV === 'development',
   });
 
-export default withLess(withPWA({ output: CI ? 'standalone' : undefined }));
+const rewrites = async () => ({
+  beforeFiles: [
+    {
+      source: '/proxy/github.com/:path*',
+      destination: 'https://github.com/:path*',
+    },
+    {
+      source: '/proxy/raw.githubusercontent.com/:path*',
+      destination: 'https://raw.githubusercontent.com/:path*',
+    },
+  ],
+  afterFiles: [],
+  fallback: [],
+});
+
+export default withLess(
+  withPWA({ output: CI ? 'standalone' : undefined, rewrites }),
+);

@@ -1,5 +1,5 @@
+import { Badge, Col, Container, Image, Row } from 'idea-react';
 import { FC } from 'react';
-import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 import { groupBy } from 'web-utility';
 
 import { partners, sponsors } from '../../pages/api/conference/SponsorData';
@@ -56,12 +56,15 @@ export const OrganizationInfo: FC = () => (
           key={sponsors[0].level}
           as="ul"
           className="list-unstyled justify-content-around p-0"
-          xs={2}
+          cols={2}
           sm={5}
         >
           {sponsors.map(({ level, href, imgSrc }) => (
             <Col key={imgSrc} as="li" className={styles.sponsor_item}>
-              <Badge className="d-inline-block align-middle m-1 w-75" bg="info">
+              <Badge
+                className="d-inline-block align-middle m-1 w-75"
+                theme="info"
+              >
                 {renderLevel(level)}
               </Badge>
               <a
@@ -85,7 +88,7 @@ export const OrganizationInfo: FC = () => (
       <Row
         as="ul"
         className="list-unstyled justify-content-around align-items-center"
-        xs={2}
+        cols={2}
         sm={5}
       >
         {partners.map(({ href, imgSrc }) => (
