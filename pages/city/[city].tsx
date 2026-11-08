@@ -1,7 +1,7 @@
+import { Col, Container, Image, Row } from 'idea-react';
 import { Contributor, GitRepository } from 'mobx-github';
 import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
 
 import { CommentBox } from '../../components/CommentBox';
 import { GitCard } from '../../components/Git/Card';
@@ -119,7 +119,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
       <section className="text-center mx-auto my-0">
         <SectionTitle
           id="organizers"
-          className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+          className="fs-4 m-0 py-5 text-center md:text-start md:ps-4 lg:ps-5"
           count={organizers.length}
         >
           社区组织者
@@ -146,7 +146,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
       <section className="text-center mx-auto my-0">
         <SectionTitle
           id="speakers"
-          className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+          className="fs-4 m-0 py-5 text-center md:text-start md:ps-4 lg:ps-5"
           count={speakers.length}
         >
           演讲嘉宾
@@ -172,7 +172,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
       <section className="text-center mx-auto my-0">
         <SectionTitle
           id="speakers"
-          className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+          className="fs-4 m-0 py-5 text-center md:text-start md:ps-4 lg:ps-5"
           count={contributors.length}
         >
           线上开源志愿者
@@ -201,7 +201,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
       <section className="mx-auto my-0 position-relative">
         <SectionTitle
           id="repositories"
-          className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+          className="fs-4 m-0 py-5 text-center md:text-start md:ps-4 lg:ps-5"
           count={repositories.length}
         >
           开源项目
@@ -220,7 +220,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
       <section className="mx-auto my-0 position-relative text-center">
         <SectionTitle
           id="partners"
-          className="fs-4 m-0 py-5 text-center text-md-start ps-md-4 ps-lg-5"
+          className="fs-4 m-0 py-5 text-center md:text-start md:ps-4 lg:ps-5"
           count={partners.length}
         >
           合作企业

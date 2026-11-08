@@ -1,10 +1,9 @@
-import { Loading } from 'idea-react';
+import { Container, Loading, Row } from 'idea-react';
 import { GitRepository } from 'mobx-github';
 import { observer } from 'mobx-react';
 import { ScrollList } from 'mobx-restful-table';
 import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC, useContext } from 'react';
-import { Container, Row } from 'react-bootstrap';
 
 import { IssuePanel } from '../components/Git/Issue/Panel';
 import { PageHead } from '../components/PageHead';

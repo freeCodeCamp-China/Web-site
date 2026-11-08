@@ -1,6 +1,6 @@
+import { Badge, Col, Container, Image, Row } from 'idea-react';
 import { GetServerSidePropsContext } from 'next';
 import { FC } from 'react';
-import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 
 import { CommentBox } from '../../components/CommentBox';
 import { PageHead } from '../../components/PageHead';
@@ -29,8 +29,12 @@ const OrganizerPeople: FC<Volunteer> = ({
     <PageHead title={`${name} - ${zhFrom}志愿者`} />
 
     <Row as="ul" className="list-unstyled text-center pt-4">
-      <Col as="li" md={3} className="text-md-start">
-        <Image rounded fluid src={`/image/organizer/${img}`} alt={name} />
+      <Col as="li" md={3} className="md:text-start">
+        <Image
+          className="rounded img-fluid"
+          src={`/image/organizer/${img}`}
+          alt={name}
+        />
       </Col>
       <Col md={9}>
         <h1>{name}</h1>
@@ -66,7 +70,7 @@ const OrganizerPeople: FC<Volunteer> = ({
                 <Badge
                   as="h3"
                   className="fs-5 text-wrap text-start"
-                  bg="success"
+                  theme="success"
                   pill
                 >
                   {title}

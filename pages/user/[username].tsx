@@ -1,6 +1,6 @@
+import { Card, Col, Container, Image, Row } from 'idea-react';
 import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
-import { Card, Col, Container, Image, Row } from 'react-bootstrap';
 
 import { CommentBox } from '../../components/CommentBox';
 import { PageHead } from '../../components/PageHead';
@@ -39,7 +39,7 @@ const UserProfilePage: FC<FCCUserProfile> = ({
     <Row>
       <Col md={4} className="text-center">
         <Image
-          roundedCircle
+          className="rounded-circle"
           fluid
           src={picture}
           alt={name || usernameDisplay || username}

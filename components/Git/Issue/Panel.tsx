@@ -1,7 +1,16 @@
-import { Icon, text2color } from 'idea-react';
+import {
+  Badge,
+  Card,
+  CardBody,
+  CardHeader,
+  Col,
+  Collapse,
+  Icon,
+  Row,
+  text2color,
+} from 'idea-react';
 import { GitRepository } from 'mobx-github';
 import { FC, useState } from 'react';
-import { Badge, Card, Col, Collapse, Row } from 'react-bootstrap';
 
 import { IssueCard } from './Card';
 
@@ -9,15 +18,15 @@ export const IssuePanel: FC<GitRepository> = ({ name, language, issues }) => {
   const [isExpand, setIsExpand] = useState(false);
 
   return (
-    <Card className="p-0" bg="light" text="dark">
-      <Card.Header
+    <Card className="p-0" theme="light">
+      <CardHeader
         className="cursor-pointer"
         onClick={() => setIsExpand(!isExpand)}
       >
         <Row className="align-items-center gx-3">
           <Col xs={4} sm={2}>
             {language && (
-              <Badge className="fs-6" bg={text2color(language, ['light'])}>
+              <Badge className="fs-6" theme={text2color(language, ['light'])}>
                 {language}
               </Badge>
             )}
@@ -26,7 +35,7 @@ export const IssuePanel: FC<GitRepository> = ({ name, language, issues }) => {
             {name}
           </Col>
           <Col xs={1} className="text-end">
-            <Badge className="fs-6" pill bg="info">
+            <Badge className="fs-6" pill theme="info">
               {issues?.length}
             </Badge>
           </Col>
@@ -37,16 +46,16 @@ export const IssuePanel: FC<GitRepository> = ({ name, language, issues }) => {
             />
           </Col>
         </Row>
-      </Card.Header>
+      </CardHeader>
 
-      <Collapse in={isExpand}>
-        <Card.Body as={Row} xs={1} sm={2} xl={2} className="g-3">
+      <Collapse open={isExpand}>
+        <CardBody as={Row} xs={1} sm={2} xl={2} className="g-3">
           {issues?.map(issue => (
             <Col key={issue.title}>
               <IssueCard className="h-100" {...issue} />
             </Col>
           ))}
-        </Card.Body>
+        </CardBody>
       </Collapse>
     </Card>
   );

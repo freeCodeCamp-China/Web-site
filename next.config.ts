@@ -1,4 +1,3 @@
-import { NextConfig } from 'next';
 import setPWA from 'next-pwa';
 // @ts-expect-error No types available
 import withLess from 'next-with-less';
@@ -11,7 +10,7 @@ const { NODE_ENV, CI } = process.env,
     disable: NODE_ENV === 'development',
   });
 
-const rewrites: NextConfig['rewrites'] = async () => ({
+const rewrites = async () => ({
   beforeFiles: [
     {
       source: '/proxy/github.com/:path*',

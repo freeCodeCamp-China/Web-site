@@ -1,9 +1,9 @@
+import { Col, Container, Row } from 'idea-react';
 import { GitRepository } from 'mobx-github';
 import { observer } from 'mobx-react';
 import { InferGetServerSidePropsType } from 'next';
 import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
 
 import { GitCard } from '../components/Git/Card';
 import { PageHead } from '../components/PageHead';
@@ -23,6 +23,7 @@ export const getServerSideProps = compose(cache(), errorLogger, async () => {
     repositories = (await new RepositoryModel().getAll()).filter(
       ({ archived }) => !archived,
     );
+
   return {
     props: {
       cities,
@@ -38,7 +39,7 @@ const HomePage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
 
       <SectionTitle
         id="cities"
-        className="py-5 text-center text-md-start ps-lg-5 ps-md-4"
+        className="py-5 text-center md:text-start lg:ps-5 md:ps-4"
         count={cities.length}
       >
         城市社区
@@ -56,7 +57,7 @@ const HomePage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
 
       <SectionTitle
         id="repositories"
-        className="py-5 text-center text-md-start ps-lg-5 ps-md-4"
+        className="py-5 text-center md:text-start lg:ps-5 md:ps-4"
         count={repositories.length}
       >
         开源项目

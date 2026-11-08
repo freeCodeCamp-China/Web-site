@@ -1,5 +1,5 @@
+import { Container, Row } from 'idea-react';
 import { FC } from 'react';
-import { Container, Row } from 'react-bootstrap';
 
 import guestData from '../../pages/api/conference/GuestData.json';
 import { PersonCard } from '../PersonCard';

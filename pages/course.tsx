@@ -1,7 +1,16 @@
-import { Icon } from 'idea-react';
+import {
+  Button,
+  Card,
+  CardBody,
+  CardText,
+  CardTitle,
+  Col,
+  Container,
+  Icon,
+  Row,
+} from 'idea-react';
 import { observer } from 'mobx-react';
 import { FC } from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 
 import { PageHead } from '../components/PageHead';
 import { SectionTitle } from '../components/SectionTitle';
@@ -12,7 +21,7 @@ const CoursePage: FC = observer(() => (
     <PageHead title="课程列表" />
 
     <SectionTitle
-      className="py-5 text-center text-md-start"
+      className="py-5 text-center md:text-start"
       count={stableCourses.length}
     >
       课程列表
@@ -22,18 +31,18 @@ const CoursePage: FC = observer(() => (
       {stableCourses.map(({ id, title, description, link, icon }) => (
         <Col key={id} as="li">
           <Card className="h-100 shadow-sm">
-            <Card.Body className="d-flex flex-column gap-3">
+            <CardBody className="d-flex flex-column gap-3">
               <Icon name={icon} size={3} className="text-primary" />
-              <Card.Title as="h3" className="fs-5">
+              <CardTitle as="h3" className="fs-5">
                 {title}
-              </Card.Title>
-              <Card.Text className="text-muted flex-grow-1">
+              </CardTitle>
+              <CardText className="text-muted flex-grow-1">
                 {description}
-              </Card.Text>
-              <Button href={link} target="_blank" variant="primary">
+              </CardText>
+              <Button href={link} target="_blank" theme="primary">
                 开始学习
               </Button>
-            </Card.Body>
+            </CardBody>
           </Card>
         </Col>
       ))}
