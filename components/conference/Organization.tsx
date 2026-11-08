@@ -17,7 +17,11 @@ export const OrganizationInfo: FC = () => (
       <div className="d-flex justify-content-between">
         <div className="mx-auto my-0">
           <a target="_blank" href="/" rel="noreferrer">
-            <img className={styles.logo} src="/freecodecamp-logo.png" />
+            <img
+              className={styles.logo}
+              src="/freecodecamp-logo.png"
+              alt="freeCodeCamp"
+            />
           </a>
           <p className="text-start mt-4">
             freeCodeCamp 是 GitHub 上 Star 第一的开源项目。自 2014
@@ -56,7 +60,7 @@ export const OrganizationInfo: FC = () => (
           key={sponsors[0].level}
           as="ul"
           className="list-unstyled justify-content-around p-0"
-          cols={2}
+          xs={2}
           sm={5}
         >
           {sponsors.map(({ level, href, imgSrc }) => (
@@ -88,7 +92,7 @@ export const OrganizationInfo: FC = () => (
       <Row
         as="ul"
         className="list-unstyled justify-content-around align-items-center"
-        cols={2}
+        xs={2}
         sm={5}
       >
         {partners.map(({ href, imgSrc }) => (

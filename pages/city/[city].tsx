@@ -63,7 +63,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
     <PageHead title={`${name}社区`} />
     <section>
       <Row as="ul" className="list-unstyled justify-content-center">
-        <Col as="li" span={12} sm={8}>
+        <Col as="li" xs={12} sm={8}>
           {banner && (
             <div className="position-relative">
               <Image
@@ -90,7 +90,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
         </Col>
         <Col
           as="li"
-          span={12}
+          xs={12}
           sm={4}
           className="d-flex flex-column justify-content-around gap-4"
         >
@@ -127,7 +127,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
         <Row
           as="ul"
           className="list-unstyled justify-content-center"
-          cols={2}
+          xs={2}
           sm={5}
         >
           {organizers.map(({ name, link, pic }) => (
@@ -154,7 +154,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
         <Row
           as="ul"
           className="list-unstyled justify-content-around"
-          cols={2}
+          xs={2}
           sm={5}
         >
           {speakers.map(({ pic, name }) => (
@@ -180,7 +180,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
         <Row
           as="ul"
           className="list-unstyled justify-content-center text-center"
-          cols={2}
+          xs={2}
           sm={5}
           md={6}
         >
@@ -206,7 +206,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
         >
           开源项目
         </SectionTitle>
-        <Row as="ul" className="list-unstyled g-3" cols={1} sm={2} lg={4}>
+        <Row as="ul" className="list-unstyled g-3" xs={1} sm={2} lg={4}>
           {repositories.map(repository => (
             <Col key={repository.id} as="li">
               <GitCard className="h-100" {...repository} />
@@ -227,7 +227,7 @@ const CommunityCity: FC<CommunityCityProps> = ({
         </SectionTitle>
         <Row
           as="ul"
-          cols={2}
+          xs={2}
           sm={5}
           className="list-unstyled justify-content-around"
         >

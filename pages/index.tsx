@@ -44,7 +44,7 @@ const HomePage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
       >
         城市社区
       </SectionTitle>
-      <Row as="ul" className="list-unstyled" cols={2} sm={4} lg={6}>
+      <Row as="ul" className="list-unstyled" xs={2} sm={4} lg={6}>
         {cities.map(({ key, name, github }) => (
           <PersonCard
             key={key}
@@ -62,7 +62,7 @@ const HomePage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
       >
         开源项目
       </SectionTitle>
-      <Row as="ul" className="list-unstyled g-3" cols={1} sm={2} lg={4}>
+      <Row as="ul" className="list-unstyled g-3" xs={1} sm={2} lg={4}>
         {repositories.map(repository => (
           <Col key={repository.id} as="li">
             <GitCard className="h-100" {...repository} />
