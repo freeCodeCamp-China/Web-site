@@ -65,8 +65,13 @@ export const IssueCard: FC<IssueCardProps> = ({
         )}
       </Stack>
     </CardHeader>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/github-markdown-css@5.9.0/github-markdown.css"
+    />
     <CardBody
       as="article"
+      className="markdown-body"
       dangerouslySetInnerHTML={{ __html: marked(body || '') }}
     />
     <CardFooter className="d-flex justify-content-between align-items-center">

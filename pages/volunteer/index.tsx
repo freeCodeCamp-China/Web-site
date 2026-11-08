@@ -33,7 +33,7 @@ const Organizer: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
     <Row
       as="ul"
       className="list-unstyled justify-content-center text-center"
-      cols={2}
+      xs={2}
       sm={5}
       md={6}
     >
@@ -52,7 +52,7 @@ const Organizer: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
     <Row
       as="ul"
       className="list-unstyled justify-content-center text-center"
-      cols={2}
+      xs={2}
       sm={5}
       md={6}
     >

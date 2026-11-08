@@ -27,7 +27,7 @@ const CoursePage: FC = observer(() => (
       课程列表
     </SectionTitle>
 
-    <Row as="ul" className="list-unstyled g-4" cols={1} md={2} lg={3}>
+    <Row as="ul" className="list-unstyled g-4" xs={1} md={2} lg={3}>
       {stableCourses.map(({ id, title, description, link, icon }) => (
         <Col key={id} as="li">
           <Card className="h-100 shadow-sm">

@@ -12,7 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@fortawesome/react-fontawesome": "^3.5.0",
     "@giscus/react": "^3.1.0",
-    "idea-react": "^3.0.0-beta.3",
+    "idea-react": "^3.0.0-beta.5",
     "koa": "^3.3.0",
     "koajax": "^3.3.1",
     "less": "^4.9.1",
@@ -41,26 +41,20 @@
     "@types/koa": "^3.0.3",
     "@types/lodash": "^4.17.27",
     "@types/next-pwa": "^5.6.9",
-    "@types/node": "^24.19.2",
+    "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "eslint": "^10.14.0",
     "eslint-idea2app-next-js": "^0.1.1",
     "git-utility": "^0.3.0",
     "husky": "^9.1.7",
     "jiti": "^2.7.0",
-    "lint-staged": "^16.4.0",
+    "lint-staged": "^17.6.0",
     "prettier": "^3.9.10",
     "prettier-plugin-css-order": "^2.2.0",
-    "typescript": "~5.9.3"
+    "typescript": "~6.0.3"
   },
   "resolutions": {
     "next": "$next"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp",
-      "unrs-resolver"
-    ]
   },
   "prettier": {
     "singleQuote": true,

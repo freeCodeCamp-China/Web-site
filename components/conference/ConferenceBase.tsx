@@ -84,25 +84,25 @@ export const ConferenceBase: FC = () => (
         大会亮点
       </h2>
       <Row
-        cols={2}
+        xs={2}
         sm={5}
         as="ul"
         className="list-unstyled justify-content-around text-center"
       >
         <Col as="li" className={styles.media}>
-          <img src="/image/meeting.png" />
+          <img src="/image/meeting.png" alt="" />
           <p className="m-0 mt-3 mx-2">
             12 个城市社区同期举办，促进本地开发者技术分享与交流
           </p>
         </Col>
         <Col as="li" className={styles.media}>
-          <img src="/image/meeting.png" />
+          <img src="/image/meeting.png" alt="" />
           <p className="m-0 mt-3 mx-2">
             与数十位前端、区块链等领域的优秀开发者、技术负责人面对面交流
           </p>
         </Col>
         <Col as="li" className={styles.media}>
-          <img src="/image/meeting.png" />
+          <img src="/image/meeting.png" alt="" />
           <p className="m-0 mt-3 mx-2">
             部分城市设置现场招聘环节，为企业和开发者搭建沟通桥梁
           </p>
