@@ -41,5 +41,22 @@ const rewrites = async () => ({
 });
 
 export default withSerwist(
-  withLess({ output: CI ? 'standalone' : undefined, rewrites }),
+  withLess({
+    output: CI ? 'standalone' : undefined,
+    transpilePackages: [
+      '@serwist/next',
+      '@swc/helpers',
+      'idea-react',
+      'iterable-observer',
+      'koajax',
+      'marked',
+      'mobx-github',
+      'mobx-i18n',
+      'mobx-restful',
+      'mobx-restful-table',
+      'react-bootstrap-editor',
+      'web-utility',
+    ],
+    rewrites,
+  }),
 );
