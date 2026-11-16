@@ -39,7 +39,12 @@ const CoursePage: FC = observer(() => (
               <CardText className="text-muted flex-grow-1">
                 {description}
               </CardText>
-              <Button href={link} target="_blank" theme="primary">
+              <Button
+                variant="solid"
+                href={link}
+                target="_blank"
+                theme="primary"
+              >
                 开始学习
               </Button>
             </CardBody>

@@ -24,7 +24,12 @@ export const CityScheduleInfo: FC = () => (
             className={styles.table_box}
           >
             <div className="d-flex justify-content-start py-3">
-              <Button theme="primary" target="_blank" href={href}>
+              <Button
+                variant="solid"
+                theme="primary"
+                target="_blank"
+                href={href}
+              >
                 {href ? '点此报名' : '报名通道即将开启'}
               </Button>
             </div>

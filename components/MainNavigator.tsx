@@ -23,6 +23,39 @@ export class MainNavigator extends Component {
 
   hide = action(() => (this.open = false));
 
+  renderLinks = () => (
+    <NavbarNav className={`ms-auto align-items-center ${styles.navBox}`}>
+      <Menu as="li" nav label="课程">
+        <MenuItem href="/course" onClick={this.hide}>
+          中文稳定版
+        </MenuItem>
+        <MenuItem
+          href="https://www.freecodecamp.org/chinese/learn/"
+          target="_blank"
+          onClick={this.hide}
+        >
+          英文最新版
+        </MenuItem>
+      </Menu>
+      <NavLink
+        href="https://forum.freecodecamp.org/c/chinese/"
+        target="_blank"
+        onClick={this.hide}
+      >
+        论坛
+      </NavLink>
+      <NavLink href="/issue" onClick={this.hide}>
+        开源参与
+      </NavLink>
+      <NavLink href="/volunteer" onClick={this.hide}>
+        志愿者
+      </NavLink>
+      <NavLink href="/conference" onClick={this.hide}>
+        会议
+      </NavLink>
+    </NavbarNav>
+  );
+
   render() {
     const { open, show, hide } = this;
 
@@ -50,44 +83,13 @@ export class MainNavigator extends Component {
           <Drawer
             className="w-100"
             bodyClassName="d-flex"
-            title="导航菜单"
             responsive="lg"
             placement="end"
+            title="导航菜单"
             open={open}
             onDismiss={hide}
           >
-            <NavbarNav
-              className={`ms-auto align-items-center ${styles.navBox}`}
-            >
-              <Menu as="li" nav label="课程">
-                <MenuItem href="/course" onClick={hide}>
-                  中文稳定版
-                </MenuItem>
-                <MenuItem
-                  href="https://www.freecodecamp.org/chinese/learn/"
-                  target="_blank"
-                  onClick={hide}
-                >
-                  英文最新版
-                </MenuItem>
-              </Menu>
-              <NavLink
-                href="https://forum.freecodecamp.org/c/chinese/"
-                target="_blank"
-                onClick={hide}
-              >
-                论坛
-              </NavLink>
-              <NavLink href="/issue" onClick={hide}>
-                开源参与
-              </NavLink>
-              <NavLink href="/volunteer" onClick={hide}>
-                志愿者
-              </NavLink>
-              <NavLink href="/conference" onClick={hide}>
-                会议
-              </NavLink>
-            </NavbarNav>
+            {this.renderLinks()}
           </Drawer>
         </Container>
       </Navbar>

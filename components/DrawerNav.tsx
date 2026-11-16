@@ -30,16 +30,16 @@ export class DrawerNav extends Component {
     return (
       <>
         <div className="fixed-bottom p-3">
-          <Button theme="primary" onClick={() => (this.drawerShown = true)}>
+          <Button
+            variant="solid"
+            theme="primary"
+            onClick={() => (this.drawerShown = true)}
+          >
             <Icon name="layout-text-sidebar" />
           </Button>
         </div>
 
-        <Drawer
-          style={{ width: 'max-content' }}
-          open={drawerShown}
-          onDismiss={closeDrawer}
-        >
+        <Drawer className="w-max" open={drawerShown} onDismiss={closeDrawer}>
           <PageNav onItemClick={this.closeDrawer} />
         </Drawer>
       </>

@@ -2,7 +2,7 @@ packages:
   - .
 autoInstallPeers: false
 minimumReleaseAge: 0
+patchedDependencies:
+  next@16.4.6: patches/next@16.4.6.patch
 allowBuilds:
   core-js: true
-patchedDependencies:
-  next@16.4.5: patches/next@16.4.5.patch
