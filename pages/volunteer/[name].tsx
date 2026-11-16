@@ -30,11 +30,7 @@ const OrganizerPeople: FC<Volunteer> = ({
 
     <Row as="ul" className="list-unstyled text-center pt-4">
       <Col as="li" md={3} className="md:text-start">
-        <Image
-          className="rounded img-fluid"
-          src={`/image/organizer/${img}`}
-          alt={name}
-        />
+        <Image rounded fluid src={`/image/organizer/${img}`} alt={name} />
       </Col>
       <Col md={9}>
         <h1>{name}</h1>
