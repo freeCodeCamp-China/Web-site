@@ -1,5 +1,5 @@
+import { Badge, Col, Container, Image, Row } from 'idea-react';
 import { FC } from 'react';
-import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 import { groupBy } from 'web-utility';
 
 import { partners, sponsors } from '../../pages/api/conference/SponsorData';
@@ -17,7 +17,11 @@ export const OrganizationInfo: FC = () => (
       <div className="d-flex justify-content-between">
         <div className="mx-auto my-0">
           <a target="_blank" href="/" rel="noreferrer">
-            <img className={styles.logo} src="/freecodecamp-logo.png" />
+            <img
+              className={styles.logo}
+              src="/freecodecamp-logo.png"
+              alt="freeCodeCamp"
+            />
           </a>
           <p className="text-start mt-4">
             freeCodeCamp 是 GitHub 上 Star 第一的开源项目。自 2014
@@ -61,7 +65,10 @@ export const OrganizationInfo: FC = () => (
         >
           {sponsors.map(({ level, href, imgSrc }) => (
             <Col key={imgSrc} as="li" className={styles.sponsor_item}>
-              <Badge className="d-inline-block align-middle m-1 w-75" bg="info">
+              <Badge
+                className="d-inline-block align-middle m-1 w-75"
+                theme="info"
+              >
                 {renderLevel(level)}
               </Badge>
               <a

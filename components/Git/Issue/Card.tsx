@@ -1,14 +1,23 @@
-import { Icon, Nameplate, text2color } from 'idea-react';
+import {
+  Badge,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  CardProps,
+  Icon,
+  Nameplate,
+  Stack,
+  text2color,
+} from 'idea-react';
 import { marked } from 'marked';
 import { Issue } from 'mobx-github';
 import { FC } from 'react';
-import { Badge, Card, CardProps, Stack } from 'react-bootstrap';
 
 export type IssueCardProps = Issue & Omit<CardProps, 'id' | 'body'>;
 
 export const IssueCard: FC<IssueCardProps> = ({
-  bg = 'light',
-  text = 'dark',
+  theme = 'light',
   id,
   number,
   title,
@@ -20,8 +29,8 @@ export const IssueCard: FC<IssueCardProps> = ({
   created_at,
   ...props
 }) => (
-  <Card {...{ ...props, bg, text }}>
-    <Card.Header
+  <Card {...props} theme={theme}>
+    <CardHeader
       as="h4"
       className="d-flex justify-content-between align-items-center gap-3"
     >
@@ -43,11 +52,11 @@ export const IssueCard: FC<IssueCardProps> = ({
                 className="fs-6"
                 {...(label.color
                   ? {
-                      bg: '',
+                      theme: undefined,
                       style: { background: `#${label.color}` },
                     }
                   : {
-                      bg: text2color(label.name || '', ['light']),
+                      theme: text2color(label.name || '', ['light']),
                     })}
               >
                 {label.name}
@@ -55,12 +64,17 @@ export const IssueCard: FC<IssueCardProps> = ({
             ),
         )}
       </Stack>
-    </Card.Header>
-    <Card.Body
+    </CardHeader>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/github-markdown-css@5.9.0/github-markdown.css"
+    />
+    <CardBody
       as="article"
+      className="markdown-body"
       dangerouslySetInnerHTML={{ __html: marked(body || '') }}
     />
-    <Card.Footer className="d-flex justify-content-between align-items-center">
+    <CardFooter className="d-flex justify-content-between align-items-center">
       {user && <Nameplate name={user.name || ''} avatar={user.avatar_url} />}
 
       <Stack direction="horizontal" gap={2}>
@@ -69,6 +83,6 @@ export const IssueCard: FC<IssueCardProps> = ({
       </Stack>
 
       <time dateTime={created_at}>{new Date(created_at).toLocaleString()}</time>
-    </Card.Footer>
+    </CardFooter>
   </Card>
 );

@@ -1,4 +1,4 @@
-import { Container } from 'react-bootstrap';
+import { Container } from 'idea-react';
 
 import { CityScheduleInfo } from '../components/conference/CityScheduleInfo';
 import { ConferenceBase } from '../components/conference/ConferenceBase';

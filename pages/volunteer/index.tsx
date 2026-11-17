@@ -1,8 +1,8 @@
+import { Container, Row } from 'idea-react';
 import { Contributor } from 'mobx-github';
 import { InferGetServerSidePropsType } from 'next';
 import { cache, compose, errorLogger } from 'next-ssr-middleware';
 import { FC } from 'react';
-import { Container, Row } from 'react-bootstrap';
 
 import { PageHead } from '../../components/PageHead';
 import { PersonCard } from '../../components/PersonCard';
@@ -27,7 +27,7 @@ const Organizer: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
 }) => (
   <Container>
     <PageHead title="志愿者" />
-    <h1 className="py-5 text-center text-md-start ps-md-4">志愿者</h1>
+    <h1 className="py-5 text-center md:text-start md:ps-4">志愿者</h1>
 
     <SectionTitle count={contributors.length}>线上开源志愿者</SectionTitle>
     <Row

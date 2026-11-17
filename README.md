@@ -16,7 +16,7 @@
 
 ## Next-Bootstrap.ts
 
-该项目是使用 [`create-next-app`][6] 脚手架引导安装，基于 [TypeScript][2]、[Next.js][3]、[Bootstrap][4] 和 [Workbox][5] 的 [React][1] 项目。
+该项目是使用 [`create-next-app`][6] 脚手架引导安装，基于 [TypeScript][2]、[Next.js][3]、[Bootstrap][4] 和 [Serwist][5] 的 [React][1] 项目。
 
 <!--[![NPM Dependency](https://david-dm.org/freecodecamp-china/web-site.svg)][7]-->
 
@@ -24,11 +24,11 @@
 
 ### 项目技术栈
 
-- 编程语言: [TypeScript v5][2]
+- 编程语言: [TypeScript v6][2]
 - 组件引擎: [Nextjs v16][3]
-- 组件套件: [Bootstrap v5][4]
-- PWA 框架: [Workbox v6][5]
-- 状态管理: [MobX v6][9]
+- 组件套件: [Bootstrap v6][4]
+- PWA 框架: [Serwist v9][5]
+- 状态管理: [MobX v7][9]
 - CI / CD: [GitHub Actions][11] + [Vercel][12]
 
 ### 启动
@@ -70,7 +70,7 @@ pnpm container
 [2]: https://www.typescriptlang.org/
 [3]: https://nextjs.org/
 [4]: https://getbootstrap.com/
-[5]: https://developers.google.com/web/tools/workbox
+[5]: https://serwist.pages.dev/
 [6]: https://github.com/vercel/next.js/tree/canary/packages/create-next-app
 [7]: https://david-dm.org/freecodecamp-china/web-site
 [8]: https://github.com/freeCodeCamp-China/Web-site/actions/workflows/main.yml
